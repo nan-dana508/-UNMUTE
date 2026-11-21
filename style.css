@@ -1,0 +1,278 @@
+
+/* 1. Basic page settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F1EA;
+    color: #493047;
+}
+
+
+/* 2. Navigation bar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    border-bottom: 1px solid #E5D5E3;
+    background-color: #F8F1EA;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 140px;
+    width: auto;
+    max-width: 400px;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #493047;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #732871;
+}
+
+
+/* 3. Hero section */
+
+.hero {
+    min-height: 680px;
+    padding: 65px 6%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.eyebrow {
+    color: #732871;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 5.5vw, 70px);
+    line-height: 1.12;
+    margin-bottom: 25px;
+    color: #493047;
+}
+
+.hero h1 span {
+    color: #732871;
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 530px;
+    line-height: 1.8;
+    color: #725F70;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    background-color: #732871;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #582057;
+}
+
+
+/* 4. Hero image */
+
+.hero-image {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* 5. Mission section */
+
+.mission {
+    background-color: #EDE1E9;
+    padding: 85px 12%;
+    text-align: center;
+}
+
+.mission h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    color: #493047;
+    margin-bottom: 20px;
+}
+
+.mission p:last-child {
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+    color: #725F70;
+}
+
+
+/* 6. Platform feature cards */
+
+.platform {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.platform h2 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    color: #493047;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    text-align: left;
+}
+
+.feature-card {
+    background-color: #FFFFFF;
+    padding: 35px;
+    border: 1px solid #E5D5E3;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #732871;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #725F70;
+    line-height: 1.7;
+}
+
+
+/* 7. Footer */
+
+footer {
+    background-color: #732871;
+    color: white;
+    padding: 35px 8%;
+    text-align: center;
+    line-height: 2;
+}
+
+footer p:last-child {
+    font-size: 12px;
+    color: #F0E1EF;
+}
+
+
+/* 8. Mobile responsiveness */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 6%;
+    }
+
+    .logo img {
+        height: 85px;
+        max-width: 280px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 8%;
+        gap: 35px;
+    }
+
+    .hero-image {
+        height: 420px;
+        border-radius: 10px;
+    }
+
+    .mission {
+        padding: 65px 8%;
+    }
+
+    .mission h2 {
+        font-size: 29px;
+    }
+
+    .platform {
+        padding: 65px 8%;
+    }
+
+    .platform h2 {
+        font-size: 29px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
