@@ -1,0 +1,1162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emotional Wellbeing | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none !important;
+        }
+
+        .emotional-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            background: #faf5f2;
+        }
+
+        .emotional-hero-content {
+            flex: 1;
+        }
+
+        .emotional-hero-content h1 {
+            font-size: 42px;
+            color: #54284f;
+            margin-bottom: 20px;
+        }
+
+        .emotional-hero-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #514650;
+            max-width: 600px;
+        }
+
+        .emotional-hero-image {
+            flex: 1;
+        }
+
+        .emotional-hero-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .emotional-intro {
+            text-align: center;
+            padding: 55px 8% 25px;
+        }
+
+        .emotional-intro h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .emotional-intro p {
+            color: #625760;
+            line-height: 1.7;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            padding: 30px 8% 70px;
+        }
+
+        .topic-card {
+            display: block;
+            text-align: left;
+            padding: 27px;
+            background: #fff;
+            border: 1px solid #eee4eb;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(75, 43, 69, 0.08);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: inherit;
+            color: inherit;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(75, 43, 69, 0.14);
+        }
+
+        .topic-card:focus-visible,
+        .back-button:focus-visible,
+        .source-link:focus-visible {
+            outline: 2px solid #98536F;
+            outline-offset: 4px;
+        }
+
+        .topic-number {
+            display: inline-block;
+            color: #98536f;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .topic-card h3 {
+            color: #54284f;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            color: #625760;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .topic-card span:last-child {
+            color: #8a496e;
+            font-weight: 600;
+        }
+
+        .topic-view {
+            display: none;
+            padding: 55px 8% 75px;
+        }
+
+        .topic-view.active {
+            display: block;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 11px 20px;
+            background: #f4e9ef;
+            color: #702f61;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+            font-family: inherit;
+        }
+
+        .back-button:hover {
+            background: #ead8e3;
+        }
+
+        .guide-content {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(75, 43, 69, 0.08);
+        }
+
+        .guide-content h2 {
+            color: #54284f;
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .guide-content h3 {
+            color: #713d68;
+            font-size: 21px;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .guide-content p {
+            color: #625760;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .guide-content ul {
+            padding-left: 23px;
+            margin-bottom: 20px;
+        }
+
+        .guide-content li {
+            color: #625760;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 9px;
+        }
+
+        .gentle-reminder {
+            background: #faf5f2;
+            border-left: 4px solid #98536f;
+            padding: 20px 23px;
+            margin-top: 28px;
+            border-radius: 8px;
+        }
+
+        .gentle-reminder p {
+            margin-bottom: 0;
+            color: #54284f;
+        }
+
+        .support-note {
+            background: #f7f0f5;
+            padding: 22px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .support-note h3 {
+            margin-top: 0;
+        }
+
+        .guide-sources {
+            border-top: 1px solid #eadfe7;
+            margin-top: 35px;
+            padding-top: 22px;
+        }
+
+        .guide-sources h3 {
+            margin-top: 0;
+        }
+
+        .guide-sources ul {
+            margin-bottom: 0;
+        }
+
+        .source-link {
+            color: #8a496e;
+            font-weight: 600;
+        }
+
+        .emotional-closing {
+            text-align: center;
+            padding: 65px 10%;
+            background: #faf5f2;
+        }
+
+        .emotional-closing h2 {
+            color: #54284f;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .emotional-closing p {
+            max-width: 750px;
+            margin: auto;
+            color: #625760;
+            line-height: 1.8;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .emotional-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+            }
+
+            .emotional-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .emotional-hero-image img {
+                height: 260px;
+            }
+
+            .topic-grid {
+                grid-template-columns: 1fr;
+                padding: 25px 6% 50px;
+            }
+
+            .topic-view {
+                padding: 35px 6% 55px;
+            }
+
+            .guide-content {
+                padding: 25px;
+            }
+
+            .guide-content h2 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#know-your-body">Know Your Body</a>
+            <a href="index.html#support" class="active">Find Support</a>
+            <a href="index.html#voices">Her Voice</a>
+            <a href="index.html#research">Beyond the Common</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="emotional-hero">
+
+        <div class="emotional-hero-content">
+            <h1>Your Emotional Wellbeing Matters</h1>
+
+            <p>
+                A cancer diagnosis can bring many emotions, and
+                there is no single right way to experience them.
+                Whether you're feeling anxious, overwhelmed,
+                uncertain or simply looking for someone who understands,
+                this space is here to help.
+            </p>
+
+            <p>
+                Your feelings deserve care, understanding and support too.
+            </p>
+        </div>
+
+        <div class="emotional-hero-image">
+            <img src="emotional-wellbeing.jpg"
+                 alt="A peaceful image representing emotional wellbeing">
+        </div>
+
+    </section>
+
+    <!-- Topic Directory -->
+    <main id="topicDirectory">
+
+        <section class="emotional-intro">
+            <h2>Explore Emotional Support</h2>
+
+            <p>
+                Choose a topic to explore practical guidance
+                and information for different parts of your journey.
+            </p>
+        </section>
+
+        <section class="topic-grid">
+
+            <button class="topic-card" onclick="openTopic('understanding')">
+                <span class="topic-number">01</span>
+                <h3>Understanding Emotional Wellbeing</h3>
+                <p>
+                    Understand the emotional side of cancer
+                    and the different feelings you may experience.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('diagnosis')">
+                <span class="topic-number">02</span>
+                <h3>Coping With a Cancer Diagnosis</h3>
+                <p>
+                    Find gentle guidance for navigating the
+                    emotions and uncertainty that can follow a diagnosis.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('anxiety')">
+                <span class="topic-number">03</span>
+                <h3>Managing Anxiety, Fear and Uncertainty</h3>
+                <p>
+                    Explore ways to manage worries and find
+                    support when uncertainty feels overwhelming.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('scanxiety')">
+                <span class="topic-number">04</span>
+                <h3>Scan Anxiety and Fear of Recurrence</h3>
+                <p>
+                    Understand the stress around scans, results
+                    and worries about cancer returning.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('bodyimage')">
+                <span class="topic-number">05</span>
+                <h3>Body Image and Self-Confidence</h3>
+                <p>
+                    Explore the emotional impact of physical
+                    changes during and after cancer treatment.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('relationships')">
+                <span class="topic-number">06</span>
+                <h3>Relationships, Friendships and Communication</h3>
+                <p>
+                    Find ways to communicate your needs,
+                    maintain connections and set boundaries.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('counselling')">
+                <span class="topic-number">07</span>
+                <h3>Counselling and Professional Support</h3>
+                <p>
+                    Learn about professional emotional support
+                    and where to begin looking for help.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('youngpatients')">
+                <span class="topic-number">08</span>
+                <h3>Emotional Wellbeing for Young Patients</h3>
+                <p>
+                    Explore the challenges young people may
+                    face with education, relationships and future plans.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('selfcare')">
+                <span class="topic-number">09</span>
+                <h3>Everyday Coping and Self-Care</h3>
+                <p>
+                    Discover manageable ways to care for
+                    yourself emotionally during difficult days.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+            <button class="topic-card" onclick="openTopic('professionalhelp')">
+                <span class="topic-number">10</span>
+                <h3>When to Seek Professional Help</h3>
+                <p>
+                    Recognise when emotional distress may
+                    need additional support and where to turn.
+                </p>
+                <span>Explore Topic →</span>
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Topic 1 -->
+    <section class="topic-view" id="understanding">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Understanding Emotional Wellbeing</h2>
+
+            <p>
+                Emotional wellbeing is about understanding your feelings,
+                finding ways to cope with challenges and having support
+                when you need it. It does not mean feeling happy all
+                the time or being unaffected by difficult experiences.
+            </p>
+
+            <p>
+                Cancer can affect more than physical health. A diagnosis
+                and its treatment may bring feelings such as shock,
+                sadness, anger, fear, uncertainty, loneliness or even
+                relief at finally having answers.
+            </p>
+
+            <h3>Why do emotions change?</h3>
+
+            <p>
+                Your feelings may change throughout diagnosis,
+                treatment, recovery and life after treatment.
+                Some days may feel manageable, while others may
+                be more difficult. Everyone responds differently.
+            </p>
+
+            <h3>What might help?</h3>
+
+            <ul>
+                <li>Give yourself permission to acknowledge what you feel.</li>
+                <li>Talk with someone you trust when you feel ready.</li>
+                <li>Ask your healthcare team questions when something worries you.</li>
+                <li>Consider counselling or a support group if you would like additional support.</li>
+                <li>Allow yourself time to adjust without comparing your experience with someone else's.</li>
+            </ul>
+
+            <div class="gentle-reminder">
+                <p>
+                    There is no correct way to feel about cancer.
+                    You do not have to remain positive every moment,
+                    and you do not have to manage everything alone.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings" target="_blank" rel="noopener noreferrer">NCI – Emotions and Cancer</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 2 -->
+    <section class="topic-view" id="diagnosis">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Coping With a Cancer Diagnosis</h2>
+
+            <p>
+                Hearing that you have cancer can be overwhelming.
+                You may have many questions about treatment, your
+                health, your family, education, work and what happens next.
+            </p>
+
+            <p>
+                Some people feel shocked or numb. Others feel frightened,
+                angry, confused or uncertain. You may experience several
+                emotions at once, and your feelings may change over time.
+            </p>
+
+            <h3>Taking things one step at a time</h3>
+
+            <ul>
+                <li>Give yourself time to process the information.</li>
+                <li>Write down questions before appointments so you don't have to remember everything.</li>
+                <li>Ask your doctor to explain unfamiliar terms or treatment options.</li>
+                <li>Consider taking a trusted person to appointments, if you would find that helpful.</li>
+                <li>Decide whom you want to tell about your diagnosis and when.</li>
+                <li>Ask for practical or emotional support instead of feeling you must manage everything yourself.</li>
+            </ul>
+
+            <h3>When everything feels overwhelming</h3>
+
+            <p>
+                You do not need to understand every part of your treatment
+                immediately. Ask your healthcare team to explain the next
+                step and focus on the information you need right now.
+            </p>
+
+            <div class="gentle-reminder">
+                <p>
+                    You do not need to be brave every moment.
+                    Asking questions, expressing fear and accepting
+                    help are all valid ways of coping.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings/anxiety-distress-pdq" target="_blank" rel="noopener noreferrer">NCI – Adjustment to Cancer: Anxiety and Distress</a></li>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings" target="_blank" rel="noopener noreferrer">NCI – Emotions and Cancer</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 3 -->
+    <section class="topic-view" id="anxiety">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Managing Anxiety, Fear and Uncertainty</h2>
+
+            <p>
+                Worry and uncertainty can be part of living with cancer.
+                You may feel anxious about treatment, medical appointments,
+                symptoms, recovery or what the future might look like.
+            </p>
+
+            <h3>How might anxiety feel?</h3>
+
+            <p>
+                Anxiety can affect people differently. Some experiences
+                include persistent worrying, racing thoughts, restlessness,
+                difficulty concentrating, sleep changes or physical tension.
+                These experiences can also have physical or treatment-related
+                causes, so discuss new or concerning symptoms with your
+                healthcare team.
+            </p>
+
+            <h3>Small ways to cope</h3>
+
+            <ul>
+                <li>Focus on the next manageable step rather than trying to solve everything at once.</li>
+                <li>Write down worries and questions you would like to discuss with your care team.</li>
+                <li>Take breaks from information or online searches if they increase your distress.</li>
+                <li>Talk to someone you trust instead of keeping every worry to yourself.</li>
+                <li>Try a calming activity, such as gentle breathing or listening to music.</li>
+                <li>Maintain a flexible routine that allows time for rest and activities you enjoy.</li>
+            </ul>
+
+            <h3>When to ask for support</h3>
+
+            <p>
+                If anxiety feels difficult to manage, continues to affect
+                your sleep or everyday life, or interferes with treatment,
+                speak with your healthcare team. A mental-health
+                professional can help you explore suitable coping strategies.
+            </p>
+
+            <div class="gentle-reminder">
+                <p>
+                    You do not have to figure out the entire future today.
+                    It is okay to focus on what you need in this moment.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings/anxiety-distress-pdq" target="_blank" rel="noopener noreferrer">NCI – Adjustment to Cancer: Anxiety and Distress</a></li>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings" target="_blank" rel="noopener noreferrer">NCI – Emotions and Cancer</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 4 -->
+    <section class="topic-view" id="scanxiety">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Scan Anxiety and Fear of Recurrence</h2>
+
+            <p>
+                Medical scans and follow-up appointments can bring
+                considerable stress. The term <strong>scanxiety</strong>
+                is often used to describe the anxiety people experience
+                before, during or after medical scans.
+            </p>
+
+            <h3>Why can scans feel stressful?</h3>
+
+            <ul>
+                <li>Worry about what the results might show.</li>
+                <li>Uncertainty about whether treatment is working.</li>
+                <li>Waiting for reports or follow-up appointments.</li>
+                <li>Remembering difficult experiences from earlier tests or treatment.</li>
+                <li>Worrying about cancer returning after treatment.</li>
+            </ul>
+
+            <h3>Preparing for a scan or appointment</h3>
+
+            <ul>
+                <li>Ask your healthcare team what the scan involves and when results may be available.</li>
+                <li>Write down questions you want to ask about the results.</li>
+                <li>If possible, arrange for someone you trust to accompany you.</li>
+                <li>Plan something comforting or enjoyable for after the appointment.</li>
+                <li>Try not to interpret medical reports without discussing them with your doctor.</li>
+            </ul>
+
+            <h3>Fear of recurrence</h3>
+
+            <p>
+                Worry about cancer returning can continue after treatment
+                and may become stronger around follow-up appointments.
+                Having this fear does not, by itself, mean that cancer
+                has returned.
+            </p>
+
+            <p>
+                Discuss new, persistent or concerning symptoms with
+                your healthcare team rather than trying to determine
+                their cause on your own.
+            </p>
+
+            <div class="gentle-reminder">
+                <p>
+                    Waiting for answers can be difficult.
+                    You deserve support during the waiting period too.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings/anxiety-distress-pdq" target="_blank" rel="noopener noreferrer">NCI – Adjustment to Cancer: Anxiety and Distress</a></li>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/survivorship" target="_blank" rel="noopener noreferrer">NCI – Life After Cancer Treatment</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 5 -->
+    <section class="topic-view" id="bodyimage">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Body Image and Self-Confidence</h2>
+
+            <p>
+                Cancer and its treatment can bring physical changes
+                that affect how you see yourself. These changes may
+                influence confidence, relationships and your sense
+                of identity.
+            </p>
+
+            <h3>Changes you may experience</h3>
+
+            <ul>
+                <li>Hair loss or changes in hair growth.</li>
+                <li>Changes in weight or body shape.</li>
+                <li>Surgical scars or changes following surgery.</li>
+                <li>Changes in skin, nails or physical appearance.</li>
+                <li>Changes involving fertility or reproductive health.</li>
+                <li>Fatigue or other physical changes that affect everyday activities.</li>
+            </ul>
+
+            <h3>Being kinder to yourself</h3>
+
+            <ul>
+                <li>Allow yourself to have mixed feelings about physical changes.</li>
+                <li>Explore clothing, scarves, wigs or other options if they make you feel comfortable.</li>
+                <li>Talk with someone you trust about changes that are difficult for you.</li>
+                <li>Ask your care team about physical changes, fertility and reproductive-health concerns.</li>
+                <li>Seek counselling if concerns about appearance are affecting your everyday life or relationships.</li>
+            </ul>
+
+            <p>
+                You do not have to love every change or feel confident
+                all the time. Your experience and feelings deserve respect.
+            </p>
+
+            <div class="gentle-reminder">
+                <p>
+                    Your appearance does not determine your worth.
+                    You deserve care and respect at every stage of your journey.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings/anxiety-distress-pdq" target="_blank" rel="noopener noreferrer">NCI – Adjustment to Cancer: Anxiety and Distress</a></li>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping" target="_blank" rel="noopener noreferrer">NCI – Coping with Cancer</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 6 -->
+    <section class="topic-view" id="relationships">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Relationships, Friendships and Communication</h2>
+
+            <p>
+                A cancer diagnosis can affect relationships in different
+                ways. Some people may feel closer to their loved ones,
+                while others may experience misunderstandings, distance
+                or difficulty communicating.
+            </p>
+
+            <p>
+                Friends and family may want to help but might not know
+                what to say or what you need. You may also find it
+                difficult to explain what you are going through.
+            </p>
+
+            <h3>Communicating your needs</h3>
+
+            <ul>
+                <li>Share information about your diagnosis at your own pace.</li>
+                <li>Tell people what kind of support would actually help you.</li>
+                <li>It is okay to say when you do not want to talk about cancer.</li>
+                <li>Set boundaries around advice, questions and visitors.</li>
+                <li>Stay connected in ways that feel manageable to you.</li>
+                <li>Consider asking someone you trust to help communicate updates to others.</li>
+            </ul>
+
+            <h3>Romantic relationships and intimacy</h3>
+
+            <p>
+                Cancer and its treatment may affect intimacy, sexuality,
+                fertility and how partners relate to one another.
+                These concerns are valid and can be discussed with
+                your partner and healthcare team when you feel ready.
+            </p>
+
+            <div class="gentle-reminder">
+                <p>
+                    You are allowed to ask for understanding, space
+                    and respect. You do not owe everyone every detail
+                    of your experience.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/types/aya/support" target="_blank" rel="noopener noreferrer">NCI – Emotional Support for Young People with Cancer</a></li>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings" target="_blank" rel="noopener noreferrer">NCI – Emotions and Cancer</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 7 -->
+    <section class="topic-view" id="counselling">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Counselling and Professional Support</h2>
+
+            <p>
+                Sometimes talking with friends or family may not feel
+                like enough. Professional emotional support can help
+                you work through difficult feelings, understand your
+                concerns and explore ways to cope.
+            </p>
+
+            <h3>Who can provide support?</h3>
+
+            <ul>
+                <li><strong>Psycho-oncologists:</strong> Professionals who focus on the psychological and social aspects of cancer.</li>
+                <li><strong>Psychologists:</strong> Professionals who can provide psychological assessment and therapy.</li>
+                <li><strong>Psychiatrists:</strong> Medical doctors who specialise in mental health and can assess whether medication or other treatment may help.</li>
+                <li><strong>Counsellors:</strong> Trained professionals who offer support with emotional and personal challenges. Their qualifications and scope of practice can vary.</li>
+                <li><strong>Social workers:</strong> Professionals who may help with practical, family, financial and support-service needs.</li>
+            </ul>
+
+            <h3>What can you discuss?</h3>
+
+            <ul>
+                <li>Fear, anxiety and uncertainty about cancer.</li>
+                <li>Body image and changes in self-confidence.</li>
+                <li>Relationships, family concerns and communication.</li>
+                <li>Stress related to treatment, education or work.</li>
+                <li>Adjusting to life after treatment.</li>
+            </ul>
+
+            <h3>How can you find support?</h3>
+
+            <ul>
+                <li>Ask your oncologist whether the hospital offers psycho-oncology or counselling services.</li>
+                <li>Ask for a referral to a qualified mental-health professional.</li>
+                <li>Explore reputable hospital or community support programmes.</li>
+                <li>Ask about available subsidised or low-cost services.</li>
+            </ul>
+
+            <p>
+                Counselling is not only for people experiencing a crisis.
+                You can seek support whenever you feel it might help.
+                Ask the service about confidentiality and its limits
+                before sharing personal information.
+            </p>
+
+            <div class="gentle-reminder">
+                <p>
+                    Asking for professional help is not a sign of weakness.
+                    Your emotional wellbeing deserves attention too.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/types/aya/support" target="_blank" rel="noopener noreferrer">NCI – Emotional Support for Young People with Cancer</a></li>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings/anxiety-distress-pdq" target="_blank" rel="noopener noreferrer">NCI – Adjustment to Cancer: Anxiety and Distress</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 8 -->
+    <section class="topic-view" id="youngpatients">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Emotional Wellbeing for Young Patients</h2>
+
+            <p>
+                Being diagnosed with cancer at a young age can bring
+                challenges that affect many parts of life. Alongside
+                treatment, you may be thinking about education, career
+                plans, friendships, independence, relationships and
+                the future.
+            </p>
+
+            <h3>Challenges young people may face</h3>
+
+            <ul>
+                <li>Taking a break from school, college or work.</li>
+                <li>Feeling disconnected from friends or people of the same age.</li>
+                <li>Worrying about future plans and independence.</li>
+                <li>Changes in appearance, relationships or self-confidence.</li>
+                <li>Questions about fertility and reproductive health.</li>
+                <li>Feeling that life is moving differently from what you expected.</li>
+            </ul>
+
+            <h3>Finding support that understands your needs</h3>
+
+            <ul>
+                <li>Ask your educational institution about academic flexibility or leave arrangements.</li>
+                <li>Stay connected with friends in ways that suit your energy and comfort.</li>
+                <li>Explore age-appropriate cancer support groups and peer communities.</li>
+                <li>Discuss fertility and reproductive-health questions with your care team.</li>
+                <li>Consider counselling if you feel isolated or overwhelmed.</li>
+                <li>Give yourself permission to pursue personal interests and goals at your own pace.</li>
+            </ul>
+
+            <div class="gentle-reminder">
+                <p>
+                    Cancer is one part of your life. It does not define
+                    your identity, erase your ambitions or make your
+                    future less worthy of dreaming about.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/types/aya/support" target="_blank" rel="noopener noreferrer">NCI – Emotional Support for Young People with Cancer</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 9 -->
+    <section class="topic-view" id="selfcare">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>Everyday Coping and Self-Care</h2>
+
+            <p>
+                Self-care does not have to involve complicated routines
+                or large changes. It can simply mean recognising what
+                you need and finding manageable ways to support your
+                physical and emotional wellbeing.
+            </p>
+
+            <h3>Small things that may help</h3>
+
+            <ul>
+                <li>Create a flexible daily routine that allows time for rest.</li>
+                <li>Stay connected with people who make you feel comfortable.</li>
+                <li>Make space for activities you enjoy, such as music, reading, art or journaling.</li>
+                <li>Try relaxation activities or gentle breathing when they feel helpful.</li>
+                <li>Respect your energy levels and take breaks when needed.</li>
+                <li>Spend time outdoors if you feel well enough and your care team says it is suitable.</li>
+                <li>Ask for help with everyday tasks when you need it.</li>
+            </ul>
+
+            <h3>On difficult days</h3>
+
+            <p>
+                Some days may not go according to plan. You may have
+                less energy, feel upset or simply want to rest.
+                You do not need to turn every day into a productive one.
+            </p>
+
+            <p>
+                During treatment, discuss new exercise routines,
+                major dietary changes or complementary practices
+                with your healthcare team before starting them.
+            </p>
+
+            <div class="gentle-reminder">
+                <p>
+                    Resting, doing less and asking someone for help
+                    can be forms of self-care too.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings" target="_blank" rel="noopener noreferrer">NCI – Emotions and Cancer</a></li>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping" target="_blank" rel="noopener noreferrer">NCI – Coping with Cancer</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic 10 -->
+    <section class="topic-view" id="professionalhelp">
+
+        <button class="back-button" onclick="backToTopics()">← Back to Topics</button>
+
+        <div class="guide-content">
+            <h2>When to Seek Professional Help</h2>
+
+            <p>
+                Difficult emotions can be part of a cancer experience.
+                However, when distress becomes persistent, overwhelming
+                or begins affecting everyday life, additional support
+                may be helpful.
+            </p>
+
+            <h3>When might you need extra support?</h3>
+
+            <p>Consider speaking with a healthcare professional if you experience:</p>
+
+            <ul>
+                <li>Persistent sadness, hopelessness or emotional numbness.</li>
+                <li>Anxiety or worry that feels difficult to control.</li>
+                <li>Ongoing sleep difficulties.</li>
+                <li>Loss of interest in activities you previously enjoyed.</li>
+                <li>Difficulty concentrating or managing everyday responsibilities.</li>
+                <li>Withdrawing from friends, family or other sources of support.</li>
+                <li>Feelings of guilt, worthlessness or being a burden.</li>
+                <li>Emotional distress that affects relationships or makes treatment harder to manage.</li>
+            </ul>
+
+            <p>
+                These experiences do not automatically mean that
+                you have a mental-health condition. A qualified
+                professional can help understand what is happening
+                and discuss appropriate support.
+            </p>
+
+            <h3>Where can you begin?</h3>
+
+            <ul>
+                <li>Tell your oncologist or another member of your treatment team how you have been feeling.</li>
+                <li>Ask about a psycho-oncologist, psychologist or psychiatrist.</li>
+                <li>Explore counselling services through your hospital or a reputable organisation.</li>
+            </ul>
+
+            <div class="support-note">
+                <h3>Need mental-health support in India?</h3>
+
+                <p>
+                    <strong>Tele-MANAS</strong> is a Government of India
+                    tele-mental-health service offering 24-hour support.
+                </p>
+
+                <p>
+                    Call <strong>14416</strong> or
+                    <strong>1800-89-14416</strong>.
+                </p>
+
+                <p>
+                    If you are thinking about harming yourself,
+                    feel unable to stay safe or are in immediate danger,
+                    seek urgent help from the nearest emergency department
+                    or local emergency services. Tell someone you trust
+                    and ask them to stay with you while help is arranged.
+                    Do not rely on a helpline alone in an immediate emergency.
+                </p>
+
+                <p>
+                    <a class="source-link"
+                       href="https://www.dghs.mohfw.gov.in/national-mental-health-programme.php"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Official Tele-MANAS information →
+                    </a>
+                </p>
+            </div>
+
+            <div class="gentle-reminder">
+                <p>
+                    Your emotional wellbeing matters just as much
+                    as your physical health. You deserve support,
+                    understanding and care.
+                </p>
+            </div>
+
+            <div class="guide-sources">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings/anxiety-distress-pdq" target="_blank" rel="noopener noreferrer">NCI – Adjustment to Cancer: Anxiety and Distress</a></li>
+                    <li><a class="source-link" href="https://www.cancer.gov/about-cancer/coping/feelings" target="_blank" rel="noopener noreferrer">NCI – Emotions and Cancer</a></li>
+                    <li><a class="source-link" href="https://www.dghs.mohfw.gov.in/national-mental-health-programme.php" target="_blank" rel="noopener noreferrer">Government of India – National Mental Health Programme</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="emotional-closing" id="emotionalClosing">
+
+        <h2>You Don't Have to Navigate This Alone</h2>
+
+        <p>
+            Your emotional wellbeing deserves the same attention
+            and compassion as your physical health. Take your time,
+            explore the support available and remember that asking
+            for help is always okay.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 UNMUTE. Every voice matters. Every journey deserves support.</p>
+    </footer>
+
+    <!-- Topic Navigation Script -->
+    <script>
+        const topicDirectory = document.getElementById("topicDirectory");
+        const topicViews = document.querySelectorAll(".topic-view");
+        const emotionalClosing = document.getElementById("emotionalClosing");
+
+        function openTopic(topicId) {
+            topicDirectory.classList.add("hidden");
+            emotionalClosing.classList.add("hidden");
+
+            topicViews.forEach(function (view) {
+                view.classList.remove("active");
+            });
+
+            const selectedTopic = document.getElementById(topicId);
+
+            if (selectedTopic) {
+                selectedTopic.classList.add("active");
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        function backToTopics() {
+            topicViews.forEach(function (view) {
+                view.classList.remove("active");
+            });
+
+            topicDirectory.classList.remove("hidden");
+            emotionalClosing.classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+</body>
+</html>

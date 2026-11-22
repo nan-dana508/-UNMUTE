@@ -1,0 +1,2943 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Understanding Ovarian Cancer | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* NAVIGATION */
+
+        .cancer-guide-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 18px 7%;
+            background: #ffffff;
+            border-bottom: 1px solid #e6eeeb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .cancer-guide-nav .logo img {
+            width: 145px;
+            height: auto;
+        }
+
+        .cancer-guide-nav nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .cancer-guide-nav nav a {
+            color: #315d54;
+            text-decoration: none !important;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .cancer-guide-nav nav a:hover,
+        .cancer-guide-nav nav a.active {
+            color: #438878;
+        }
+
+        /* HERO */
+
+        .cancer-guide-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            padding: 75px 9%;
+            background: #f1f8f5;
+        }
+
+        .cancer-guide-hero-content {
+            flex: 1;
+            max-width: 750px;
+        }
+
+        .cancer-guide-hero .section-label {
+            color: #438878;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .cancer-guide-hero h1 {
+            color: #315d54;
+            font-size: clamp(38px, 5vw, 58px);
+            margin: 12px 0 20px;
+        }
+
+        .cancer-guide-hero p {
+            color: #647a72;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .cancer-guide-hero-image {
+            flex: 0 0 210px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cancer-guide-hero-image img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+        }
+
+        .directory-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #438878;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .directory-link:hover {
+            text-decoration: underline;
+        }
+
+        /* GENERAL GUIDE LAYOUT */
+
+        .guide-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 55px 7%;
+        }
+
+        .guide-heading {
+            color: #315d54;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .guide-intro {
+            color: #71837c;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .guide-section {
+            padding: 55px 7%;
+            scroll-margin-top: 90px;
+        }
+
+        .guide-section:nth-of-type(even) {
+            background: #f7faf8;
+        }
+
+        .guide-section-inner {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .guide-section h2 {
+            color: #315d54;
+            font-size: 29px;
+            margin-bottom: 18px;
+        }
+
+        .guide-section h3 {
+            color: #438878;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        .guide-section p,
+        .guide-section li {
+            color: #566c64;
+            line-height: 1.85;
+            font-size: 15px;
+        }
+
+        .guide-section ul,
+        .guide-section ol {
+            padding-left: 25px;
+        }
+
+        .guide-section li {
+            margin-bottom: 9px;
+        }
+
+        /* GUIDE CONTENT BOXES */
+
+        .guide-content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .guide-content-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 19px;
+            background: #E7F4F1;
+            border: 1px solid #C5E2DA;
+            border-radius: 13px;
+            text-decoration: none !important;
+            transition: 0.25s ease;
+        }
+
+        .guide-content-card:hover {
+            background: #D5EBE4;
+            transform: translateY(-3px);
+        }
+
+        .guide-number {
+            color: #438878;
+            font-size: 15px;
+            font-weight: 700;
+            min-width: 28px;
+        }
+
+        .guide-content-card strong {
+            display: block;
+            color: #315D54;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .guide-content-card span:last-child {
+            color: #71837c;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* INFO CARDS */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin: 25px 0;
+        }
+
+        .info-card {
+            padding: 22px;
+            background: #ffffff;
+            border: 1px solid #dcebe5;
+            border-radius: 13px;
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+        }
+
+        .info-card p {
+            margin-bottom: 0;
+        }
+
+        .important-note {
+            background: #edf6f2;
+            border-left: 4px solid #438878;
+            padding: 20px 22px;
+            margin: 28px 0;
+            border-radius: 8px;
+        }
+
+        .important-note p {
+            margin: 0;
+        }
+
+        .important-note strong {
+            color: #315d54;
+        }
+
+        /* TABLES */
+
+        .guide-table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+
+        .guide-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+            background: #ffffff;
+        }
+
+        .guide-table th {
+            background: #e7f4f1;
+            color: #315d54;
+            text-align: left;
+            padding: 15px;
+        }
+
+        .guide-table td {
+            color: #566c64;
+            padding: 15px;
+            border-bottom: 1px solid #e5eeea;
+            line-height: 1.7;
+            vertical-align: top;
+        }
+
+        /* LINKS */
+
+        .guide-section a:not(.back-to-contents),
+        .guide-references a {
+            color: #438878;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            overflow-wrap: anywhere;
+        }
+
+        /* RESEARCH / RESOURCE CARDS */
+
+        .resource-card {
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #dcebe5;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .resource-card h3 {
+            margin-top: 0;
+        }
+
+        /* BACK TO CONTENTS */
+
+        .back-to-contents {
+            display: inline-block;
+            margin-top: 35px;
+            color: #438878 !important;
+            text-decoration: none !important;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .back-to-contents:hover {
+            text-decoration: underline !important;
+        }
+
+        /* REFERENCES */
+
+        .guide-references {
+            background: #f1f8f5;
+            padding: 55px 7%;
+        }
+
+        .guide-references-inner {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .guide-references h2 {
+            color: #315d54;
+            margin-bottom: 20px;
+        }
+
+        .guide-references li {
+            color: #566c64;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .reference-date {
+            color: #71837c;
+            font-size: 13px;
+            margin-top: 25px;
+        }
+
+        .guide-disclaimer {
+            background: #ffffff;
+            border: 1px solid #dcebe5;
+            border-radius: 12px;
+            padding: 22px;
+            margin-top: 30px;
+        }
+
+        .guide-disclaimer p {
+            color: #566c64;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* FLOATING BACK TO TOP */
+
+        .back-to-top {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #438878;
+            color: white !important;
+            text-decoration: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 4px 12px rgba(49, 93, 84, 0.2);
+            z-index: 99;
+            transition: 0.2s ease;
+        }
+
+        .back-to-top:hover {
+            background: #315d54;
+            transform: translateY(-3px);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .cancer-guide-nav {
+                flex-direction: column;
+                padding: 15px 5%;
+            }
+
+            .cancer-guide-nav nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .cancer-guide-nav nav a {
+                font-size: 12px;
+            }
+
+            .cancer-guide-hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 45px 7%;
+                gap: 20px;
+            }
+
+            .cancer-guide-hero-image {
+                flex: none;
+                width: 145px;
+            }
+
+            .guide-content-grid,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-container,
+            .guide-section,
+            .guide-references {
+                padding: 40px 6%;
+            }
+
+            .guide-section h2 {
+                font-size: 25px;
+            }
+
+            .guide-content-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- NAVIGATION -->
+
+    <header class="cancer-guide-nav">
+
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html" class="active">Know Your Body</a>
+            <a href="index.html#support">Find Support</a>
+            <a href="index.html#voices">Her Voice</a>
+            <a href="index.html#research">Beyond the Common</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="cancer-guide-hero">
+
+        <div class="cancer-guide-hero-content">
+
+            <p class="section-label">KNOW YOUR BODY • UNDERSTAND YOUR HEALTH</p>
+
+            <h1>Understanding Ovarian Cancer.</h1>
+
+            <p>
+                Ovarian cancer is not a single disease. It includes different
+                types of cancers affecting the ovaries and related reproductive
+                tissues. Understanding its symptoms, diagnosis, stages and
+                treatment options can help patients and families make more
+                informed decisions.
+            </p>
+
+            <p>
+                This guide brings together medically reviewed information,
+                research resources and support pathways to help make a complex
+                diagnosis easier to understand.
+            </p>
+
+            <a href="know-your-body.html" class="directory-link">
+                ← Back to Know Your Body
+            </a>
+
+        </div>
+
+        <div class="cancer-guide-hero-image">
+            <img
+                src="ovarian-cancer-ribbon.svg"
+                alt="Teal ovarian cancer awareness ribbon"
+            >
+        </div>
+
+    </section>
+
+
+    <!-- GUIDE CONTENTS -->
+
+    <section class="guide-container" id="guide-contents">
+
+        <h2 class="guide-heading">Explore the Guide</h2>
+
+        <p class="guide-intro">
+            Explore the different aspects of ovarian cancer, from understanding
+            the disease to finding treatment information and support.
+            Select a topic to learn more.
+        </p>
+
+        <div class="guide-content-grid">
+
+            <a href="#overview" class="guide-content-card">
+                <span class="guide-number">01</span>
+                <span>
+                    <strong>Overview</strong>
+                    What ovarian cancer is and where it begins.
+                </span>
+            </a>
+
+            <a href="#types" class="guide-content-card">
+                <span class="guide-number">02</span>
+                <span>
+                    <strong>Types & Subtypes</strong>
+                    Understanding the different forms of ovarian cancer.
+                </span>
+            </a>
+
+            <a href="#symptoms" class="guide-content-card">
+                <span class="guide-number">03</span>
+                <span>
+                    <strong>Signs & Symptoms</strong>
+                    Possible symptoms and when to seek medical evaluation.
+                </span>
+            </a>
+
+            <a href="#risk-factors" class="guide-content-card">
+                <span class="guide-number">04</span>
+                <span>
+                    <strong>Risk Factors</strong>
+                    Genetic, hormonal and other associated factors.
+                </span>
+            </a>
+
+            <a href="#screening" class="guide-content-card">
+                <span class="guide-number">05</span>
+                <span>
+                    <strong>Screening</strong>
+                    What screening tests can and cannot tell us.
+                </span>
+            </a>
+
+            <a href="#diagnosis" class="guide-content-card">
+                <span class="guide-number">06</span>
+                <span>
+                    <strong>Diagnosis</strong>
+                    Imaging, blood tests, biopsies and pathology.
+                </span>
+            </a>
+
+            <a href="#stages" class="guide-content-card">
+                <span class="guide-number">07</span>
+                <span>
+                    <strong>Stages</strong>
+                    Understanding the extent of ovarian cancer.
+                </span>
+            </a>
+
+            <a href="#treatment" class="guide-content-card">
+                <span class="guide-number">08</span>
+                <span>
+                    <strong>Treatment</strong>
+                    Surgery, chemotherapy and other treatment approaches.
+                </span>
+            </a>
+
+            <a href="#research" class="guide-content-card">
+                <span class="guide-number">09</span>
+                <span>
+                    <strong>Research & Clinical Trials</strong>
+                    Emerging science, clinical studies and trial information.
+                </span>
+            </a>
+
+            <a href="#support" class="guide-content-card">
+                <span class="guide-number">10</span>
+                <span>
+                    <strong>Support & Resources</strong>
+                    Emotional, practical and financial support.
+                </span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 01: OVERVIEW -->
+
+    <section class="guide-section" id="overview">
+
+        <div class="guide-section-inner">
+
+            <h2>01. Overview of Ovarian Cancer</h2>
+
+            <p>
+                Ovarian cancer is a group of cancers that develop in the
+                ovaries or closely related reproductive tissues. These
+                include the fallopian tubes and the peritoneum, the tissue
+                lining the abdominal cavity.
+            </p>
+
+            <p>
+                The ovaries are two small reproductive organs located on
+                either side of the uterus. They produce eggs and hormones
+                such as oestrogen and progesterone.
+            </p>
+
+            <h3>Where can these cancers begin?</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Ovaries</h3>
+                    <p>
+                        Cancers can develop from the cells that form the
+                        surface or internal tissues of the ovaries.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Fallopian Tubes</h3>
+                    <p>
+                        Many high-grade serous carcinomas, the most common
+                        type of epithelial ovarian cancer, are now believed
+                        to originate in the cells of the fallopian tube,
+                        particularly its fimbrial end.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Peritoneum</h3>
+                    <p>
+                        Primary peritoneal cancer develops in the lining
+                        of the abdominal cavity. It is closely related
+                        to epithelial ovarian and fallopian tube cancers.
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>How does ovarian cancer develop?</h3>
+
+            <p>
+                Cancer develops when abnormal cells acquire changes that
+                allow them to grow and divide without normal control.
+                These cells may form a tumour and, in some cases, spread
+                to surrounding tissues or other parts of the body.
+            </p>
+
+            <p>
+                Ovarian cancer is not one uniform disease. Different
+                tumour types have different biological characteristics,
+                patterns of growth and responses to treatment.
+            </p>
+
+            <div class="important-note">
+                <p>
+                    <strong>Why understanding the type matters:</strong>
+                    Knowing the exact origin and subtype of a tumour is
+                    essential because treatment approaches can differ
+                    significantly between ovarian cancer types.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 02: TYPES -->
+
+    <section class="guide-section" id="types">
+
+        <div class="guide-section-inner">
+
+            <h2>02. Types & Subtypes of Ovarian Cancer</h2>
+
+            <p>
+                Ovarian tumours are classified according to the cells
+                from which they develop. The three broad groups are
+                epithelial tumours, germ cell tumours and sex cord-stromal
+                tumours.
+            </p>
+
+            <h3>1. Epithelial ovarian cancers</h3>
+
+            <p>
+                Epithelial ovarian cancers develop from cells covering
+                the ovary or from related reproductive tissues. They
+                represent the majority of ovarian cancers.
+            </p>
+
+            <p>Important subtypes include:</p>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>High-Grade Serous Carcinoma (HGSC)</h3>
+                    <p>
+                        A common and biologically aggressive epithelial
+                        subtype. Many cases are associated with changes
+                        in TP53 and may involve BRCA1, BRCA2 or other
+                        DNA-repair pathway abnormalities.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Low-Grade Serous Carcinoma (LGSC)</h3>
+                    <p>
+                        A distinct, generally slower-growing subtype.
+                        It may be associated with serous borderline
+                        tumours and changes in the MAPK pathway, including
+                        KRAS, BRAF and NRAS.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Endometrioid Carcinoma</h3>
+                    <p>
+                        A subtype that can sometimes be associated with
+                        endometriosis. Its molecular characteristics
+                        and treatment considerations vary.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Clear Cell Carcinoma</h3>
+                    <p>
+                        A distinct subtype also associated in some cases
+                        with endometriosis. Its behaviour and response
+                        to treatment can differ from other epithelial
+                        cancers.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Mucinous Carcinoma</h3>
+                    <p>
+                        A less common subtype. Specialists must determine
+                        whether a mucinous tumour began in the ovary or
+                        spread there from another organ, such as the
+                        gastrointestinal tract.
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>Low-grade versus high-grade serous carcinoma</h3>
+
+            <div class="guide-table-wrapper">
+                <table class="guide-table">
+
+                    <tr>
+                        <th>Feature</th>
+                        <th>LGSC</th>
+                        <th>HGSC</th>
+                    </tr>
+
+                    <tr>
+                        <td>Growth pattern</td>
+                        <td>Generally slower growing</td>
+                        <td>Generally faster growing</td>
+                    </tr>
+
+                    <tr>
+                        <td>Biology</td>
+                        <td>Often associated with MAPK pathway changes</td>
+                        <td>Frequently associated with TP53 abnormalities</td>
+                    </tr>
+
+                    <tr>
+                        <td>Chemotherapy response</td>
+                        <td>Often less responsive to conventional platinum-based chemotherapy</td>
+                        <td>Often initially responsive to platinum-based chemotherapy</td>
+                    </tr>
+
+                    <tr>
+                        <td>Other treatment approaches</td>
+                        <td>Hormone therapy and selected targeted treatments may be considered</td>
+                        <td>PARP inhibitors and bevacizumab may be considered in selected patients</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <h3>2. Germ cell tumours</h3>
+
+            <p>
+                Germ cell tumours develop from cells involved in egg
+                production. They are relatively uncommon and often
+                occur in younger patients.
+            </p>
+
+            <p>Examples include:</p>
+
+            <ul>
+                <li>Dysgerminoma.</li>
+                <li>Yolk sac tumour.</li>
+                <li>Immature teratoma.</li>
+                <li>Mixed germ cell tumours.</li>
+                <li>Embryonal carcinoma, which is rare.</li>
+            </ul>
+
+            <h3>3. Sex cord-stromal tumours</h3>
+
+            <p>
+                These develop from supporting tissues of the ovary,
+                including cells involved in hormone production.
+            </p>
+
+            <p>Examples include:</p>
+
+            <ul>
+                <li>Adult and juvenile granulosa cell tumours.</li>
+                <li>Sertoli-Leydig cell tumours.</li>
+                <li>Steroid cell tumours.</li>
+            </ul>
+
+            <h3>What are borderline ovarian tumours?</h3>
+
+            <p>
+                Borderline ovarian tumours are also called tumours of
+                low malignant potential. They show abnormal cell growth
+                but do not demonstrate the destructive stromal invasion
+                characteristic of invasive ovarian carcinoma.
+            </p>
+
+            <p>
+                Serous borderline tumours can sometimes be associated
+                with the development of low-grade serous carcinoma,
+                but most do not progress to invasive cancer.
+            </p>
+
+            <div class="important-note">
+                <p>
+                    <strong>Important:</strong> Imaging and blood markers
+                    cannot establish the exact ovarian cancer subtype.
+                    Histopathological examination of tissue is essential
+                    for accurate classification.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 03: SYMPTOMS -->
+
+    <section class="guide-section" id="symptoms">
+
+        <div class="guide-section-inner">
+
+            <h2>03. Signs & Symptoms</h2>
+
+            <p>
+                Ovarian cancer symptoms can be subtle and may overlap
+                with common digestive, urinary or gynaecological
+                conditions. Some people experience symptoms early,
+                while others may not notice changes until the disease
+                has progressed.
+            </p>
+
+            <h3>Common symptoms</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Persistent bloating</h3>
+                    <p>
+                        Frequent or persistent abdominal bloating,
+                        swelling or an increase in abdominal size.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Pelvic or abdominal pain</h3>
+                    <p>
+                        Pain, discomfort or pressure in the lower
+                        abdomen or pelvic region.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Feeling full quickly</h3>
+                    <p>
+                        Difficulty eating normally, reduced appetite
+                        or feeling full after eating small amounts.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Urinary changes</h3>
+                    <p>
+                        Increased urinary frequency, urgency or
+                        difficulty postponing urination.
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>Other possible symptoms</h3>
+
+            <ul>
+                <li>Indigestion or persistent stomach discomfort.</li>
+                <li>Constipation or changes in bowel habits.</li>
+                <li>Nausea.</li>
+                <li>Lower back pain.</li>
+                <li>Unexplained fatigue.</li>
+                <li>Unexplained weight loss.</li>
+                <li>Changes in menstrual patterns.</li>
+                <li>Unusual vaginal bleeding, including bleeding after menopause.</li>
+                <li>Pain during sexual intercourse.</li>
+            </ul>
+
+            <h3>Symptoms in more advanced disease</h3>
+
+            <p>
+                Depending on the extent of disease, some patients may
+                develop fluid accumulation in the abdomen, known as
+                ascites. Fluid may also accumulate around the lungs,
+                potentially causing breathlessness.
+            </p>
+
+            <h3>When should someone seek medical advice?</h3>
+
+            <p>
+                New, persistent, frequent or worsening symptoms should
+                be discussed with a healthcare professional, particularly
+                when they are unusual for the individual.
+            </p>
+
+            <p>
+                Keeping a symptom diary can help people describe when
+                symptoms started, how often they occur and whether
+                they are getting worse.
+            </p>
+
+            <div class="important-note">
+                <p>
+                    <strong>Remember:</strong> These symptoms do not
+                    automatically mean ovarian cancer. Many common
+                    conditions can cause similar symptoms. However,
+                    persistent or concerning changes deserve medical
+                    evaluation. Severe sudden abdominal pain, persistent
+                    vomiting or significant breathing difficulty require
+                    urgent medical attention.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 04: RISK FACTORS -->
+
+    <section class="guide-section" id="risk-factors">
+
+        <div class="guide-section-inner">
+
+            <h2>04. Risk Factors</h2>
+
+            <p>
+                A risk factor is something associated with a higher
+                likelihood of developing a disease. Having a risk
+                factor does not mean someone will definitely develop
+                ovarian cancer, and some people develop the disease
+                without any recognised risk factors.
+            </p>
+
+            <h3>1. Age</h3>
+
+            <p>
+                The risk of epithelial ovarian cancer generally
+                increases with age, and many cases occur after
+                menopause. However, ovarian cancers can also occur
+                in younger people, particularly certain germ cell
+                tumours.
+            </p>
+
+            <h3>2. Family history</h3>
+
+            <p>
+                A family history of ovarian, fallopian tube or
+                primary peritoneal cancer may increase risk.
+                Certain patterns of breast, colorectal and
+                endometrial cancers in a family may also suggest
+                an inherited cancer predisposition.
+            </p>
+
+            <p>
+                Family history on either the mother's or father's
+                side can be relevant.
+            </p>
+
+            <h3>3. Inherited genetic changes</h3>
+
+            <p>
+                Some inherited gene changes increase the risk of
+                ovarian cancer. These include:
+            </p>
+
+            <ul>
+                <li>BRCA1.</li>
+                <li>BRCA2.</li>
+                <li>BRIP1.</li>
+                <li>RAD51C.</li>
+                <li>RAD51D.</li>
+                <li>Genes associated with Lynch syndrome, including MLH1, MSH2, MSH6 and PMS2.</li>
+            </ul>
+
+            <p>
+                Genetic counselling and testing may be appropriate
+                depending on personal and family history.
+            </p>
+
+            <h3>4. Endometriosis</h3>
+
+            <p>
+                Endometriosis is associated with an increased risk
+                of certain ovarian cancer subtypes, particularly
+                clear cell and endometrioid carcinomas. Most people
+                with endometriosis do not develop ovarian cancer.
+            </p>
+
+            <h3>5. Reproductive and hormonal factors</h3>
+
+            <p>
+                Factors associated with the number of lifetime
+                ovulatory cycles may influence risk. Associations
+                include never having had a full-term pregnancy,
+                early menstruation and later menopause.
+            </p>
+
+            <h3>6. Menopausal hormone therapy</h3>
+
+            <p>
+                Some forms of menopausal hormone therapy, particularly
+                use over longer periods, have been associated with
+                ovarian cancer risk. The association varies according
+                to the type and duration of therapy.
+            </p>
+
+            <h3>Other associated factors</h3>
+
+            <ul>
+                <li>Overweight or obesity, with associations varying by tumour type.</li>
+                <li>Some inherited syndromes, including Peutz-Jeghers syndrome.</li>
+                <li>Height, which has been associated with a small difference in risk.</li>
+            </ul>
+
+            <h3>Factors associated with lower risk</h3>
+
+            <p>
+                Some factors have been associated with a lower
+                population-level risk of ovarian cancer, including:
+            </p>
+
+            <ul>
+                <li>Pregnancy carried to term.</li>
+                <li>Breastfeeding.</li>
+                <li>Use of oral contraceptive pills.</li>
+                <li>Tubal ligation.</li>
+                <li>Removal of fallopian tubes in selected circumstances.</li>
+            </ul>
+
+            <div class="important-note">
+                <p>
+                    <strong>Important:</strong> These associations
+                    should not be treated as personal prevention
+                    recommendations. No approach guarantees that
+                    ovarian cancer will be prevented. People with
+                    inherited risk should discuss individualised
+                    risk assessment and preventive options with
+                    appropriate specialists.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 05: SCREENING -->
+
+    <section class="guide-section" id="screening">
+
+        <div class="guide-section-inner">
+
+            <h2>05. Screening</h2>
+
+            <p>
+                Screening means testing people who do not have
+                symptoms to look for signs of a disease before
+                it becomes apparent.
+            </p>
+
+            <p>
+                Unlike some other cancers, there is currently no
+                routine ovarian cancer screening test proven to
+                reduce ovarian cancer deaths among average-risk
+                people without symptoms.
+            </p>
+
+            <h3>CA-125 blood test</h3>
+
+            <p>
+                CA-125 is a protein that may be elevated in the
+                blood of some people with ovarian cancer.
+            </p>
+
+            <p>However:</p>
+
+            <ul>
+                <li>Not all ovarian cancers produce elevated CA-125.</li>
+                <li>Early-stage disease may have normal CA-125 levels.</li>
+                <li>Non-cancerous conditions can also raise CA-125.</li>
+                <li>An elevated result alone cannot diagnose ovarian cancer.</li>
+            </ul>
+
+            <p>
+                CA-125 may be used during the investigation of a
+                suspected ovarian mass and for monitoring selected
+                patients whose levels were elevated previously.
+            </p>
+
+            <h3>Transvaginal ultrasound</h3>
+
+            <p>
+                Transvaginal ultrasound uses sound waves to examine
+                the ovaries and surrounding pelvic structures.
+                It can help assess the size and appearance of an
+                ovarian mass.
+            </p>
+
+            <p>
+                However, ultrasound cannot reliably distinguish
+                every benign mass from a malignant tumour.
+            </p>
+
+            <h3>Why are CA-125 and ultrasound not routine screening tests?</h3>
+
+            <p>
+                Large studies evaluating CA-125 and transvaginal
+                ultrasound have not demonstrated a reduction in
+                ovarian cancer mortality from routine screening
+                in average-risk asymptomatic populations.
+            </p>
+
+            <p>
+                Screening can also lead to false-positive results,
+                unnecessary investigations and potentially
+                unnecessary surgery.
+            </p>
+
+            <h3>What about people with inherited high risk?</h3>
+
+            <p>
+                People with BRCA1, BRCA2, Lynch syndrome or other
+                relevant inherited risk factors may need specialist
+                genetic counselling and individualised risk management.
+            </p>
+
+            <p>
+                CA-125 and ultrasound have not been established as
+                effective mortality-reducing screening methods even
+                in high-risk populations. A specialist may discuss
+                individual circumstances and risk-reducing options.
+            </p>
+
+            <h3>Does a Pap test screen for ovarian cancer?</h3>
+
+            <p>
+                No. A Pap test is designed to screen for cervical
+                cell changes and cervical cancer. It does not screen
+                for ovarian cancer.
+            </p>
+
+            <div class="important-note">
+                <p>
+                    <strong>Remember:</strong> Screening and diagnostic
+                    evaluation are different. Someone experiencing
+                    persistent symptoms may need medical investigation
+                    even though routine screening is not recommended.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 06: DIAGNOSIS -->
+
+    <section class="guide-section" id="diagnosis">
+
+        <div class="guide-section-inner">
+
+            <h2>06. Diagnosis</h2>
+
+            <p>
+                Diagnosing ovarian cancer involves combining clinical
+                assessment, imaging, laboratory investigations and
+                examination of tissue. No single blood test or scan
+                can establish every aspect of the diagnosis.
+            </p>
+
+            <h3>1. Medical history and physical examination</h3>
+
+            <p>
+                A healthcare professional may ask about symptoms,
+                their duration, menstrual and reproductive history,
+                previous medical conditions and family history.
+            </p>
+
+            <p>
+                Abdominal and pelvic examinations may help identify
+                masses, tenderness or other abnormalities. However,
+                examination alone cannot confirm or exclude ovarian
+                cancer.
+            </p>
+
+            <h3>2. Imaging investigations</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Pelvic Ultrasound</h3>
+                    <p>
+                        Transvaginal or transabdominal ultrasound
+                        can assess ovarian masses, their structure
+                        and other pelvic abnormalities.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>CT Scan</h3>
+                    <p>
+                        CT imaging can help assess the abdomen,
+                        pelvis and chest for disease extent and
+                        possible spread.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>MRI</h3>
+                    <p>
+                        MRI may provide additional information
+                        about pelvic masses and selected areas
+                        requiring further assessment.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>PET-CT</h3>
+                    <p>
+                        PET-CT may be used in selected situations.
+                        It is not required for every patient.
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>3. Blood tests and tumour markers</h3>
+
+            <p>
+                Different tumour markers may be considered
+                depending on the suspected cancer subtype.
+            </p>
+
+            <ul>
+                <li><strong>CA-125:</strong> Commonly used in evaluating and monitoring selected epithelial ovarian cancers.</li>
+                <li><strong>AFP:</strong> May be useful in selected germ cell tumours.</li>
+                <li><strong>Beta-hCG:</strong> May be elevated in certain germ cell tumours.</li>
+                <li><strong>LDH:</strong> May be useful in evaluating some germ cell tumours, including dysgerminoma.</li>
+                <li><strong>Inhibin A and B:</strong> May be considered in selected granulosa cell tumours.</li>
+                <li><strong>CEA and CA19-9:</strong> May help investigate selected mucinous tumours and possible gastrointestinal origins.</li>
+            </ul>
+
+            <p>
+                Other tests, including blood counts and kidney and
+                liver function tests, may be performed to assess
+                general health and treatment suitability.
+            </p>
+
+            <h3>4. Biopsy and tissue diagnosis</h3>
+
+            <p>
+                A biopsy involves obtaining tissue or cells for
+                examination by a pathologist.
+            </p>
+
+            <p>Possible approaches include:</p>
+
+            <ul>
+                <li>Image-guided core needle biopsy.</li>
+                <li>Laparoscopic biopsy.</li>
+                <li>Surgical removal of tissue during an operation.</li>
+            </ul>
+
+            <p>
+                In advanced epithelial ovarian cancer where
+                chemotherapy is planned before surgery, tissue
+                confirmation is generally obtained first.
+                An image-guided core biopsy may be used when
+                appropriate.
+            </p>
+
+            <p>
+                Fine needle aspiration obtains cells or fluid
+                but may not provide enough tissue architecture
+                to establish every feature of a tumour.
+            </p>
+
+            <h3>5. Histopathology</h3>
+
+            <p>
+                Histopathology is the examination of tissue under
+                a microscope. It helps establish whether cancer
+                is present and identify its type and subtype.
+            </p>
+
+            <p>Pathology may assess:</p>
+
+            <ul>
+                <li>Tumour type and subtype.</li>
+                <li>Grade, where applicable.</li>
+                <li>Evidence of invasion.</li>
+                <li>Features that help distinguish primary ovarian cancer from another cancer spreading to the ovary.</li>
+                <li>Selected immunohistochemical markers.</li>
+            </ul>
+
+            <h3>6. Genetic and molecular testing</h3>
+
+            <p>
+                Genetic testing may examine inherited changes
+                in genes such as BRCA1 and BRCA2 and genes
+                associated with Lynch syndrome.
+            </p>
+
+            <p>
+                Tumour testing may also examine BRCA changes,
+                homologous recombination deficiency (HRD) and
+                other molecular characteristics that may
+                influence treatment options.
+            </p>
+
+            <div class="important-note">
+                <p>
+                    <strong>Three different questions:</strong>
+                    Diagnosis establishes what the tumour is.
+                    Staging assesses how far it has spread.
+                    Molecular testing looks for biological features
+                    that may influence treatment. These investigations
+                    complement one another.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 07: STAGES -->
+
+    <section class="guide-section" id="stages">
+
+        <div class="guide-section-inner">
+
+            <h2>07. Stages of Ovarian Cancer</h2>
+
+            <p>
+                Staging describes how far cancer has spread from
+                its original location. Ovarian, fallopian tube
+                and primary peritoneal cancers are commonly staged
+                using the FIGO staging system.
+            </p>
+
+            <p>
+                There are four main stages, from Stage I to Stage IV.
+                Each stage has further subdivisions.
+            </p>
+
+            <h3>Stage I — Cancer confined to the ovaries or fallopian tubes</h3>
+
+            <p>
+                Stage I means the cancer is confined to one or both
+                ovaries or fallopian tubes.
+            </p>
+
+            <ul>
+                <li><strong>Stage IA:</strong> Cancer is limited to one ovary or one fallopian tube, with the capsule intact and no tumour on its surface.</li>
+                <li><strong>Stage IB:</strong> Cancer involves both ovaries or both fallopian tubes, without the additional features defining Stage IC.</li>
+                <li><strong>Stage IC:</strong> Cancer remains confined to the ovaries or fallopian tubes but there is surgical spill, capsule rupture before surgery, surface tumour or malignant cells in abdominal fluid or washings.</li>
+            </ul>
+
+            <p>Stage IC is further divided into:</p>
+
+            <ul>
+                <li><strong>IC1:</strong> Surgical spill during the operation.</li>
+                <li><strong>IC2:</strong> Capsule rupture before surgery or tumour on the ovarian or tubal surface.</li>
+                <li><strong>IC3:</strong> Malignant cells identified in ascites or peritoneal washings.</li>
+            </ul>
+
+            <h3>Stage II — Spread within the pelvis</h3>
+
+            <p>
+                Stage II means the cancer has extended to other
+                tissues within the pelvis, below the pelvic brim.
+            </p>
+
+            <ul>
+                <li><strong>Stage IIA:</strong> Extension or implants involving the uterus, fallopian tubes or ovaries.</li>
+                <li><strong>Stage IIB:</strong> Spread to other pelvic intraperitoneal tissues.</li>
+            </ul>
+
+            <h3>Stage III — Spread beyond the pelvis</h3>
+
+            <p>
+                Stage III means the cancer has spread to the
+                peritoneum outside the pelvis and/or to
+                retroperitoneal lymph nodes.
+            </p>
+
+            <ul>
+                <li><strong>Stage IIIA1:</strong> Spread to retroperitoneal lymph nodes only, confirmed by cytology or histology.</li>
+                <li><strong>Stage IIIA2:</strong> Microscopic spread to the peritoneum beyond the pelvis, with or without lymph node involvement.</li>
+                <li><strong>Stage IIIB:</strong> Visible peritoneal deposits beyond the pelvis measuring up to 2 cm, with or without lymph node involvement.</li>
+                <li><strong>Stage IIIC:</strong> Visible peritoneal deposits beyond the pelvis measuring more than 2 cm, with or without lymph node involvement.</li>
+            </ul>
+
+            <h3>Stage IV — Distant spread</h3>
+
+            <p>
+                Stage IV means cancer has spread to distant
+                sites outside the abdominal peritoneal spread
+                pattern used to define Stage III.
+            </p>
+
+            <ul>
+                <li><strong>Stage IVA:</strong> Pleural effusion with malignant cells confirmed by cytology.</li>
+                <li><strong>Stage IVB:</strong> Spread to organs such as the liver or spleen tissue, or to distant organs and lymph nodes outside the abdominal cavity.</li>
+            </ul>
+
+            <h3>Stage versus grade</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Stage</h3>
+                    <p>
+                        Describes the extent of cancer and where
+                        it has spread.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Grade</h3>
+                    <p>
+                        Describes how abnormal cancer cells look
+                        under a microscope and, in some tumour
+                        types, how they are expected to behave.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="important-note">
+                <p>
+                    <strong>Important:</strong> Cancer found on the
+                    peritoneum or omentum outside the pelvis is
+                    generally considered Stage III, not automatically
+                    Stage IV. Spread to the surface of the liver
+                    or spleen is also different from invasion into
+                    the organ tissue itself.
+                </p>
+            </div>
+
+            <p>
+                Staging is based on clinical assessment, imaging
+                and, when appropriate, surgical and pathological
+                findings. When chemotherapy is given before surgery,
+                the original disease extent and the response to
+                treatment are assessed as separate matters.
+            </p>
+
+            <div class="important-note">
+                <p>
+                    <strong>Remember:</strong> Stage is not the same
+                    as prognosis, and it does not determine whether
+                    treatment is worthwhile. People with the same
+                    stage can have different tumour subtypes,
+                    treatment options and outcomes.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 08: TREATMENT -->
+
+    <section class="guide-section" id="treatment">
+
+        <div class="guide-section-inner">
+
+            <h2>08. Treatment of Ovarian Cancer</h2>
+
+            <p>
+                Ovarian cancer treatment depends on the exact tumour
+                type, stage, molecular characteristics, previous
+                treatment and the person's overall health.
+            </p>
+
+            <p>
+                A treatment plan is usually developed by a
+                multidisciplinary team. Surgery, chemotherapy,
+                targeted treatment, hormone therapy and clinical
+                trials may all have a role in selected situations.
+            </p>
+
+            <h3>A. Surgery</h3>
+
+            <p>
+                Surgery is an important treatment for many ovarian
+                cancers. The operation depends on the location and
+                extent of the tumour.
+            </p>
+
+            <p>Procedures may include:</p>
+
+            <ul>
+                <li>Removal of one or both ovaries and fallopian tubes.</li>
+                <li>Removal of the uterus when indicated.</li>
+                <li>Removal of the omentum.</li>
+                <li>Peritoneal biopsies and abdominal washings.</li>
+                <li>Removal of visible tumour deposits from affected tissues.</li>
+                <li>Assessment or removal of suspicious lymph nodes.</li>
+            </ul>
+
+            <h3>Cytoreductive or debulking surgery</h3>
+
+            <p>
+                When cancer has spread within the abdomen,
+                cytoreductive surgery aims to remove as much
+                visible disease as safely possible.
+            </p>
+
+            <p>
+                The preferred outcome, when achievable safely,
+                is complete gross resection, meaning no visible
+                cancer remains after surgery.
+            </p>
+
+            <h3>Primary surgery versus chemotherapy first</h3>
+
+            <p>
+                Some patients undergo surgery before chemotherapy.
+                This is called primary cytoreductive surgery.
+            </p>
+
+            <p>
+                Others receive chemotherapy first to reduce the
+                tumour burden. This is called neoadjuvant
+                chemotherapy. Surgery may then be performed
+                after reassessment and is called interval
+                cytoreductive surgery.
+            </p>
+
+            <div class="important-note">
+                <p>
+                    <strong>Why are these approaches different?</strong>
+                    The decision depends on whether complete tumour
+                    removal is likely, the risks of a major operation,
+                    the extent of disease and the patient's fitness
+                    for surgery.
+                </p>
+            </div>
+
+            <h3>Fertility-sparing surgery</h3>
+
+            <p>
+                Selected patients with certain early-stage ovarian
+                cancers or germ cell tumours may be candidates for
+                fertility-sparing surgery. This can involve removing
+                the affected ovary and fallopian tube while preserving
+                the uterus and the other ovary.
+            </p>
+
+            <p>
+                It is not appropriate for every tumour or stage.
+                Fertility goals should be discussed with the
+                specialist team before treatment when possible.
+            </p>
+
+            <h3>B. Chemotherapy</h3>
+
+            <p>
+                Chemotherapy uses medicines to destroy cancer
+                cells or prevent them from multiplying.
+            </p>
+
+            <h3>Platinum-based chemotherapy</h3>
+
+            <p>
+                A commonly used first-line combination for many
+                epithelial ovarian cancers is:
+            </p>
+
+            <ul>
+                <li><strong>Carboplatin:</strong> A platinum-based medicine that damages cancer-cell DNA.</li>
+                <li><strong>Paclitaxel:</strong> A taxane medicine that interferes with cell division.</li>
+            </ul>
+
+            <p>
+                These medicines are commonly administered in
+                cycles. Many first-line plans involve approximately
+                six cycles, although schedules and treatment
+                duration vary.
+            </p>
+
+            <h3>Neoadjuvant chemotherapy</h3>
+
+            <p>
+                Neoadjuvant chemotherapy is given before surgery.
+                It may be recommended when complete removal of
+                visible disease is unlikely initially or when
+                major surgery carries excessive risk.
+            </p>
+
+            <h3>Adjuvant chemotherapy</h3>
+
+            <p>
+                Adjuvant chemotherapy is given after surgery
+                to treat possible remaining microscopic cancer
+                cells and reduce the risk of recurrence.
+            </p>
+
+            <h3>Chemotherapy for recurrent disease</h3>
+
+            <p>
+                If cancer returns, additional chemotherapy may
+                be considered. Possible medicines include
+                platinum-based combinations, paclitaxel,
+                pegylated liposomal doxorubicin and gemcitabine.
+            </p>
+
+            <p>
+                The choice depends on previous treatment,
+                treatment response, the time since earlier
+                platinum therapy, side effects and overall
+                health.
+            </p>
+
+            <h3>C. Targeted therapy</h3>
+
+            <p>
+                Targeted medicines act on specific biological
+                pathways or molecular features involved in
+                cancer growth. They are suitable only for
+                selected patients.
+            </p>
+
+            <h3>PARP inhibitors</h3>
+
+            <p>
+                PARP inhibitors interfere with DNA repair
+                processes. They may be particularly useful
+                in selected cancers with BRCA1 or BRCA2
+                mutations or other DNA repair deficiencies.
+            </p>
+
+            <p>Examples include:</p>
+
+            <ul>
+                <li>Olaparib.</li>
+                <li>Niraparib.</li>
+                <li>Rucaparib.</li>
+            </ul>
+
+            <p>
+                BRCA and HRD testing may help specialists
+                identify patients who could benefit from
+                selected PARP inhibitor treatments.
+            </p>
+
+            <h3>Bevacizumab</h3>
+
+            <p>
+                Bevacizumab blocks VEGF, a protein involved
+                in the development of new blood vessels.
+                It may be combined with chemotherapy and
+                continued as maintenance treatment in
+                selected patients.
+            </p>
+
+            <h3>Targeted treatments for low-grade serous carcinoma</h3>
+
+            <p>
+                Low-grade serous carcinoma can involve
+                changes in the MAPK signalling pathway.
+                Targeted treatments may be considered
+                in selected patients.
+            </p>
+
+            <ul>
+                <li><strong>Trametinib:</strong> A MEK inhibitor studied in recurrent LGSC.</li>
+                <li><strong>Avutometinib and defactinib:</strong> A targeted combination that received accelerated US FDA approval in 2025 for a specific group of patients with KRAS-mutated recurrent LGSC following previous systemic treatment.</li>
+            </ul>
+
+            <p>
+                Approval and availability of these medicines
+                vary by country.
+            </p>
+
+            <h3>D. Hormone therapy</h3>
+
+            <p>
+                Some ovarian cancers, particularly selected
+                low-grade serous tumours, express hormone
+                receptors.
+            </p>
+
+            <p>Hormone medicines may include:</p>
+
+            <ul>
+                <li>Letrozole.</li>
+                <li>Anastrozole.</li>
+                <li>Tamoxifen.</li>
+            </ul>
+
+            <p>
+                These may be considered in selected cases,
+                including some recurrent LGSC settings.
+                Hormone therapy is not appropriate for
+                every ovarian cancer subtype.
+            </p>
+
+            <h3>E. Treatment differences between tumour types</h3>
+
+            <div class="guide-table-wrapper">
+                <table class="guide-table">
+
+                    <tr>
+                        <th>Cancer type</th>
+                        <th>Common treatment approaches</th>
+                    </tr>
+
+                    <tr>
+                        <td>High-grade serous carcinoma</td>
+                        <td>Surgery and platinum-taxane chemotherapy; selected patients may receive maintenance PARP inhibitors or bevacizumab.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Low-grade serous carcinoma</td>
+                        <td>Surgery, selected chemotherapy approaches, hormone therapy and targeted treatment in appropriate circumstances.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Endometrioid carcinoma</td>
+                        <td>Surgery and, depending on stage and risk, chemotherapy; molecular findings may influence treatment.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Clear cell carcinoma</td>
+                        <td>Surgery and individualised systemic treatment; clinical trials may be considered.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Mucinous carcinoma</td>
+                        <td>Treatment depends on tumour origin and pathology; gastrointestinal metastases must be distinguished from primary ovarian cancer.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Malignant germ cell tumours</td>
+                        <td>Selected fertility-sparing surgery and platinum-based chemotherapy, commonly BEP.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Sex cord-stromal tumours</td>
+                        <td>Surgery and selected chemotherapy or hormone therapy, depending on subtype and disease extent.</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <h3>F. Maintenance treatment</h3>
+
+            <p>
+                Maintenance treatment is given after an initial
+                response or remission to help delay recurrence
+                or progression.
+            </p>
+
+            <p>Depending on the individual situation, it may include:</p>
+
+            <ul>
+                <li>PARP inhibitors in eligible patients.</li>
+                <li>Bevacizumab in selected treatment plans.</li>
+                <li>Hormone therapy in selected LGSC cases.</li>
+                <li>Observation and regular follow-up.</li>
+            </ul>
+
+            <p>
+                Maintenance treatment is not necessarily lifelong.
+                Its duration depends on the medicine, evidence,
+                response, tolerability and applicable treatment
+                guidance.
+            </p>
+
+            <h3>G. Treatment for recurrent disease</h3>
+
+            <p>
+                Recurrent ovarian cancer means the cancer has
+                returned after an earlier response to treatment.
+                Further treatment may involve chemotherapy,
+                targeted medicines, hormone therapy, surgery
+                in selected patients or clinical trials.
+            </p>
+
+            <p>
+                Recurrence does not automatically mean that
+                no further treatment is possible.
+            </p>
+
+            <h3>H. HIPEC</h3>
+
+            <p>
+                Hyperthermic intraperitoneal chemotherapy
+                (HIPEC) involves circulating heated chemotherapy
+                within the abdominal cavity during surgery.
+            </p>
+
+            <p>
+                It may be considered in selected patients
+                undergoing interval cytoreductive surgery
+                for advanced disease. It is not routinely
+                appropriate for everyone.
+            </p>
+
+            <h3>I. Supportive and palliative care</h3>
+
+            <p>
+                Supportive care helps manage treatment-related
+                symptoms and maintain quality of life.
+                It may include pain management, nutrition
+                support, nausea management, fatigue care
+                and psychological support.
+            </p>
+
+            <p>
+                Palliative care can be provided alongside
+                active cancer treatment. It does not
+                automatically mean that treatment has stopped.
+            </p>
+
+            <h3>J. Possible treatment side effects</h3>
+
+            <div class="guide-table-wrapper">
+                <table class="guide-table">
+
+                    <tr>
+                        <th>Treatment</th>
+                        <th>Possible side effects</th>
+                    </tr>
+
+                    <tr>
+                        <td>Surgery</td>
+                        <td>Pain, fatigue, infection risk, bleeding and recovery-related difficulties.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Chemotherapy</td>
+                        <td>Nausea, fatigue, hair loss, lowered blood counts, infection risk, neuropathy and bowel changes.</td>
+                    </tr>
+
+                    <tr>
+                        <td>PARP inhibitors</td>
+                        <td>Anaemia, fatigue, nausea and low blood counts.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bevacizumab</td>
+                        <td>High blood pressure, bleeding, blood clots and impaired wound healing.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Hormone therapy</td>
+                        <td>Hot flashes, joint discomfort and medicine-specific effects.</td>
+                    </tr>
+
+                    <tr>
+                        <td>MEK inhibitors</td>
+                        <td>Rash, diarrhoea, fatigue, swelling and other medicine-specific effects.</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="important-note">
+                <p>
+                    <strong>Remember:</strong> Treatment is individualised.
+                    Not everyone receives every treatment listed here.
+                    Patients should discuss possible benefits, risks
+                    and alternatives with their oncology team before
+                    making treatment decisions.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 09: RESEARCH -->
+
+    <section class="guide-section" id="research">
+
+        <div class="guide-section-inner">
+
+            <h2>09. Research & Clinical Trials</h2>
+
+            <p>
+                Research is continually exploring better ways to
+                understand, detect and treat ovarian cancer.
+                Clinical trials help evaluate whether new medicines,
+                combinations, procedures and supportive-care
+                approaches are safe and effective.
+            </p>
+
+            <p>
+                For patients and families, it is important to
+                understand what stage a research development
+                has reached and whether it is an established
+                treatment or still experimental.
+            </p>
+
+            <h3>Why does ovarian cancer research matter?</h3>
+
+            <ul>
+                <li>To improve early detection and diagnostic accuracy.</li>
+                <li>To understand different tumour subtypes.</li>
+                <li>To develop more effective treatments.</li>
+                <li>To overcome treatment resistance.</li>
+                <li>To reduce treatment-related side effects.</li>
+                <li>To improve quality of life and survivorship.</li>
+                <li>To improve outcomes for rare and under-researched subtypes.</li>
+            </ul>
+
+            <h3>Important areas of ongoing research</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Antibody-drug conjugates</h3>
+                    <p>
+                        ADCs combine antibodies that recognise
+                        particular cell targets with anti-cancer
+                        medicines. Researchers are investigating
+                        additional targets and combinations.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Immunotherapy</h3>
+                    <p>
+                        Studies are investigating immune checkpoint
+                        inhibitors, combination treatments and
+                        other approaches that may help the immune
+                        system recognise cancer cells.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>DNA repair research</h3>
+                    <p>
+                        Research is exploring PARP inhibitors,
+                        resistance mechanisms and additional
+                        vulnerabilities in DNA repair pathways.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Low-grade serous carcinoma</h3>
+                    <p>
+                        Researchers are studying MAPK pathway
+                        alterations, targeted medicines and
+                        treatment combinations for LGSC.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Early detection</h3>
+                    <p>
+                        Research includes blood-based biomarkers,
+                        circulating tumour DNA and other
+                        diagnostic approaches. These are
+                        not established routine screening tests.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Precision medicine</h3>
+                    <p>
+                        Molecular and genetic information
+                        may help identify which treatments
+                        are more likely to benefit particular
+                        tumour subtypes.
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>What is a clinical trial?</h3>
+
+            <p>
+                A clinical trial is a research study involving
+                people. It evaluates an intervention such as
+                a medicine, treatment combination, procedure,
+                diagnostic method or supportive-care approach.
+            </p>
+
+            <p>
+                Clinical trials help researchers understand
+                safety, side effects, effectiveness and
+                possible improvements over existing approaches.
+            </p>
+
+            <h3>Understanding clinical trial phases</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Phase I</h3>
+                    <p>
+                        Usually involves a relatively small
+                        group and primarily evaluates safety,
+                        dosage and how the treatment behaves
+                        in the body.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Phase II</h3>
+                    <p>
+                        Studies whether the treatment shows
+                        evidence of effectiveness against
+                        a particular disease while continuing
+                        safety evaluation.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Phase III</h3>
+                    <p>
+                        Usually involves larger groups and
+                        compares a treatment with standard
+                        care or another appropriate control.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Phase IV</h3>
+                    <p>
+                        Studies an approved treatment after
+                        wider use to gather additional
+                        safety and effectiveness information.
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>Who can participate?</h3>
+
+            <p>
+                Each trial has eligibility criteria. These
+                may include cancer subtype, stage, age,
+                previous treatment, molecular findings
+                and general health.
+            </p>
+
+            <p>
+                Meeting some eligibility criteria does
+                not guarantee enrolment. The research
+                team must assess each person individually.
+            </p>
+
+            <h3>Where can patients find clinical trials?</h3>
+
+            <div class="resource-card">
+                <h3>ClinicalTrials.gov</h3>
+                <p>
+                    An international registry where users
+                    can search for ovarian cancer studies
+                    by condition, location, recruitment
+                    status and other criteria.
+                </p>
+                <a href="https://clinicaltrials.gov/search?cond=Ovarian%20Cancer"
+                   target="_blank" rel="noopener noreferrer">
+                    Search ovarian cancer trials →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Clinical Trials Registry–India (CTRI)</h3>
+                <p>
+                    The Indian public clinical-trial registry
+                    hosted by ICMR. Users can search for
+                    registered studies and explore their
+                    details.
+                </p>
+                <a href="https://ctri.nic.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit CTRI →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>National Cancer Institute</h3>
+                <p>
+                    Provides information about cancer
+                    clinical trials and how people can
+                    understand and search for studies.
+                </p>
+                <a href="https://www.cancer.gov/research/participate/clinical-trials"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore NCI clinical trials →
+                </a>
+            </div>
+
+            <h3>How to evaluate a clinical trial</h3>
+
+            <ul>
+                <li>Study title and registration number.</li>
+                <li>Research question and purpose.</li>
+                <li>Trial phase and study design.</li>
+                <li>Recruitment status.</li>
+                <li>Participating hospitals and locations.</li>
+                <li>Eligibility criteria.</li>
+                <li>Investigational treatment and comparison group.</li>
+                <li>Study sponsor and investigators.</li>
+                <li>Published results, where available.</li>
+            </ul>
+
+            <h3>Informed consent and patient rights</h3>
+
+            <p>
+                Joining a clinical trial is a personal decision.
+                Before agreeing, participants should receive
+                information about the study purpose, possible
+                benefits, risks, alternatives, costs, visits,
+                privacy and their rights.
+            </p>
+
+            <p>
+                Participants can ask questions and should
+                have time to consider their decision.
+                They may withdraw from a trial, subject
+                to discussing any necessary medical
+                follow-up with the research team.
+            </p>
+
+            <h3>Questions to ask before joining a trial</h3>
+
+            <ol>
+                <li>What is the main purpose of the study?</li>
+                <li>What phase is the trial in?</li>
+                <li>Why might I be eligible?</li>
+                <li>Is the treatment experimental or already approved for another use?</li>
+                <li>What are the known risks and possible benefits?</li>
+                <li>Is there a standard treatment alternative?</li>
+                <li>Will I be randomly assigned to a treatment group?</li>
+                <li>What additional tests and visits are required?</li>
+                <li>Who will pay for treatment, tests and travel?</li>
+                <li>What happens if I decide to withdraw?</li>
+            </ol>
+
+            <h3>How UNMUTE presents research updates</h3>
+
+            <p>
+                Research updates on UNMUTE should use a
+                consistent format so that readers can
+                understand the evidence behind each
+                development.
+            </p>
+
+            <div class="guide-table-wrapper">
+                <table class="guide-table">
+
+                    <tr>
+                        <th>Information</th>
+                        <th>What it tells readers</th>
+                    </tr>
+
+                    <tr>
+                        <td>Research title</td>
+                        <td>What is being investigated.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Cancer subtype</td>
+                        <td>Which tumour type the research concerns.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Research category</td>
+                        <td>Laboratory research, clinical study, trial or approved treatment.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trial phase</td>
+                        <td>Phase I, II, III or IV, where applicable.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Publication date</td>
+                        <td>When the findings were published or updated.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Recruitment status</td>
+                        <td>Whether a study is recruiting participants.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Location and eligibility</td>
+                        <td>Where the trial takes place and who may qualify.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Evidence status</td>
+                        <td>Whether findings are preliminary, peer-reviewed or established.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Source</td>
+                        <td>The original study, registry or official publication.</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="important-note">
+                <p>
+                    <strong>Research should create informed hope,
+                    not false promises.</strong> A promising
+                    laboratory result is not an established
+                    treatment. An early clinical trial does
+                    not guarantee success in later studies.
+                    Personal experiences cannot prove that
+                    a treatment is effective.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 10: SUPPORT -->
+
+    <section class="guide-section" id="support">
+
+        <div class="guide-section-inner">
+
+            <h2>10. Support & Resources</h2>
+
+            <p>
+                A cancer diagnosis affects much more than
+                physical health. Patients and families may
+                experience emotional distress, financial
+                pressure, changes in relationships and
+                uncertainty about the future.
+            </p>
+
+            <p>
+                Support should be available throughout
+                the cancer journey, not only during
+                treatment.
+            </p>
+
+            <h3>A. Emotional and psychological support</h3>
+
+            <p>
+                A diagnosis can bring fear, anxiety,
+                sadness, anger, uncertainty and changes
+                in body image or confidence.
+            </p>
+
+            <p>Support may include:</p>
+
+            <ul>
+                <li>Oncology counselling.</li>
+                <li>Clinical psychology and psychotherapy.</li>
+                <li>Psychiatric support when needed.</li>
+                <li>Hospital-based psycho-oncology services.</li>
+                <li>Family counselling.</li>
+                <li>Peer support communities.</li>
+            </ul>
+
+            <h3>B. Peer support and patient communities</h3>
+
+            <p>
+                Connecting with someone who understands
+                the experience of cancer may help patients
+                feel less isolated.
+            </p>
+
+            <p>Peer support may involve:</p>
+
+            <ul>
+                <li>Talking with someone with a similar diagnosis.</li>
+                <li>Joining moderated online support communities.</li>
+                <li>Participating in hospital-based support groups.</li>
+                <li>Connecting with caregivers and families.</li>
+                <li>Attending survivorship programmes.</li>
+            </ul>
+
+            <div class="important-note">
+                <p>
+                    <strong>A note about personal stories:</strong>
+                    One person's treatment response, recovery
+                    or side effects cannot predict another
+                    person's outcome. Personal experiences
+                    should never replace medical advice.
+                </p>
+            </div>
+
+            <h3>C. Practical support during treatment</h3>
+
+            <p>
+                Patients may need help with transport,
+                hospital appointments, accommodation,
+                food, medication access, childcare,
+                household responsibilities and returning
+                to education or employment.
+            </p>
+
+            <p>
+                Hospital social workers, patient navigators
+                and welfare departments may help identify
+                appropriate services.
+            </p>
+
+            <h3>D. Financial assistance and treatment support in India</h3>
+
+            <div class="resource-card">
+                <h3>Ayushman Bharat – PM-JAY</h3>
+                <p>
+                    Provides eligible beneficiaries with
+                    cashless hospital treatment coverage
+                    for specified services at empanelled
+                    hospitals.
+                </p>
+                <a href="https://pmjay.gov.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Official PM-JAY website →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Rashtriya Arogya Nidhi</h3>
+                <p>
+                    A Government of India financial
+                    assistance scheme for eligible
+                    economically disadvantaged patients
+                    with specified life-threatening
+                    diseases, including cancer.
+                </p>
+                <a href="https://mohfw.gov.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Ministry of Health and Family Welfare →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Health Minister's Discretionary Grant</h3>
+                <p>
+                    Financial assistance may be available
+                    to eligible patients for certain
+                    hospitalisation and treatment expenses
+                    in government hospitals.
+                </p>
+                <a href="https://mohfw.gov.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Government health assistance information →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Kerala – Karunya Arogya Suraksha Padhathi and Karunya Benevolent Fund</h3>
+                <p>
+                    Kerala has state-level health assistance
+                    programmes for eligible beneficiaries.
+                    Benefits and eligibility depend on the
+                    applicable scheme.
+                </p>
+                <a href="https://sha.kerala.gov.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Kerala State Health Agency →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Regional Cancer Centre, Thiruvananthapuram</h3>
+                <p>
+                    RCC provides patient-care and welfare
+                    information, including assistance
+                    programmes for eligible patients.
+                </p>
+                <a href="https://www.rcctvm.gov.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit RCC →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Malabar Cancer Centre</h3>
+                <p>
+                    Provides information about cancer
+                    treatment and available financial
+                    assistance programmes.
+                </p>
+                <a href="https://www.mcc.kerala.gov.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit Malabar Cancer Centre →
+                </a>
+            </div>
+
+            <div class="important-note">
+                <p>
+                    <strong>Important:</strong> Eligibility,
+                    coverage, funding and application
+                    procedures can change. Patients should
+                    verify current details directly with
+                    the relevant government office or
+                    hospital welfare department.
+                </p>
+            </div>
+
+            <h3>E. Cancer organisations and support networks</h3>
+
+            <div class="resource-card">
+                <h3>Indian Cancer Society</h3>
+                <p>
+                    A national cancer organisation involved
+                    in cancer awareness, early detection
+                    and patient-support initiatives.
+                </p>
+                <a href="https://indiancancersociety.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit Indian Cancer Society →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Cancer Patients Aid Association (CPAA)</h3>
+                <p>
+                    Offers patient-care services, guidance,
+                    counselling and assistance for eligible
+                    patients.
+                </p>
+                <a href="https://cancer.org.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit CPAA →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Pallium India</h3>
+                <p>
+                    Works to improve access to palliative
+                    care, pain relief, education and
+                    support. Based in Thiruvananthapuram,
+                    it also provides information about
+                    palliative-care services.
+                </p>
+                <a href="https://palliumindia.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit Pallium India →
+                </a>
+            </div>
+
+            <h3>F. Palliative care</h3>
+
+            <p>
+                Palliative care focuses on relieving
+                symptoms, improving comfort and
+                supporting quality of life.
+            </p>
+
+            <p>It may include:</p>
+
+            <ul>
+                <li>Pain management.</li>
+                <li>Nausea and vomiting management.</li>
+                <li>Nutrition support.</li>
+                <li>Fatigue and sleep management.</li>
+                <li>Emotional support.</li>
+                <li>Communication and decision-making support.</li>
+                <li>Family and caregiver support.</li>
+            </ul>
+
+            <p>
+                Palliative care can be provided alongside
+                active cancer treatment. It does not
+                automatically mean that cancer treatment
+                has stopped.
+            </p>
+
+            <h3>G. Support for caregivers and families</h3>
+
+            <p>
+                Caregivers may take on responsibilities
+                such as attending appointments, managing
+                medicines, arranging transport and
+                providing emotional support.
+            </p>
+
+            <p>Caregiver support may include:</p>
+
+            <ul>
+                <li>Counselling and emotional support.</li>
+                <li>Education about the diagnosis and treatment.</li>
+                <li>Help understanding medical instructions.</li>
+                <li>Respite and practical assistance.</li>
+                <li>Support groups for caregivers.</li>
+            </ul>
+
+            <h3>H. Survivorship and life after treatment</h3>
+
+            <p>
+                Completing a major phase of treatment
+                can bring relief, but it can also bring
+                new challenges.
+            </p>
+
+            <p>Survivorship support may address:</p>
+
+            <ul>
+                <li>Follow-up appointments and monitoring.</li>
+                <li>Long-term treatment effects.</li>
+                <li>Menopause and hormonal changes.</li>
+                <li>Fertility and reproductive health.</li>
+                <li>Sexual health and relationships.</li>
+                <li>Physical activity and nutrition.</li>
+                <li>Emotional recovery and fear of recurrence.</li>
+                <li>Returning to education, work and everyday activities.</li>
+            </ul>
+
+            <h3>I. Building safe support communities on UNMUTE</h3>
+
+            <p>
+                Cancer-related communities involve sensitive
+                health information and people who may be
+                vulnerable. An online support space needs
+                clear safeguards.
+            </p>
+
+            <ul>
+                <li>Clear community guidelines.</li>
+                <li>User consent before sharing personal stories.</li>
+                <li>Privacy controls and options to use a pseudonym.</li>
+                <li>Moderation and reporting mechanisms.</li>
+                <li>Protection against harassment and exploitation.</li>
+                <li>Rules against unsolicited medical advice.</li>
+                <li>No promotion of unverified cures or miracle treatments.</li>
+                <li>No sharing another person's medical information without permission.</li>
+            </ul>
+
+            <div class="important-note">
+                <p>
+                    <strong>No one should have to navigate
+                    the cancer journey feeling completely
+                    alone.</strong> Patients deserve reliable
+                    information, respectful care, emotional
+                    support, practical assistance and the
+                    freedom to make informed decisions.
+                    Families and caregivers deserve support too.
+                </p>
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- REFERENCES -->
+
+    <section class="guide-references" id="references">
+
+        <div class="guide-references-inner">
+
+            <h2>References & Further Reading</h2>
+
+            <p>
+                This guide is intended for educational purposes.
+                The following organisations and publications
+                provide additional medical information.
+            </p>
+
+            <h3>Overview, types and diagnosis</h3>
+
+            <ul>
+                <li>
+                    <a href="https://www.cancer.gov/types/ovarian"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute – Ovarian Cancer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/ovarian/patient/ovarian-epithelial-treatment-pdq"
+                       target="_blank" rel="noopener noreferrer">
+                        NCI – Ovarian Epithelial, Fallopian Tube and Primary Peritoneal Cancer Treatment (Patient Version)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/ovarian/hp/ovarian-epithelial-treatment-pdq"
+                       target="_blank" rel="noopener noreferrer">
+                        NCI – Ovarian Epithelial Cancer Treatment (Health Professional Version)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.org/cancer/types/ovarian-cancer.html"
+                       target="_blank" rel="noopener noreferrer">
+                        American Cancer Society – Ovarian Cancer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.icmr.gov.in/"
+                       target="_blank" rel="noopener noreferrer">
+                        Indian Council of Medical Research
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Symptoms and risk factors</h3>
+
+            <ul>
+                <li>
+                    <a href="https://www.cancer.org/cancer/types/ovarian-cancer/detection-diagnosis-staging/signs-and-symptoms.html"
+                       target="_blank" rel="noopener noreferrer">
+                        American Cancer Society – Signs and Symptoms
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.org/cancer/types/ovarian-cancer/causes-risks-prevention/risk-factors.html"
+                       target="_blank" rel="noopener noreferrer">
+                        American Cancer Society – Risk Factors
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cdc.gov/ovarian-cancer/about/index.html"
+                       target="_blank" rel="noopener noreferrer">
+                        CDC – Ovarian Cancer Information
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Screening</h3>
+
+            <ul>
+                <li>
+                    <a href="https://www.cancer.gov/types/ovarian/patient/ovarian-epithelial-treatment-pdq"
+                       target="_blank" rel="noopener noreferrer">
+                        NCI – Ovarian Cancer Screening and Treatment Information
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/ovarian-cancer-screening"
+                       target="_blank" rel="noopener noreferrer">
+                        US Preventive Services Task Force – Ovarian Cancer Screening
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.acog.org/womens-health/faqs/ovarian-cancer"
+                       target="_blank" rel="noopener noreferrer">
+                        American College of Obstetricians and Gynecologists – Ovarian Cancer
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Stages and treatment</h3>
+
+            <ul>
+                <li>
+                    <a href="https://www.cancer.gov/types/ovarian/patient/ovarian-epithelial-treatment-pdq"
+                       target="_blank" rel="noopener noreferrer">
+                        NCI – Ovarian Cancer Treatment and Staging
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.asco.org/"
+                       target="_blank" rel="noopener noreferrer">
+                        American Society of Clinical Oncology
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.esmo.org/"
+                       target="_blank" rel="noopener noreferrer">
+                        European Society for Medical Oncology
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.fda.gov/"
+                       target="_blank" rel="noopener noreferrer">
+                        US Food and Drug Administration – Medicine Approvals and Safety
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12411830/"
+                       target="_blank" rel="noopener noreferrer">
+                        FIGO Ovarian, Fallopian Tube and Primary Peritoneal Cancer Staging Update
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://clinicaltrials.gov/"
+                       target="_blank" rel="noopener noreferrer">
+                        ClinicalTrials.gov
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Research and clinical trials</h3>
+
+            <ul>
+                <li>
+                    <a href="https://www.cancer.gov/research/participate/clinical-trials"
+                       target="_blank" rel="noopener noreferrer">
+                        NCI – Understanding Clinical Trials
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://clinicaltrials.gov/search?cond=Ovarian%20Cancer"
+                       target="_blank" rel="noopener noreferrer">
+                        ClinicalTrials.gov – Ovarian Cancer Studies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://ctri.nic.in/"
+                       target="_blank" rel="noopener noreferrer">
+                        Clinical Trials Registry–India
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.fda.gov/drugs"
+                       target="_blank" rel="noopener noreferrer">
+                        FDA – Drug Information and Approvals
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Support and resources</h3>
+
+            <ul>
+                <li>
+                    <a href="https://indiancancersociety.org/"
+                       target="_blank" rel="noopener noreferrer">
+                        Indian Cancer Society
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://cancer.org.in/"
+                       target="_blank" rel="noopener noreferrer">
+                        Cancer Patients Aid Association
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://palliumindia.org/"
+                       target="_blank" rel="noopener noreferrer">
+                        Pallium India
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://pmjay.gov.in/"
+                       target="_blank" rel="noopener noreferrer">
+                        Ayushman Bharat – PM-JAY
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://sha.kerala.gov.in/"
+                       target="_blank" rel="noopener noreferrer">
+                        Kerala State Health Agency
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.rcctvm.gov.in/"
+                       target="_blank" rel="noopener noreferrer">
+                        Regional Cancer Centre, Thiruvananthapuram
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.mcc.kerala.gov.in/"
+                       target="_blank" rel="noopener noreferrer">
+                        Malabar Cancer Centre
+                    </a>
+                </li>
+            </ul>
+
+            <p class="reference-date">
+                Reference list reviewed for this educational guide:
+                22 November 2026. External links and programme
+                information should be checked periodically for
+                updates.
+            </p>
+
+            <div class="guide-disclaimer">
+                <p>
+                    <strong>Medical disclaimer:</strong>
+                    This guide is intended for general educational
+                    and informational purposes. It does not replace
+                    professional medical advice, diagnosis or
+                    treatment. Cancer diagnosis and treatment
+                    decisions must be made with qualified healthcare
+                    professionals who can consider an individual's
+                    specific medical circumstances. Information
+                    about clinical trials, medicine approvals and
+                    financial assistance may change over time.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BACK TO TOP -->
+
+    <a href="#top"
+       class="back-to-top"
+       aria-label="Back to top"
+       title="Back to top">
+        ↑
+    </a>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>© 2026 UNMUTE. Knowledge, support and a voice for every journey.</p>
+    </footer>
+
+</body>
+</html>

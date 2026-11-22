@@ -1,5 +1,7 @@
 
-/* 1. Basic page settings */
+/* =====================================
+   1. BASIC PAGE SETTINGS
+===================================== */
 
 * {
     margin: 0;
@@ -18,7 +20,9 @@ body {
 }
 
 
-/* 2. Navigation bar */
+/* =====================================
+   2. NAVIGATION BAR
+===================================== */
 
 .navbar {
     display: flex;
@@ -62,7 +66,9 @@ body {
 }
 
 
-/* 3. Hero section */
+/* =====================================
+   3. HERO SECTION
+===================================== */
 
 .hero {
     min-height: 680px;
@@ -122,7 +128,9 @@ body {
 }
 
 
-/* 4. Hero image */
+/* =====================================
+   4. HERO IMAGE
+===================================== */
 
 .hero-image {
     width: 100%;
@@ -139,7 +147,9 @@ body {
 }
 
 
-/* 5. Mission section */
+/* =====================================
+   5. MISSION SECTION
+===================================== */
 
 .mission {
     background-color: #EDE1E9;
@@ -162,7 +172,9 @@ body {
 }
 
 
-/* 6. Platform feature cards */
+/* =====================================
+   6. PLATFORM FEATURE CARDS
+===================================== */
 
 .platform {
     padding: 85px 8%;
@@ -208,7 +220,9 @@ body {
 }
 
 
-/* 7. Footer */
+/* =====================================
+   7. FOOTER
+===================================== */
 
 footer {
     background-color: #732871;
@@ -224,7 +238,664 @@ footer p:last-child {
 }
 
 
-/* 8. Mobile responsiveness */
+/* =====================================
+   8. WELCOME PATHWAY POPUP
+===================================== */
+
+.welcome-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(45, 30, 45, 0.48);
+}
+
+.welcome-overlay.is-visible {
+    display: flex;
+}
+
+.welcome-popup {
+    width: 100%;
+    max-width: 620px;
+    padding: 45px;
+    background-color: #F8F1EA;
+    border: 1px solid #E5D5E3;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 15px 55px rgba(50, 30, 50, 0.18);
+    animation: popupAppear 0.35s ease;
+}
+
+.welcome-popup .eyebrow {
+    margin-bottom: 15px;
+}
+
+.welcome-popup h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    line-height: 1.25;
+    color: #493047;
+    margin-bottom: 12px;
+}
+
+.welcome-description {
+    color: #725F70;
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+
+/* Welcome options */
+
+.welcome-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.welcome-option {
+    min-height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background-color: #F1E5ED;
+    border: 1px solid #E5D5E3;
+    border-radius: 9px;
+    color: #493047;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: background-color 0.25s ease,
+                transform 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.welcome-option:hover {
+    background-color: #EBD9E7;
+    border-color: #C9A9C5;
+    transform: translateY(-3px);
+}
+
+
+/* Welcome SVG icons */
+
+.welcome-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    color: #732871;
+}
+
+.welcome-icon svg {
+    width: 42px;
+    height: 42px;
+    display: block;
+}
+
+
+/* Explore link */
+
+.explore-link {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: #732871;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.explore-link:hover {
+    color: #493047;
+}
+
+
+/* Popup animation */
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Popup mobile layout */
+
+@media (max-width: 600px) {
+
+    .welcome-popup {
+        padding: 30px 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .welcome-popup h2 {
+        font-size: 26px;
+    }
+
+    .welcome-grid {
+        gap: 10px;
+    }
+
+    .welcome-option {
+        min-height: 125px;
+        padding: 14px 10px;
+        font-size: 12px;
+    }
+
+    .welcome-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .welcome-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+
+/* =====================================
+   9. A LITTLE GARDEN OF HOPE
+===================================== */
+
+.garden-section {
+    padding: 85px 7%;
+    text-align: center;
+    background-color: #F8F1EA;
+}
+
+.garden-section h2 {
+    font-family: Georgia, serif;
+    font-size: 2.4rem;
+    color: #493047;
+    margin: 15px 0;
+}
+
+.garden-description {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    line-height: 1.8;
+    color: #6D5869;
+}
+
+
+/* Flower selection */
+
+.flower-selection {
+    max-width: 1100px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.flower-selection h3 {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    color: #493047;
+    margin-bottom: 12px;
+}
+
+.flower-selection > p {
+    color: #6D5869;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   10. FLOWER GALLERY
+===================================== */
+
+.flower-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.flower-choice {
+    grid-column: span 2;
+    min-height: 320px;
+    padding: 32px 24px;
+    border: 1.5px solid #E0CEDB;
+    border-radius: 18px;
+    background-color: #FFFDFC;
+    color: #493047;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+}
+
+
+/* Centre the last two cards */
+
+.flower-choice:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.flower-choice:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+
+/* Custom flower SVG illustrations */
+
+.flower-art {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 125px;
+    margin-bottom: 8px;
+}
+
+.flower-art svg {
+    width: 110px;
+    height: 125px;
+    display: block;
+    overflow: visible;
+}
+
+
+/* Flower names */
+
+.flower-choice strong {
+    font-family: Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+
+/* Flower symbolism */
+
+.flower-choice > span:not(.flower-art) {
+    font-size: 1rem;
+    color: #A16B86;
+    font-weight: 600;
+}
+
+
+/* Flower descriptions */
+
+.flower-choice small {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #6D5869;
+    max-width: 250px;
+}
+
+
+/* Hover effect */
+
+.flower-choice:hover {
+    transform: translateY(-6px);
+    border-color: #A16B86;
+    box-shadow: 0 10px 25px rgba(73, 48, 71, 0.09);
+}
+
+
+/* Selected flower */
+
+.flower-choice.selected {
+    background-color: #F3E8ED;
+    border: 2px solid #732871;
+    box-shadow: 0 8px 22px rgba(115, 40, 113, 0.12);
+    transform: translateY(-4px);
+}
+
+
+/* Keyboard focus */
+
+.flower-choice:focus-visible {
+    outline: 3px solid #732871;
+    outline-offset: 4px;
+}
+
+
+/* =====================================
+   11. GARDEN INTERACTION AREA
+===================================== */
+
+.garden-container {
+    max-width: 850px;
+    min-height: 450px;
+    margin: 55px auto 0;
+    padding: 35px 25px;
+    background-color: #EDE1E9;
+    border: 1px solid #E5D5E3;
+    border-radius: 20px;
+}
+
+.garden-instruction {
+    color: #6D5869;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+
+/* Main garden scene */
+
+.garden-scene {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: visible;
+    isolation: isolate;
+}
+
+
+/* Growing flower */
+
+.garden-plant {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 240px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: visible;
+    z-index: 2;
+}
+
+.garden-plant svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+
+/* =====================================
+   12. VINTAGE BOTANICAL WATERING CAN
+===================================== */
+
+.watering-tool {
+    position: absolute;
+
+    /* Original starting position */
+    left: 10%;
+    top: auto;
+    bottom: 5px;
+
+    /* Dimensions match the vintage SVG proportions */
+    width: 170px;
+    height: 124px;
+
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+
+    /* No transition during dragging */
+    transition: none;
+}
+
+.watering-tool svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+
+/* Dragging cursor */
+
+.watering-tool:active {
+    cursor: grabbing;
+}
+
+
+/* Smooth return animation.
+   JavaScript adds this class only when the can returns home. */
+
+.watering-tool.returning {
+    transition:
+        left 0.65s ease,
+        top 0.65s ease;
+    cursor: grab;
+}
+
+
+/* =====================================
+   13. WATER DROPLET ANIMATION
+===================================== */
+
+.water-flow {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* JavaScript displays this container while watering */
+
+.water-flow.is-active {
+    display: block;
+}
+
+
+/* Individual water droplets */
+
+.garden-water-drop {
+    position: absolute;
+    width: 6px;
+    height: 11px;
+
+    background: #8AB9D5;
+    border-radius: 50% 50% 55% 55%;
+
+    opacity: 0;
+    pointer-events: none;
+
+    animation: gardenWaterFall 0.65s linear infinite;
+}
+
+
+/* Droplets fall from the sprinkler head */
+
+@keyframes gardenWaterFall {
+
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(65px) scale(0.9);
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   14. GARDEN MESSAGE AND RESTART
+===================================== */
+
+.garden-message {
+    max-width: 550px;
+    margin: 25px auto 0;
+    color: #493047;
+    line-height: 1.8;
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+}
+
+
+/* Restart button */
+
+.restart-garden {
+    margin-top: 20px;
+    padding: 13px 25px;
+    border: 1px solid #732871;
+    border-radius: 30px;
+    background-color: #732871;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.restart-garden:hover {
+    background-color: #493047;
+}
+
+
+/* =====================================
+   15. GARDEN MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 700px) {
+
+    .garden-section {
+        padding: 65px 6%;
+    }
+
+    .garden-section h2 {
+        font-size: 1.9rem;
+    }
+
+    .flower-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .flower-choice,
+    .flower-choice:nth-child(4),
+    .flower-choice:nth-child(5) {
+        grid-column: auto;
+        min-height: 285px;
+        padding: 23px 14px;
+    }
+
+    .flower-choice:last-child {
+        grid-column: 1 / -1;
+        width: 75%;
+        justify-self: center;
+    }
+
+    .flower-art {
+        height: 115px;
+    }
+
+    .flower-art svg {
+        width: 100px;
+        height: 115px;
+    }
+
+    .flower-choice strong {
+        font-size: 1.2rem;
+    }
+
+    .flower-choice small {
+        font-size: 0.87rem;
+    }
+
+    .garden-container {
+        padding: 25px 15px;
+    }
+
+    .garden-scene {
+        height: 350px;
+    }
+
+    .garden-plant {
+        width: 190px;
+        height: 220px;
+    }
+
+    .watering-tool {
+        width: 135px;
+        height: 98px;
+        bottom: 5px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .flower-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .flower-choice,
+    .flower-choice:nth-child(4),
+    .flower-choice:nth-child(5),
+    .flower-choice:last-child {
+        grid-column: auto;
+        width: 100%;
+        min-height: 245px;
+    }
+
+    .garden-scene {
+        height: 330px;
+    }
+
+    .garden-plant {
+        width: 165px;
+        height: 200px;
+    }
+
+    .watering-tool {
+        width: 115px;
+        height: 84px;
+        bottom: 5px;
+    }
+}
+
+
+/* =====================================
+   16. GENERAL MOBILE RESPONSIVENESS
+===================================== */
 
 @media (max-width: 650px) {
 
@@ -275,4 +946,660 @@ footer p:last-child {
     .feature-grid {
         grid-template-columns: 1fr;
     }
+
+}
+
+/* =====================================
+   17. KNOW YOUR BODY PAGE
+===================================== */
+
+/* Navigation for the Know Your Body page */
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #493047;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #732871;
+}
+
+.navbar nav a.active {
+    font-weight: bold;
+}
+
+
+/* Page introduction */
+
+.know-hero {
+    padding: 90px 12% 75px;
+    text-align: center;
+    background-color: #EDE1E9;
+}
+
+.know-hero .section-label {
+    color: #732871;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.know-hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 5vw, 62px);
+    color: #493047;
+    margin-bottom: 25px;
+}
+
+.know-intro {
+    max-width: 720px;
+    margin: 0 auto 20px;
+    color: #725F70;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.know-note {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #732871;
+    font-family: Georgia, serif;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+
+/* Cancer directory */
+
+.cancer-directory {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.directory-heading {
+    margin-bottom: 45px;
+}
+
+.directory-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    color: #493047;
+    margin-bottom: 15px;
+}
+
+.directory-heading p {
+    max-width: 650px;
+    margin: auto;
+    color: #725F70;
+    line-height: 1.8;
+}
+
+
+/* Cancer cards layout */
+
+.cancer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1050px;
+    margin: auto;
+    text-align: left;
+}
+
+.cancer-card {
+    display: block;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #E5D5E3;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #493047;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.cancer-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(73, 48, 71, 0.12);
+}
+
+.cancer-card:focus-visible {
+    outline: 3px solid #732871;
+    outline-offset: 5px;
+}
+
+
+/* Image placeholders */
+
+.cancer-card-image {
+    height: 230px;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+    overflow: hidden;
+}
+
+.breast-image {
+    background: linear-gradient(135deg, #D9B9CA, #A16B86);
+}
+
+.ovarian-image {
+    background: linear-gradient(135deg, #C8B8D8, #80658F);
+}
+
+.cancer-card-image span {
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    opacity: 0.9;
+}
+
+
+/* Card text */
+
+.cancer-card-content {
+    padding: 30px;
+}
+
+.cancer-category {
+    display: inline-block;
+    color: #732871;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.cancer-card-content h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+.cancer-card-content p {
+    color: #725F70;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.card-link {
+    color: #732871;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* More cancer guides coming soon */
+
+.upcoming-cancers {
+    padding: 75px 8%;
+    text-align: center;
+    background-color: #EDE1E9;
+}
+
+.upcoming-cancers h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #493047;
+    margin-bottom: 15px;
+}
+
+.upcoming-cancers > p {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    color: #725F70;
+    line-height: 1.8;
+}
+
+.upcoming-list {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.upcoming-list span {
+    padding: 14px 22px;
+    background-color: #F8F1EA;
+    border: 1px solid #E5D5E3;
+    border-radius: 30px;
+    color: #493047;
+    font-size: 14px;
+}
+
+
+/* Know Your Body footer */
+
+.footer {
+    text-align: center;
+}
+
+.footer a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   18. KNOW YOUR BODY RESPONSIVENESS
+===================================== */
+
+@media (max-width: 700px) {
+
+    .navbar nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar nav a {
+        font-size: 13px;
+    }
+
+    .know-hero {
+        padding: 65px 8%;
+    }
+
+    .know-hero h1 {
+        font-size: 40px;
+    }
+
+    .know-intro {
+        font-size: 14px;
+    }
+
+    .cancer-directory {
+        padding: 65px 7%;
+    }
+
+    .directory-heading h2 {
+        font-size: 30px;
+    }
+
+    .cancer-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .cancer-card-image {
+        height: 200px;
+    }
+
+    .upcoming-cancers {
+        padding: 60px 7%;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .know-hero h1 {
+        font-size: 34px;
+    }
+
+    .cancer-card-content {
+        padding: 23px;
+    }
+
+    .cancer-card-content h3 {
+        font-size: 22px;
+    }
+}
+
+/* =====================================
+   19. INDIVIDUAL CANCER GUIDE PAGES
+===================================== */
+
+/* Guide page introduction */
+
+.cancer-guide-hero {
+    padding: 85px 12%;
+    text-align: center;
+    background-color: #EDE1E9;
+}
+
+.cancer-guide-hero .section-label {
+    color: #732871;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.cancer-guide-hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 58px);
+    color: #493047;
+    margin-bottom: 20px;
+}
+
+.cancer-guide-hero > p:not(.section-label) {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    color: #725F70;
+    line-height: 1.9;
+}
+
+.cancer-guide-hero > a {
+    display: inline-block;
+    color: #732871;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cancer-guide-hero > a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main guide content */
+
+.cancer-guide-content {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 65px 35px 85px;
+}
+
+
+/* Individual information sections */
+
+.guide-section {
+    padding: 35px 0;
+    border-bottom: 1px solid #E5D5E3;
+    scroll-margin-top: 30px;
+}
+
+.guide-section .section-label {
+    color: #A16B86;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.guide-section h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #493047;
+    margin-bottom: 22px;
+    line-height: 1.3;
+}
+
+.guide-section h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: #732871;
+    margin: 28px 0 15px;
+}
+
+.guide-section p {
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 17px;
+}
+
+.guide-section ul {
+    padding-left: 25px;
+    margin: 15px 0 25px;
+}
+
+.guide-section li {
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.8;
+    padding-left: 6px;
+    margin-bottom: 13px;
+}
+
+.guide-section li strong {
+    color: #493047;
+}
+
+
+/* Important information note */
+
+.guide-note {
+    margin-top: 30px;
+    padding: 25px 28px;
+    background-color: #EDE1E9;
+    border-left: 4px solid #732871;
+    border-radius: 5px;
+}
+
+.guide-note strong {
+    display: block;
+    color: #493047;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.guide-note p {
+    margin-bottom: 10px;
+}
+
+.guide-note p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* References section */
+
+.guide-references {
+    padding: 45px 0 20px;
+}
+
+.guide-references h2 {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    color: #493047;
+    margin-bottom: 18px;
+}
+
+.guide-references p,
+.guide-references li {
+    color: #725F70;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.guide-references ul {
+    padding-left: 22px;
+    margin: 18px 0;
+}
+
+.guide-references li {
+    margin-bottom: 12px;
+}
+
+.guide-references a {
+    color: #732871;
+    text-decoration: underline;
+}
+
+.guide-references a:hover {
+    color: #493047;
+}
+
+.reference-date {
+    font-size: 12px !important;
+    color: #A16B86 !important;
+    margin-top: 22px;
+}
+
+
+/* Guide page mobile layout */
+
+@media (max-width: 650px) {
+
+    .cancer-guide-hero {
+        padding: 65px 8%;
+    }
+
+    .cancer-guide-hero h1 {
+        font-size: 36px;
+    }
+
+    .cancer-guide-content {
+        padding: 40px 7% 60px;
+    }
+
+    .guide-section {
+        padding: 28px 0;
+    }
+
+    .guide-section h2 {
+        font-size: 27px;
+    }
+
+    .guide-section h3 {
+        font-size: 20px;
+    }
+
+    .guide-section p,
+    .guide-section li {
+        font-size: 14px;
+    }
+
+    .guide-note {
+        padding: 20px;
+    }
+
+    .guide-references h2 {
+        font-size: 25px;
+    }
+}
+
+/* CANCER DIRECTORY RIBBON IMAGES */
+
+.cancer-card-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.cancer-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* KNOW YOUR BODY - BOTANICAL HERO */
+
+.know-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.know-hero-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.know-hero-image {
+    flex: 0 0 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.know-hero-image img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+    .know-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .know-hero-image {
+        flex: none;
+        width: 200px;
+    }
+}
+/* =====================================
+   20. NAVIGATION AND LINK UNDERLINE FIX
+===================================== */
+
+/* Remove underlines from all homepage navigation states */
+
+.nav-links a,
+.nav-links a:link,
+.nav-links a:visited,
+.nav-links a:hover,
+.nav-links a:active,
+.navbar nav a,
+.navbar nav a:link,
+.navbar nav a:visited,
+.navbar nav a:hover,
+.navbar nav a:active {
+    text-decoration: none !important;
+}
+
+/* Preserve the existing navigation colours */
+
+.nav-links a {
+    color: #493047;
+}
+
+.nav-links a:hover {
+    color: #732871;
+}
+
+/* Remove underlines from the Know Your Body feature card */
+
+a.feature-card,
+a.feature-card:link,
+a.feature-card:visited,
+a.feature-card:hover,
+a.feature-card:active {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* Keep the popup options free of underlines */
+
+.welcome-option,
+.welcome-option:link,
+.welcome-option:visited,
+.welcome-option:hover,
+.welcome-option:active {
+    text-decoration: none !important;
 }

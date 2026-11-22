@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Support | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Page-specific styling */
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none !important;
+        }
+
+        .patient-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            background: #faf5f2;
+        }
+
+        .patient-hero-content {
+            flex: 1;
+        }
+
+        .patient-hero-content h1 {
+            font-size: 42px;
+            color: #54284f;
+            margin-bottom: 20px;
+        }
+
+        .patient-hero-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #514650;
+            max-width: 600px;
+        }
+
+        .patient-hero-image {
+            flex: 1;
+        }
+
+        .patient-hero-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .patient-intro {
+            text-align: center;
+            padding: 55px 8% 25px;
+        }
+
+        .patient-intro h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .patient-intro p {
+            color: #625760;
+            line-height: 1.7;
+        }
+
+        .patient-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            padding: 30px 8% 70px;
+        }
+
+        .patient-card {
+            display: block;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(75, 43, 69, 0.09);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: inherit;
+        }
+
+        .patient-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(75, 43, 69, 0.15);
+        }
+
+        .patient-card:focus-visible {
+            outline: 2px solid #98536F;
+            outline-offset: 4px;
+        }
+
+        .patient-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .patient-card-content {
+            padding: 24px;
+        }
+
+        .patient-card-content h3 {
+            color: #54284f;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .patient-card-content p {
+            color: #625760;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .patient-card-link {
+            color: #8a496e;
+            font-weight: 600;
+        }
+
+        .patient-closing {
+            text-align: center;
+            padding: 65px 10%;
+            background: #faf5f2;
+        }
+
+        .patient-closing h2 {
+            color: #54284f;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .patient-closing p {
+            max-width: 750px;
+            margin: auto;
+            color: #625760;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .patient-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+            }
+
+            .patient-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .patient-hero-image img {
+                height: 260px;
+            }
+
+            .patient-grid {
+                grid-template-columns: 1fr;
+                padding: 25px 6% 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#know-your-body">Know Your Body</a>
+            <a href="index.html#support" class="active">Find Support</a>
+            <a href="index.html#voices">Her Voice</a>
+            <a href="index.html#research">Beyond the Common</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="patient-hero">
+
+        <div class="patient-hero-content">
+            <h1>Support for Every Step of Your Journey</h1>
+
+            <p>
+                Every cancer journey is different, and so are the needs
+                that come with it. Whether you're looking for emotional
+                support, practical guidance, financial assistance or
+                someone who understands, explore resources designed
+                to help you navigate each step.
+            </p>
+
+            <p>
+                You don't have to figure everything out alone.
+            </p>
+        </div>
+
+        <div class="patient-hero-image">
+            <img src="patient-support.jpg"
+                 alt="A welcoming and supportive space for patients">
+        </div>
+
+    </section>
+
+    <!-- Introduction -->
+    <section class="patient-intro">
+        <h2>How Can We Support You?</h2>
+
+        <p>
+            Explore the different kinds of support available
+            throughout your cancer journey.
+        </p>
+    </section>
+
+    <!-- Patient Support Cards -->
+    <section class="patient-grid">
+
+        <a href="emotional-wellbeing.html" class="patient-card">
+            <img src="emotional-wellbeing.jpg"
+                 alt="A peaceful moment representing emotional wellbeing">
+
+            <div class="patient-card-content">
+                <h3>Emotional Wellbeing</h3>
+
+                <p>
+                    Find guidance for coping with difficult emotions,
+                    anxiety, uncertainty and changes in self-image.
+                </p>
+
+                <span class="patient-card-link">Explore Support →</span>
+            </div>
+        </a>
+
+        <a href="treatment-support.html" class="patient-card">
+            <img src="treatment-support.jpg"
+                 alt="A healthcare professional supporting a patient">
+
+            <div class="patient-card-content">
+                <h3>Support During Treatment</h3>
+
+                <p>
+                    Explore practical guidance for appointments,
+                    side effects, everyday life and recovery.
+                </p>
+
+                <span class="patient-card-link">Explore Support →</span>
+            </div>
+        </a>
+
+        <a href="financial-assistance.html" class="patient-card">
+            <img src="financial-assistance.jpg"
+                 alt="Documents representing financial assistance">
+
+            <div class="patient-card-content">
+                <h3>Financial Assistance</h3>
+
+                <p>
+                    Discover government schemes, financial aid
+                    programmes and resources that may help with
+                    cancer-care expenses.
+                </p>
+
+                <span class="patient-card-link">Explore Support →</span>
+            </div>
+        </a>
+
+        <a href="connect-with-others.html" class="patient-card">
+            <img src="connect-with-others.jpg"
+                 alt="Women connecting and supporting one another">
+
+            <div class="patient-card-content">
+                <h3>Connect With Others</h3>
+
+                <p>
+                    Find cancer support groups, peer communities
+                    and spaces where you can connect with people
+                    who understand.
+                </p>
+
+                <span class="patient-card-link">Explore Support →</span>
+            </div>
+        </a>
+
+        <a href="trusted-organisations.html" class="patient-card">
+            <img src="trusted-organisations.jpg"
+                 alt="A person receiving guidance and support">
+
+            <div class="patient-card-content">
+                <h3>Trusted Organisations &amp; Helplines</h3>
+
+                <p>
+                    Explore verified organisations, support
+                    services and helplines for guidance
+                    and assistance.
+                </p>
+
+                <span class="patient-card-link">Explore Support →</span>
+            </div>
+        </a>
+
+    </section>
+
+    <!-- Closing Section -->
+    <section class="patient-closing">
+
+        <h2>You Deserve Care, Support and Understanding</h2>
+
+        <p>
+            Reaching out for support is not a sign of weakness.
+            Take your time, explore the resources available and
+            remember that you don't have to navigate this journey alone.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 UNMUTE. Every voice matters. Every journey deserves support.</p>
+    </footer>
+
+</body>
+</html>

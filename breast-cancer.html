@@ -1,0 +1,2522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Understanding Breast Cancer | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* NAVIGATION */
+
+        .cancer-guide-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 18px 7%;
+            background: #ffffff;
+            border-bottom: 1px solid #F0E2E8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .cancer-guide-nav .logo img {
+            width: 145px;
+            display: block;
+        }
+
+        .cancer-guide-nav nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .cancer-guide-nav nav a {
+            color: #593746;
+            font-size: 14px;
+            text-decoration: none !important;
+            transition: color 0.25s ease;
+        }
+
+        .cancer-guide-nav nav a:hover,
+        .cancer-guide-nav nav a.active {
+            color: #98536F;
+        }
+
+        /* BREAST CANCER HERO */
+
+        .cancer-guide-hero {
+            background: #FCF5F8;
+            padding: 75px 9%;
+        }
+
+        .cancer-hero-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cancer-hero-content {
+            flex: 1;
+            max-width: 750px;
+        }
+
+        .cancer-hero-content .section-label {
+            color: #98536F;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+
+        .cancer-hero-content h1 {
+            color: #593746;
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
+
+        .cancer-hero-content p {
+            color: #806875;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .cancer-hero-ribbon {
+            flex: 0 0 210px;
+            width: 210px;
+            max-height: 250px;
+            object-fit: contain;
+        }
+
+        .directory-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #98536F;
+            font-weight: 600;
+            text-decoration: none !important;
+            transition: color 0.25s ease;
+        }
+
+        .directory-link:hover {
+            color: #713B54;
+            text-decoration: none !important;
+        }
+
+        /* GUIDE CONTENTS */
+
+        .guide-contents {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 55px 7%;
+        }
+
+        .guide-contents-heading {
+            margin-bottom: 30px;
+        }
+
+        .guide-contents-heading .section-label {
+            color: #98536F;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .guide-contents-heading h2 {
+            color: #593746;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .guide-contents-heading > p:last-child {
+            color: #806875;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .guide-contents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .guide-content-card {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 19px;
+            border: 1px solid #D9A6B8;
+            border-radius: 13px;
+            background: #F2DCE4;
+            text-decoration: none !important;
+            color: #593746;
+            transition: transform 0.25s ease,
+                        box-shadow 0.25s ease,
+                        background 0.25s ease;
+        }
+
+        .guide-content-card:hover {
+            transform: translateY(-3px);
+            background: #EACBD7;
+            box-shadow: 0 8px 20px rgba(90, 48, 75, 0.10);
+        }
+
+        .guide-content-card > div {
+            flex: 1;
+        }
+
+        .guide-card-number {
+            display: block;
+            color: #98536F;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .guide-content-card h3 {
+            color: #593746;
+            font-size: 15px;
+            margin: 0 0 7px;
+        }
+
+        .guide-content-card p {
+            color: #806875;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .guide-card-arrow {
+            color: #98536F;
+            font-size: 20px;
+            align-self: center;
+        }
+
+        /* MAIN GUIDE CONTENT */
+
+        .cancer-guide-content {
+            width: 100%;
+        }
+
+        .guide-section {
+            padding: 55px 7%;
+            scroll-margin-top: 90px;
+        }
+
+        .guide-section:nth-child(even) {
+            background: #FCF5F8;
+        }
+
+        .guide-section > * {
+            max-width: 1050px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .guide-section .section-label {
+            color: #98536F;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .guide-section h2 {
+            color: #593746;
+            font-size: 29px;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .guide-section h3 {
+            color: #713B54;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        .guide-section h4 {
+            color: #593746;
+            font-size: 17px;
+        }
+
+        .guide-section p,
+        .guide-section li {
+            color: #806875;
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .guide-section p {
+            margin-top: 0;
+            margin-bottom: 17px;
+        }
+
+        .guide-section ul,
+        .guide-section ol {
+            padding-left: 25px;
+            margin-top: 12px;
+            margin-bottom: 22px;
+        }
+
+        .guide-section li {
+            margin-bottom: 9px;
+        }
+
+        .guide-section strong {
+            color: #593746;
+        }
+
+        .guide-section a:not(.back-to-contents) {
+            color: #98536F;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            overflow-wrap: anywhere;
+        }
+
+        /* IMPORTANT NOTES */
+
+        .guide-note,
+        .important-note {
+            background: #FFF1F6;
+            border-left: 4px solid #C58AAA;
+            padding: 20px 22px;
+            margin: 28px auto;
+            border-radius: 8px;
+        }
+
+        .guide-note strong,
+        .important-note strong {
+            color: #713B54;
+        }
+
+        .guide-note p,
+        .important-note p {
+            margin-bottom: 10px;
+        }
+
+        .guide-note p:last-child,
+        .important-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* INFORMATION GRID */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 25px auto;
+        }
+
+        .info-card {
+            padding: 22px;
+            background: #ffffff;
+            border: 1px solid #EAD6DF;
+            border-radius: 13px;
+        }
+
+        .info-card h4 {
+            color: #713B54;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .info-card p {
+            margin-bottom: 0;
+        }
+
+        /* RESOURCE CARDS */
+
+        .resource-card {
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #EAD6DF;
+            border-radius: 12px;
+            margin: 15px auto;
+        }
+
+        .resource-card h4 {
+            color: #593746;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            margin-bottom: 12px;
+        }
+
+        .resource-card a {
+            color: #98536F;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .guide-disclaimer {
+            font-size: 13px !important;
+            color: #8B7782 !important;
+            margin-top: 20px !important;
+        }
+
+        /* BACK TO CONTENTS */
+
+        .back-to-contents {
+            display: inline-block;
+            margin-top: 35px;
+            color: #98536F !important;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none !important;
+        }
+
+        .back-to-contents:hover {
+            color: #713B54 !important;
+            text-decoration: underline !important;
+        }
+
+        /* REFERENCES */
+
+        .guide-references {
+            background: #FCF5F8;
+            padding: 55px 7%;
+            scroll-margin-top: 90px;
+        }
+
+        .guide-references > * {
+            max-width: 1050px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .guide-references h2 {
+            color: #593746;
+            font-size: 29px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .guide-references p,
+        .guide-references li {
+            color: #806875;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .guide-references ul {
+            padding-left: 25px;
+        }
+
+        .guide-references li {
+            margin-bottom: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .guide-references a {
+            color: #98536F;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .reference-date {
+            font-size: 13px !important;
+            color: #8B7782 !important;
+            margin-top: 25px !important;
+        }
+
+        /* FLOATING BACK TO TOP */
+
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #98536F;
+            color: white !important;
+            border-radius: 50%;
+            text-decoration: none !important;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 4px 14px rgba(73, 48, 71, 0.2);
+            z-index: 999;
+            transition: background 0.25s ease,
+                        transform 0.25s ease;
+        }
+
+        .back-to-top:hover {
+            background: #713B54;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 768px) {
+
+            .cancer-guide-nav {
+                flex-direction: column;
+                justify-content: center;
+                padding: 15px 5%;
+                gap: 13px;
+            }
+
+            .cancer-guide-nav nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .cancer-guide-nav nav a {
+                font-size: 12px;
+            }
+
+            .cancer-guide-hero {
+                padding: 45px 7%;
+            }
+
+            .cancer-hero-layout {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .cancer-hero-ribbon {
+                flex: none;
+                width: 145px;
+                max-height: 170px;
+            }
+
+            .guide-contents {
+                padding: 40px 6%;
+            }
+
+            .guide-contents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-section {
+                padding: 40px 6%;
+            }
+
+            .guide-section h2,
+            .guide-references h2 {
+                font-size: 25px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card,
+            .resource-card {
+                padding: 18px;
+            }
+
+            .guide-content-card {
+                padding: 16px;
+            }
+
+            .guide-references {
+                padding: 40px 6%;
+            }
+
+            .back-to-top {
+                width: 43px;
+                height: 43px;
+                bottom: 18px;
+                right: 18px;
+            }
+        }
+    </style>
+
+</head>
+
+<body id="top">
+
+    <!-- NAVIGATION -->
+
+    <header class="cancer-guide-nav">
+
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html" class="active">Know Your Body</a>
+            <a href="index.html#support">Find Support</a>
+            <a href="index.html#voices">Her Voice</a>
+            <a href="index.html#research">Beyond the Common</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE INTRODUCTION -->
+
+    <section class="cancer-guide-hero">
+
+        <div class="cancer-hero-layout">
+
+            <div class="cancer-hero-content">
+
+                <p class="section-label">KNOW YOUR BODY</p>
+
+                <h1>Understanding Breast Cancer.</h1>
+
+                <p>
+                    Reliable information can help you understand your health,
+                    recognise changes, and have more informed conversations
+                    with your healthcare team.
+                </p>
+
+                <a href="know-your-body.html" class="directory-link">
+                    ← Back to Know Your Body
+                </a>
+
+            </div>
+
+            <img
+                src="breast-cancer-ribbon.svg"
+                alt="Pink breast cancer awareness ribbon"
+                class="cancer-hero-ribbon"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- GUIDE CONTENTS -->
+
+    <section class="guide-contents" id="guide-contents">
+
+        <div class="guide-contents-heading">
+
+            <p class="section-label">EXPLORE THE GUIDE</p>
+
+            <h2>Where would you like to begin?</h2>
+
+            <p>
+                Explore the topics below to understand different
+                aspects of breast cancer. Choose any section
+                that interests you.
+            </p>
+
+        </div>
+
+        <div class="guide-contents-grid">
+
+            <a href="#overview" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">01 — THE BASICS</span>
+                    <h3>Overview</h3>
+                    <p>What breast cancer is and how it develops.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#types" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">02 — UNDERSTANDING TYPES</span>
+                    <h3>Types & Subtypes</h3>
+                    <p>Different forms and biological characteristics.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#symptoms" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">03 — RECOGNISING CHANGES</span>
+                    <h3>Signs & Symptoms</h3>
+                    <p>Possible changes and warning signs.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#risk-factors" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">04 — UNDERSTANDING RISK</span>
+                    <h3>Risk Factors</h3>
+                    <p>Factors that may influence breast cancer risk.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#screening" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">05 — EARLY DETECTION</span>
+                    <h3>Screening</h3>
+                    <p>Screening methods and who may need them.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#diagnosis" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">06 — MEDICAL EVALUATION</span>
+                    <h3>Diagnosis</h3>
+                    <p>Imaging, biopsies and medical investigations.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#stages" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">07 — UNDERSTANDING PROGRESSION</span>
+                    <h3>Stages</h3>
+                    <p>How breast cancer is classified into stages.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#treatment" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">08 — TREATMENT OPTIONS</span>
+                    <h3>Treatment</h3>
+                    <p>Different approaches to breast cancer treatment.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#research" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">09 — LOOKING AHEAD</span>
+                    <h3>Research & Clinical Trials</h3>
+                    <p>New developments and ongoing research.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+            <a href="#support" class="guide-content-card">
+                <div>
+                    <span class="guide-card-number">10 — YOU ARE NOT ALONE</span>
+                    <h3>Support & Resources</h3>
+                    <p>Support services and useful resources.</p>
+                </div>
+                <span class="guide-card-arrow">↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- BREAST CANCER GUIDE -->
+
+    <main class="cancer-guide-content">
+
+
+        <!-- 01 OVERVIEW -->
+
+        <section class="guide-section" id="overview">
+
+            <p class="section-label">01 — THE BASICS</p>
+
+            <h2>What is Breast Cancer?</h2>
+
+            <p>
+                Breast cancer is a disease in which abnormal cells
+                in the breast grow uncontrollably and form a tumour.
+                It most commonly begins in the milk ducts or
+                milk-producing lobules.
+            </p>
+
+            <p>
+                Some breast cancers remain within their original
+                location, while others invade surrounding breast
+                tissue and may spread to nearby lymph nodes or
+                distant parts of the body.
+            </p>
+
+            <p>
+                Breast cancer is not one single disease. Different
+                types behave differently, and understanding the
+                specific type helps doctors plan treatment.
+            </p>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 02 TYPES AND SUBTYPES -->
+
+        <section class="guide-section" id="types">
+
+            <p class="section-label">02 — TYPES AND SUBTYPES</p>
+
+            <h2>Understanding the Different Types</h2>
+
+            <p>
+                Breast cancers are classified in several ways,
+                including where they begin, whether they have
+                invaded surrounding tissue, and their biological
+                characteristics.
+            </p>
+
+            <h3>Based on where they begin</h3>
+
+            <ul>
+                <li>
+                    <strong>Ductal carcinoma in situ (DCIS):</strong>
+                    Abnormal cells are found inside the milk ducts
+                    but have not invaded nearby breast tissue.
+                    It is also called stage 0 breast cancer.
+                </li>
+
+                <li>
+                    <strong>Invasive ductal carcinoma (IDC):</strong>
+                    Cancer begins in a milk duct and spreads into
+                    the surrounding breast tissue. It is the most
+                    common type of invasive breast cancer.
+                </li>
+
+                <li>
+                    <strong>Invasive lobular carcinoma (ILC):</strong>
+                    Cancer begins in the milk-producing lobules
+                    and spreads into surrounding breast tissue.
+                </li>
+            </ul>
+
+            <h3>Based on biological characteristics</h3>
+
+            <p>
+                Doctors also examine certain proteins and hormone
+                receptors in cancer cells. These results help
+                identify the cancer subtype.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Hormone receptor-positive (HR+):</strong>
+                    Cancer cells have estrogen receptors (ER),
+                    progesterone receptors (PR), or both.
+                    Hormone or endocrine therapy may be useful.
+                </li>
+
+                <li>
+                    <strong>HER2-positive:</strong>
+                    Cancer cells have higher-than-normal levels
+                    of the HER2 protein. HER2-targeted treatments
+                    may be an option.
+                </li>
+
+                <li>
+                    <strong>Triple-negative breast cancer (TNBC):</strong>
+                    Cancer cells do not have estrogen receptors,
+                    progesterone receptors, or high levels of
+                    HER2. Treatment approaches differ from
+                    hormone receptor-positive and HER2-positive
+                    cancers.
+                </li>
+            </ul>
+
+            <p>
+                These categories can overlap. For example, a
+                breast cancer can be both hormone receptor-positive
+                and HER2-positive.
+            </p>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 03 SYMPTOMS -->
+
+        <section class="guide-section" id="symptoms">
+
+            <p class="section-label">03 — RECOGNISING CHANGES</p>
+
+            <h2>Signs and Symptoms</h2>
+
+            <p>
+                Breast cancer can cause changes in the breast or
+                surrounding areas. Some people experience no
+                noticeable symptoms, particularly in the early
+                stages.
+            </p>
+
+            <p>Possible signs and symptoms include:</p>
+
+            <ul>
+                <li>A new lump or thickening in the breast or underarm.</li>
+                <li>A change in the size, shape or appearance of a breast.</li>
+                <li>Dimpling, puckering or changes in the breast skin.</li>
+                <li>Redness, swelling or unusual changes in the skin.</li>
+                <li>A newly inverted nipple or other changes in nipple appearance.</li>
+                <li>Unusual nipple discharge, particularly bloody discharge.</li>
+                <li>Persistent changes around the nipple or areola.</li>
+            </ul>
+
+            <div class="guide-note">
+
+                <strong>Important to remember</strong>
+
+                <p>
+                    Most breast lumps are not cancer. However,
+                    a new or unusual breast change should be
+                    assessed by a qualified healthcare professional,
+                    even if it is painless.
+                </p>
+
+                <p>
+                    Do not wait for a lump to become painful before
+                    seeking medical advice.
+                </p>
+
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 04 RISK FACTORS -->
+
+        <section class="guide-section" id="risk-factors">
+
+            <p class="section-label">04 — UNDERSTANDING RISK</p>
+
+            <h2>Risk Factors</h2>
+
+            <p>
+                A risk factor is something that may increase a
+                person's likelihood of developing a disease.
+                Having one or more risk factors does not mean
+                someone will definitely develop breast cancer.
+            </p>
+
+            <h3>Factors associated with increased risk</h3>
+
+            <ul>
+                <li>
+                    <strong>Age:</strong>
+                    The risk generally increases as a person gets older.
+                </li>
+
+                <li>
+                    <strong>Family history:</strong>
+                    Having close relatives with breast or certain
+                    other cancers may increase risk.
+                </li>
+
+                <li>
+                    <strong>Inherited gene changes:</strong>
+                    Changes in genes such as BRCA1, BRCA2 and PALB2
+                    can significantly increase risk.
+                </li>
+
+                <li>
+                    <strong>Personal medical history:</strong>
+                    Certain previous breast conditions or a history
+                    of breast cancer may increase risk.
+                </li>
+
+                <li>
+                    <strong>Radiation exposure:</strong>
+                    Previous radiation treatment involving the
+                    chest, particularly at a young age, may increase risk.
+                </li>
+
+                <li>
+                    <strong>Hormonal and reproductive factors:</strong>
+                    Certain reproductive patterns and use of
+                    menopausal hormone therapy may influence risk.
+                </li>
+
+                <li>
+                    <strong>Lifestyle and other factors:</strong>
+                    Alcohol consumption, tobacco use and obesity
+                    are among the factors associated with increased risk.
+                </li>
+            </ul>
+
+            <div class="guide-note">
+
+                <strong>Having no family history does not mean having no risk.</strong>
+
+                <p>
+                    Many people diagnosed with breast cancer have
+                    no known family history of the disease. Breast
+                    cancer can also occur in younger people.
+                </p>
+
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 05 SCREENING -->
+
+        <section class="guide-section" id="screening">
+
+            <p class="section-label">05 — EARLY DETECTION</p>
+
+            <h2>Breast Cancer Screening</h2>
+
+            <p>
+                Breast cancer screening involves checking for signs of
+                breast cancer in people who do not have noticeable
+                symptoms. Its purpose is to identify possible cancers
+                before they cause symptoms, when earlier treatment
+                may be possible.
+            </p>
+
+            <p>
+                Screening recommendations depend on factors such as
+                age, personal and family medical history, individual
+                risk, and the healthcare guidelines followed in a
+                particular country.
+            </p>
+
+            <h3>Common screening methods</h3>
+
+            <ul>
+                <li>
+                    <strong>Mammography:</strong>
+                    A mammogram is an X-ray image of the breast.
+                    It can identify certain abnormalities, including
+                    small masses and calcium deposits, sometimes
+                    before they can be felt.
+                </li>
+
+                <li>
+                    <strong>Clinical Breast Examination (CBE):</strong>
+                    A trained healthcare professional examines the
+                    breasts and nearby areas for unusual lumps,
+                    thickening or other changes.
+                </li>
+
+                <li>
+                    <strong>Additional imaging for selected individuals:</strong>
+                    Ultrasound or breast MRI may be recommended in
+                    particular situations, such as when further
+                    assessment is needed or when someone has a
+                    significantly increased risk.
+                </li>
+            </ul>
+
+            <h3>Who should consider screening?</h3>
+
+            <p>
+                There is no single screening schedule that applies
+                to everyone. Recommendations differ across countries
+                and healthcare organisations.
+            </p>
+
+            <p>
+                For example, the United States Preventive Services
+                Task Force recommends a mammogram every two years
+                for women aged 40 to 74 who fall within the population
+                covered by its guidance.
+            </p>
+
+            <p>
+                In India, government population-based screening
+                materials have included Clinical Breast Examination
+                as a method for women aged 30 to 65. Local availability
+                and implementation should be confirmed with a
+                healthcare provider or public health facility.
+            </p>
+
+            <p>
+                People with a strong family history, inherited
+                genetic changes such as BRCA1 or BRCA2, previous
+                high-dose radiation exposure to the chest, or
+                certain previous breast conditions may need an
+                individualised screening plan.
+            </p>
+
+            <h3>Screening vs. diagnostic testing</h3>
+
+            <p>
+                These terms are related, but they do not mean
+                the same thing.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Screening:</strong>
+                    Testing someone who does not have noticeable
+                    breast symptoms to look for possible signs
+                    of cancer.
+                </li>
+
+                <li>
+                    <strong>Diagnostic testing:</strong>
+                    Investigations performed when someone has a
+                    breast change, an abnormal screening result,
+                    or another finding that needs further evaluation.
+                </li>
+            </ul>
+
+            <div class="guide-note">
+
+                <strong>Important: Do not wait for a screening appointment.</strong>
+
+                <p>
+                    If you notice a new breast lump, unusual nipple
+                    discharge, skin changes, swelling or another
+                    persistent breast change, seek medical evaluation.
+                    You may need diagnostic tests even if you are
+                    younger than the usual screening age.
+                </p>
+
+            </div>
+
+            <h3>What are the limitations of screening?</h3>
+
+            <p>
+                Screening can help detect breast cancer, but no
+                screening test is perfect. It is important to
+                understand its possible limitations.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>False-positive results:</strong>
+                    A screening test may show an abnormality that
+                    turns out not to be cancer. Further imaging
+                    or a biopsy may be needed.
+                </li>
+
+                <li>
+                    <strong>False-negative results:</strong>
+                    A screening test may not detect a cancer
+                    that is actually present.
+                </li>
+
+                <li>
+                    <strong>Overdiagnosis:</strong>
+                    Screening may identify some cancers that
+                    would not have caused symptoms or affected
+                    a person's health during their lifetime.
+                </li>
+            </ul>
+
+            <div class="guide-note">
+
+                <strong>Breast awareness matters too.</strong>
+
+                <p>
+                    Becoming familiar with what is normal for your
+                    breasts can help you notice unusual changes.
+                    Breast awareness is useful, but it does not
+                    replace recommended screening or medical
+                    evaluation.
+                </p>
+
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 06 DIAGNOSIS -->
+
+        <section class="guide-section" id="diagnosis">
+
+            <p class="section-label">06 — MEDICAL EVALUATION</p>
+
+            <h2>How Is Breast Cancer Diagnosed?</h2>
+
+            <p>
+                Diagnosing breast cancer involves several steps.
+                Doctors combine medical history, physical examination,
+                imaging tests and, when necessary, a biopsy to
+                understand an abnormality and determine whether
+                it is cancer.
+            </p>
+
+            <p>
+                Not everyone needs every test. The investigations
+                recommended depend on the person's symptoms,
+                examination findings and previous test results.
+            </p>
+
+            <h3>1. Clinical Breast Examination</h3>
+
+            <p>
+                A healthcare professional examines the breasts,
+                chest and underarm areas for lumps, thickening,
+                skin changes, nipple changes or enlarged lymph nodes.
+                They may also ask about symptoms, personal medical
+                history and family history.
+            </p>
+
+            <h3>2. Breast Imaging</h3>
+
+            <p>
+                Imaging tests help doctors examine breast tissue
+                and identify areas that may need further investigation.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Diagnostic mammography:</strong>
+                    Uses X-ray images to investigate a breast
+                    abnormality or an unusual screening result.
+                    Additional views may be taken to examine
+                    a particular area more closely.
+                </li>
+
+                <li>
+                    <strong>Breast ultrasound:</strong>
+                    Uses sound waves to produce images of breast
+                    tissue. It can help distinguish fluid-filled
+                    cysts from solid masses and guide certain
+                    biopsy procedures.
+                </li>
+
+                <li>
+                    <strong>Breast MRI:</strong>
+                    Uses magnetic fields and radio waves to create
+                    detailed breast images. It may be recommended
+                    in selected situations, including certain
+                    high-risk assessments or further evaluation
+                    of known breast cancer.
+                </li>
+            </ul>
+
+            <h3>3. Breast Biopsy</h3>
+
+            <p>
+                Imaging can identify suspicious areas, but it
+                cannot always determine whether an abnormality
+                is cancer. A biopsy involves collecting a small
+                sample of tissue so that it can be examined
+                under a microscope.
+            </p>
+
+            <p>Common biopsy methods include:</p>
+
+            <ul>
+                <li>
+                    <strong>Core needle biopsy:</strong>
+                    A hollow needle is used to collect small
+                    samples of breast tissue. It is commonly
+                    performed with imaging guidance.
+                </li>
+
+                <li>
+                    <strong>Fine needle aspiration (FNA):</strong>
+                    A thin needle removes cells or fluid from
+                    an area of concern. It may help investigate
+                    certain lumps or lymph nodes, but it does
+                    not provide the same tissue architecture
+                    as a core biopsy.
+                </li>
+
+                <li>
+                    <strong>Surgical biopsy:</strong>
+                    A procedure in which part or all of an
+                    abnormal area is removed for examination.
+                    It may be considered when other tests do
+                    not provide enough information.
+                </li>
+            </ul>
+
+            <div class="guide-note">
+
+                <strong>Why is a biopsy important?</strong>
+
+                <p>
+                    A biopsy allows a pathologist to examine
+                    cells and tissue directly. It is usually
+                    needed to confirm whether a suspicious
+                    breast abnormality is cancer and to identify
+                    important features of the disease.
+                </p>
+
+            </div>
+
+            <h3>4. Pathology and Histopathology</h3>
+
+            <p>
+                After a biopsy, the tissue sample is examined
+                by a pathologist. The resulting pathology report
+                provides information about the cells and tissue.
+            </p>
+
+            <p>A report may describe:</p>
+
+            <ul>
+                <li>
+                    <strong>Whether cancer is present:</strong>
+                    The examination helps determine whether the
+                    sampled tissue contains cancer cells.
+                </li>
+
+                <li>
+                    <strong>Cancer type:</strong>
+                    It may identify the type of breast cancer,
+                    such as invasive ductal carcinoma or
+                    invasive lobular carcinoma.
+                </li>
+
+                <li>
+                    <strong>Tumour grade:</strong>
+                    Describes how abnormal the cancer cells
+                    look under a microscope and gives an
+                    indication of how they may behave.
+                </li>
+
+                <li>
+                    <strong>Invasion:</strong>
+                    Helps establish whether cancer cells have
+                    invaded surrounding breast tissue.
+                </li>
+            </ul>
+
+            <h3>5. Understanding ER, PR and HER2 Testing</h3>
+
+            <p>
+                If breast cancer is confirmed, additional tests
+                are often performed to identify biological
+                characteristics that can influence treatment.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>ER (Estrogen Receptor):</strong>
+                    Determines whether cancer cells have
+                    receptors for the hormone estrogen.
+                </li>
+
+                <li>
+                    <strong>PR (Progesterone Receptor):</strong>
+                    Determines whether cancer cells have
+                    receptors for the hormone progesterone.
+                </li>
+
+                <li>
+                    <strong>HER2 (Human Epidermal Growth Factor
+                    Receptor 2):</strong>
+                    Evaluates whether cancer cells have
+                    increased levels of the HER2 protein
+                    or gene amplification.
+                </li>
+            </ul>
+
+            <p>
+                These results help classify breast cancer into
+                biologically meaningful groups and can help
+                doctors determine whether hormone therapy or
+                HER2-targeted treatment may be appropriate.
+            </p>
+
+            <h3>6. Further Tests When Needed</h3>
+
+            <p>
+                If breast cancer is confirmed, additional
+                investigations may be recommended to assess
+                the extent of disease or plan treatment.
+            </p>
+
+            <p>
+                Depending on the situation, these may include
+                blood tests, lymph node evaluation or imaging
+                studies such as CT, PET-CT or bone scans.
+                Not everyone needs all of these investigations.
+            </p>
+
+            <div class="guide-note">
+
+                <strong>A diagnosis is based on the complete picture.</strong>
+
+                <p>
+                    No single imaging result or symptom should
+                    be interpreted in isolation. Doctors consider
+                    clinical findings, imaging and pathology
+                    together when making a diagnosis and planning
+                    further care.
+                </p>
+
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 07 STAGES -->
+
+        <section class="guide-section" id="stages">
+
+            <p class="section-label">07 — UNDERSTANDING PROGRESSION</p>
+
+            <h2>Stages of Breast Cancer</h2>
+
+            <p>
+                Breast cancer staging describes how extensive
+                the cancer is in the body. It helps doctors
+                understand the extent of the disease, discuss
+                treatment options and estimate prognosis.
+            </p>
+
+            <p>
+                Breast cancer is commonly classified into
+                stages 0 to IV. The stage is determined using
+                information about the primary tumour, nearby
+                lymph nodes and whether the cancer has spread
+                to distant parts of the body.
+            </p>
+
+            <h3>Understanding the TNM system</h3>
+
+            <p>
+                Doctors use a classification system called
+                TNM to describe the extent of breast cancer.
+                Each letter represents a different feature:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>T — Tumour:</strong>
+                    Describes the size of the primary tumour
+                    and whether it has grown into nearby
+                    structures.
+                </li>
+
+                <li>
+                    <strong>N — Nodes:</strong>
+                    Describes whether cancer has spread to
+                    nearby lymph nodes and, if so, how much
+                    involvement is present.
+                </li>
+
+                <li>
+                    <strong>M — Metastasis:</strong>
+                    Indicates whether cancer has spread to
+                    distant parts of the body, such as the
+                    bones, lungs, liver or brain.
+                </li>
+            </ul>
+
+            <h3>The stages of breast cancer</h3>
+
+            <p>
+                The following descriptions provide a general
+                introduction. The exact stage depends on
+                detailed clinical findings and staging criteria.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Stage 0 — Non-invasive disease:</strong>
+                    Abnormal cells are present but have not
+                    invaded surrounding breast tissue. Ductal
+                    carcinoma in situ (DCIS) is an example.
+                </li>
+
+                <li>
+                    <strong>Stage I — Early invasive cancer:</strong>
+                    Cancer is relatively small and may have
+                    spread to a limited number of nearby
+                    lymph nodes, depending on the specific
+                    stage classification.
+                </li>
+
+                <li>
+                    <strong>Stage II — Larger or more locally
+                    involved cancer:</strong>
+                    The tumour may be larger, or cancer may
+                    have spread to nearby lymph nodes.
+                </li>
+
+                <li>
+                    <strong>Stage III — Locally advanced cancer:</strong>
+                    Cancer may involve more nearby lymph nodes
+                    or extend into surrounding skin or the
+                    chest wall. Some forms, including
+                    inflammatory breast cancer, are generally
+                    classified as stage III when there is
+                    no distant spread.
+                </li>
+
+                <li>
+                    <strong>Stage IV — Metastatic breast cancer:</strong>
+                    Cancer has spread beyond the breast and
+                    nearby lymph nodes to distant parts of
+                    the body, such as the bones, lungs, liver
+                    or brain.
+                </li>
+            </ul>
+
+            <div class="guide-note">
+
+                <strong>What does metastatic mean?</strong>
+
+                <p>
+                    Metastatic breast cancer means that cancer
+                    cells have spread from the original breast
+                    tumour to another part of the body. It is
+                    also called stage IV breast cancer.
+                </p>
+
+                <p>
+                    Even when breast cancer spreads to another
+                    organ, it is still considered breast cancer
+                    because of where it originally began.
+                </p>
+
+            </div>
+
+            <h3>Clinical staging and pathological staging</h3>
+
+            <p>
+                Staging can be assessed at different points
+                during diagnosis and treatment.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Clinical stage:</strong>
+                    Determined using information from physical
+                    examinations, imaging and biopsies before
+                    treatment begins.
+                </li>
+
+                <li>
+                    <strong>Pathological stage:</strong>
+                    Determined using findings from tissue
+                    examined after surgery. It can provide
+                    additional information about the tumour
+                    and lymph nodes.
+                </li>
+            </ul>
+
+            <p>
+                When treatment such as chemotherapy is given
+                before surgery, doctors may also assess how
+                much cancer remains after treatment. This
+                information can help guide further care.
+            </p>
+
+            <h3>Stage and grade are not the same</h3>
+
+            <p>
+                These terms are sometimes confused, but they
+                describe different characteristics of cancer.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Stage</strong> describes how far
+                    the cancer has spread in the body.
+                </li>
+
+                <li>
+                    <strong>Grade</strong> describes how
+                    abnormal the cancer cells look under
+                    a microscope and can provide information
+                    about how they may grow.
+                </li>
+            </ul>
+
+            <p>
+                Doctors may also consider hormone receptor
+                status, HER2 status and other tumour features
+                when determining the overall stage group and
+                planning treatment.
+            </p>
+
+            <div class="guide-note">
+
+                <strong>A stage does not tell the whole story.</strong>
+
+                <p>
+                    A higher stage does not mean that treatment
+                    is pointless, and a lower stage does not
+                    guarantee that cancer will never return.
+                    Treatment decisions depend on several
+                    factors, including cancer subtype, tumour
+                    characteristics, overall health and
+                    individual circumstances.
+                </p>
+
+                <p>
+                    Every person's diagnosis and treatment
+                    plan is different. A healthcare team can
+                    explain what a particular stage means
+                    in an individual situation.
+                </p>
+
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 08 TREATMENT -->
+
+        <section class="guide-section" id="treatment">
+
+            <p class="section-label">08 — TREATMENT OPTIONS</p>
+
+            <h2>Understanding Breast Cancer Treatment</h2>
+
+            <p>
+                Breast cancer treatment aims to remove or destroy cancer
+                cells, control the disease, reduce the risk of recurrence
+                or manage symptoms. The approach depends on the individual
+                person's diagnosis and circumstances.
+            </p>
+
+            <p>
+                There is no single treatment plan for everyone.
+                Doctors consider several factors before recommending
+                treatment, including:
+            </p>
+
+            <ul>
+                <li>The stage and extent of the cancer.</li>
+                <li>The type and grade of the tumour.</li>
+                <li>Hormone receptor (ER and PR) status.</li>
+                <li>HER2 status and other relevant tumour markers.</li>
+                <li>The person's age, general health and menopausal status.</li>
+                <li>Individual preferences and treatment goals.</li>
+            </ul>
+
+            <h3>1. Surgery</h3>
+
+            <p>
+                Surgery is an important treatment for many people
+                with breast cancer. It involves removing the cancer
+                from the breast and, when necessary, evaluating
+                nearby lymph nodes.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Breast-conserving surgery (Lumpectomy):</strong>
+                    The surgeon removes the cancer along with a
+                    surrounding margin of healthy tissue while
+                    preserving most of the breast.
+                </li>
+
+                <li>
+                    <strong>Mastectomy:</strong>
+                    The surgeon removes the entire breast.
+                    Different types of mastectomy are available,
+                    and breast reconstruction may be an option
+                    for some people.
+                </li>
+
+                <li>
+                    <strong>Sentinel lymph node biopsy:</strong>
+                    A procedure used to examine the first lymph
+                    node or nodes to which cancer is most likely
+                    to spread from the breast.
+                </li>
+
+                <li>
+                    <strong>Axillary lymph node surgery:</strong>
+                    In selected situations, additional lymph nodes
+                    in the underarm area may need to be removed
+                    and examined.
+                </li>
+            </ul>
+
+            <p>
+                The choice between breast-conserving surgery and
+                mastectomy depends on factors such as tumour size,
+                location, disease extent, previous treatment and
+                individual circumstances. Neither option is
+                automatically appropriate for everyone.
+            </p>
+
+            <h3>2. Radiation Therapy</h3>
+
+            <p>
+                Radiation therapy uses high-energy radiation to
+                destroy cancer cells or damage their ability to grow.
+                It is directed at a particular area of the body.
+            </p>
+
+            <p>
+                It is commonly recommended after breast-conserving
+                surgery to reduce the risk of cancer returning in
+                the breast. It may also be recommended after
+                mastectomy in certain situations, depending on
+                tumour and lymph node findings.
+            </p>
+
+            <p>
+                Radiation therapy may cause side effects such as
+                skin irritation, redness, tiredness and changes
+                in the treated area. The effects vary between
+                individuals and depend on the treatment plan.
+            </p>
+
+            <h3>3. Chemotherapy</h3>
+
+            <p>
+                Chemotherapy uses medicines to destroy cancer
+                cells or stop them from growing and dividing.
+                These medicines can travel through the bloodstream
+                and reach different parts of the body.
+            </p>
+
+            <p>Chemotherapy may be given at different points:</p>
+
+            <ul>
+                <li>
+                    <strong>Neoadjuvant chemotherapy:</strong>
+                    Given before surgery to shrink a tumour,
+                    make surgery easier in some situations,
+                    or assess how the cancer responds to treatment.
+                </li>
+
+                <li>
+                    <strong>Adjuvant chemotherapy:</strong>
+                    Given after surgery to destroy any remaining
+                    cancer cells that may not be visible and
+                    reduce the risk of recurrence.
+                </li>
+
+                <li>
+                    <strong>Chemotherapy for advanced disease:</strong>
+                    May be used to control cancer that has spread
+                    to other parts of the body, depending on the
+                    cancer subtype and previous treatments.
+                </li>
+            </ul>
+
+            <p>
+                Not everyone with breast cancer needs chemotherapy.
+                Its potential benefits and risks are assessed
+                according to the characteristics of the cancer
+                and the person's overall situation.
+            </p>
+
+            <div class="guide-note">
+
+                <strong>What about chemotherapy side effects?</strong>
+
+                <p>
+                    Possible side effects include tiredness,
+                    nausea, hair loss, changes in blood cell counts
+                    and an increased risk of infections. The effects
+                    depend on the medicines used and vary from
+                    person to person. Supportive medicines and
+                    other measures can help manage many side effects.
+                </p>
+
+            </div>
+
+            <h3>4. Hormone or Endocrine Therapy</h3>
+
+            <p>
+                Some breast cancers use hormones such as estrogen
+                or progesterone to support their growth. These
+                are called hormone receptor-positive cancers.
+            </p>
+
+            <p>
+                Endocrine therapy works by blocking the effects
+                of these hormones or reducing the amount of
+                hormone available to cancer cells.
+            </p>
+
+            <p>Examples include:</p>
+
+            <ul>
+                <li>
+                    <strong>Tamoxifen:</strong>
+                    Blocks estrogen receptors in breast tissue
+                    and may be used in certain hormone
+                    receptor-positive breast cancers.
+                </li>
+
+                <li>
+                    <strong>Aromatase inhibitors:</strong>
+                    Medicines such as anastrozole, letrozole
+                    and exemestane reduce estrogen production
+                    in the body. They are commonly used in
+                    postmenopausal patients.
+                </li>
+
+                <li>
+                    <strong>Ovarian suppression:</strong>
+                    In some premenopausal patients, treatment
+                    may be used to reduce ovarian hormone
+                    production, sometimes alongside other
+                    endocrine medicines.
+                </li>
+            </ul>
+
+            <p>
+                Endocrine therapy is generally considered for
+                hormone receptor-positive breast cancer.
+                It is not a treatment for every breast cancer
+                subtype.
+            </p>
+
+            <h3>5. Targeted Therapy</h3>
+
+            <p>
+                Targeted therapies are medicines designed to
+                act on particular proteins, genes or other
+                features that help cancer cells grow and survive.
+                They are used when the relevant target is present
+                and the treatment is appropriate.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>HER2-targeted therapy:</strong>
+                    Medicines such as trastuzumab target the
+                    HER2 protein. They are used in certain
+                    HER2-positive breast cancers, often as
+                    part of a combination treatment plan.
+                </li>
+
+                <li>
+                    <strong>CDK4/6 inhibitors:</strong>
+                    Medicines such as palbociclib, ribociclib
+                    and abemaciclib may be used with endocrine
+                    therapy in certain hormone receptor-positive,
+                    HER2-negative breast cancers.
+                </li>
+
+                <li>
+                    <strong>PARP inhibitors:</strong>
+                    Medicines such as olaparib may be considered
+                    for selected patients with particular
+                    inherited BRCA1 or BRCA2 gene changes.
+                </li>
+            </ul>
+
+            <p>
+                The availability and suitability of targeted
+                treatments depend on the cancer's biological
+                characteristics, disease setting and previous
+                treatments.
+            </p>
+
+            <h3>6. Immunotherapy</h3>
+
+            <p>
+                Immunotherapy helps the body's immune system
+                recognise and fight cancer cells. It works
+                differently from chemotherapy and other
+                medicines that directly target cancer cells.
+            </p>
+
+            <p>
+                Certain immunotherapy medicines may be used
+                in selected cases of triple-negative breast
+                cancer. Eligibility depends on factors such
+                as the disease setting, tumour characteristics
+                and the specific treatment protocol.
+            </p>
+
+            <p>
+                Immunotherapy is not suitable for every
+                person with breast cancer. It can also cause
+                immune-related side effects, which need
+                medical monitoring.
+            </p>
+
+            <h3>7. How Are Different Treatments Combined?</h3>
+
+            <p>
+                Breast cancer treatment often involves more
+                than one approach. The order and combination
+                of treatments depend on the cancer's stage,
+                subtype and response to earlier treatment.
+            </p>
+
+            <p>For example, a treatment plan may involve:</p>
+
+            <ul>
+                <li>
+                    Surgery followed by radiation therapy
+                    and/or medicines, when appropriate.
+                </li>
+
+                <li>
+                    Chemotherapy or targeted treatment before
+                    surgery, followed by surgery and additional
+                    treatment when indicated.
+                </li>
+
+                <li>
+                    Endocrine therapy for hormone
+                    receptor-positive cancer.
+                </li>
+
+                <li>
+                    HER2-targeted medicines for HER2-positive
+                    cancer, as part of an appropriate treatment plan.
+                </li>
+            </ul>
+
+            <p>
+                These are examples rather than fixed treatment
+                sequences. A person's treatment plan may look
+                very different from another person's, even
+                when they have the same cancer stage.
+            </p>
+
+            <h3>8. Treatment Goals and Supportive Care</h3>
+
+            <p>
+                Treatment goals depend on the stage and
+                circumstances of the disease. They may include
+                removing the cancer, reducing the risk of
+                recurrence, controlling cancer growth or
+                relieving symptoms.
+            </p>
+
+            <p>
+                For metastatic breast cancer, treatment often
+                focuses on controlling the disease, managing
+                symptoms and maintaining quality of life.
+                Treatment options may change over time
+                depending on how the cancer responds.
+            </p>
+
+            <p>
+                Supportive care is also an important part
+                of cancer treatment. It may include help
+                with pain, nutrition, physical rehabilitation,
+                emotional well-being and treatment-related
+                side effects.
+            </p>
+
+            <p>
+                Palliative care can help improve quality of
+                life and manage symptoms. It can be provided
+                alongside treatments intended to control
+                or eliminate cancer; it is not limited to
+                end-of-life care.
+            </p>
+
+            <div class="guide-note">
+
+                <strong>Every treatment journey is different.</strong>
+
+                <p>
+                    The information in this section is intended
+                    to explain general treatment approaches,
+                    not to recommend a particular medicine
+                    or procedure. Treatment decisions should
+                    be made with a qualified oncology team
+                    after reviewing the complete diagnosis.
+                </p>
+
+                <p>
+                    Patients can ask their healthcare team
+                    about the purpose of each treatment,
+                    expected benefits, possible side effects,
+                    alternatives and available support.
+                </p>
+
+            </div>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 09 RESEARCH AND CLINICAL TRIALS -->
+
+        <section class="guide-section" id="research">
+
+            <p class="section-label">09 — LOOKING AHEAD</p>
+
+            <h2>Research & Clinical Trials</h2>
+
+            <p>
+                Breast cancer research continues to explore better ways to detect,
+                understand and treat the disease. Researchers are studying new medicines,
+                treatment combinations, genetic changes, immunotherapy and ways to reduce
+                the side effects of treatment.
+            </p>
+
+            <h3>What is breast cancer research?</h3>
+
+            <p>
+                Research helps scientists and healthcare professionals understand how
+                breast cancer develops, why different cancers respond differently to
+                treatment, and how existing treatments can be improved. Research may
+                involve laboratory studies, observational studies, or clinical trials
+                involving people.
+            </p>
+
+            <h3>What are clinical trials?</h3>
+
+            <p>
+                Clinical trials are research studies involving people. They help
+                researchers evaluate new treatments, combinations of existing treatments,
+                diagnostic methods and supportive care approaches.
+            </p>
+
+            <p>
+                A clinical trial may investigate a treatment that is not yet approved,
+                or study whether an existing treatment works better in a different
+                situation. Participation does not guarantee personal benefit.
+            </p>
+
+            <h3>Understanding clinical trial phases</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h4>Phase 1</h4>
+                    <p>
+                        Studies an experimental treatment in a small group to understand
+                        its safety, possible side effects and suitable dosage.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h4>Phase 2</h4>
+                    <p>
+                        Studies whether the treatment shows signs of effectiveness
+                        against a particular cancer while continuing to evaluate safety.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h4>Phase 3</h4>
+                    <p>
+                        Compares the treatment with existing standard treatments in
+                        larger groups to assess its effectiveness and safety.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h4>Phase 4</h4>
+                    <p>
+                        Studies a treatment after approval to learn more about its
+                        longer-term effects and safety in wider use.
+                    </p>
+                </div>
+
+            </div>
+
+            <h3>Areas of ongoing breast cancer research</h3>
+
+            <ul>
+                <li>
+                    <strong>Targeted therapies:</strong> Developing treatments that
+                    act on particular proteins, genes or pathways involved in cancer.
+                </li>
+
+                <li>
+                    <strong>Immunotherapy:</strong> Studying ways to help the immune
+                    system recognise and fight cancer cells.
+                </li>
+
+                <li>
+                    <strong>Personalised treatment:</strong> Exploring how tumour
+                    characteristics and molecular testing can help guide treatment.
+                </li>
+
+                <li>
+                    <strong>Early detection:</strong> Improving screening and diagnostic
+                    approaches to identify breast cancer earlier.
+                </li>
+
+                <li>
+                    <strong>Reducing treatment burden:</strong> Studying ways to
+                    maintain treatment effectiveness while reducing unnecessary
+                    treatment and long-term side effects.
+                </li>
+            </ul>
+
+            <h3>Finding clinical trials</h3>
+
+            <p>
+                Clinical trial databases allow patients, caregivers and healthcare
+                professionals to explore studies taking place in different locations.
+                Trial availability and eligibility can change, so information should
+                always be checked with the study team.
+            </p>
+
+            <div class="resource-card">
+
+                <h4>Explore breast cancer clinical trials</h4>
+
+                <p>
+                    The National Cancer Institute provides a searchable list of breast
+                    cancer clinical trials, with information about study status and
+                    locations.
+                </p>
+
+                <a href="https://www.cancer.gov/research/participate/clinical-trials/disease/breast-cancer"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore NCI breast cancer trials →
+                </a>
+
+            </div>
+
+            <div class="resource-card">
+
+                <h4>Search clinical studies worldwide</h4>
+
+                <p>
+                    ClinicalTrials.gov provides study records, including recruitment
+                    status, study locations, eligibility criteria and contact details
+                    when available.
+                </p>
+
+                <a href="https://clinicaltrials.gov/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit ClinicalTrials.gov →
+                </a>
+
+            </div>
+
+            <h3>Before considering a clinical trial</h3>
+
+            <p>
+                Not every trial is suitable for every patient. Eligibility may depend
+                on cancer type, stage, biomarkers, previous treatments, age and general
+                health.
+            </p>
+
+            <p>Questions worth discussing with the treating healthcare team include:</p>
+
+            <ul>
+                <li>What is the purpose of this study?</li>
+                <li>What treatment or intervention is being investigated?</li>
+                <li>What are the known and possible risks?</li>
+                <li>Is the study comparing the treatment with standard care?</li>
+                <li>What additional visits, tests or costs may be involved?</li>
+                <li>Can I leave the study if I change my mind?</li>
+            </ul>
+
+            <p>
+                Participation should be voluntary and based on informed consent.
+                Patients can ask questions and discuss their options with their
+                healthcare team before making a decision.
+            </p>
+
+            <div class="important-note">
+
+                <strong>Research is not the same as established treatment.</strong>
+
+                A promising laboratory result, early-stage study or individual
+                patient experience does not establish that a treatment is safe
+                or effective. Clinical evidence develops over time, and new
+                findings should be interpreted in context.
+
+            </div>
+
+            <p class="guide-disclaimer">
+                This section is for educational purposes. Clinical trial participation
+                and treatment decisions should be discussed with qualified healthcare
+                professionals.
+            </p>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- 10 SUPPORT AND RESOURCES -->
+
+        <section class="guide-section" id="support">
+
+            <p class="section-label">10 — YOU ARE NOT ALONE</p>
+
+            <h2>Support & Resources</h2>
+
+            <p>
+                A breast cancer diagnosis can affect many parts of life, not just
+                physical health. Emotional wellbeing, relationships, finances,
+                work and everyday responsibilities may all be affected.
+                Support can come from healthcare professionals, family, friends,
+                patient communities and reliable organisations.
+            </p>
+
+            <h3>Emotional and mental health support</h3>
+
+            <p>
+                Fear, uncertainty, sadness, anger and anxiety can be part of the
+                experience of cancer. These feelings deserve care and attention.
+                Speaking with a counsellor, psychologist, social worker or
+                psycho-oncology professional may help patients and caregivers
+                navigate difficult moments.
+            </p>
+
+            <h3>Support from other patients and survivors</h3>
+
+            <p>
+                Connecting with people who have experienced breast cancer may
+                help individuals feel less isolated. Peer support can offer
+                understanding, shared experiences and a sense of community.
+            </p>
+
+            <p>
+                However, every person's cancer and treatment experience is
+                different. Another person's experience should not be treated
+                as a prediction of what will happen to someone else.
+            </p>
+
+            <h3>Practical support during treatment</h3>
+
+            <ul>
+                <li>
+                    <strong>Nutrition:</strong> Ask a qualified dietitian or
+                    healthcare professional about nutritional needs during
+                    treatment.
+                </li>
+
+                <li>
+                    <strong>Physical activity:</strong> Discuss safe and suitable
+                    activity with the treating team, especially during recovery
+                    or treatment.
+                </li>
+
+                <li>
+                    <strong>Financial assistance:</strong> Ask hospitals and
+                    relevant government programmes about financial support,
+                    insurance and treatment assistance.
+                </li>
+
+                <li>
+                    <strong>Caregiver support:</strong> Family members and
+                    caregivers may also need emotional support, rest and
+                    practical assistance.
+                </li>
+
+                <li>
+                    <strong>Returning to everyday life:</strong> Work, education,
+                    relationships and daily routines may need adjustments during
+                    treatment and recovery.
+                </li>
+            </ul>
+
+            <h3>Reliable support and information in India</h3>
+
+            <div class="resource-card">
+
+                <h4>Indian Cancer Society</h4>
+
+                <p>
+                    An Indian organisation working in cancer awareness,
+                    education, support and related initiatives.
+                </p>
+
+                <a href="https://indiancancersociety.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit Indian Cancer Society →
+                </a>
+
+            </div>
+
+            <div class="resource-card">
+
+                <h4>National Cancer Grid</h4>
+
+                <p>
+                    A network of cancer centres and institutions in India
+                    working towards improving cancer care through collaboration,
+                    education and research.
+                </p>
+
+                <a href="https://www.ncgindia.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit National Cancer Grid →
+                </a>
+
+            </div>
+
+            <div class="resource-card">
+
+                <h4>National Health Authority — Ayushman Bharat PM-JAY</h4>
+
+                <p>
+                    Provides information about India's publicly funded health
+                    assurance scheme and its eligibility and benefits.
+                    Coverage and availability depend on applicable scheme rules.
+                </p>
+
+                <a href="https://pmjay.gov.in/"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit PM-JAY →
+                </a>
+
+            </div>
+
+            <h3>For family members and caregivers</h3>
+
+            <p>
+                Caregivers can play an important role by listening without
+                judgement, helping with appointments and everyday tasks,
+                respecting the patient's choices and allowing them space
+                to express their feelings.
+            </p>
+
+            <p>
+                Support does not always mean having the right words.
+                Sometimes, being present and listening is enough.
+            </p>
+
+            <div class="important-note">
+
+                <strong>A reminder:</strong> No one should have to navigate
+                cancer alone. Asking for help is not a sign of weakness.
+                Patients deserve respectful care, clear information,
+                dignity and support throughout their journey.
+
+            </div>
+
+            <p class="guide-disclaimer">
+                The resources listed here are starting points for further
+                information. Please verify current services, eligibility
+                and availability directly with the respective organisations.
+            </p>
+
+            <a href="#guide-contents" class="back-to-contents">
+                ↑ Back to Guide Contents
+            </a>
+
+        </section>
+
+
+        <!-- MEDICAL REFERENCES -->
+
+        <section class="guide-references" id="references">
+
+            <h2>Sources and Further Reading</h2>
+
+            <p>
+                The information above is based on the following
+                medical and organisational resources:
+            </p>
+
+            <ul>
+
+                <li>
+                    <a href="https://www.who.int/news-room/fact-sheets/detail/breast-cancer"
+                       target="_blank" rel="noopener noreferrer">
+                        World Health Organization — Breast Cancer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/breast"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — Breast Cancer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/breast/breast-cancer-types/triple-negative"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — Triple-Negative Breast Cancer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/breast/stages"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — Breast Cancer Stages
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/breast/stages/tnm-staging-system"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — TNM Staging System
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Breast_Cancer.pdf"
+                       target="_blank" rel="noopener noreferrer">
+                        Indian Council of Medical Research — Consensus Document for Management of Breast Cancer
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/breast/screening"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — Breast Cancer Screening
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/breast/screening/mammograms"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — Mammograms
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
+                       target="_blank" rel="noopener noreferrer">
+                        United States Preventive Services Task Force — Breast Cancer Screening
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.mohfw-dohfw.gov.in/static/uploads/2025/11/b9daf32703eb4c8057af12dc75e9a0c3.pdf"
+                       target="_blank" rel="noopener noreferrer">
+                        Ministry of Health and Family Welfare, India — Population-Based Screening Guidance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/breast/treatment"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — Breast Cancer Treatment
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/types/breast/treatment/by-stage"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — Breast Cancer Treatment by Stage
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://nhm.gov.in/New-Update-2025-26/Whats-new/NCD-Medical-Officers.pdf"
+                       target="_blank" rel="noopener noreferrer">
+                        National Health Mission, India — Training Module for Medical Officers: Breast Cancer Management
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/research/participate/clinical-trials/disease/breast-cancer"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — Breast Cancer Clinical Trials
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.cancer.gov/research/participate/clinical-trials/how-trials-work"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Institute — How Clinical Trials Work
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://clinicaltrials.gov/study-basics/learn-about-studies"
+                       target="_blank" rel="noopener noreferrer">
+                        ClinicalTrials.gov — Learn About Studies
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://clinicaltrials.gov/study-basics/how-to-read-study-record"
+                       target="_blank" rel="noopener noreferrer">
+                        ClinicalTrials.gov — How to Read a Study Record
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://indiancancersociety.org/"
+                       target="_blank" rel="noopener noreferrer">
+                        Indian Cancer Society
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.ncgindia.org/"
+                       target="_blank" rel="noopener noreferrer">
+                        National Cancer Grid, India
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://pmjay.gov.in/"
+                       target="_blank" rel="noopener noreferrer">
+                        National Health Authority — Ayushman Bharat PM-JAY
+                    </a>
+                </li>
+
+            </ul>
+
+            <p class="reference-date">
+                Sources accessed: 22 November 2026.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FLOATING BACK TO TOP BUTTON -->
+
+    <a href="#top"
+       class="back-to-top"
+       aria-label="Back to top"
+       title="Back to top">
+        ↑
+    </a>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>UNMUTE</p>
+
+        <p>Her health. Her voice. Her right to be heard.</p>
+
+        <a href="know-your-body.html">Return to Know Your Body</a>
+
+    </footer>
+
+</body>
+
+</html>
