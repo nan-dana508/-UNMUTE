@@ -20,6 +20,15 @@
             margin: 0;
         }
 
+        /* GLOBAL LINK STYLING - NO UNDERLINES */
+
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none !important;
+        }
+
         /* NAVIGATION */
 
         .cancer-guide-nav {
@@ -113,11 +122,11 @@
             margin-top: 15px;
             color: #438878;
             font-weight: 600;
-            text-decoration: none;
+            text-decoration: none !important;
         }
 
         .directory-link:hover {
-            text-decoration: underline;
+            text-decoration: none !important;
         }
 
         /* GENERAL GUIDE LAYOUT */
@@ -303,7 +312,7 @@
         .guide-section a:not(.back-to-contents),
         .guide-references a {
             color: #438878;
-            text-decoration: underline;
+            text-decoration: none !important;
             text-underline-offset: 3px;
             overflow-wrap: anywhere;
         }
@@ -334,7 +343,7 @@
         }
 
         .back-to-contents:hover {
-            text-decoration: underline !important;
+            text-decoration: none !important;
         }
 
         /* REFERENCES */
@@ -472,9 +481,10 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="know-your-body.html" class="active">Know Your Body</a>
-            <a href="index.html#support">Find Support</a>
-            <a href="index.html#voices">Her Voice</a>
-            <a href="index.html#research">Beyond the Common</a>
+            <a href="find-support.html">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
         </nav>
 
     </header>

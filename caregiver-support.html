@@ -1,0 +1,1338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caregiver Support | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Page-specific styling */
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none !important;
+        }
+
+        .caregiver-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            background: #faf5f2;
+        }
+
+        .caregiver-hero-content {
+            flex: 1;
+        }
+
+        .caregiver-hero-content h1 {
+            font-size: 42px;
+            color: #54284f;
+            margin-bottom: 20px;
+        }
+
+        .caregiver-hero-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #514650;
+            max-width: 600px;
+        }
+
+        .caregiver-hero-image {
+            flex: 1;
+        }
+
+        .caregiver-hero-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .caregiver-intro {
+            text-align: center;
+            padding: 55px 8% 25px;
+        }
+
+        .caregiver-intro h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .caregiver-intro p {
+            color: #625760;
+            line-height: 1.7;
+        }
+
+        .caregiver-section-heading {
+            text-align: center;
+            padding: 45px 8% 10px;
+        }
+
+        .caregiver-section-heading h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .caregiver-section-heading p {
+            color: #625760;
+            line-height: 1.7;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .caregiver-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            padding: 30px 8% 55px;
+        }
+
+        .caregiver-card {
+            display: block;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(75, 43, 69, 0.09);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: inherit;
+        }
+
+        .caregiver-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(75, 43, 69, 0.15);
+        }
+
+        .caregiver-card:focus-visible {
+            outline: 3px solid #8a496e;
+            outline-offset: 4px;
+        }
+
+        .caregiver-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caregiver-card-content {
+            padding: 24px;
+        }
+
+        .caregiver-card-content h3 {
+            color: #54284f;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .caregiver-card-content p {
+            color: #625760;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Helpful Resources */
+
+        .caregiver-resources {
+            background: #faf5f2;
+            padding: 55px 8% 70px;
+        }
+
+        .caregiver-resources-intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .caregiver-resources-intro h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .caregiver-resources-intro p {
+            color: #625760;
+            line-height: 1.7;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .resource-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(75, 43, 69, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 20px rgba(75, 43, 69, 0.12);
+        }
+
+        .resource-icon {
+            width: 43px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f4e8ee;
+            color: #8a496e;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .resource-card h3 {
+            color: #54284f;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            color: #625760;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Resource card links and buttons */
+
+        .resource-card-button {
+            width: 100%;
+            border: none;
+            font: inherit;
+            text-align: left;
+            color: inherit;
+            cursor: pointer;
+            display: block;
+        }
+
+        .resource-link {
+            display: block;
+            color: inherit;
+        }
+
+        .resource-action {
+            display: inline-block;
+            margin-top: 15px;
+            color: #8a496e;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .resource-card-button:focus-visible,
+        .resource-link:focus-visible,
+        .resource-faq summary:focus-visible {
+            outline: 3px solid #8a496e;
+            outline-offset: 4px;
+        }
+
+        /* Checklist Dialog */
+
+        .resource-dialog {
+            width: min(650px, calc(100% - 30px));
+            max-height: 85vh;
+            overflow-y: auto;
+            border: none;
+            border-radius: 18px;
+            padding: 30px;
+            color: #514650;
+            box-shadow: 0 12px 40px rgba(40, 20, 40, 0.2);
+        }
+
+        .resource-dialog::backdrop {
+            background: rgba(35, 20, 35, 0.6);
+        }
+
+        .resource-dialog h2 {
+            color: #54284f;
+            margin-bottom: 12px;
+        }
+
+        .resource-dialog p {
+            line-height: 1.7;
+        }
+
+        .resource-dialog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .resource-close {
+            border: none;
+            background: #f4e8ee;
+            color: #54284f;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checklist-progress {
+            margin: 22px 0;
+        }
+
+        .checklist-progress-track {
+            height: 9px;
+            background: #eee4e9;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .checklist-progress-fill {
+            height: 100%;
+            width: 0;
+            background: #8a496e;
+            transition: width 0.25s ease;
+        }
+
+        .checklist-group {
+            margin: 24px 0;
+        }
+
+        .checklist-group h3 {
+            color: #54284f;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee7eb;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .checklist-item input {
+            margin-top: 5px;
+            accent-color: #8a496e;
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+        }
+
+        .checklist-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .checklist-actions button {
+            padding: 11px 18px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .checklist-reset {
+            background: #f4e8ee;
+            color: #54284f;
+        }
+
+        .checklist-done {
+            background: #54284f;
+            color: white;
+        }
+
+        /* Caregiver FAQs */
+
+        .resource-faqs {
+            margin-top: 45px;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .resource-faqs h2 {
+            text-align: center;
+            color: #54284f;
+            font-size: 26px;
+            margin-bottom: 22px;
+        }
+
+        .resource-faq {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            padding: 18px 20px;
+            box-shadow: 0 3px 12px rgba(75, 43, 69, 0.06);
+        }
+
+        .resource-faq summary {
+            color: #54284f;
+            font-weight: 600;
+            cursor: pointer;
+            line-height: 1.6;
+        }
+
+        .resource-faq p {
+            color: #625760;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 14px 0 0;
+        }
+
+        .caregiver-closing {
+            text-align: center;
+            padding: 65px 10%;
+        }
+
+        .caregiver-closing h2 {
+            color: #54284f;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .caregiver-closing p {
+            max-width: 750px;
+            margin: auto;
+            color: #625760;
+            line-height: 1.8;
+        }
+
+        /* Responsive Styling */
+
+        @media (max-width: 900px) {
+            .resource-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .caregiver-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+            }
+
+            .caregiver-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .caregiver-hero-image img {
+                height: 260px;
+            }
+
+            .caregiver-grid {
+                grid-template-columns: 1fr;
+                padding: 25px 6% 45px;
+            }
+
+            .caregiver-section-heading {
+                padding: 35px 6% 10px;
+            }
+
+            .caregiver-section-heading h2 {
+                font-size: 26px;
+            }
+
+            .caregiver-resources {
+                padding: 45px 6%;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .resource-dialog {
+                padding: 22px;
+            }
+
+            .resource-faqs h2 {
+                font-size: 23px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .resource-card,
+            .checklist-progress-fill {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html">Know Your Body</a>
+            <a href="find-support.html" class="active">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="caregiver-hero">
+
+        <div class="caregiver-hero-content">
+            <h1>Support for You, Too</h1>
+
+            <p>
+                When someone you love is diagnosed with cancer,
+                the journey affects you, too. Whether you're a
+                family member, friend or caregiver, you may find
+                yourself navigating unfamiliar responsibilities,
+                difficult emotions and uncertain moments.
+            </p>
+
+            <p>
+                This space offers guidance on supporting someone
+                with cancer while also recognising the importance
+                of your own wellbeing. You deserve care and support, too.
+            </p>
+        </div>
+
+        <div class="caregiver-hero-image">
+            <img src="caregiver-support.webp"
+                 alt="A caring moment representing support for patients and caregivers">
+        </div>
+
+    </section>
+
+    <!-- Introduction -->
+    <section class="caregiver-intro">
+        <h2>How Can We Support You?</h2>
+
+        <p>
+            Explore guidance for supporting someone through cancer
+            and resources to help you care for yourself along the way.
+        </p>
+    </section>
+
+    <!-- Section One: Supporting Someone With Cancer -->
+    <section class="caregiver-section-heading">
+        <h2>Supporting Someone With Cancer</h2>
+
+        <p>
+            Small acts of understanding, patience and kindness
+            can make a meaningful difference. Learn how to be
+            there for someone through different parts of their journey.
+        </p>
+    </section>
+
+    <section class="caregiver-grid">
+
+        <a href="supporting-someone.html#understanding-experience"
+           class="caregiver-card"
+           aria-label="Read the guide: Understanding Their Experience">
+
+            <img src="understanding-experience.jpg"
+                 alt="A family member sitting beside and comforting someone">
+
+            <div class="caregiver-card-content">
+                <h3>Understanding Their Experience</h3>
+
+                <p>
+                    Understand the physical, emotional and practical
+                    challenges someone with cancer may experience,
+                    while recognising that every person's journey
+                    is different.
+                </p>
+            </div>
+        </a>
+
+        <a href="supporting-someone.html#practical-ways-to-help"
+           class="caregiver-card"
+           aria-label="Read the guide: Practical Ways to Help">
+
+            <img src="practical-caregiver-help.jpg"
+                 alt="People discussing an appointment schedule">
+
+            <div class="caregiver-card-content">
+                <h3>Practical Ways to Help</h3>
+
+                <p>
+                    Explore everyday ways to help with appointments,
+                    treatment schedules, meals, transportation,
+                    household tasks and daily responsibilities.
+                </p>
+            </div>
+        </a>
+
+        <a href="supporting-someone.html#emotional-support"
+           class="caregiver-card"
+           aria-label="Read the guide: Emotional Support and Communication">
+
+            <img src="emotional-support.jpg"
+                 alt="Two people sharing a supportive conversation">
+
+            <div class="caregiver-card-content">
+                <h3>Emotional Support and Communication</h3>
+
+                <p>
+                    Learn how to listen without judgement, communicate
+                    with empathy, respect personal boundaries and
+                    approach difficult conversations.
+                </p>
+            </div>
+        </a>
+
+        <a href="supporting-someone.html#supporting-young-people"
+           class="caregiver-card"
+           aria-label="Read the guide: Supporting Young Adults and Children">
+
+            <img src="supporting-young-patients.jpg"
+                 alt="A young person studying with family support">
+
+            <div class="caregiver-card-content">
+                <h3>Supporting Young Adults and Children</h3>
+
+                <p>
+                    Understand how cancer can affect education,
+                    friendships, independence and everyday life,
+                    and how to support younger patients without
+                    taking away their sense of identity.
+                </p>
+            </div>
+        </a>
+
+        <a href="supporting-someone.html#every-stage"
+           class="caregiver-card"
+           aria-label="Read the guide: Being There Through Every Stage">
+
+            <img src="support-through-stages.jpg"
+                 alt="A comforting gesture representing support through treatment">
+
+            <div class="caregiver-card-content">
+                <h3>Being There Through Every Stage</h3>
+
+                <p>
+                    Discover ways to support someone through diagnosis,
+                    treatment, surgery, recovery, remission,
+                    follow-up care and changing circumstances.
+                </p>
+            </div>
+        </a>
+
+    </section>
+
+    <!-- Section Two: Caring for Yourself -->
+    <section class="caregiver-section-heading">
+        <h2>Caring for Yourself as a Caregiver</h2>
+
+        <p>
+            Supporting someone through cancer can be emotionally
+            and physically demanding. Your wellbeing matters,
+            and you don't have to manage everything alone.
+        </p>
+    </section>
+
+    <section class="caregiver-grid">
+
+        <a href="caregiver-wellbeing.html#caregiver-stress"
+           class="caregiver-card"
+           aria-label="Read the guide: Understanding Caregiver Stress">
+
+            <img src="caregiver-stress.jpg"
+                 alt="A caregiver taking a quiet moment to reflect">
+
+            <div class="caregiver-card-content">
+                <h3>Understanding Caregiver Stress</h3>
+
+                <p>
+                    Recognise the emotional weight of caregiving,
+                    including fear, uncertainty, exhaustion and
+                    the challenge of balancing multiple responsibilities.
+                </p>
+            </div>
+        </a>
+
+        <a href="caregiver-wellbeing.html#caregiver-burnout"
+           class="caregiver-card"
+           aria-label="Read the guide: Recognising Caregiver Burnout">
+
+            <img src="caregiver-burnout.jpg"
+                 alt="A tired caregiver resting at home">
+
+            <div class="caregiver-card-content">
+                <h3>Recognising Caregiver Burnout</h3>
+
+                <p>
+                    Learn to recognise signs such as constant fatigue,
+                    irritability, sleep difficulties, isolation and
+                    neglecting your own health and needs.
+                </p>
+            </div>
+        </a>
+
+        <a href="caregiver-wellbeing.html#personal-wellbeing"
+           class="caregiver-card"
+           aria-label="Read the guide: Looking After Your Wellbeing">
+
+            <img src="caregiver-wellbeing.jpg"
+                 alt="A caregiver enjoying a peaceful moment with a book">
+
+            <div class="caregiver-card-content">
+                <h3>Looking After Your Wellbeing</h3>
+
+                <p>
+                    Make room for rest, regular meals, personal
+                    healthcare, friendships and activities that
+                    help you maintain your own sense of wellbeing.
+                </p>
+            </div>
+        </a>
+
+        <a href="caregiver-wellbeing.html#sharing-responsibilities"
+           class="caregiver-card"
+           aria-label="Read the guide: Sharing Responsibilities">
+
+            <img src="sharing-care.jpg"
+                 alt="Family members planning responsibilities together">
+
+            <div class="caregiver-card-content">
+                <h3>Sharing Responsibilities</h3>
+
+                <p>
+                    Explore ways to divide caregiving tasks,
+                    ask family and friends for specific help
+                    and build a support system so that one person
+                    doesn't have to carry everything alone.
+                </p>
+            </div>
+        </a>
+
+        <a href="caregiver-wellbeing.html#difficult-emotions"
+           class="caregiver-card"
+           aria-label="Read the guide: Managing Difficult Emotions">
+
+            <img src="caregiver-emotions.jpg"
+                 alt="Two people offering emotional support to each other">
+
+            <div class="caregiver-card-content">
+                <h3>Managing Difficult Emotions</h3>
+
+                <p>
+                    Find ways to navigate fear, guilt, frustration,
+                    helplessness and anticipatory grief while
+                    recognising that you cannot control every outcome.
+                </p>
+            </div>
+        </a>
+
+        <a href="caregiver-wellbeing.html#finding-support"
+           class="caregiver-card"
+           aria-label="Read the guide: Finding Support for Yourself">
+
+            <img src="caregiver-support-groups.jpg"
+                 alt="People participating in a small support group">
+
+            <div class="caregiver-card-content">
+                <h3>Finding Support for Yourself</h3>
+
+                <p>
+                    Discover caregiver support groups, counselling,
+                    peer connections and trusted organisations
+                    that can offer guidance and understanding.
+                </p>
+            </div>
+        </a>
+
+    </section>
+
+    <!-- Helpful Resources -->
+    <section class="caregiver-resources" id="helpful-resources">
+
+        <div class="caregiver-resources-intro">
+            <h2>Helpful Resources for Caregivers</h2>
+
+            <p>
+                A few practical resources to make caregiving
+                responsibilities and everyday challenges easier
+                to navigate.
+            </p>
+        </div>
+
+        <div class="resource-grid">
+
+            <!-- 1. Everyday Caregiver Checklist -->
+            <button type="button"
+                    class="resource-card resource-card-button"
+                    id="openChecklist"
+                    aria-haspopup="dialog">
+
+                <div class="resource-icon" aria-hidden="true">✓</div>
+
+                <h3>Everyday Caregiver Checklist</h3>
+
+                <p>
+                    Keep track of appointments, daily responsibilities,
+                    treatment-related tasks and your own wellbeing.
+                </p>
+
+                <span class="resource-action">Open checklist →</span>
+            </button>
+
+            <!-- 2. Helpful Conversations -->
+            <a href="supporting-someone.html#emotional-support"
+               class="resource-card resource-link">
+
+                <div class="resource-icon" aria-hidden="true">♡</div>
+
+                <h3>Helpful Conversations</h3>
+
+                <p>
+                    Explore supportive ways to communicate,
+                    listen and approach sensitive conversations
+                    with someone living with cancer.
+                </p>
+
+                <span class="resource-action">
+                    Explore conversation guidance →
+                </span>
+            </a>
+
+            <!-- 3. Sharing the Care -->
+            <a href="caregiver-wellbeing.html#sharing-responsibilities"
+               class="resource-card resource-link">
+
+                <div class="resource-icon" aria-hidden="true">+</div>
+
+                <h3>Sharing the Care</h3>
+
+                <p>
+                    Plan how family members and friends can
+                    divide responsibilities and provide
+                    practical support together.
+                </p>
+
+                <span class="resource-action">
+                    Explore practical guidance →
+                </span>
+            </a>
+
+            <!-- 4. Trusted Organisations -->
+            <a href="trusted-organisations.html"
+               class="resource-card resource-link">
+
+                <div class="resource-icon" aria-hidden="true">⌂</div>
+
+                <h3>Trusted Organisations and Helplines</h3>
+
+                <p>
+                    Find organisations and support services
+                    that may offer guidance, assistance
+                    and connections for patients and caregivers.
+                </p>
+
+                <span class="resource-action">
+                    Find support services →
+                </span>
+            </a>
+
+            <!-- 5. Caregiver FAQs -->
+            <a href="#caregiver-faqs"
+               class="resource-card resource-link">
+
+                <div class="resource-icon" aria-hidden="true">?</div>
+
+                <h3>Caregiver FAQs</h3>
+
+                <p>
+                    Find answers to common questions about
+                    caregiving, supporting someone with cancer
+                    and finding help when you need it.
+                </p>
+
+                <span class="resource-action">
+                    Explore FAQs →
+                </span>
+            </a>
+
+        </div>
+
+        <!-- Everyday Caregiver Checklist Dialog -->
+        <dialog class="resource-dialog" id="caregiverChecklist">
+
+            <div class="resource-dialog-header">
+
+                <div>
+                    <h2>Everyday Caregiver Checklist</h2>
+
+                    <p>
+                        Use this checklist to organise everyday
+                        responsibilities. Every situation is different,
+                        so choose the tasks that are relevant to you.
+                    </p>
+                </div>
+
+                <button type="button"
+                        class="resource-close"
+                        id="closeChecklist"
+                        aria-label="Close checklist">
+                    &times;
+                </button>
+
+            </div>
+
+            <!-- Progress -->
+            <div class="checklist-progress">
+
+                <strong id="checklistProgressText"
+                        aria-live="polite">
+                    0 of 15 tasks completed
+                </strong>
+
+                <div class="checklist-progress-track"
+                     role="progressbar"
+                     aria-label="Checklist completion"
+                     aria-valuemin="0"
+                     aria-valuemax="15"
+                     aria-valuenow="0"
+                     id="checklistProgressBar">
+
+                    <div class="checklist-progress-fill"
+                         id="checklistProgressFill"></div>
+
+                </div>
+
+            </div>
+
+            <!-- Appointments -->
+            <div class="checklist-group">
+
+                <h3>Appointments and Medical Information</h3>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Keep track of upcoming appointments and hospital visits.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Prepare questions or concerns to discuss with the healthcare team.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Keep important medical documents and contact details organised.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Record instructions given by the healthcare team.
+                    </span>
+                </label>
+
+            </div>
+
+            <!-- Daily Care -->
+            <div class="checklist-group">
+
+                <h3>Everyday Care and Practical Support</h3>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Help organise transportation when needed.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Plan meals and everyday household responsibilities.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Check whether help with errands or daily activities is needed.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Respect the patient's preferences, privacy and independence.
+                    </span>
+                </label>
+
+            </div>
+
+            <!-- Personal Wellbeing -->
+            <div class="checklist-group">
+
+                <h3>Looking After Yourself</h3>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Make time for meals, rest and adequate sleep.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Attend to your own healthcare and appointments.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Stay connected with friends, family or people you trust.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Ask someone to share responsibilities when you need a break.
+                    </span>
+                </label>
+
+            </div>
+
+            <!-- Communication -->
+            <div class="checklist-group">
+
+                <h3>Communication and Support</h3>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Check in with the patient about the kind of support they want.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Keep family members or other helpers informed, with the patient's consent.
+                    </span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="care-task">
+                    <span>
+                        Know where to find reliable support and professional guidance.
+                    </span>
+                </label>
+
+            </div>
+
+            <p>
+                Remember: this is a flexible planning tool, not a list
+                of obligations. You do not have to complete everything.
+            </p>
+
+            <div class="checklist-actions">
+
+                <button type="button"
+                        class="checklist-reset"
+                        id="resetChecklist">
+                    Reset checklist
+                </button>
+
+                <button type="button"
+                        class="checklist-done"
+                        id="doneChecklist">
+                    Done
+                </button>
+
+            </div>
+
+        </dialog>
+
+        <!-- Caregiver FAQs -->
+        <section class="resource-faqs" id="caregiver-faqs">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <details class="resource-faq">
+                <summary>
+                    How can I support someone with cancer without overwhelming them?
+                </summary>
+
+                <p>
+                    Start by asking what kind of help they would find useful.
+                    Listen to their preferences, respect their decisions
+                    and offer specific help rather than assuming what
+                    they need. Remember that their needs may change over time.
+                </p>
+            </details>
+
+            <details class="resource-faq">
+                <summary>
+                    Is it normal to feel exhausted or overwhelmed as a caregiver?
+                </summary>
+
+                <p>
+                    Caregiving can involve emotional, physical and practical
+                    demands. Feeling tired, worried or overwhelmed does not
+                    mean you are failing. Make room for rest and seek help
+                    from trusted people or a qualified professional when needed.
+                </p>
+            </details>
+
+            <details class="resource-faq">
+                <summary>
+                    What should I do if I don't know how to answer the patient's questions?
+                </summary>
+
+                <p>
+                    You do not need to have every answer. Be honest about
+                    what you don't know and, when appropriate, help the
+                    patient write down questions for their healthcare team.
+                    Avoid guessing about medical information.
+                </p>
+            </details>
+
+            <details class="resource-faq">
+                <summary>
+                    How can family members share caregiving responsibilities?
+                </summary>
+
+                <p>
+                    Discuss the tasks that need attention and ask family
+                    members or friends to take on specific responsibilities.
+                    This could include transportation, meals, errands,
+                    appointment support or household tasks. Agree on
+                    arrangements with the patient's preferences in mind.
+                </p>
+            </details>
+
+            <details class="resource-faq">
+                <summary>
+                    When should a caregiver seek professional support?
+                </summary>
+
+                <p>
+                    Consider reaching out to a healthcare professional,
+                    counsellor or mental health professional if stress,
+                    anxiety, sadness or exhaustion becomes difficult to manage
+                    or affects everyday life. You deserve support, too.
+                </p>
+            </details>
+
+            <details class="resource-faq">
+                <summary>
+                    Where can I find help if I cannot manage everything alone?
+                </summary>
+
+                <p>
+                    You can explore trusted cancer organisations, caregiver
+                    support groups, counselling services and community
+                    resources. Visit our
+                    <a href="trusted-organisations.html">
+                        Trusted Organisations and Helplines
+                    </a>
+                    page to explore available support.
+                </p>
+            </details>
+
+        </section>
+
+    </section>
+
+    <!-- Closing Section -->
+    <section class="caregiver-closing">
+
+        <h2>You Don't Have to Do This Alone</h2>
+
+        <p>
+            Supporting someone with cancer doesn't mean
+            forgetting yourself. You deserve time to rest,
+            space to express your feelings and people who
+            support you, too. Remember that caring for yourself
+            is also an important part of being there for someone else.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            © 2026 UNMUTE. Every voice matters. Every journey deserves support.
+        </p>
+    </footer>
+
+    <!-- JavaScript: Caregiver Checklist -->
+    <script>
+
+        const checklistDialog =
+            document.getElementById("caregiverChecklist");
+
+        const openChecklistButton =
+            document.getElementById("openChecklist");
+
+        const closeChecklistButton =
+            document.getElementById("closeChecklist");
+
+        const doneChecklistButton =
+            document.getElementById("doneChecklist");
+
+        const resetChecklistButton =
+            document.getElementById("resetChecklist");
+
+        const checklistTasks =
+            document.querySelectorAll(".care-task");
+
+        const progressText =
+            document.getElementById("checklistProgressText");
+
+        const progressFill =
+            document.getElementById("checklistProgressFill");
+
+        const progressBar =
+            document.getElementById("checklistProgressBar");
+
+        let previouslyFocusedElement = null;
+
+
+        // Update checklist progress
+
+        function updateChecklistProgress() {
+
+            const completed =
+                document.querySelectorAll(".care-task:checked").length;
+
+            const total = checklistTasks.length;
+
+            const percentage =
+                total === 0 ? 0 : (completed / total) * 100;
+
+            progressText.textContent =
+                `${completed} of ${total} tasks completed`;
+
+            progressFill.style.width = `${percentage}%`;
+
+            progressBar.setAttribute("aria-valuenow", completed);
+
+            progressBar.setAttribute("aria-valuemax", total);
+
+            if (completed === total) {
+
+                progressText.textContent =
+                    `All ${total} tasks completed`;
+
+            }
+
+        }
+
+
+        // Open checklist
+
+        openChecklistButton.addEventListener("click", () => {
+
+            previouslyFocusedElement = document.activeElement;
+
+            checklistDialog.showModal();
+
+            closeChecklistButton.focus();
+
+        });
+
+
+        // Close checklist using close button
+
+        closeChecklistButton.addEventListener("click", () => {
+
+            checklistDialog.close();
+
+        });
+
+
+        // Close checklist using Done button
+
+        doneChecklistButton.addEventListener("click", () => {
+
+            checklistDialog.close();
+
+        });
+
+
+        // Restore keyboard focus after closing
+
+        checklistDialog.addEventListener("close", () => {
+
+            if (previouslyFocusedElement) {
+
+                previouslyFocusedElement.focus();
+
+            }
+
+        });
+
+
+        // Update progress whenever a checkbox changes
+
+        checklistTasks.forEach(task => {
+
+            task.addEventListener("change", updateChecklistProgress);
+
+        });
+
+
+        // Reset checklist
+
+        resetChecklistButton.addEventListener("click", () => {
+
+            checklistTasks.forEach(task => {
+
+                task.checked = false;
+
+            });
+
+            updateChecklistProgress();
+
+        });
+
+
+        // Initial progress
+
+        updateChecklistProgress();
+
+    </script>
+
+</body>
+</html>

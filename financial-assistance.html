@@ -1,0 +1,1372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Financial Assistance | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none !important;
+        }
+
+        .financial-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            background: #faf5f2;
+        }
+
+        .financial-hero-content {
+            flex: 1;
+        }
+
+        .financial-hero-content h1 {
+            font-size: 42px;
+            color: #54284f;
+            margin-bottom: 20px;
+        }
+
+        .financial-hero-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #514650;
+            max-width: 600px;
+            margin-bottom: 15px;
+        }
+
+        .financial-hero-image {
+            flex: 1;
+        }
+
+        .financial-hero-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .financial-intro {
+            text-align: center;
+            padding: 55px 8% 25px;
+        }
+
+        .financial-intro h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .financial-intro p {
+            color: #625760;
+            line-height: 1.7;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            padding: 30px 8% 70px;
+        }
+
+        .topic-card {
+            display: block;
+            text-align: left;
+            padding: 27px;
+            background: #fff;
+            border: 1px solid #eee4eb;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(75, 43, 69, 0.08);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: inherit;
+            color: inherit;
+            width: 100%;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(75, 43, 69, 0.14);
+        }
+
+        .topic-card:focus-visible,
+        .back-button:focus-visible,
+        .source-link:focus-visible {
+            outline: 2px solid #98536F;
+            outline-offset: 4px;
+        }
+
+        .topic-number {
+            display: inline-block;
+            color: #98536f;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .topic-card h3 {
+            color: #54284f;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            color: #625760;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .topic-card span:last-child {
+            color: #8a496e;
+            font-weight: 600;
+        }
+
+        .topic-view {
+            display: none;
+            padding: 55px 8% 75px;
+        }
+
+        .topic-view.active {
+            display: block;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 11px 20px;
+            background: #f4e9ef;
+            color: #702f61;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+            margin-right: 10px;
+            font-family: inherit;
+        }
+
+        .back-button:hover {
+            background: #ead8e3;
+        }
+
+        .guide-content {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(75, 43, 69, 0.08);
+        }
+
+        .guide-content h2 {
+            color: #54284f;
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .guide-content h3 {
+            color: #713d68;
+            font-size: 21px;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .guide-content p {
+            color: #625760;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .guide-content ul {
+            padding-left: 23px;
+            margin-bottom: 20px;
+        }
+
+        .guide-content li {
+            color: #625760;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 9px;
+        }
+
+        .gentle-reminder {
+            background: #faf5f2;
+            border-left: 4px solid #98536f;
+            padding: 20px 23px;
+            margin-top: 28px;
+            border-radius: 8px;
+        }
+
+        .gentle-reminder p {
+            margin-bottom: 0;
+            color: #54284f;
+        }
+
+        .guide-sources {
+            border-top: 1px solid #eadfe7;
+            margin-top: 35px;
+            padding-top: 22px;
+        }
+
+        .guide-sources h3 {
+            margin-top: 0;
+        }
+
+        .guide-sources ul {
+            margin-bottom: 0;
+        }
+
+        .source-link {
+            color: #8a496e;
+            font-weight: 600;
+        }
+
+        .medical-disclaimer {
+            background: #f7f0f5;
+            padding: 22px;
+            border-radius: 12px;
+            margin: 0 8% 55px;
+        }
+
+        .medical-disclaimer p {
+            color: #625760;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .financial-closing {
+            text-align: center;
+            padding: 65px 10%;
+            background: #faf5f2;
+        }
+
+        .financial-closing h2 {
+            color: #54284f;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .financial-closing p {
+            max-width: 750px;
+            margin: auto;
+            color: #625760;
+            line-height: 1.8;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .financial-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+            }
+
+            .financial-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .financial-hero-image img {
+                height: 260px;
+            }
+
+            .topic-grid {
+                grid-template-columns: 1fr;
+                padding: 25px 6% 50px;
+            }
+
+            .topic-view {
+                padding: 35px 6% 55px;
+            }
+
+            .guide-content {
+                padding: 25px;
+            }
+
+            .guide-content h2 {
+                font-size: 27px;
+            }
+
+            .medical-disclaimer {
+                margin-left: 6%;
+                margin-right: 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html">Know Your Body</a>
+            <a href="find-support.html" class="active">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="financial-hero">
+
+        <div class="financial-hero-content">
+
+            <h1>Financial Support Shouldn't Be Out of Reach</h1>
+
+            <p>
+                A cancer diagnosis can bring financial challenges
+                alongside the emotional and physical demands of
+                treatment. Medical expenses, medicines, travel
+                and everyday responsibilities can place a significant
+                burden on patients and their families.
+            </p>
+
+            <p>
+                Understanding the assistance available can help
+                make the financial side of cancer care feel
+                more manageable. Explore government schemes,
+                charitable support, hospital resources and
+                practical guidance.
+            </p>
+
+        </div>
+
+        <div class="financial-hero-image">
+            <img src="financial-assistance.jpg"
+                 alt="Financial assistance and support during the cancer journey">
+        </div>
+
+    </section>
+
+
+    <!-- Main Category Directory -->
+    <main id="categoryDirectory">
+
+        <section class="financial-intro">
+
+            <h2>Explore Financial Support</h2>
+
+            <p>
+                Choose an area to explore assistance options,
+                eligibility information, application guidance
+                and resources for managing cancer-related expenses.
+            </p>
+
+        </section>
+
+
+        <section class="topic-grid" id="categoryGrid">
+
+            <button class="topic-card" onclick="openCategory('national')">
+
+                <span class="topic-number">01</span>
+
+                <h3>Government Schemes Across India</h3>
+
+                <p>
+                    Explore national healthcare schemes and
+                    government financial assistance for
+                    eligible cancer patients.
+                </p>
+
+                <span>Explore Topics →</span>
+
+            </button>
+
+
+            <button class="topic-card" onclick="openCategory('kerala')">
+
+                <span class="topic-number">02</span>
+
+                <h3>Financial Assistance in Kerala</h3>
+
+                <p>
+                    Discover Kerala-specific schemes,
+                    healthcare assistance and state-level
+                    support options.
+                </p>
+
+                <span>Explore Topics →</span>
+
+            </button>
+
+
+            <button class="topic-card" onclick="openCategory('hospital')">
+
+                <span class="topic-number">03</span>
+
+                <h3>Hospital and Charitable Support</h3>
+
+                <p>
+                    Learn about hospital welfare departments,
+                    charitable organisations and patient
+                    assistance programmes.
+                </p>
+
+                <span>Explore Topics →</span>
+
+            </button>
+
+
+            <button class="topic-card" onclick="openCategory('applying')">
+
+                <span class="topic-number">04</span>
+
+                <h3>Understanding the Application Process</h3>
+
+                <p>
+                    Find out how to identify suitable schemes,
+                    check eligibility and begin an application.
+                </p>
+
+                <span>Explore Topics →</span>
+
+            </button>
+
+
+            <button class="topic-card" onclick="openCategory('documents')">
+
+                <span class="topic-number">05</span>
+
+                <h3>Documents and Financial Planning</h3>
+
+                <p>
+                    Prepare commonly requested documents
+                    and organise treatment-related expenses.
+                </p>
+
+                <span>Explore Topics →</span>
+
+            </button>
+
+
+            <button class="topic-card" onclick="openCategory('community')">
+
+                <span class="topic-number">06</span>
+
+                <h3>Community Support and Financial Safety</h3>
+
+                <p>
+                    Explore crowdfunding, community assistance,
+                    patient privacy and ways to recognise
+                    financial scams.
+                </p>
+
+                <span>Explore Topics →</span>
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Category Topic Directory -->
+    <section class="topic-view" id="categoryTopics">
+
+        <button class="back-button" onclick="backToCategories()">
+            ← Back to Sections
+        </button>
+
+        <div class="financial-intro">
+
+            <h2 id="categoryHeading">Explore Topics</h2>
+
+            <p id="categoryDescription"></p>
+
+        </div>
+
+        <section class="topic-grid" id="individualTopicGrid"></section>
+
+    </section>
+
+
+    <!-- Individual Guide View -->
+    <section class="topic-view" id="individualGuide">
+
+        <button class="back-button" onclick="backToCategoryTopics()">
+            ← Back to Topics
+        </button>
+
+        <div class="guide-content" id="guideContent"></div>
+
+    </section>
+
+
+    <!-- Financial Disclaimer -->
+    <section class="medical-disclaimer">
+
+        <p>
+            <strong>Important:</strong> UNMUTE provides general
+            information about financial assistance and does not
+            approve applications, provide grants or guarantee
+            eligibility. Government scheme rules, benefit amounts,
+            hospital empanelment and application procedures may
+            change. Always confirm current details with the
+            relevant government authority or treating hospital
+            before making financial decisions.
+        </p>
+
+    </section>
+
+
+    <!-- Closing Section -->
+    <section class="financial-closing" id="financialClosing">
+
+        <h2>You Deserve Support, Too</h2>
+
+        <p>
+            Financial difficulties should never make someone
+            feel that they have to navigate cancer care alone.
+            Asking questions, exploring assistance and reaching
+            out for help are all valid steps. You deserve care,
+            dignity and support throughout your journey.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>© 2026 UNMUTE. Every voice matters. Every journey deserves support.</p>
+
+    </footer>
+
+
+    <script>
+
+        const categories = {
+
+            national: {
+                title: "Government Schemes Across India",
+                description: "Explore national healthcare coverage and financial assistance programmes that may help eligible patients access cancer treatment.",
+                topics: [
+
+                    {
+                        id: "pmjay",
+                        title: "Ayushman Bharat – PM-JAY",
+                        description: "Understand cashless hospitalisation coverage under the national health protection scheme.",
+                        intro: "Ayushman Bharat – Pradhan Mantri Jan Arogya Yojana (AB-PMJAY) is a government-funded health assurance scheme. Eligible beneficiary families receive cashless hospitalisation coverage of up to ₹5 lakh per family per year for covered secondary and tertiary care services.",
+                        points: [
+                            "The scheme is intended for eligible beneficiary families identified under its prescribed criteria.",
+                            "Eligible patients can access covered treatment at participating public and private hospitals.",
+                            "The scheme includes specified medical, surgical and radiation oncology procedures.",
+                            "The ₹5 lakh benefit is a family-based annual health cover, not a cash grant paid directly to the patient.",
+                            "Treatment is subject to the available packages, hospital empanelment and scheme rules.",
+                            "Ask the hospital's Ayushman Mitra or scheme help desk to check your eligibility and whether your proposed treatment is covered."
+                        ],
+                        reminder: "Do not assume that every hospital or every cancer treatment is automatically covered. Confirm your eligibility, treatment package and hospital participation before proceeding.",
+                        sources: [
+                            {
+                                text: "National Health Authority – PM-JAY",
+                                url: "https://pmjay.gov.in/"
+                            },
+                            {
+                                text: "National Health Authority – Beneficiary Portal",
+                                url: "https://beneficiary.nha.gov.in/"
+                            },
+                            {
+                                text: "Government information on cancer treatment coverage",
+                                url: "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2333536"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "ran",
+                        title: "Rashtriya Arogya Nidhi – HMCPF",
+                        description: "Explore one-time financial assistance for eligible patients requiring cancer treatment.",
+                        intro: "The Health Minister's Cancer Patients Fund (HMCPF) is a component of the Umbrella Scheme of Rashtriya Arogya Nidhi. It provides one-time financial assistance to eligible patients from economically disadvantaged backgrounds who require cancer treatment at qualifying government cancer institutions.",
+                        points: [
+                            "The scheme is intended for eligible poor patients living below the applicable State or Union Territory threshold poverty line.",
+                            "Financial assistance of up to ₹15 lakh may be available, subject to eligibility, assessment and approval.",
+                            "Treatment must be undertaken at qualifying government cancer institutions, including eligible Regional Cancer Centres, Tertiary Care Cancer Centres and State Cancer Institutes.",
+                            "Treatment at private hospitals is generally not covered under the scheme guidelines.",
+                            "Government servants and their families are excluded under the stated guidelines.",
+                            "The assistance is a one-time grant and reimbursement of expenses already incurred is not permitted under the guidelines.",
+                            "Applications are facilitated through the concerned government hospital's nodal officer."
+                        ],
+                        reminder: "This scheme has specific hospital and income requirements. Speak to the hospital nodal officer before treatment expenses are incurred to understand whether an application can be made.",
+                        sources: [
+                            {
+                                text: "Ministry of Health and Family Welfare – RAN Guidelines",
+                                url: "https://www.mohfw-dohfw.gov.in/static/uploads/2025/11/d54b4c0070f8d177867a163f23cf87c1.pdf"
+                            },
+                            {
+                                text: "Government of India – Financial assistance for critical diseases",
+                                url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290623"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "hmdg",
+                        title: "Health Minister's Discretionary Grant",
+                        description: "Learn about additional government assistance for eligible patients receiving treatment at government hospitals.",
+                        intro: "The Health Minister's Discretionary Grant (HMDG) is another government assistance option for certain economically disadvantaged patients with serious illnesses. It may help meet part of the cost of hospitalisation or treatment when free medical facilities are not available.",
+                        points: [
+                            "The scheme is intended for eligible patients receiving treatment at qualifying government hospitals or institutions.",
+                            "The government has described assistance of up to ₹1.25 lakh per patient under this grant.",
+                            "The stated annual family income eligibility limit is up to ₹1.25 lakh.",
+                            "The assistance is subject to the applicable scheme conditions and approval.",
+                            "Ask the hospital administration whether the grant applies to your treatment and what documents are needed.",
+                            "Do not assume that expenses already paid will automatically be reimbursed."
+                        ],
+                        reminder: "The HMDG and HMCPF are different assistance routes. Ask the hospital which scheme, if any, is relevant to your circumstances.",
+                        sources: [
+                            {
+                                text: "Government of India – Financial assistance for critical diseases",
+                                url: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2290623"
+                            },
+                            {
+                                text: "Ministry of Health and Family Welfare",
+                                url: "https://mohfw.gov.in/"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+
+
+            kerala: {
+                title: "Financial Assistance in Kerala",
+                description: "Explore state-level healthcare assistance and financial support options available to eligible patients in Kerala.",
+                topics: [
+
+                    {
+                        id: "kasp",
+                        title: "Karunya Arogya Suraksha Padhathi (KASP)",
+                        description: "Understand Kerala's implementation of the national health protection scheme.",
+                        intro: "Karunya Arogya Suraksha Padhathi (KASP) provides cashless healthcare services to eligible beneficiary families through empanelled hospitals in Kerala. It is Kerala's implementation of the Ayushman Bharat health protection programme.",
+                        points: [
+                            "Eligible families can receive covered hospital treatment up to ₹5 lakh per family per financial year.",
+                            "The scheme operates through participating government and private hospitals.",
+                            "Cancer-related treatment may be available under specified packages.",
+                            "Eligibility depends on the beneficiary criteria and records recognised under the scheme.",
+                            "The hospital's KASP help desk can check beneficiary status and available treatment packages.",
+                            "Ask whether the hospital and the specific cancer treatment are covered before beginning the treatment process."
+                        ],
+                        reminder: "KASP is cashless hospital coverage for eligible beneficiaries, not a general-purpose cash grant. Confirm the current eligibility and package details with the hospital.",
+                        sources: [
+                            {
+                                text: "Kerala State Health Agency",
+                                url: "https://sha.kerala.gov.in/"
+                            },
+                            {
+                                text: "Kerala Health Department – KASP information",
+                                url: "https://health.kerala.gov.in/"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "kbf",
+                        title: "Karunya Benevolent Fund (KBF)",
+                        description: "Explore Kerala's financial assistance programme for people facing serious illnesses.",
+                        intro: "The Karunya Benevolent Fund is a Kerala Government assistance programme for economically disadvantaged people facing serious illnesses, including cancer, kidney disease, heart disease and haemophilia. The scheme is intended to help people whose treatment expenses are difficult to manage.",
+                        points: [
+                            "The Kerala Health Department lists families with annual income below ₹3 lakh among the eligibility criteria.",
+                            "Cancer is included among the serious illnesses supported by the programme.",
+                            "Eligible beneficiaries can approach KASP-empanelled hospitals to enquire about cashless treatment.",
+                            "The current KBF and KASP arrangements have specific eligibility and treatment-package requirements.",
+                            "Ask the hospital's scheme desk whether you qualify and whether your proposed treatment is included.",
+                            "Check whether you need to submit any documents before treatment begins."
+                        ],
+                        reminder: "Do not assume that the income threshold alone guarantees approval. The hospital or State Health Agency must confirm your eligibility and the applicable benefit.",
+                        sources: [
+                            {
+                                text: "Kerala Health Department – Karunya Benevolent Fund",
+                                url: "https://health.kerala.gov.in/"
+                            },
+                            {
+                                text: "Kerala State Health Agency",
+                                url: "https://sha.kerala.gov.in/"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "medicalassistance",
+                        title: "Society for Medical Assistance to the Poor",
+                        description: "Learn about Kerala's medical assistance for eligible patients with serious illnesses.",
+                        intro: "The Kerala Health Department lists the Society for Medical Assistance to the Poor as a source of financial assistance for eligible patients with serious illnesses. Cancer treatments, including surgery, chemotherapy and radiation, are included among the listed treatments.",
+                        points: [
+                            "The published scheme information lists an annual family income below ₹3 lakh as an eligibility condition.",
+                            "Medical assistance of up to ₹50,000 is listed, subject to scheme conditions.",
+                            "Assistance is allowed only once per patient under the published scheme information.",
+                            "A certificate from the treating doctor stating the expenses incurred is listed among the required documents.",
+                            "Where another government grant is available, the scheme information describes assistance for eligible excess treatment costs, subject to its rules.",
+                            "Contact the Kerala Health Department or hospital administration to confirm the current application procedure."
+                        ],
+                        reminder: "This scheme has specific conditions and may involve documentation of expenses already incurred. Verify the current rules and application process before relying on it.",
+                        sources: [
+                            {
+                                text: "Kerala Health Department – Welfare Schemes",
+                                url: "https://health.kerala.gov.in/"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "keralahelp",
+                        title: "Finding Other Kerala Government Support",
+                        description: "Discover where to ask about additional state-level patient assistance.",
+                        intro: "Apart from KASP and KBF, patients may be able to explore other state welfare programmes or hospital-linked assistance depending on their circumstances. The available options can differ based on age, income, diagnosis, treatment location and other eligibility requirements.",
+                        points: [
+                            "Ask the hospital social worker or welfare office about current state assistance programmes.",
+                            "Check whether the State Health Agency has a relevant scheme or hospital help desk.",
+                            "Ask whether the hospital participates in any additional patient welfare initiatives.",
+                            "For children and other specific patient groups, ask whether separate welfare programmes apply.",
+                            "Request the official scheme name, eligibility criteria and application instructions.",
+                            "Keep a record of the office or person who provided the information so you can follow up."
+                        ],
+                        reminder: "A scheme listed online may not be open to every patient or may have changed. Confirm that it is currently active before applying.",
+                        sources: [
+                            {
+                                text: "Kerala Health Department",
+                                url: "https://health.kerala.gov.in/"
+                            },
+                            {
+                                text: "Kerala State Health Agency",
+                                url: "https://sha.kerala.gov.in/"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+
+
+            hospital: {
+                title: "Hospital and Charitable Support",
+                description: "Financial assistance may also be available through hospitals, charitable organisations and patient welfare initiatives.",
+                topics: [
+
+                    {
+                        id: "socialworker",
+                        title: "Speaking to a Hospital Social Worker",
+                        description: "Understand how hospital social workers can help identify financial assistance.",
+                        intro: "Hospital social workers and patient welfare teams can help patients navigate practical and financial challenges associated with treatment. They may know about government schemes, hospital concessions and charitable support options.",
+                        points: [
+                            "Ask whether your hospital has a medical social work department or patient welfare office.",
+                            "Explain your financial concerns and the type of treatment you need.",
+                            "Ask which government schemes or charitable programmes may apply to your situation.",
+                            "Find out whether the hospital has a dedicated financial assistance desk.",
+                            "Ask whether help is available for medicines, investigations, transport or accommodation.",
+                            "Request written information or contact details for the relevant assistance office."
+                        ],
+                        reminder: "You do not need to wait until the financial situation becomes unmanageable before asking for help. Early conversations may give you more time to explore options.",
+                        sources: [
+                            {
+                                text: "National Cancer Institute – Financial and Insurance Matters",
+                                url: "https://www.cancer.gov/about-cancer/managing-care/financial"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "hospitalfunds",
+                        title: "Hospital Welfare Funds and Concessions",
+                        description: "Explore financial support that may be offered directly through hospitals.",
+                        intro: "Some hospitals and cancer centres have patient welfare funds, subsidised treatment arrangements or assistance programmes for people who cannot afford the full cost of care. The availability and eligibility rules differ between institutions.",
+                        points: [
+                            "Ask whether the hospital has a patient welfare fund or financial assistance programme.",
+                            "Enquire about concessions for medicines, tests, procedures or hospital stays.",
+                            "Ask whether support is limited to particular departments or patient groups.",
+                            "Find out whether an application or income certificate is required.",
+                            "Ask whether approval is needed before receiving the service.",
+                            "Request a written explanation of what is covered and what expenses remain your responsibility."
+                        ],
+                        reminder: "Hospital assistance is not standardised across all hospitals. Contact the hospital directly to understand what it currently offers.",
+                        sources: [
+                            {
+                                text: "National Cancer Institute – Financial and Insurance Matters",
+                                url: "https://www.cancer.gov/about-cancer/managing-care/financial"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "charities",
+                        title: "Charitable Organisations and Trusts",
+                        description: "Learn how to find organisations that support people undergoing cancer treatment.",
+                        intro: "Some charitable trusts and non-profit organisations offer assistance to patients who face difficulty paying for cancer care. Support may be available for treatment costs, medicines, transport, accommodation or other essential needs.",
+                        points: [
+                            "Ask your hospital social worker for organisations with an established record of supporting patients.",
+                            "Check whether the organisation supports your cancer type, location and treatment needs.",
+                            "Ask what expenses it can help cover and whether support is paid to the hospital or patient.",
+                            "Confirm the application requirements and whether assistance is currently available.",
+                            "Check the organisation's official registration and contact details.",
+                            "Keep copies of all applications and correspondence."
+                        ],
+                        reminder: "Do not pay an unofficial agent to secure a charitable grant. Contact the organisation through its verified channels.",
+                        sources: [
+                            {
+                                text: "National Cancer Institute – Financial and Insurance Matters",
+                                url: "https://www.cancer.gov/about-cancer/managing-care/financial"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+
+
+            applying: {
+                title: "Understanding the Application Process",
+                description: "Explore the steps involved in identifying assistance, checking eligibility and applying for financial support.",
+                topics: [
+
+                    {
+                        id: "checkeligibility",
+                        title: "Understanding Eligibility",
+                        description: "Learn why different schemes have different eligibility requirements.",
+                        intro: "Financial assistance programmes are designed for different groups of people. Some are based on household income, some on government beneficiary lists, and others on the hospital or treatment being used.",
+                        points: [
+                            "Check the income limit, if the scheme has one.",
+                            "Find out whether the scheme is available in your State or Union Territory.",
+                            "Confirm whether your hospital is empanelled or otherwise eligible under the scheme.",
+                            "Check whether the treatment or procedure is included.",
+                            "Ask whether age, diagnosis, family status or other conditions affect eligibility.",
+                            "Do not rely only on information from social media or unofficial websites."
+                        ],
+                        reminder: "Being diagnosed with cancer does not automatically make someone eligible for every financial assistance programme. Always check the full eligibility criteria.",
+                        sources: [
+                            {
+                                text: "National Health Authority – PM-JAY",
+                                url: "https://pmjay.gov.in/"
+                            },
+                            {
+                                text: "Kerala Health Department",
+                                url: "https://health.kerala.gov.in/"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "beforetreatment",
+                        title: "When Should You Apply?",
+                        description: "Understand why the timing of an application can matter.",
+                        intro: "Some financial assistance programmes require an application or approval before treatment begins. Others may have different rules about expenses already incurred. Understanding the timing can prevent avoidable difficulties.",
+                        points: [
+                            "Ask about assistance as soon as you receive a treatment estimate.",
+                            "Check whether approval must be obtained before admission or treatment.",
+                            "Find out whether the scheme provides cashless treatment or a one-time grant.",
+                            "Ask whether previously incurred expenses are eligible.",
+                            "Do not assume that submitting an application means it has been approved.",
+                            "Keep a record of application dates and approval communications."
+                        ],
+                        reminder: "Some government grants do not reimburse expenses already incurred. Confirm the timing requirements before paying for treatment.",
+                        sources: [
+                            {
+                                text: "Ministry of Health and Family Welfare – RAN Guidelines",
+                                url: "https://www.mohfw-dohfw.gov.in/static/uploads/2025/11/d54b4c0070f8d177867a163f23cf87c1.pdf"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "applicationsteps",
+                        title: "Step-by-Step Application Guidance",
+                        description: "Follow a practical sequence when applying for financial assistance.",
+                        intro: "The application process differs between programmes, but a few general steps can help you stay organised and understand what is expected.",
+                        points: [
+                            "Start by speaking to the hospital's social worker, scheme desk or patient welfare office.",
+                            "Identify the schemes that match your income, location, treatment and hospital.",
+                            "Request the official application form and current eligibility requirements.",
+                            "Prepare the required medical and financial documents.",
+                            "Ask the hospital or scheme office to check the application before submission.",
+                            "Submit the application through the prescribed official channel.",
+                            "Keep copies, acknowledgement receipts and reference numbers.",
+                            "Follow up through the official contact provided by the scheme."
+                        ],
+                        reminder: "If you are unsure how to complete a form, ask the hospital's assistance desk for guidance rather than relying on an unverified intermediary.",
+                        sources: [
+                            {
+                                text: "National Health Authority – PM-JAY",
+                                url: "https://pmjay.gov.in/"
+                            },
+                            {
+                                text: "Kerala State Health Agency",
+                                url: "https://sha.kerala.gov.in/"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "applicationrejected",
+                        title: "What If Your Application Is Delayed or Rejected?",
+                        description: "Understand how to seek clarification when an application does not progress.",
+                        intro: "An application may be delayed, returned for additional documents or rejected because of eligibility or scheme requirements. It is important to understand the reason before deciding what to do next.",
+                        points: [
+                            "Ask for the reason for the delay or rejection.",
+                            "Check whether any documents or information are missing.",
+                            "Ask whether there is an official grievance or appeal process.",
+                            "Keep copies of all communications and application reference numbers.",
+                            "Ask the hospital social worker whether another scheme may be suitable.",
+                            "Use official contact channels to follow up.",
+                            "Do not pay someone who promises to reverse a rejection through unofficial means."
+                        ],
+                        reminder: "A rejected application does not mean that no other form of assistance exists. Ask the hospital to help identify other legitimate options.",
+                        sources: [
+                            {
+                                text: "National Health Authority",
+                                url: "https://nha.gov.in/"
+                            },
+                            {
+                                text: "Kerala Health Department",
+                                url: "https://health.kerala.gov.in/"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+
+
+            documents: {
+                title: "Documents and Financial Planning",
+                description: "Learn which documents may be requested and how to organise medical expenses and financial records.",
+                topics: [
+
+                    {
+                        id: "medicaldocuments",
+                        title: "Medical Documents",
+                        description: "Prepare the medical records commonly requested during financial assistance applications.",
+                        intro: "Medical documents help a scheme or organisation understand the patient's diagnosis, treatment requirements and estimated expenses. The exact documents depend on the assistance programme.",
+                        points: [
+                            "Keep copies of pathology or biopsy reports.",
+                            "Organise relevant scan and imaging reports.",
+                            "Keep the doctor's diagnosis and treatment summary.",
+                            "Obtain a hospital-issued treatment estimate where required.",
+                            "Keep prescriptions and relevant investigation reports.",
+                            "Ask whether a certificate from the treating doctor is needed.",
+                            "Check whether the scheme requires documents in a particular format."
+                        ],
+                        reminder: "Do not submit original medical records unless an official authority specifically requires them. Keep copies of everything you provide.",
+                        sources: [
+                            {
+                                text: "National Health Authority – PM-JAY",
+                                url: "https://pmjay.gov.in/"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "financialdocuments",
+                        title: "Income and Identity Documents",
+                        description: "Understand the financial and identity records that some schemes may request.",
+                        intro: "Many financial assistance programmes need to confirm a patient's identity, residence or financial eligibility. Requirements differ, so it is important to check the exact document list for each scheme.",
+                        points: [
+                            "An accepted identity document, such as Aadhaar where required.",
+                            "Address or residence proof if requested.",
+                            "A valid income certificate where the scheme requires income verification.",
+                            "Ration card or other beneficiary identification where applicable.",
+                            "Bank account details only when the official application requires them.",
+                            "Prescribed application forms and declarations.",
+                            "Any additional certificate specifically requested by the scheme."
+                        ],
+                        reminder: "Never share OTPs, passwords, UPI PINs or online banking credentials as part of a financial assistance application.",
+                        sources: [
+                            {
+                                text: "National Health Authority",
+                                url: "https://nha.gov.in/"
+                            },
+                            {
+                                text: "Kerala Health Department",
+                                url: "https://health.kerala.gov.in/"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "organisingexpenses",
+                        title: "Organising Treatment Expenses",
+                        description: "Learn how to keep track of treatment-related costs and financial records.",
+                        intro: "Cancer-related expenses may include hospital treatment, medicines, tests, travel, accommodation and everyday costs. Keeping records can help families understand their financial needs and complete applications where expense details are required.",
+                        points: [
+                            "Keep hospital estimates, bills and payment receipts organised.",
+                            "Maintain a list of medicines and their costs.",
+                            "Record travel and accommodation expenses where relevant.",
+                            "Separate expenses that are covered by a scheme from those that are not.",
+                            "Keep copies of insurance or scheme approval documents.",
+                            "Ask the hospital for an updated estimate if the treatment plan changes.",
+                            "Store digital copies securely and limit access to trusted people."
+                        ],
+                        reminder: "Good record-keeping can help with applications and follow-up, but it does not guarantee reimbursement under a scheme.",
+                        sources: [
+                            {
+                                text: "National Cancer Institute – Financial and Insurance Matters",
+                                url: "https://www.cancer.gov/about-cancer/managing-care/financial"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+
+
+            community: {
+                title: "Community Support and Financial Safety",
+                description: "Explore additional sources of help while protecting patient privacy and staying alert to misleading financial requests.",
+                topics: [
+
+                    {
+                        id: "crowdfunding",
+                        title: "Understanding Medical Crowdfunding",
+                        description: "Learn how online fundraising may help families manage treatment expenses.",
+                        intro: "Medical crowdfunding allows individuals or families to request financial contributions from a wider community. It may help with some cancer-related expenses, but fundraising outcomes are not guaranteed.",
+                        points: [
+                            "Research the platform and understand its verification process and fees.",
+                            "Check what medical documents the platform requires.",
+                            "Obtain the patient's consent before sharing medical information or photographs.",
+                            "Clearly explain the purpose of the fundraiser and the expenses involved.",
+                            "Keep records of donations and how funds are used.",
+                            "Understand how the platform transfers funds and whether additional conditions apply.",
+                            "Avoid sharing sensitive information publicly unless it is necessary and consented to."
+                        ],
+                        reminder: "Crowdfunding is not a guaranteed source of assistance. Platform verification does not replace independent medical or financial advice.",
+                        sources: [
+                            {
+                                text: "National Cancer Institute – Financial and Insurance Matters",
+                                url: "https://www.cancer.gov/about-cancer/managing-care/financial"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "communityhelp",
+                        title: "Community and Workplace Support",
+                        description: "Explore practical support through trusted community and personal networks.",
+                        intro: "Support may also come from trusted community groups, workplaces, educational institutions, local organisations or family networks. Help does not always need to be financial; practical assistance can also reduce the burden of treatment.",
+                        points: [
+                            "Ask whether your workplace has an employee welfare or medical assistance programme.",
+                            "Students may enquire about institutional welfare funds or medical support policies.",
+                            "Explore community organisations with established patient assistance programmes.",
+                            "Ask trusted people about transport, accommodation or daily support.",
+                            "Discuss fundraising arrangements openly and keep records of contributions.",
+                            "Respect the patient's preferences about who is informed and what information is shared."
+                        ],
+                        reminder: "Accepting support does not mean losing your independence. You can decide what help you need and what information you wish to share.",
+                        sources: [
+                            {
+                                text: "National Cancer Institute – Financial and Insurance Matters",
+                                url: "https://www.cancer.gov/about-cancer/managing-care/financial"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "scams",
+                        title: "Recognising Financial Assistance Scams",
+                        description: "Identify warning signs of fraudulent grants, fundraising requests and unofficial agents.",
+                        intro: "People seeking urgent medical assistance may be targeted by individuals who promise guaranteed grants, demand advance fees or misuse patient information. Always verify the source before sharing money or documents.",
+                        points: [
+                            "Be cautious of anyone promising guaranteed government assistance in exchange for a fee.",
+                            "Do not share OTPs, passwords, UPI PINs or banking credentials.",
+                            "Verify scheme information through official government websites or hospital offices.",
+                            "Check the identity and registration details of charitable organisations.",
+                            "Verify fundraising campaigns before donating or sharing them.",
+                            "Be cautious if someone pressures you to make an immediate payment.",
+                            "Report suspected fraud through appropriate official channels."
+                        ],
+                        reminder: "Legitimate assistance programmes have official eligibility and application procedures. Never pay an unofficial intermediary to guarantee approval.",
+                        sources: [
+                            {
+                                text: "National Cyber Crime Reporting Portal",
+                                url: "https://cybercrime.gov.in/"
+                            },
+                            {
+                                text: "National Cyber Crime Helpline – 1930",
+                                url: "https://cybercrime.gov.in/"
+                            }
+                        ]
+                    },
+
+                    {
+                        id: "privacy",
+                        title: "Protecting Patient Privacy",
+                        description: "Understand how to protect medical information when seeking financial help.",
+                        intro: "Financial assistance applications and fundraising may involve sharing sensitive medical and personal information. Patients should understand what is being shared, who can access it and how it will be used.",
+                        points: [
+                            "Obtain the patient's informed consent before sharing reports, photographs or personal details.",
+                            "Share only the documents and information required for the application.",
+                            "Use official websites and verified communication channels.",
+                            "Avoid posting identity documents or complete medical records publicly.",
+                            "Check whether a fundraising platform explains how it stores and uses personal information.",
+                            "Ask trusted people to respect the patient's wishes about privacy.",
+                            "Keep digital copies of important documents in a secure location."
+                        ],
+                        reminder: "A patient has the right to seek financial assistance without giving up control over their personal story or medical privacy.",
+                        sources: [
+                            {
+                                text: "National Cancer Institute – Financial and Insurance Matters",
+                                url: "https://www.cancer.gov/about-cancer/managing-care/financial"
+                            }
+                        ]
+                    }
+
+                ]
+            }
+
+        };
+
+
+        const categoryDirectory = document.getElementById("categoryDirectory");
+        const categoryTopics = document.getElementById("categoryTopics");
+        const individualGuide = document.getElementById("individualGuide");
+        const financialClosing = document.getElementById("financialClosing");
+
+        const categoryHeading = document.getElementById("categoryHeading");
+        const categoryDescription = document.getElementById("categoryDescription");
+        const individualTopicGrid = document.getElementById("individualTopicGrid");
+        const guideContent = document.getElementById("guideContent");
+
+
+        // Scroll to the selected section while accounting for the navbar.
+
+        function scrollToSection(element) {
+
+            if (!element) return;
+
+            requestAnimationFrame(function () {
+
+                const navbar = document.querySelector(".navbar");
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+                const elementPosition =
+                    element.getBoundingClientRect().top + window.scrollY;
+
+                window.scrollTo({
+                    top: Math.max(0, elementPosition - navbarHeight - 20),
+                    behavior: "smooth"
+                });
+
+            });
+
+        }
+
+
+        function hideAllViews() {
+
+            categoryDirectory.classList.add("hidden");
+            categoryTopics.classList.remove("active");
+            individualGuide.classList.remove("active");
+            financialClosing.classList.add("hidden");
+
+        }
+
+
+        function openCategory(categoryId) {
+
+            const category = categories[categoryId];
+
+            if (!category) return;
+
+            hideAllViews();
+
+            categoryHeading.textContent = category.title;
+            categoryDescription.textContent = category.description;
+
+            individualTopicGrid.innerHTML = "";
+
+            category.topics.forEach(function (topic, index) {
+
+                const card = document.createElement("button");
+
+                card.className = "topic-card";
+                card.type = "button";
+
+                const number = document.createElement("span");
+                number.className = "topic-number";
+                number.textContent = String(index + 1).padStart(2, "0");
+
+                const heading = document.createElement("h3");
+                heading.textContent = topic.title;
+
+                const description = document.createElement("p");
+                description.textContent = topic.description;
+
+                const linkText = document.createElement("span");
+                linkText.textContent = "Explore Topic →";
+
+                card.append(number, heading, description, linkText);
+
+                card.addEventListener("click", function () {
+                    openGuide(topic.id);
+                });
+
+                individualTopicGrid.appendChild(card);
+
+            });
+
+            categoryTopics.classList.add("active");
+
+            scrollToSection(categoryHeading);
+
+        }
+
+
+        function findTopic(topicId) {
+
+            for (const category of Object.values(categories)) {
+
+                const topic = category.topics.find(function (item) {
+                    return item.id === topicId;
+                });
+
+                if (topic) return topic;
+
+            }
+
+            return null;
+
+        }
+
+
+        function openGuide(topicId) {
+
+            const topic = findTopic(topicId);
+
+            if (!topic) return;
+
+            hideAllViews();
+
+            guideContent.innerHTML = "";
+
+            const heading = document.createElement("h2");
+            heading.textContent = topic.title;
+
+            guideContent.appendChild(heading);
+
+
+            const intro = document.createElement("p");
+            intro.textContent = topic.intro;
+
+            guideContent.appendChild(intro);
+
+
+            const subheading = document.createElement("h3");
+            subheading.textContent = "What Should You Know?";
+
+            guideContent.appendChild(subheading);
+
+
+            const list = document.createElement("ul");
+
+            topic.points.forEach(function (point) {
+
+                const item = document.createElement("li");
+                item.textContent = point;
+
+                list.appendChild(item);
+
+            });
+
+            guideContent.appendChild(list);
+
+
+            // Additional reminder
+
+            const reminderBox = document.createElement("div");
+            reminderBox.className = "gentle-reminder";
+
+            const reminder = document.createElement("p");
+            reminder.textContent = topic.reminder;
+
+            reminderBox.appendChild(reminder);
+            guideContent.appendChild(reminderBox);
+
+
+            // Official and relevant sources
+
+            if (topic.sources && topic.sources.length > 0) {
+
+                const sources = document.createElement("div");
+                sources.className = "guide-sources";
+
+                const sourceHeading = document.createElement("h3");
+                sourceHeading.textContent = "Official and Further Reading";
+
+                const sourceList = document.createElement("ul");
+
+                topic.sources.forEach(function (source) {
+
+                    const item = document.createElement("li");
+                    const link = document.createElement("a");
+
+                    link.className = "source-link";
+                    link.href = source.url;
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                    link.textContent = source.text;
+
+                    item.appendChild(link);
+                    sourceList.appendChild(item);
+
+                });
+
+                sources.append(sourceHeading, sourceList);
+                guideContent.appendChild(sources);
+
+            }
+
+
+            individualGuide.classList.add("active");
+
+            scrollToSection(guideContent);
+
+        }
+
+
+        function backToCategories() {
+
+            categoryTopics.classList.remove("active");
+            individualGuide.classList.remove("active");
+
+            categoryDirectory.classList.remove("hidden");
+            financialClosing.classList.remove("hidden");
+
+            scrollToSection(categoryDirectory);
+
+        }
+
+
+        function backToCategoryTopics() {
+
+            individualGuide.classList.remove("active");
+            categoryTopics.classList.add("active");
+
+            scrollToSection(categoryHeading);
+
+        }
+
+    </script>
+
+</body>
+</html>

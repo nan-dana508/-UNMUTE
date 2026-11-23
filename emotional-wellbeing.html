@@ -310,10 +310,11 @@
 
         <nav>
             <a href="index.html">Home</a>
-            <a href="index.html#know-your-body">Know Your Body</a>
-            <a href="index.html#support" class="active">Find Support</a>
-            <a href="index.html#voices">Her Voice</a>
-            <a href="index.html#research">Beyond the Common</a>
+            <a href="know-your-body.html">Know Your Body</a>
+            <a href="find-support.html" class="active">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
         </nav>
     </header>
 
@@ -1124,6 +1125,24 @@
         const topicViews = document.querySelectorAll(".topic-view");
         const emotionalClosing = document.getElementById("emotionalClosing");
 
+        function scrollToSection(element) {
+            if (!element) return;
+
+            const navbar = document.querySelector(".navbar");
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+            const sectionTop =
+                element.getBoundingClientRect().top +
+                window.scrollY -
+                navbarHeight -
+                20;
+
+            window.scrollTo({
+                top: Math.max(0, sectionTop),
+                behavior: "smooth"
+            });
+        }
+
         function openTopic(topicId) {
             topicDirectory.classList.add("hidden");
             emotionalClosing.classList.add("hidden");
@@ -1136,9 +1155,9 @@
 
             if (selectedTopic) {
                 selectedTopic.classList.add("active");
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
+
+                requestAnimationFrame(function () {
+                    scrollToSection(selectedTopic);
                 });
             }
         }
@@ -1151,9 +1170,8 @@
             topicDirectory.classList.remove("hidden");
             emotionalClosing.classList.remove("hidden");
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+            requestAnimationFrame(function () {
+                scrollToSection(topicDirectory);
             });
         }
     </script>

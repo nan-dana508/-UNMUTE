@@ -1,4 +1,3 @@
-
 /* =====================================
    1. BASIC PAGE SETTINGS
 ===================================== */
@@ -17,6 +16,17 @@ body {
     font-family: Arial, sans-serif;
     background-color: #F8F1EA;
     color: #493047;
+}
+
+/* No underlines anywhere on the website */
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none !important;
 }
 
 
@@ -288,9 +298,6 @@ footer p:last-child {
     margin-bottom: 28px;
 }
 
-
-/* Welcome options */
-
 .welcome-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -324,9 +331,6 @@ footer p:last-child {
     transform: translateY(-3px);
 }
 
-
-/* Welcome SVG icons */
-
 .welcome-icon {
     display: flex;
     justify-content: center;
@@ -341,9 +345,6 @@ footer p:last-child {
     height: 42px;
     display: block;
 }
-
-
-/* Explore link */
 
 .explore-link {
     display: inline-block;
@@ -363,9 +364,6 @@ footer p:last-child {
     color: #493047;
 }
 
-
-/* Popup animation */
-
 @keyframes popupAppear {
     from {
         opacity: 0;
@@ -377,9 +375,6 @@ footer p:last-child {
         transform: translateY(0);
     }
 }
-
-
-/* Popup mobile layout */
 
 @media (max-width: 600px) {
 
@@ -439,9 +434,6 @@ footer p:last-child {
     color: #6D5869;
 }
 
-
-/* Flower selection */
-
 .flower-selection {
     max-width: 1100px;
     margin: 50px auto;
@@ -482,23 +474,17 @@ footer p:last-child {
     border-radius: 18px;
     background-color: #FFFDFC;
     color: #493047;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     gap: 14px;
-
     cursor: pointer;
-
     transition: transform 0.3s ease,
                 border-color 0.3s ease,
                 box-shadow 0.3s ease,
                 background-color 0.3s ease;
 }
-
-
-/* Centre the last two cards */
 
 .flower-choice:nth-child(4) {
     grid-column: 2 / span 2;
@@ -507,9 +493,6 @@ footer p:last-child {
 .flower-choice:nth-child(5) {
     grid-column: 4 / span 2;
 }
-
-
-/* Custom flower SVG illustrations */
 
 .flower-art {
     display: flex;
@@ -527,26 +510,17 @@ footer p:last-child {
     overflow: visible;
 }
 
-
-/* Flower names */
-
 .flower-choice strong {
     font-family: Georgia, serif;
     font-size: 1.45rem;
     font-weight: 600;
 }
 
-
-/* Flower symbolism */
-
 .flower-choice > span:not(.flower-art) {
     font-size: 1rem;
     color: #A16B86;
     font-weight: 600;
 }
-
-
-/* Flower descriptions */
 
 .flower-choice small {
     font-size: 0.95rem;
@@ -555,17 +529,11 @@ footer p:last-child {
     max-width: 250px;
 }
 
-
-/* Hover effect */
-
 .flower-choice:hover {
     transform: translateY(-6px);
     border-color: #A16B86;
     box-shadow: 0 10px 25px rgba(73, 48, 71, 0.09);
 }
-
-
-/* Selected flower */
 
 .flower-choice.selected {
     background-color: #F3E8ED;
@@ -573,9 +541,6 @@ footer p:last-child {
     box-shadow: 0 8px 22px rgba(115, 40, 113, 0.12);
     transform: translateY(-4px);
 }
-
-
-/* Keyboard focus */
 
 .flower-choice:focus-visible {
     outline: 3px solid #732871;
@@ -603,9 +568,6 @@ footer p:last-child {
     margin-bottom: 25px;
 }
 
-
-/* Main garden scene */
-
 .garden-scene {
     position: relative;
     width: 100%;
@@ -614,9 +576,6 @@ footer p:last-child {
     isolation: isolate;
 }
 
-
-/* Growing flower */
-
 .garden-plant {
     position: absolute;
     left: 50%;
@@ -624,11 +583,9 @@ footer p:last-child {
     transform: translateX(-50%);
     width: 220px;
     height: 240px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     overflow: visible;
     z-index: 2;
 }
@@ -647,27 +604,18 @@ footer p:last-child {
 
 .watering-tool {
     position: absolute;
-
-    /* Original starting position */
     left: 10%;
     top: auto;
     bottom: 5px;
-
-    /* Dimensions match the vintage SVG proportions */
     width: 170px;
     height: 124px;
-
     z-index: 10;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     cursor: grab;
     touch-action: none;
     user-select: none;
-
-    /* No transition during dragging */
     transition: none;
 }
 
@@ -679,16 +627,9 @@ footer p:last-child {
     pointer-events: none;
 }
 
-
-/* Dragging cursor */
-
 .watering-tool:active {
     cursor: grabbing;
 }
-
-
-/* Smooth return animation.
-   JavaScript adds this class only when the can returns home. */
 
 .watering-tool.returning {
     transition:
@@ -709,31 +650,20 @@ footer p:last-child {
     z-index: 4;
 }
 
-/* JavaScript displays this container while watering */
-
 .water-flow.is-active {
     display: block;
 }
-
-
-/* Individual water droplets */
 
 .garden-water-drop {
     position: absolute;
     width: 6px;
     height: 11px;
-
     background: #8AB9D5;
     border-radius: 50% 50% 55% 55%;
-
     opacity: 0;
     pointer-events: none;
-
     animation: gardenWaterFall 0.65s linear infinite;
 }
-
-
-/* Droplets fall from the sprinkler head */
 
 @keyframes gardenWaterFall {
 
@@ -769,9 +699,6 @@ footer p:last-child {
     font-family: Georgia, serif;
     font-size: 1.15rem;
 }
-
-
-/* Restart button */
 
 .restart-garden {
     margin-top: 20px;
@@ -860,7 +787,6 @@ footer p:last-child {
     }
 }
 
-
 @media (max-width: 420px) {
 
     .flower-gallery {
@@ -946,14 +872,12 @@ footer p:last-child {
     .feature-grid {
         grid-template-columns: 1fr;
     }
-
 }
+
 
 /* =====================================
    17. KNOW YOUR BODY PAGE
 ===================================== */
-
-/* Navigation for the Know Your Body page */
 
 .navbar nav {
     display: flex;
@@ -977,9 +901,6 @@ footer p:last-child {
 .navbar nav a.active {
     font-weight: bold;
 }
-
-
-/* Page introduction */
 
 .know-hero {
     padding: 90px 12% 75px;
@@ -1019,9 +940,6 @@ footer p:last-child {
     line-height: 1.8;
 }
 
-
-/* Cancer directory */
-
 .cancer-directory {
     padding: 85px 8%;
     text-align: center;
@@ -1044,9 +962,6 @@ footer p:last-child {
     color: #725F70;
     line-height: 1.8;
 }
-
-
-/* Cancer cards layout */
 
 .cancer-grid {
     display: grid;
@@ -1079,9 +994,6 @@ footer p:last-child {
     outline-offset: 5px;
 }
 
-
-/* Image placeholders */
-
 .cancer-card-image {
     height: 230px;
     display: flex;
@@ -1104,9 +1016,6 @@ footer p:last-child {
     font-size: 42px;
     opacity: 0.9;
 }
-
-
-/* Card text */
 
 .cancer-card-content {
     padding: 30px;
@@ -1141,9 +1050,6 @@ footer p:last-child {
     font-size: 14px;
     font-weight: bold;
 }
-
-
-/* More cancer guides coming soon */
 
 .upcoming-cancers {
     padding: 75px 8%;
@@ -1183,9 +1089,6 @@ footer p:last-child {
     font-size: 14px;
 }
 
-
-/* Know Your Body footer */
-
 .footer {
     text-align: center;
 }
@@ -1195,7 +1098,7 @@ footer p:last-child {
     margin-top: 12px;
     color: #FFFFFF;
     font-size: 14px;
-    text-decoration: underline;
+    text-decoration: none !important;
 }
 
 
@@ -1271,11 +1174,10 @@ footer p:last-child {
     }
 }
 
+
 /* =====================================
    19. INDIVIDUAL CANCER GUIDE PAGES
 ===================================== */
-
-/* Guide page introduction */
 
 .cancer-guide-hero {
     padding: 85px 12%;
@@ -1308,26 +1210,21 @@ footer p:last-child {
 .cancer-guide-hero > a {
     display: inline-block;
     color: #732871;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 14px;
     font-weight: bold;
 }
 
 .cancer-guide-hero > a:hover {
-    text-decoration: underline;
+    color: #493047;
+    text-decoration: none !important;
 }
-
-
-/* Main guide content */
 
 .cancer-guide-content {
     max-width: 950px;
     margin: 0 auto;
     padding: 65px 35px 85px;
 }
-
-
-/* Individual information sections */
 
 .guide-section {
     padding: 35px 0;
@@ -1382,9 +1279,6 @@ footer p:last-child {
     color: #493047;
 }
 
-
-/* Important information note */
-
 .guide-note {
     margin-top: 30px;
     padding: 25px 28px;
@@ -1408,9 +1302,6 @@ footer p:last-child {
 .guide-note p:last-child {
     margin-bottom: 0;
 }
-
-
-/* References section */
 
 .guide-references {
     padding: 45px 0 20px;
@@ -1441,11 +1332,12 @@ footer p:last-child {
 
 .guide-references a {
     color: #732871;
-    text-decoration: underline;
+    text-decoration: none !important;
 }
 
 .guide-references a:hover {
     color: #493047;
+    text-decoration: none !important;
 }
 
 .reference-date {
@@ -1453,9 +1345,6 @@ footer p:last-child {
     color: #A16B86 !important;
     margin-top: 22px;
 }
-
-
-/* Guide page mobile layout */
 
 @media (max-width: 650px) {
 
@@ -1497,7 +1386,8 @@ footer p:last-child {
     }
 }
 
-/* CANCER DIRECTORY RIBBON IMAGES */
+
+/* Cancer directory ribbon images */
 
 .cancer-card-image {
     width: 100%;
@@ -1513,7 +1403,8 @@ footer p:last-child {
     object-position: center;
 }
 
-/* KNOW YOUR BODY - BOTANICAL HERO */
+
+/* Know Your Body botanical hero */
 
 .know-hero {
     display: flex;
@@ -1540,9 +1431,11 @@ footer p:last-child {
     object-fit: contain;
 }
 
-/* MOBILE RESPONSIVENESS */
+
+/* Know Your Body mobile responsiveness */
 
 @media (max-width: 768px) {
+
     .know-hero {
         flex-direction: column;
         text-align: center;
@@ -1554,11 +1447,11 @@ footer p:last-child {
         width: 200px;
     }
 }
+
+
 /* =====================================
    20. NAVIGATION AND LINK UNDERLINE FIX
 ===================================== */
-
-/* Remove underlines from all homepage navigation states */
 
 .nav-links a,
 .nav-links a:link,
@@ -1573,8 +1466,6 @@ footer p:last-child {
     text-decoration: none !important;
 }
 
-/* Preserve the existing navigation colours */
-
 .nav-links a {
     color: #493047;
 }
@@ -1582,8 +1473,6 @@ footer p:last-child {
 .nav-links a:hover {
     color: #732871;
 }
-
-/* Remove underlines from the Know Your Body feature card */
 
 a.feature-card,
 a.feature-card:link,
@@ -1594,12 +1483,987 @@ a.feature-card:active {
     color: inherit;
 }
 
-/* Keep the popup options free of underlines */
-
 .welcome-option,
 .welcome-option:link,
 .welcome-option:visited,
 .welcome-option:hover,
 .welcome-option:active {
     text-decoration: none !important;
+}
+
+
+/* =====================================
+   21. HER VOICE PAGE
+===================================== */
+
+/* Hero section */
+
+.her-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 90px 12% 75px;
+    background-color: #EDE1E9;
+}
+
+.her-hero-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.her-hero .section-label {
+    color: #732871;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.her-hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 5vw, 62px);
+    line-height: 1.15;
+    color: #493047;
+    margin-bottom: 25px;
+}
+
+.her-hero-content > p:not(.section-label) {
+    max-width: 680px;
+    color: #725F70;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.her-hero-image {
+    flex: 0 0 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.her-hero-image img {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+}
+
+
+/* Introduction section */
+
+.her-introduction {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 75px 25px 65px;
+    text-align: center;
+}
+
+.her-section-label {
+    color: #732871;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.her-introduction h2 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    line-height: 1.3;
+    color: #493047;
+    margin-bottom: 20px;
+}
+
+.her-introduction p {
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+
+/* Survivor stories section */
+
+.her-stories {
+    padding: 85px 8%;
+    background-color: #F8F1EA;
+    scroll-margin-top: 30px;
+}
+
+.her-stories-heading {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.her-stories-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    color: #493047;
+    margin-bottom: 15px;
+}
+
+.her-stories-heading > p:not(.her-section-label) {
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.her-disclosure {
+    max-width: 1050px;
+    margin: 0 auto 35px;
+    padding: 22px 25px;
+    background-color: #EDE1E9;
+    border-left: 4px solid #732871;
+    border-radius: 5px;
+}
+
+.her-disclosure p {
+    color: #725F70;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.her-disclosure strong {
+    color: #493047;
+}
+
+
+/* Story filters */
+
+.story-filters {
+    max-width: 1050px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 190px;
+}
+
+.filter-group label {
+    color: #493047;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.filter-group select {
+    min-width: 190px;
+    padding: 12px 14px;
+    border: 1px solid #E5D5E3;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #493047;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filter-group select:focus-visible,
+.filter-reset:focus-visible,
+.story-flip-button:focus-visible,
+.story-read-link:focus-visible,
+.story-back-button:focus-visible {
+    outline: 3px solid #732871;
+    outline-offset: 3px;
+}
+
+.filter-reset {
+    padding: 12px 20px;
+    border: 1px solid #732871;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #732871;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.25s ease,
+                color 0.25s ease;
+}
+
+.filter-reset:hover {
+    background-color: #732871;
+    color: #FFFFFF;
+}
+
+.story-result-count {
+    max-width: 1050px;
+    margin: 0 auto 22px;
+    color: #725F70;
+    font-size: 13px;
+}
+
+
+/* Story card grid */
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1050px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.story-card {
+    min-width: 0;
+    min-height: 390px;
+    perspective: 1200px;
+}
+
+.story-card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.65s ease;
+}
+
+.story-card.is-flipped .story-card-inner {
+    transform: rotateY(180deg);
+}
+
+.story-card-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border: 1px solid #E5D5E3;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.story-card-front {
+    transform: rotateY(0deg);
+}
+
+.story-card-back {
+    transform: rotateY(180deg);
+    padding: 28px;
+    justify-content: center;
+}
+
+.story-card-front img {
+    display: block;
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.story-card-front-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+}
+
+.story-card-label {
+    color: #A16B86;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.story-card-front h3 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    line-height: 1.3;
+    color: #493047;
+    margin-bottom: 8px;
+}
+
+.story-card-front-content > p:not(.story-card-label) {
+    color: #725F70;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 17px;
+}
+
+.story-flip-button,
+.story-back-button {
+    margin-top: auto;
+    padding: 10px 16px;
+    border: 1px solid #732871;
+    border-radius: 4px;
+    background-color: #732871;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.story-flip-button:hover,
+.story-back-button:hover {
+    background-color: #493047;
+}
+
+.story-card-back h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #493047;
+    margin-bottom: 15px;
+}
+
+.story-card-back p {
+    color: #725F70;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.story-read-link {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 18px;
+    color: #732871;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.story-read-link:hover {
+    color: #493047;
+}
+
+.story-empty {
+    display: none;
+    max-width: 700px;
+    margin: 35px auto 0;
+    padding: 30px;
+    text-align: center;
+    background-color: #EDE1E9;
+    border-radius: 5px;
+}
+
+.story-empty.is-visible {
+    display: block;
+}
+
+.story-empty p {
+    color: #725F70;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* Share your story section */
+
+.her-share {
+    padding: 85px 12%;
+    text-align: center;
+    background-color: #EDE1E9;
+}
+
+.her-share .her-section-label {
+    margin-bottom: 20px;
+}
+
+.her-share h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    line-height: 1.3;
+    color: #493047;
+    margin-bottom: 18px;
+}
+
+.her-share > p {
+    max-width: 680px;
+    margin: 0 auto 18px;
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.her-share-note {
+    max-width: 700px;
+    margin: 30px auto 0;
+    padding: 22px 25px;
+    background-color: #F8F1EA;
+    border: 1px solid #E5D5E3;
+    border-radius: 6px;
+    text-align: left;
+}
+
+.her-share-note p {
+    color: #725F70;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.her-share-note p:last-child {
+    margin-bottom: 0;
+}
+
+.her-share-note strong {
+    color: #493047;
+}
+
+.her-share-note a {
+    color: #732871;
+    font-weight: bold;
+}
+
+.her-share-note a:hover {
+    color: #493047;
+}
+
+.her-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 24px;
+    border: 1px solid #732871;
+    border-radius: 4px;
+    background-color: #732871;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.25s ease;
+}
+
+.her-button:hover {
+    background-color: #493047;
+}
+
+
+/* Closing section */
+
+.her-closing {
+    padding: 75px 12%;
+    text-align: center;
+    background-color: #F8F1EA;
+}
+
+.her-closing h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #493047;
+    margin-bottom: 18px;
+}
+
+.her-closing p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.her-expansion {
+    margin-top: 25px;
+    color: #A16B86 !important;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+
+/* =====================================
+   22. INDIVIDUAL SURVIVOR STORY PAGES
+===================================== */
+
+/* Survivor page hero */
+
+.survivor-hero {
+    padding: 75px 12%;
+    text-align: center;
+    background-color: #EDE1E9;
+}
+
+.survivor-back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #732871;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.survivor-back-link:hover {
+    color: #493047;
+}
+
+.survivor-hero .section-label {
+    color: #732871;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.survivor-hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 58px);
+    color: #493047;
+    margin-bottom: 15px;
+}
+
+.survivor-hero > p:not(.section-label) {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* Survivor profile */
+
+.survivor-profile {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    align-items: center;
+    gap: 45px;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 65px 35px;
+}
+
+.survivor-profile img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+
+.survivor-profile-content h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #493047;
+    margin-bottom: 18px;
+}
+
+.survivor-profile-content p {
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 14px;
+}
+
+
+/* Fictional story disclosure */
+
+.survivor-disclosure {
+    max-width: 850px;
+    margin: 0 auto 35px;
+    padding: 22px 25px;
+    background-color: #EDE1E9;
+    border-left: 4px solid #732871;
+    border-radius: 5px;
+}
+
+.survivor-disclosure p {
+    color: #725F70;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.survivor-disclosure strong {
+    color: #493047;
+}
+
+
+/* Story content */
+
+.survivor-story-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px 35px 75px;
+}
+
+.survivor-story-section {
+    padding: 32px 0;
+    border-bottom: 1px solid #E5D5E3;
+}
+
+.survivor-story-section .section-label {
+    color: #A16B86;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.survivor-story-section h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    line-height: 1.3;
+    color: #493047;
+    margin-bottom: 20px;
+}
+
+.survivor-story-section h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    color: #732871;
+    margin: 25px 0 12px;
+}
+
+.survivor-story-section p {
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 17px;
+}
+
+.survivor-story-section ul {
+    padding-left: 24px;
+    margin: 15px 0 22px;
+}
+
+.survivor-story-section li {
+    color: #725F70;
+    font-size: 15px;
+    line-height: 1.8;
+    padding-left: 5px;
+    margin-bottom: 12px;
+}
+
+
+/* Survivor quote */
+
+.survivor-quote {
+    margin: 30px 0;
+    padding: 25px 28px;
+    background-color: #EDE1E9;
+    border-left: 4px solid #A16B86;
+    border-radius: 5px;
+}
+
+.survivor-quote p {
+    color: #493047;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+
+/* Navigation between survivor stories */
+
+.survivor-story-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 35px 75px;
+}
+
+.survivor-story-navigation a {
+    color: #732871;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.survivor-story-navigation a:hover {
+    color: #493047;
+}
+
+
+/* =====================================
+   23. HER VOICE RESPONSIVENESS
+===================================== */
+
+/* Tablet */
+
+@media (max-width: 850px) {
+
+    .her-hero {
+        padding: 70px 8%;
+        gap: 25px;
+    }
+
+    .her-hero-image {
+        flex: 0 0 230px;
+    }
+
+    .her-hero-image img {
+        max-height: 280px;
+    }
+
+    .story-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .survivor-profile {
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .survivor-profile img {
+        height: 310px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .her-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 8%;
+        gap: 25px;
+    }
+
+    .her-hero-content {
+        width: 100%;
+    }
+
+    .her-hero h1 {
+        font-size: 40px;
+    }
+
+    .her-hero-content > p:not(.section-label) {
+        font-size: 14px;
+    }
+
+    .her-hero-image {
+        flex: none;
+        width: 200px;
+    }
+
+    .her-hero-image img {
+        max-height: 240px;
+    }
+
+    .her-introduction {
+        padding: 60px 8%;
+    }
+
+    .her-introduction h2 {
+        font-size: 29px;
+    }
+
+    .her-introduction p {
+        font-size: 14px;
+    }
+
+    .her-stories {
+        padding: 65px 7%;
+    }
+
+    .her-stories-heading h2 {
+        font-size: 30px;
+    }
+
+    .her-stories-heading > p:not(.her-section-label) {
+        font-size: 14px;
+    }
+
+    .her-disclosure {
+        padding: 19px;
+    }
+
+    .story-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .filter-group,
+    .filter-group select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .filter-reset {
+        align-self: flex-start;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        gap: 22px;
+    }
+
+    .story-card,
+    .story-card-inner {
+        min-height: 390px;
+    }
+
+    .her-share {
+        padding: 65px 8%;
+    }
+
+    .her-share h2 {
+        font-size: 30px;
+    }
+
+    .her-share > p {
+        font-size: 14px;
+    }
+
+    .her-share-note {
+        padding: 20px;
+    }
+
+    .her-closing {
+        padding: 60px 8%;
+    }
+
+    .her-closing h2 {
+        font-size: 28px;
+    }
+
+    .survivor-hero {
+        padding: 60px 8%;
+    }
+
+    .survivor-hero h1 {
+        font-size: 36px;
+    }
+
+    .survivor-profile {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 480px;
+        padding: 45px 7%;
+        text-align: center;
+    }
+
+    .survivor-profile img {
+        width: 220px;
+        height: 260px;
+        margin: 0 auto;
+    }
+
+    .survivor-profile-content h2 {
+        font-size: 27px;
+    }
+
+    .survivor-disclosure {
+        margin: 0 7% 25px;
+        padding: 19px;
+    }
+
+    .survivor-story-content {
+        padding: 15px 7% 55px;
+    }
+
+    .survivor-story-section {
+        padding: 27px 0;
+    }
+
+    .survivor-story-section h2 {
+        font-size: 26px;
+    }
+
+    .survivor-story-section h3 {
+        font-size: 20px;
+    }
+
+    .survivor-story-section p,
+    .survivor-story-section li {
+        font-size: 14px;
+    }
+
+    .survivor-quote {
+        padding: 20px;
+    }
+
+    .survivor-quote p {
+        font-size: 17px;
+    }
+
+    .survivor-story-navigation {
+        padding: 0 7% 55px;
+    }
+}
+
+
+/* Small mobile screens */
+
+@media (max-width: 420px) {
+
+    .her-hero h1 {
+        font-size: 34px;
+    }
+
+    .her-stories-heading h2 {
+        font-size: 27px;
+    }
+
+    .story-card-front img {
+        height: 215px;
+    }
+
+    .story-card-front-content {
+        padding: 19px;
+    }
+
+    .story-card-back {
+        padding: 23px;
+    }
+
+    .survivor-hero h1 {
+        font-size: 32px;
+    }
+
+    .survivor-profile img {
+        width: 190px;
+        height: 235px;
+    }
+
+    .survivor-story-section h2 {
+        font-size: 24px;
+    }
+}
+
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .story-card-inner {
+        transition: none;
+    }
+
+    .story-flip-button,
+    .story-back-button,
+    .filter-reset,
+    .her-button {
+        transition: none;
+    }
+}
+/* Survivor story navigation button */
+.survivor-story-navigation .her-button {
+    display: inline-block;
+    background-color: #732871;
+    color: #FFFFFF;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.survivor-story-navigation .her-button:hover {
+    background-color: #493047;
+    color: #FFFFFF;
+    text-decoration: none;
 }

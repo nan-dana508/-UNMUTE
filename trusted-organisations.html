@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trusted Organisations & Helplines | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Trusted Organisations and Helplines Page */
+
+        .trusted-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            padding: 65px 8%;
+            background: #f8f5fc;
+        }
+
+        .trusted-hero-content {
+            flex: 1;
+        }
+
+        .trusted-hero-content h1 {
+            color: #593b78;
+            font-size: 42px;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .trusted-hero-content p {
+            color: #625b68;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        .trusted-hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .trusted-hero-image img {
+            width: 100%;
+            max-width: 520px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 22px;
+        }
+
+        .trusted-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 65px auto 45px;
+            padding: 0 25px;
+        }
+
+        .trusted-intro h2 {
+            color: #593b78;
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .trusted-intro p {
+            color: #6b6470;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .trusted-section {
+            padding: 55px 8%;
+        }
+
+        .trusted-section:nth-of-type(even) {
+            background: #faf8fc;
+        }
+
+        .trusted-section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .trusted-section-heading h2 {
+            color: #593b78;
+            font-size: 29px;
+            margin-bottom: 12px;
+        }
+
+        .trusted-section-heading p {
+            color: #706978;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .trusted-card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .trusted-card {
+            background: #fff;
+            border: 1px solid #eee7f3;
+            border-radius: 17px;
+            padding: 28px;
+            box-shadow: 0 5px 18px rgba(70, 45, 90, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .trusted-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 9px 24px rgba(70, 45, 90, 0.10);
+        }
+
+        .trusted-card h3 {
+            color: #654783;
+            font-size: 20px;
+            margin-bottom: 13px;
+        }
+
+        .trusted-card p {
+            color: #6c6571;
+            line-height: 1.75;
+            margin-bottom: 13px;
+        }
+
+        .trusted-card ul {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+
+        .trusted-card li {
+            color: #6c6571;
+            line-height: 1.75;
+            margin-bottom: 7px;
+        }
+
+        .trusted-contact {
+            background: #f5f0fa;
+            padding: 17px;
+            border-radius: 11px;
+            margin-top: 18px;
+        }
+
+        .trusted-contact p {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .trusted-contact strong {
+            color: #593b78;
+        }
+
+        .trusted-phone {
+            display: inline-block;
+            color: #593b78;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .trusted-phone:hover,
+        .trusted-phone:focus {
+            color: #40265d;
+            text-decoration: none;
+        }
+
+        .trusted-link {
+            display: inline-block;
+            margin-top: 13px;
+            color: #76539a;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .trusted-link:hover,
+        .trusted-link:focus {
+            color: #4d326b;
+            text-decoration: none;
+        }
+
+        .trusted-tag {
+            display: inline-block;
+            background: #eee6f5;
+            color: #654783;
+            padding: 5px 11px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .trusted-note {
+            max-width: 1050px;
+            margin: 45px auto;
+            padding: 28px 32px;
+            background: #f4eff9;
+            border-left: 5px solid #8b6aaa;
+            border-radius: 12px;
+        }
+
+        .trusted-note h2 {
+            color: #593b78;
+            margin-bottom: 13px;
+        }
+
+        .trusted-note p,
+        .trusted-note li {
+            color: #625b68;
+            line-height: 1.8;
+        }
+
+        .trusted-note ul {
+            padding-left: 22px;
+        }
+
+        .trusted-emergency {
+            max-width: 1050px;
+            margin: 45px auto;
+            padding: 30px;
+            background: #fff7f3;
+            border: 1px solid #f0d9ce;
+            border-radius: 14px;
+        }
+
+        .trusted-emergency h2 {
+            color: #874b3e;
+            margin-bottom: 12px;
+        }
+
+        .trusted-emergency p {
+            color: #6d5b56;
+            line-height: 1.8;
+        }
+
+        .trusted-emergency .trusted-phone {
+            color: #874b3e;
+        }
+
+        .trusted-closing {
+            text-align: center;
+            padding: 65px 8%;
+            background: #f8f5fc;
+        }
+
+        .trusted-closing h2 {
+            color: #593b78;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .trusted-closing p {
+            color: #6b6470;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .trusted-disclaimer {
+            text-align: center;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 25px;
+            color: #77717c;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* No underlines throughout the page */
+
+        .navbar a,
+        .navbar a:hover,
+        .navbar a:focus,
+        .trusted-link,
+        .trusted-link:hover,
+        .trusted-link:focus,
+        .trusted-phone,
+        .trusted-phone:hover,
+        .trusted-phone:focus {
+            text-decoration: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .trusted-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+                text-align: center;
+            }
+
+            .trusted-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .trusted-hero-image img {
+                height: 260px;
+            }
+
+            .trusted-intro {
+                margin: 45px auto 35px;
+            }
+
+            .trusted-section {
+                padding: 45px 6%;
+            }
+
+            .trusted-section-heading h2 {
+                font-size: 25px;
+            }
+
+            .trusted-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trusted-note,
+            .trusted-emergency {
+                margin: 30px 6%;
+                padding: 25px;
+            }
+
+            .trusted-closing {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html">Know Your Body</a>
+            <a href="find-support.html" class="active">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="trusted-hero">
+
+        <div class="trusted-hero-content">
+            <h1>Trusted Organisations & Helplines</h1>
+
+            <p>
+                Finding the right support should not be another challenge
+                during a cancer journey. Explore established organisations,
+                patient-support services and helplines that can help patients,
+                survivors and caregivers find guidance, information and care.
+            </p>
+        </div>
+
+        <div class="trusted-hero-image">
+            <img src="trusted-organisations.jpg"
+                 alt="Trusted support and care for people affected by cancer">
+        </div>
+
+    </section>
+
+
+    <!-- Introduction -->
+    <section class="trusted-intro">
+
+        <h2>Help Is Only a Conversation Away</h2>
+
+        <p>
+            Whether you need information about cancer care, emotional support,
+            financial guidance or help navigating treatment, reaching out to
+            an established organisation can be a useful first step.
+        </p>
+
+        <p>
+            This directory brings together organisations and contact services
+            in India, including options relevant to people in Kerala.
+            Contact details and service availability can change, so always
+            confirm the latest information through the organisation's
+            official website.
+        </p>
+
+    </section>
+
+
+    <!-- Section 1: Cancer Support Organisations -->
+    <section class="trusted-section" id="cancer-organisations">
+
+        <div class="trusted-section-heading">
+            <h2>Cancer Support Organisations</h2>
+
+            <p>
+                Organisations that work with people affected by cancer through
+                patient assistance, awareness, rehabilitation, counselling
+                and other support services.
+            </p>
+        </div>
+
+        <div class="trusted-card-grid">
+
+            <!-- Indian Cancer Society -->
+            <div class="trusted-card">
+
+                <span class="trusted-tag">India-wide organisation</span>
+
+                <h3>Indian Cancer Society</h3>
+
+                <p>
+                    The Indian Cancer Society works across cancer awareness,
+                    early detection, patient assistance, survivorship and
+                    rehabilitation.
+                </p>
+
+                <div class="trusted-contact">
+                    <p><strong>Cancer Helpline</strong></p>
+
+                    <a class="trusted-phone" href="tel:1800221951">
+                        1800-22-1951
+                    </a>
+
+                    <p>
+                        General contact: +91 22 2413 9445 / 51
+                    </p>
+                </div>
+
+                <a class="trusted-link"
+                   href="https://www.indiancancersociety.org/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit Official Website
+                </a>
+
+            </div>
+
+
+            <!-- Cancer Patients Aid Association -->
+            <div class="trusted-card">
+
+                <span class="trusted-tag">Patient assistance</span>
+
+                <h3>Cancer Patients Aid Association (CPAA)</h3>
+
+                <p>
+                    CPAA is a non-profit organisation supporting people
+                    affected by cancer through treatment assistance,
+                    guidance, counselling, rehabilitation and awareness.
+                    Its work particularly focuses on patients who face
+                    financial and access-related difficulties.
+                </p>
+
+                <div class="trusted-contact">
+                    <p><strong>Patient Care – Mumbai</strong></p>
+
+                    <a class="trusted-phone" href="tel:+917977655400">
+                        +91 79776 55400
+                    </a>
+
+                    <p>Monday to Friday, 11:00 AM – 4:30 PM</p>
+
+                    <p>
+                        General contact: +91 22 2492 4000
+                    </p>
+                </div>
+
+                <a class="trusted-link"
+                   href="https://cancer.org.in/contact/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit Official Website
+                </a>
+
+            </div>
+
+
+            <!-- Malabar Cancer Care Society -->
+            <div class="trusted-card">
+
+                <span class="trusted-tag">Kerala-based support</span>
+
+                <h3>Malabar Cancer Care Society (MCCS)</h3>
+
+                <p>
+                    Based in Kannur, MCCS provides cancer information,
+                    emotional support, counselling, rehabilitation guidance
+                    and referrals to cancer treatment centres.
+                </p>
+
+                <div class="trusted-contact">
+                    <p><strong>Cancer Helpline</strong></p>
+
+                    <a class="trusted-phone" href="tel:+919446525309">
+                        +91 94465 25309
+                    </a>
+
+                    <p>
+                        Office: 0497 2705309 / 2703309
+                    </p>
+
+                    <p>
+                        Published helpline hours: Weekdays, 9:00 AM – 5:00 PM
+                    </p>
+                </div>
+
+                <a class="trusted-link"
+                   href="https://www.cancercaremccskannur.org/helpline/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit Official Website
+                </a>
+
+            </div>
+
+
+            <!-- CanSupport -->
+            <div class="trusted-card">
+
+                <span class="trusted-tag">Palliative care</span>
+
+                <h3>CanSupport</h3>
+
+                <p>
+                    CanSupport provides palliative care, home-based support,
+                    counselling and helpline services for people living with
+                    cancer. Its services focus on quality of life, comfort
+                    and dignity.
+                </p>
+
+                <div class="trusted-contact">
+                    <p><strong>Helpline</strong></p>
+
+                    <a class="trusted-phone" href="tel:+911141010539">
+                        +91 11 4101 0539
+                    </a>
+
+                    <p>
+                        Alternative contact: +91 98990 11212
+                    </p>
+
+                    <p>
+                        Monday to Saturday, 9:00 AM – 6:00 PM
+                    </p>
+                </div>
+
+                <a class="trusted-link"
+                   href="https://cansupport.org/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit Official Website
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Section 2: Childhood Cancer Support -->
+    <section class="trusted-section" id="childhood-cancer">
+
+        <div class="trusted-section-heading">
+            <h2>Childhood Cancer Support</h2>
+
+            <p>
+                Dedicated organisations supporting children diagnosed with
+                cancer and their families through treatment, accommodation,
+                education and emotional support.
+            </p>
+        </div>
+
+        <div class="trusted-card-grid">
+
+            <div class="trusted-card">
+
+                <span class="trusted-tag">Childhood cancer</span>
+
+                <h3>CanKids...KidsCan</h3>
+
+                <p>
+                    CanKids works with children diagnosed with cancer and
+                    their families across India. Its programmes include
+                    treatment-related assistance, accommodation, transport,
+                    nutrition, education and psychosocial support.
+                </p>
+
+                <div class="trusted-contact">
+                    <p><strong>Pan-India Helpline</strong></p>
+
+                    <a class="trusted-phone" href="tel:+919953591578">
+                        +91 99535 91578
+                    </a>
+
+                    <p><strong>Kerala, Tamil Nadu and Karnataka</strong></p>
+
+                    <a class="trusted-phone" href="tel:+919444096660">
+                        +91 94440 96660
+                    </a>
+
+                    <p>
+                        Retinoblastoma assistance:
+                        +91 88603 18881
+                    </p>
+                </div>
+
+                <a class="trusted-link"
+                   href="https://cankidsindia.org/contact-us/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit Official Website
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Section 3: Kerala Health Helplines -->
+    <section class="trusted-section" id="kerala-helplines">
+
+        <div class="trusted-section-heading">
+            <h2>Kerala Health Helplines</h2>
+
+            <p>
+                Government-supported health information and assistance
+                services available to people in Kerala.
+            </p>
+        </div>
+
+        <div class="trusted-card-grid">
+
+            <div class="trusted-card">
+
+                <span class="trusted-tag">Government of Kerala</span>
+
+                <h3>DISHA – Kerala Health Helpline</h3>
+
+                <p>
+                    DISHA is a statewide health helpline operated under
+                    Kerala's National Health Mission and Department of Health.
+                    It provides health information, guidance and access
+                    to telemedical support.
+                </p>
+
+                <div class="trusted-contact">
+                    <p><strong>Toll-Free Helpline</strong></p>
+
+                    <a class="trusted-phone" href="tel:1056">
+                        1056
+                    </a>
+
+                    <p>
+                        Alternative landline:
+                        <a href="tel:+914712552056" class="trusted-phone">
+                            0471 2552056
+                        </a>
+                    </p>
+
+                    <p>Available 24 hours a day, 7 days a week.</p>
+                </div>
+
+                <a class="trusted-link"
+                   href="https://health.kerala.gov.in/Disha"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit Official Website
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Section 4: Emergency Contacts -->
+    <section class="trusted-emergency" id="emergency">
+
+        <h2>For Medical Emergencies</h2>
+
+        <p>
+            Cancer-specific helplines and support organisations are not
+            emergency medical services. If someone is experiencing a
+            life-threatening emergency, seek immediate medical attention
+            rather than waiting for a support organisation to respond.
+        </p>
+
+        <p><strong>India Emergency Response Support System</strong></p>
+
+        <a class="trusted-phone" href="tel:112">
+            112 – Emergency Helpline
+        </a>
+
+        <p>
+            For urgent cancer-treatment concerns, contact the treating
+            hospital or oncology team directly.
+        </p>
+
+    </section>
+
+
+    <!-- Section 5: Before Contacting an Organisation -->
+    <section class="trusted-note">
+
+        <h2>Before Reaching Out</h2>
+
+        <p>
+            A few simple checks can help you find the right service and
+            protect yourself while seeking assistance.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Verify contact details:</strong>
+                Use the organisation's official website to confirm that
+                a phone number or email address is current.
+            </li>
+
+            <li>
+                <strong>Ask what support is available:</strong>
+                Services may include counselling, financial assistance,
+                treatment guidance, palliative care or referrals.
+            </li>
+
+            <li>
+                <strong>Check eligibility:</strong>
+                Some organisations provide services only in specific
+                locations or to particular patient groups.
+            </li>
+
+            <li>
+                <strong>Protect your information:</strong>
+                Do not share passwords, OTPs, banking PINs or unnecessary
+                medical documents with unknown contacts.
+            </li>
+
+            <li>
+                <strong>Be careful with payment requests:</strong>
+                Do not assume that a person requesting money through a
+                private account represents an organisation.
+            </li>
+
+            <li>
+                <strong>Know the limits:</strong>
+                Support organisations can provide guidance and assistance,
+                but they do not replace your treating medical team.
+            </li>
+        </ul>
+
+    </section>
+
+
+    <!-- Disclaimer -->
+    <div class="trusted-disclaimer">
+        Contact numbers, operating hours and services may change.
+        UNMUTE provides this directory for informational purposes and
+        does not guarantee the availability, eligibility or outcome of
+        any service. Please confirm details directly with the organisation
+        before relying on them.
+    </div>
+
+
+    <!-- Closing Section -->
+    <section class="trusted-closing">
+
+        <h2>Reaching Out Is a Strength</h2>
+
+        <p>
+            Asking for help can be difficult, but you do not have to
+            figure everything out alone. Whether you need information,
+            practical assistance or someone to speak with, the right
+            support can help you take the next step.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 UNMUTE. Every voice matters. Every journey deserves support.</p>
+    </footer>
+
+
+    <script>
+        // Keep anchor navigation clear of the fixed navigation bar
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (event) {
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (target) {
+                    event.preventDefault();
+
+                    const navbar = document.querySelector('.navbar');
+                    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+                    const targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        navbarHeight -
+                        20;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

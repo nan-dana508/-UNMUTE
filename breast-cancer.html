@@ -288,8 +288,7 @@
 
         .guide-section a:not(.back-to-contents) {
             color: #98536F;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+            text-decoration: none !important;
             overflow-wrap: anywhere;
         }
 
@@ -368,8 +367,7 @@
         .resource-card a {
             color: #98536F;
             font-weight: 600;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+            text-decoration: none !important;
         }
 
         .guide-disclaimer {
@@ -391,7 +389,7 @@
 
         .back-to-contents:hover {
             color: #713B54 !important;
-            text-decoration: underline !important;
+            text-decoration: none !important;
         }
 
         /* REFERENCES */
@@ -433,8 +431,7 @@
 
         .guide-references a {
             color: #98536F;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+            text-decoration: none !important;
         }
 
         .reference-date {
@@ -475,6 +472,28 @@
 
         .footer {
             text-align: center;
+        }
+
+        /* GLOBAL NO-UNDERLINE RULE */
+
+        .cancer-guide-nav a,
+        .cancer-guide-nav a:hover,
+        .cancer-guide-nav a:focus,
+        .cancer-guide-content a,
+        .cancer-guide-content a:hover,
+        .cancer-guide-content a:focus,
+        .guide-contents a,
+        .guide-contents a:hover,
+        .guide-contents a:focus,
+        .guide-references a,
+        .guide-references a:hover,
+        .guide-references a:focus,
+        .back-to-top,
+        .back-to-top:hover,
+        .footer a,
+        .footer a:hover,
+        .footer a:focus {
+            text-decoration: none !important;
         }
 
         /* MOBILE RESPONSIVENESS */
@@ -571,9 +590,10 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="know-your-body.html" class="active">Know Your Body</a>
-            <a href="index.html#support">Find Support</a>
-            <a href="index.html#voices">Her Voice</a>
-            <a href="index.html#research">Beyond the Common</a>
+            <a href="find-support.html">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
         </nav>
 
     </header>
@@ -2112,8 +2132,7 @@
                     status, study locations, eligibility criteria and contact details
                     when available.
                 </p>
-
-                <a href="https://clinicaltrials.gov/"
+<a href="https://clinicaltrials.gov/"
                    target="_blank" rel="noopener noreferrer">
                     Visit ClinicalTrials.gov →
                 </a>

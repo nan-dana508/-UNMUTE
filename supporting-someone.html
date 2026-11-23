@@ -1,0 +1,863 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supporting Someone With Cancer | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Page-specific styling */
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none !important;
+        }
+
+        .supporting-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            background: #faf5f2;
+        }
+
+        .supporting-hero-content {
+            flex: 1;
+        }
+
+        .supporting-hero-content h1 {
+            font-size: 42px;
+            color: #54284f;
+            margin-bottom: 20px;
+        }
+
+        .supporting-hero-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #514650;
+            max-width: 620px;
+        }
+
+        .supporting-hero-image {
+            flex: 1;
+        }
+
+        .supporting-hero-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .supporting-intro {
+            text-align: center;
+            padding: 55px 8% 25px;
+        }
+
+        .supporting-intro h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .supporting-intro p {
+            color: #625760;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Topic Navigation */
+
+        .topic-navigation {
+            padding: 25px 8% 55px;
+        }
+
+        .topic-navigation h2 {
+            text-align: center;
+            color: #54284f;
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .topic-link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            background: #faf5f2;
+            padding: 20px;
+            border-radius: 13px;
+            color: #54284f;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .topic-link:hover {
+            transform: translateY(-3px);
+            background: #f4e8ee;
+        }
+
+        .topic-link:focus-visible {
+            outline: 3px solid #8a496e;
+            outline-offset: 4px;
+        }
+
+        .topic-number {
+            min-width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f0dfe8;
+            color: #54284f;
+            font-size: 15px;
+        }
+
+        /* Guide Sections */
+
+        .guide-section {
+            padding: 65px 8%;
+            scroll-margin-top: 30px;
+        }
+
+        .guide-section:nth-of-type(even) {
+            background: #faf5f2;
+        }
+
+        .guide-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .guide-label {
+            color: #94617e;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .guide-section h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .guide-section h3 {
+            color: #54284f;
+            font-size: 20px;
+            margin: 25px 0 10px;
+        }
+
+        .guide-section p {
+            color: #625760;
+            font-size: 16px;
+            line-height: 1.85;
+            margin-bottom: 15px;
+        }
+
+        .guide-section ul {
+            padding-left: 22px;
+            margin: 12px 0 20px;
+        }
+
+        .guide-section li {
+            color: #625760;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 9px;
+        }
+
+        .guide-image {
+            width: 100%;
+            max-height: 340px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin: 20px 0 25px;
+        }
+
+        .guide-note {
+            background: #f4e8ee;
+            border-left: 4px solid #8a496e;
+            border-radius: 10px;
+            padding: 20px 23px;
+            margin-top: 25px;
+        }
+
+        .guide-note p {
+            margin-bottom: 0;
+            color: #54284f;
+        }
+
+        .guide-back {
+            display: inline-block;
+            color: #8a496e;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: color 0.3s ease;
+        }
+
+        .guide-back:hover {
+            color: #54284f;
+        }
+
+        /* Closing Section */
+
+        .supporting-closing {
+            text-align: center;
+            padding: 65px 10%;
+        }
+
+        .supporting-closing h2 {
+            color: #54284f;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .supporting-closing p {
+            max-width: 780px;
+            margin: auto;
+            color: #625760;
+            line-height: 1.8;
+        }
+
+        .back-to-caregiver {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 25px;
+            background: #54284f;
+            color: #fff !important;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-caregiver:hover {
+            background: #75436d;
+        }
+
+        @media (max-width: 900px) {
+            .topic-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .supporting-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+            }
+
+            .supporting-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .supporting-hero-image img {
+                height: 260px;
+            }
+
+            .supporting-intro {
+                padding: 40px 6% 20px;
+            }
+
+            .supporting-intro h2 {
+                font-size: 26px;
+            }
+
+            .topic-navigation {
+                padding: 20px 6% 40px;
+            }
+
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-section {
+                padding: 45px 6%;
+            }
+
+            .guide-section h2 {
+                font-size: 26px;
+            }
+
+            .supporting-closing {
+                padding: 50px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html">Know Your Body</a>
+            <a href="find-support.html" class="active">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="supporting-hero">
+
+        <div class="supporting-hero-content">
+
+            <h1>Being There for Someone With Cancer</h1>
+
+            <p>
+                When someone close to you is diagnosed with cancer,
+                you may want to do everything possible to make
+                things easier for them. But knowing what to say,
+                how to help and when to step back can sometimes
+                feel difficult.
+            </p>
+
+            <p>
+                There is no single perfect way to support someone.
+                Understanding their needs, respecting their choices
+                and showing up with patience can make a meaningful
+                difference throughout their journey.
+            </p>
+
+        </div>
+
+        <div class="supporting-hero-image">
+            <img src="caregiver-support.webp"
+                 alt="A caring moment representing support and companionship">
+        </div>
+
+    </section>
+
+    <!-- Introduction -->
+    <section class="supporting-intro">
+
+        <h2>Understanding How to Be There</h2>
+
+        <p>
+            Every person's experience with cancer is different.
+            Some may want practical assistance, others may need
+            someone to listen, and some may simply want life to
+            feel as normal as possible. Explore these five topics
+            to understand how you can offer thoughtful and
+            respectful support.
+        </p>
+
+    </section>
+
+    <!-- Topic Navigation -->
+    <section class="topic-navigation">
+
+        <h2>Explore This Guide</h2>
+
+        <div class="topic-grid">
+
+            <a href="#understanding-experience" class="topic-link">
+                <span class="topic-number">01</span>
+                Understanding Their Experience
+            </a>
+
+            <a href="#practical-ways-to-help" class="topic-link">
+                <span class="topic-number">02</span>
+                Practical Ways to Help
+            </a>
+
+            <a href="#emotional-support" class="topic-link">
+                <span class="topic-number">03</span>
+                Emotional Support and Communication
+            </a>
+
+            <a href="#supporting-young-people" class="topic-link">
+                <span class="topic-number">04</span>
+                Supporting Young Adults and Children
+            </a>
+
+            <a href="#every-stage" class="topic-link">
+                <span class="topic-number">05</span>
+                Being There Through Every Stage
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 1: Understanding Their Experience -->
+    <section class="guide-section" id="understanding-experience">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 01</div>
+
+            <h2>Understanding Their Experience</h2>
+
+            <img class="guide-image"
+                 src="understanding-experience.jpg"
+                 alt="A family member sitting beside and comforting someone">
+
+            <p>
+                A cancer diagnosis can affect much more than a
+                person's physical health. It can influence their
+                emotions, relationships, education, work, finances
+                and sense of independence.
+            </p>
+
+            <p>
+                Treatment experiences also vary. Some people may
+                experience fatigue, pain, nausea, changes in
+                appearance or difficulty with everyday activities.
+                Others may have fewer visible symptoms but still
+                experience considerable emotional stress.
+            </p>
+
+            <h3>What might they be experiencing?</h3>
+
+            <ul>
+                <li><strong>Physical changes:</strong> Fatigue, discomfort, treatment side effects, changes in appetite or sleep, and changes in appearance.</li>
+
+                <li><strong>Emotional challenges:</strong> Fear, uncertainty, frustration, sadness, anger or difficulty processing the diagnosis.</li>
+
+                <li><strong>Changes in everyday life:</strong> Interrupted routines, missed classes or work, financial concerns and dependence on others.</li>
+
+                <li><strong>Social challenges:</strong> Feeling isolated, misunderstood or uncomfortable discussing their diagnosis with others.</li>
+
+                <li><strong>Uncertainty about the future:</strong> Concerns about treatment, recovery, relationships, independence and what comes next.</li>
+            </ul>
+
+            <h3>How can you understand them better?</h3>
+
+            <ul>
+                <li>Ask what they are comfortable sharing instead of expecting them to explain everything.</li>
+
+                <li>Listen to their experiences without immediately trying to solve every problem.</li>
+
+                <li>Understand that their needs and feelings may change from one day to another.</li>
+
+                <li>Avoid comparing their diagnosis or treatment experience with someone else's.</li>
+
+                <li>Respect their privacy and allow them to decide who knows about their diagnosis.</li>
+            </ul>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> You don't have to understand
+                    everything about cancer to be supportive. Being
+                    willing to listen, learn and respect someone's
+                    experience is already meaningful.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 2: Practical Ways to Help -->
+    <section class="guide-section" id="practical-ways-to-help">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 02</div>
+
+            <h2>Practical Ways to Help</h2>
+
+            <img class="guide-image"
+                 src="practical-caregiver-help.jpg"
+                 alt="People discussing an appointment schedule">
+
+            <p>
+                Sometimes the most helpful support is practical.
+                Cancer treatment can involve appointments,
+                medication schedules, hospital visits and
+                changes to everyday routines. Offering help
+                with specific tasks can reduce some of that burden.
+            </p>
+
+            <h3>Everyday ways you can help</h3>
+
+            <ul>
+                <li><strong>Appointments:</strong> Offer to accompany them to hospital visits, help arrange transport or assist with appointment reminders.</li>
+
+                <li><strong>Meals:</strong> Prepare meals or help with grocery shopping, while respecting their preferences and any dietary guidance from their healthcare team.</li>
+
+                <li><strong>Household responsibilities:</strong> Help with cleaning, laundry, errands or other tasks that may become difficult during treatment.</li>
+
+                <li><strong>Daily routines:</strong> Assist with school, work, childcare or other responsibilities when they need extra help.</li>
+
+                <li><strong>Organisation:</strong> If they want assistance, help keep appointment details, medical documents and questions for their doctor organised.</li>
+
+                <li><strong>Companionship:</strong> Spend time together through a conversation, a film, a short walk or a quiet activity they enjoy.</li>
+            </ul>
+
+            <h3>Offer specific help instead of vague promises</h3>
+
+            <p>
+                Saying "Let me know if you need anything" is kind,
+                but someone going through treatment may not always
+                know what to ask for. Offering something specific
+                can make accepting help easier.
+            </p>
+
+            <p>For example, you could say:</p>
+
+            <ul>
+                <li>"Can I take you to your appointment on Thursday?"</li>
+
+                <li>"I'm going grocery shopping. Would you like me to pick anything up?"</li>
+
+                <li>"Would it help if I handled that errand for you today?"</li>
+
+                <li>"I have some free time this weekend. Would you like company?"</li>
+            </ul>
+
+            <h3>Respect their independence</h3>
+
+            <p>
+                Helping someone does not mean taking control of
+                their life. Ask before stepping in, respect their
+                decisions and allow them to do things independently
+                whenever they want and are able.
+            </p>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> Consistent, practical
+                    support is often more helpful than grand gestures.
+                    Small acts of kindness can make difficult days
+                    a little easier.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 3: Emotional Support and Communication -->
+    <section class="guide-section" id="emotional-support">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 03</div>
+
+            <h2>Emotional Support and Communication</h2>
+
+            <img class="guide-image"
+                 src="emotional-support.jpg"
+                 alt="Two people sharing a supportive conversation">
+
+            <p>
+                Finding the right words when someone you care about
+                has cancer can be difficult. You may worry about
+                saying something hurtful or not knowing how to
+                respond when they are upset.
+            </p>
+
+            <p>
+                You do not need perfect words. Often, listening
+                with patience and allowing someone to express
+                themselves without judgement can be more valuable
+                than trying to find an immediate solution.
+            </p>
+
+            <h3>How to communicate with empathy</h3>
+
+            <ul>
+                <li><strong>Listen without judgement:</strong> Give them space to talk without interrupting or dismissing their feelings.</li>
+
+                <li><strong>Acknowledge their emotions:</strong> Let them know that it is okay to feel upset, angry, frightened or uncertain.</li>
+
+                <li><strong>Ask what they need:</strong> They may want advice, practical help, a distraction or simply someone to listen.</li>
+
+                <li><strong>Respect silence:</strong> They may not always feel like talking. Being present without forcing a conversation can also be supportive.</li>
+
+                <li><strong>Keep checking in:</strong> A simple message or thoughtful visit can remind them that they are not alone.</li>
+
+                <li><strong>Respect boundaries:</strong> Let them decide when and with whom they want to discuss their diagnosis.</li>
+            </ul>
+
+            <h3>Things you can say</h3>
+
+            <ul>
+                <li>"I'm here for you. You don't have to go through this alone."</li>
+
+                <li>"Would you like to talk about it, or would you prefer a distraction?"</li>
+
+                <li>"I may not know exactly what you're going through, but I want to understand."</li>
+
+                <li>"Is there anything I can do to make today a little easier?"</li>
+
+                <li>"You don't have to pretend to be okay around me."</li>
+            </ul>
+
+            <h3>Things to be mindful of</h3>
+
+            <ul>
+                <li>Avoid comparing their experience with another person's cancer journey.</li>
+
+                <li>Avoid pressuring them to stay positive all the time.</li>
+
+                <li>Do not offer unverified treatment advice or promise that everything will be fine.</li>
+
+                <li>Avoid unsolicited comments about their appearance, weight or physical changes.</li>
+
+                <li>Do not share their diagnosis or personal information without their permission.</li>
+            </ul>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> Support does not mean
+                    having an answer to every difficult question.
+                    Sometimes, simply saying "I'm listening" is enough.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 4: Supporting Young Adults and Children -->
+    <section class="guide-section" id="supporting-young-people">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 04</div>
+
+            <h2>Supporting Young Adults and Children</h2>
+
+            <img class="guide-image"
+                 src="supporting-young-patients.jpg"
+                 alt="A young person studying with family support">
+
+            <p>
+                Cancer can be especially disruptive when it happens
+                during childhood, adolescence or young adulthood.
+                Alongside treatment, younger patients may be trying
+                to maintain friendships, education, independence
+                and important milestones in their lives.
+            </p>
+
+            <p>
+                They may also feel different from their peers or
+                worry about missing out on experiences that matter
+                to them. Support should recognise that they are
+                more than their diagnosis.
+            </p>
+
+            <h3>Supporting children</h3>
+
+            <ul>
+                <li>Use age-appropriate, honest explanations about illness and treatment.</li>
+
+                <li>Allow children to ask questions and express feelings without being made to feel guilty.</li>
+
+                <li>Maintain familiar routines where possible, while allowing flexibility when treatment affects daily life.</li>
+
+                <li>Encourage play, creativity, friendships and activities they enjoy when they feel able.</li>
+
+                <li>Coordinate with parents, guardians and healthcare professionals to provide consistent support.</li>
+            </ul>
+
+            <h3>Supporting teenagers and young adults</h3>
+
+            <ul>
+                <li><strong>Education:</strong> Help them explore flexible learning arrangements, academic support or communication with their educational institution.</li>
+
+                <li><strong>Independence:</strong> Respect their growing need to make decisions and participate in conversations about their care.</li>
+
+                <li><strong>Friendships:</strong> Support their connections with friends without pressuring them to socialise.</li>
+
+                <li><strong>Identity:</strong> Recognise that their interests, ambitions, relationships and personal goals remain important.</li>
+
+                <li><strong>Privacy:</strong> Ask before sharing information about their diagnosis with classmates, colleagues or other people.</li>
+
+                <li><strong>Emotional wellbeing:</strong> Encourage access to appropriate counselling, peer support or mental health professionals when needed.</li>
+            </ul>
+
+            <h3>Help them maintain a sense of normalcy</h3>
+
+            <p>
+                Whenever possible, make space for conversations
+                that have nothing to do with cancer. Talk about
+                music, books, hobbies, friendships, future plans
+                or whatever interests them.
+            </p>
+
+            <p>
+                Avoid treating every interaction as a discussion
+                about their illness. They should have the freedom
+                to enjoy ordinary moments and continue being
+                themselves.
+            </p>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> A young person with
+                    cancer is still a student, friend, sibling,
+                    child, dreamer and individual. Make room for
+                    every part of who they are.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 5: Being There Through Every Stage -->
+    <section class="guide-section" id="every-stage">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 05</div>
+
+            <h2>Being There Through Every Stage</h2>
+
+            <img class="guide-image"
+                 src="support-through-stages.jpg"
+                 alt="A comforting gesture representing support through treatment">
+
+            <p>
+                Cancer support is not limited to the day of diagnosis
+                or the period of active treatment. A person's needs
+                may change throughout their journey, and support
+                can remain important at every stage.
+            </p>
+
+            <h3>At the time of diagnosis</h3>
+
+            <ul>
+                <li>Give them time to process the news.</li>
+
+                <li>Offer to accompany them to appointments if they want company.</li>
+
+                <li>Help them organise questions for their healthcare team.</li>
+
+                <li>Respect their decisions about sharing the diagnosis with others.</li>
+            </ul>
+
+            <h3>During treatment</h3>
+
+            <ul>
+                <li>Be flexible because energy levels and daily needs may change.</li>
+
+                <li>Offer practical help with transport, meals and household tasks.</li>
+
+                <li>Keep checking in without expecting immediate replies.</li>
+
+                <li>Encourage them to discuss treatment concerns and side effects with their healthcare team.</li>
+            </ul>
+
+            <h3>During surgery and recovery</h3>
+
+            <ul>
+                <li>Offer help with everyday activities while they recover.</li>
+
+                <li>Respect their physical limitations and recovery pace.</li>
+
+                <li>Help with follow-up appointments or transport if requested.</li>
+
+                <li>Understand that recovery can involve emotional as well as physical adjustments.</li>
+            </ul>
+
+            <h3>After treatment and during follow-up care</h3>
+
+            <ul>
+                <li>Continue checking in even when treatment has ended.</li>
+
+                <li>Recognise that follow-up appointments and uncertainty about the future can bring emotional challenges.</li>
+
+                <li>Avoid assuming that life immediately returns to how it was before diagnosis.</li>
+
+                <li>Support their efforts to rebuild routines, relationships, education, work and personal goals.</li>
+            </ul>
+
+            <h3>When circumstances change</h3>
+
+            <p>
+                Cancer journeys do not always follow a predictable
+                path. Treatment plans may change, new challenges
+                may arise, or a person may need different kinds
+                of support over time.
+            </p>
+
+            <p>
+                Continue listening, respect their choices and
+                allow them to communicate what they need. If
+                circumstances become difficult, encourage
+                conversations with their healthcare team about
+                available support and care options.
+            </p>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> Your support does not
+                    have to end when treatment ends. Sometimes,
+                    the most meaningful thing you can offer is
+                    continuing to show up.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Closing Section -->
+    <section class="supporting-closing">
+
+        <h2>Your Presence Can Make a Difference</h2>
+
+        <p>
+            You cannot take away every difficulty someone faces
+            during cancer, and you do not have to have all the
+            answers. What you can offer is patience, understanding,
+            respect and a willingness to be there. Small moments
+            of genuine support can mean more than you realise.
+        </p>
+
+        <a href="caregiver-support.html" class="back-to-caregiver">
+            Back to Caregiver Support
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 UNMUTE. Every voice matters. Every journey deserves support.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Her Voice | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="her-voice-page">
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <img src="unmute-logo.png" alt="UNMUTE">
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="know-your-body.html">Know Your Body</a>
+                <a href="find-support.html">Find Support</a>
+                <a href="her-voice.html" class="active">Her Voice</a>
+                <a href="beyond-the-common.html">Beyond the Common</a>
+                <a href="index.html#garden">A Little Garden of Hope</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="her-hero">
+
+        <div class="her-hero-content">
+
+            <p class="section-label">HER VOICE · HER JOURNEY</p>
+
+            <h1>
+                Every journey matters.
+                <span>Every voice deserves to be heard.</span>
+            </h1>
+
+            <p>
+                Behind every diagnosis is a woman with her own story,
+                experiences, challenges and hopes. Her Voice is a space
+                dedicated to recognising the journeys of women who have
+                completed active cancer treatment.
+            </p>
+
+            <p>
+                Their experiences remind us that life after treatment
+                is also a journey — one that deserves understanding,
+                support and a place to be heard.
+            </p>
+
+        </div>
+
+        <div class="her-hero-image">
+            <img
+                src="her-voice-floral.png"
+                alt="Floral illustration representing hope, strength and new beginnings"
+            >
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="her-introduction">
+
+        <p class="her-section-label">MORE THAN A DIAGNOSIS</p>
+
+        <h2>Every survivor has a story of her own.</h2>
+
+        <p>
+            Cancer can change many parts of life, but it does not define
+            the entirety of a woman's identity. Behind the medical
+            appointments and treatment experiences are individual
+            stories of family, friendships, education, careers,
+            uncertainty and new beginnings.
+        </p>
+
+        <p>
+            Her Voice aims to create a space where these experiences
+            can be explored, understood and acknowledged. No two
+            journeys are identical, and every woman's experience
+            deserves to be respected.
+        </p>
+
+    </section>
+
+
+    <!-- SURVIVOR STORIES -->
+    <section class="her-stories" id="survivor-stories">
+
+        <div class="her-stories-heading">
+
+            <p class="her-section-label">MEET THE SURVIVORS</p>
+
+            <h2>Stories of strength, change and new beginnings.</h2>
+
+            <p>
+                Explore different survivor journeys across ages and
+                cancer types. Select a story to learn more about
+                each woman's experience.
+            </p>
+
+        </div>
+
+
+        <!-- FICTIONAL CONTENT DISCLOSURE -->
+        <div class="her-disclosure">
+
+            <strong>Important demonstration notice:</strong>
+
+            All six portraits and survivor stories displayed here
+            are fictional and AI-generated. They were created for
+            demonstration purposes and do not represent real people,
+            actual patient testimonials or medical evidence.
+
+        </div>
+
+
+        <!-- FILTERS -->
+        <div class="story-filters">
+
+            <div class="filter-group">
+
+                <label for="cancerFilter">Cancer type</label>
+
+                <select id="cancerFilter">
+                    <option value="all">All cancer types</option>
+                    <option value="ovarian">Ovarian cancer</option>
+                    <option value="breast">Breast cancer</option>
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label for="ageFilter">Age group</label>
+
+                <select id="ageFilter">
+                    <option value="all">All age groups</option>
+                    <option value="under20">Under 20</option>
+                    <option value="20-39">20–39 years</option>
+                    <option value="40-59">40–59 years</option>
+                    <option value="60plus">60 years and above</option>
+                </select>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="filter-reset"
+                id="resetFilters"
+            >
+                Reset filters
+            </button>
+
+        </div>
+
+
+        <p
+            class="story-result-count"
+            id="storyResultCount"
+            aria-live="polite"
+        >
+            Showing 6 of 6 survivor stories
+        </p>
+
+
+        <!-- STORY CARDS -->
+        <div class="story-grid">
+
+
+            <!-- STORY 01: ANANYA -->
+            <article
+                class="story-card"
+                data-cancer="ovarian"
+                data-age="15"
+            >
+
+                <div class="story-card-inner">
+
+                    <!-- FRONT -->
+                    <div
+                        class="story-card-face story-card-front"
+                        aria-hidden="false"
+                    >
+
+                        <img
+                            src="story-01.png"
+                            alt="Fictional portrait of Ananya Nair"
+                        >
+
+                        <div class="story-card-front-content">
+
+                            <h3>Ananya Nair</h3>
+
+                            <p>15 years · Ovarian cancer</p>
+
+                            <button
+                                type="button"
+                                class="story-flip-button"
+                                aria-expanded="false"
+                            >
+                                Get to know Ananya ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BACK -->
+                    <div
+                        class="story-card-face story-card-back"
+                        aria-hidden="true"
+                        inert
+                    >
+
+                        <p class="story-card-label">HER STORY</p>
+
+                        <h3>Meet Ananya</h3>
+
+                        <p>
+                            I'm Ananya. I was just beginning to discover
+                            who I wanted to be when an unexpected
+                            diagnosis changed my teenage years.
+                            My journey taught me that I am so much
+                            more than what I went through.
+                        </p>
+
+                        <a
+                            href="story-01.html"
+                            class="story-read-link"
+                        >
+                            Read My Story
+                        </a>
+
+                        <button
+                            type="button"
+                            class="story-back-button"
+                        >
+                            ← Back to portrait
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- STORY 02: MEERA -->
+            <article
+                class="story-card"
+                data-cancer="ovarian"
+                data-age="20"
+            >
+
+                <div class="story-card-inner">
+
+                    <!-- FRONT -->
+                    <div
+                        class="story-card-face story-card-front"
+                        aria-hidden="false"
+                    >
+
+                        <img
+                            src="story-02.png"
+                            alt="Fictional portrait of Meera Krishnan"
+                        >
+
+                        <div class="story-card-front-content">
+
+                            <h3>Meera Krishnan</h3>
+
+                            <p>20 years · Ovarian cancer</p>
+
+                            <button
+                                type="button"
+                                class="story-flip-button"
+                                aria-expanded="false"
+                            >
+                                Get to know Meera ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BACK -->
+                    <div
+                        class="story-card-face story-card-back"
+                        aria-hidden="true"
+                        inert
+                    >
+
+                        <p class="story-card-label">HER STORY</p>
+
+                        <h3>Meet Meera</h3>
+
+                        <p>
+                            I'm Meera. I had plans for my university
+                            years, but an unexpected diagnosis changed
+                            the path I imagined. My journey taught me
+                            that life after treatment can bring its
+                            own challenges and new beginnings.
+                        </p>
+
+                        <a
+                            href="story-02.html"
+                            class="story-read-link"
+                        >
+                            Read My Story
+                        </a>
+
+                        <button
+                            type="button"
+                            class="story-back-button"
+                        >
+                            ← Back to portrait
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- STORY 03: KAVYA -->
+            <article
+                class="story-card"
+                data-cancer="breast"
+                data-age="32"
+            >
+
+                <div class="story-card-inner">
+
+                    <!-- FRONT -->
+                    <div
+                        class="story-card-face story-card-front"
+                        aria-hidden="false"
+                    >
+
+                        <img
+                            src="story-03.png"
+                            alt="Fictional portrait of Kavya Sharma"
+                        >
+
+                        <div class="story-card-front-content">
+
+                            <h3>Kavya Sharma</h3>
+
+                            <p>32 years · Breast cancer</p>
+
+                            <button
+                                type="button"
+                                class="story-flip-button"
+                                aria-expanded="false"
+                            >
+                                Get to know Kavya ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BACK -->
+                    <div
+                        class="story-card-face story-card-back"
+                        aria-hidden="true"
+                        inert
+                    >
+
+                        <p class="story-card-label">HER STORY</p>
+
+                        <h3>Meet Kavya</h3>
+
+                        <p>
+                            I'm Kavya. I have always loved being
+                            surrounded by people, family and the
+                            everyday moments of life. My experience
+                            taught me that accepting support can
+                            be a strength, not a weakness.
+                        </p>
+
+                        <a
+                            href="story-03.html"
+                            class="story-read-link"
+                        >
+                            Read My Story
+                        </a>
+
+                        <button
+                            type="button"
+                            class="story-back-button"
+                        >
+                            ← Back to portrait
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- STORY 04: RADHIKA -->
+            <article
+                class="story-card"
+                data-cancer="ovarian"
+                data-age="41"
+            >
+
+                <div class="story-card-inner">
+
+                    <!-- FRONT -->
+                    <div
+                        class="story-card-face story-card-front"
+                        aria-hidden="false"
+                    >
+
+                        <img
+                            src="story-04.png"
+                            alt="Fictional portrait of Radhika Menon"
+                        >
+
+                        <div class="story-card-front-content">
+
+                            <h3>Radhika Menon</h3>
+
+                            <p>41 years · Ovarian cancer</p>
+
+                            <button
+                                type="button"
+                                class="story-flip-button"
+                                aria-expanded="false"
+                            >
+                                Get to know Radhika ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BACK -->
+                    <div
+                        class="story-card-face story-card-back"
+                        aria-hidden="true"
+                        inert
+                    >
+
+                        <p class="story-card-label">HER STORY</p>
+
+                        <h3>Meet Radhika</h3>
+
+                        <p>
+                            I'm Radhika. I have always been someone
+                            who likes to plan ahead. My diagnosis
+                            brought unexpected questions, but it
+                            also taught me the importance of asking
+                            questions, understanding my choices
+                            and taking things one step at a time.
+                        </p>
+
+                        <a
+                            href="story-04.html"
+                            class="story-read-link"
+                        >
+                            Read My Story
+                        </a>
+
+                        <button
+                            type="button"
+                            class="story-back-button"
+                        >
+                            ← Back to portrait
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- STORY 05: SUNITA -->
+            <article
+                class="story-card"
+                data-cancer="breast"
+                data-age="48"
+            >
+
+                <div class="story-card-inner">
+
+                    <!-- FRONT -->
+                    <div
+                        class="story-card-face story-card-front"
+                        aria-hidden="false"
+                    >
+
+                        <img
+                            src="story-05.png"
+                            alt="Fictional portrait of Sunita Rao"
+                        >
+
+                        <div class="story-card-front-content">
+
+                            <h3>Sunita Rao</h3>
+
+                            <p>48 years · Breast cancer</p>
+
+                            <button
+                                type="button"
+                                class="story-flip-button"
+                                aria-expanded="false"
+                            >
+                                Get to know Sunita ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BACK -->
+                    <div
+                        class="story-card-face story-card-back"
+                        aria-hidden="true"
+                        inert
+                    >
+
+                        <p class="story-card-label">HER STORY</p>
+
+                        <h3>Meet Sunita</h3>
+
+                        <p>
+                            I'm Sunita. I have always been the person
+                            everyone turns to. My experience reminded
+                            me that I deserve care and understanding
+                            too, and that there is more to me than
+                            a diagnosis.
+                        </p>
+
+                        <a
+                            href="story-05.html"
+                            class="story-read-link"
+                        >
+                            Read My Story
+                        </a>
+
+                        <button
+                            type="button"
+                            class="story-back-button"
+                        >
+                            ← Back to portrait
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- STORY 06: LEELA -->
+            <article
+                class="story-card"
+                data-cancer="ovarian"
+                data-age="63"
+            >
+
+                <div class="story-card-inner">
+
+                    <!-- FRONT -->
+                    <div
+                        class="story-card-face story-card-front"
+                        aria-hidden="false"
+                    >
+
+                        <img
+                            src="story-06.png"
+                            alt="Fictional portrait of Leela Das"
+                        >
+
+                        <div class="story-card-front-content">
+
+                            <h3>Leela Das</h3>
+
+                            <p>63 years · Ovarian cancer</p>
+
+                            <button
+                                type="button"
+                                class="story-flip-button"
+                                aria-expanded="false"
+                            >
+                                Get to know Leela ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BACK -->
+                    <div
+                        class="story-card-face story-card-back"
+                        aria-hidden="true"
+                        inert
+                    >
+
+                        <p class="story-card-label">HER STORY</p>
+
+                        <h3>Meet Leela</h3>
+
+                        <p>
+                            I'm Leela. Life has taught me that strength
+                            can be quiet. My journey brought changes
+                            I never expected, but it also reminded me
+                            of the importance of dignity, independence
+                            and the people who stand beside us.
+                        </p>
+
+                        <a
+                            href="story-06.html"
+                            class="story-read-link"
+                        >
+                            Read My Story
+                        </a>
+
+                        <button
+                            type="button"
+                            class="story-back-button"
+                        >
+                            ← Back to portrait
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- NO RESULTS MESSAGE -->
+        <div
+            class="story-empty"
+            id="storyEmpty"
+            aria-live="polite"
+        >
+
+            <h3>No stories found.</h3>
+
+            <p>
+                Try selecting a different age group or cancer type
+                to explore the available survivor stories.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SHARE YOUR STORY -->
+    <section class="her-share">
+
+        <p class="her-section-label">YOUR VOICE MATTERS</p>
+
+        <h2>Would you like to share your story?</h2>
+
+        <p>
+            Every survivor's experience is unique. Your story may
+            help someone feel understood, less alone or more
+            confident in seeking support.
+        </p>
+
+        <p>
+            If you are a cancer survivor and would like to share
+            your journey with UNMUTE, you are welcome to contact us.
+            We would be glad to hear from you.
+        </p>
+
+        <div class="her-share-note">
+
+            <strong>Interested in sharing your story?</strong>
+
+            <p>
+                You can reach us through:
+            </p>
+
+            <a href="mailto:YOUR-UNMUTE-EMAIL">
+                YOUR-UNMUTE-EMAIL
+            </a>
+
+            <p>
+                <strong>Please note:</strong> This is an initial
+                contact process only. A dedicated story-submission
+                form, along with the necessary contact details and
+                consent process, will be introduced in a future
+                version of UNMUTE.
+            </p>
+
+            <p>
+                Stories will not be published automatically.
+                Any future publication will require informed consent,
+                privacy protection and editorial review.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CLOSING SECTION -->
+    <section class="her-closing">
+
+        <p class="her-section-label">BECAUSE EVERY VOICE MATTERS</p>
+
+        <h2>There is life beyond the diagnosis.</h2>
+
+        <p>
+            Listening to survivors means recognising not just what
+            they have been through, but who they are beyond it.
+            Their experiences deserve to be heard with empathy,
+            respect and understanding.
+        </p>
+
+        <p class="her-expansion">
+            Her Voice will continue to grow, with more cancer types
+            and survivor stories being added in the future.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>UNMUTE</p>
+
+        <p>Her health. Her voice. Her right to be heard.</p>
+
+        <a href="index.html">Return to homepage →</a>
+
+    </footer>
+
+
+    <!-- HER VOICE JAVASCRIPT -->
+    <script src="her-voice.js"></script>
+
+</body>
+</html>

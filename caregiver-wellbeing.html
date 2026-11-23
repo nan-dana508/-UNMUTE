@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caregiver Wellbeing | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Page-specific styling */
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none !important;
+        }
+
+        .wellbeing-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            background: #faf5f2;
+        }
+
+        .wellbeing-hero-content {
+            flex: 1;
+        }
+
+        .wellbeing-hero-content h1 {
+            font-size: 42px;
+            color: #54284f;
+            margin-bottom: 20px;
+        }
+
+        .wellbeing-hero-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #514650;
+            max-width: 620px;
+        }
+
+        .wellbeing-hero-image {
+            flex: 1;
+        }
+
+        .wellbeing-hero-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .wellbeing-intro {
+            text-align: center;
+            padding: 55px 8% 25px;
+        }
+
+        .wellbeing-intro h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .wellbeing-intro p {
+            color: #625760;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Topic Navigation */
+
+        .topic-navigation {
+            padding: 25px 8% 55px;
+        }
+
+        .topic-navigation h2 {
+            text-align: center;
+            color: #54284f;
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .topic-link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            background: #faf5f2;
+            padding: 20px;
+            border-radius: 13px;
+            color: #54284f;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .topic-link:hover {
+            transform: translateY(-3px);
+            background: #f4e8ee;
+        }
+
+        .topic-link:focus-visible {
+            outline: 3px solid #8a496e;
+            outline-offset: 4px;
+        }
+
+        .topic-number {
+            min-width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f0dfe8;
+            color: #54284f;
+            font-size: 15px;
+        }
+
+        /* Guide Sections */
+
+        .guide-section {
+            padding: 65px 8%;
+            scroll-margin-top: 30px;
+        }
+
+        .guide-section:nth-of-type(even) {
+            background: #faf5f2;
+        }
+
+        .guide-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .guide-label {
+            color: #94617e;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .guide-section h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .guide-section h3 {
+            color: #54284f;
+            font-size: 20px;
+            margin: 25px 0 10px;
+        }
+
+        .guide-section p {
+            color: #625760;
+            font-size: 16px;
+            line-height: 1.85;
+            margin-bottom: 15px;
+        }
+
+        .guide-section ul {
+            padding-left: 22px;
+            margin: 12px 0 20px;
+        }
+
+        .guide-section li {
+            color: #625760;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 9px;
+        }
+
+        .guide-image {
+            width: 100%;
+            max-height: 340px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin: 20px 0 25px;
+        }
+
+        .guide-note {
+            background: #f4e8ee;
+            border-left: 4px solid #8a496e;
+            border-radius: 10px;
+            padding: 20px 23px;
+            margin-top: 25px;
+        }
+
+        .guide-note p {
+            margin-bottom: 0;
+            color: #54284f;
+        }
+
+        .guide-back {
+            display: inline-block;
+            color: #8a496e;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: color 0.3s ease;
+        }
+
+        .guide-back:hover {
+            color: #54284f;
+        }
+
+        /* Closing Section */
+
+        .wellbeing-closing {
+            text-align: center;
+            padding: 65px 10%;
+        }
+
+        .wellbeing-closing h2 {
+            color: #54284f;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .wellbeing-closing p {
+            max-width: 780px;
+            margin: auto;
+            color: #625760;
+            line-height: 1.8;
+        }
+
+        .back-to-caregiver {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 25px;
+            background: #54284f;
+            color: #fff !important;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-caregiver:hover {
+            background: #75436d;
+        }
+
+        @media (max-width: 900px) {
+            .topic-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .wellbeing-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+            }
+
+            .wellbeing-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .wellbeing-hero-image img {
+                height: 260px;
+            }
+
+            .wellbeing-intro {
+                padding: 40px 6% 20px;
+            }
+
+            .wellbeing-intro h2 {
+                font-size: 26px;
+            }
+
+            .topic-navigation {
+                padding: 20px 6% 40px;
+            }
+
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-section {
+                padding: 45px 6%;
+            }
+
+            .guide-section h2 {
+                font-size: 26px;
+            }
+
+            .wellbeing-closing {
+                padding: 50px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html">Know Your Body</a>
+            <a href="find-support.html" class="active">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="wellbeing-hero">
+
+        <div class="wellbeing-hero-content">
+
+            <h1>You Deserve Care, Too</h1>
+
+            <p>
+                Supporting someone through cancer can be one of
+                the most meaningful things you do, but it can also
+                be emotionally and physically demanding.
+                Between appointments, responsibilities and
+                uncertainty, your own needs can easily get pushed aside.
+            </p>
+
+            <p>
+                Your feelings matter. Your health matters.
+                You deserve time to rest, people to lean on
+                and support of your own. This space is for you, too.
+            </p>
+
+        </div>
+
+        <div class="wellbeing-hero-image">
+            <img src="caregiver-support.webp"
+                 alt="A caring moment representing support and wellbeing">
+        </div>
+
+    </section>
+
+    <!-- Introduction -->
+    <section class="wellbeing-intro">
+
+        <h2>Taking Care of the Person Behind the Care</h2>
+
+        <p>
+            Caregiving can bring a mixture of love, responsibility,
+            fear, hope and exhaustion. Looking after yourself does
+            not mean caring any less about someone else. Explore
+            these six topics to understand your needs and find
+            healthier ways to navigate your caregiving journey.
+        </p>
+
+    </section>
+
+    <!-- Topic Navigation -->
+    <section class="topic-navigation">
+
+        <h2>Explore This Guide</h2>
+
+        <div class="topic-grid">
+
+            <a href="#caregiver-stress" class="topic-link">
+                <span class="topic-number">01</span>
+                Understanding Caregiver Stress
+            </a>
+
+            <a href="#caregiver-burnout" class="topic-link">
+                <span class="topic-number">02</span>
+                Recognising Caregiver Burnout
+            </a>
+
+            <a href="#personal-wellbeing" class="topic-link">
+                <span class="topic-number">03</span>
+                Looking After Your Wellbeing
+            </a>
+
+            <a href="#sharing-responsibilities" class="topic-link">
+                <span class="topic-number">04</span>
+                Sharing Responsibilities
+            </a>
+
+            <a href="#difficult-emotions" class="topic-link">
+                <span class="topic-number">05</span>
+                Managing Difficult Emotions
+            </a>
+
+            <a href="#finding-support" class="topic-link">
+                <span class="topic-number">06</span>
+                Finding Support for Yourself
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 1: Understanding Caregiver Stress -->
+    <section class="guide-section" id="caregiver-stress">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 01</div>
+
+            <h2>Understanding Caregiver Stress</h2>
+
+            <img class="guide-image"
+                 src="caregiver-stress.jpg"
+                 alt="A caregiver taking a quiet moment to reflect">
+
+            <p>
+                Caring for someone with cancer can involve many
+                responsibilities, from attending appointments
+                and managing everyday tasks to providing emotional
+                support. Over time, these responsibilities can
+                become overwhelming.
+            </p>
+
+            <p>
+                Caregiver stress is the physical and emotional
+                strain that can develop when the demands of caring
+                for someone begin to exceed the time, energy and
+                support available to you.
+            </p>
+
+            <h3>Why can caregiving become stressful?</h3>
+
+            <ul>
+                <li><strong>Uncertainty:</strong> Worrying about treatment, test results, changes in health and what the future may bring.</li>
+
+                <li><strong>Multiple responsibilities:</strong> Balancing caregiving with employment, education, parenting, household tasks and other commitments.</li>
+
+                <li><strong>Emotional pressure:</strong> Trying to remain strong for someone else while managing your own feelings.</li>
+
+                <li><strong>Physical demands:</strong> Frequent hospital visits, disrupted sleep and long periods of providing assistance.</li>
+
+                <li><strong>Financial concerns:</strong> Managing treatment-related expenses, travel costs or changes in household income.</li>
+
+                <li><strong>Feeling alone:</strong> Believing that others do not understand what you are experiencing or that you must handle everything yourself.</li>
+            </ul>
+
+            <h3>How might caregiver stress affect you?</h3>
+
+            <ul>
+                <li>Feeling constantly worried, overwhelmed or unable to relax.</li>
+
+                <li>Having difficulty concentrating or making everyday decisions.</li>
+
+                <li>Experiencing changes in sleep, appetite or energy levels.</li>
+
+                <li>Becoming more irritable, withdrawn or emotionally exhausted.</li>
+
+                <li>Finding less time for friendships, hobbies and personal interests.</li>
+            </ul>
+
+            <h3>What can help?</h3>
+
+            <ul>
+                <li>Acknowledge that caregiving can be difficult instead of expecting yourself to manage everything perfectly.</li>
+
+                <li>Identify the responsibilities that are causing the most stress.</li>
+
+                <li>Talk to someone you trust about how you are feeling.</li>
+
+                <li>Ask family members or friends to take on specific tasks.</li>
+
+                <li>Make time for regular breaks, even when your schedule is demanding.</li>
+
+                <li>Seek professional support if stress begins affecting your daily life.</li>
+            </ul>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> Feeling stressed does
+                    not mean you are failing as a caregiver.
+                    It means you are human and may need more support.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 2: Recognising Caregiver Burnout -->
+    <section class="guide-section" id="caregiver-burnout">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 02</div>
+
+            <h2>Recognising Caregiver Burnout</h2>
+
+            <img class="guide-image"
+                 src="caregiver-burnout.jpg"
+                 alt="A tired caregiver resting at home">
+
+            <p>
+                When caregiving responsibilities continue without
+                enough rest, support or recovery time, prolonged
+                stress can develop into caregiver burnout.
+            </p>
+
+            <p>
+                Burnout can affect your physical health, emotional
+                wellbeing and ability to manage everyday activities.
+                Recognising the signs early can help you seek
+                support before the strain becomes more difficult
+                to manage.
+            </p>
+
+            <h3>Common signs of caregiver burnout</h3>
+
+            <ul>
+                <li><strong>Persistent exhaustion:</strong> Feeling physically or emotionally drained even after resting.</li>
+
+                <li><strong>Emotional changes:</strong> Increased irritability, frustration, sadness, anxiety or feeling disconnected.</li>
+
+                <li><strong>Sleep difficulties:</strong> Struggling to fall asleep, waking frequently or feeling tired throughout the day.</li>
+
+                <li><strong>Withdrawal:</strong> Avoiding friends, family or activities you previously enjoyed.</li>
+
+                <li><strong>Neglecting personal needs:</strong> Skipping meals, postponing medical appointments or consistently ignoring your own health.</li>
+
+                <li><strong>Feeling overwhelmed:</strong> Finding even small responsibilities difficult to manage.</li>
+
+                <li><strong>Loss of motivation:</strong> Feeling unable to continue with responsibilities that previously felt manageable.</li>
+            </ul>
+
+            <h3>What should you do if you recognise these signs?</h3>
+
+            <ul>
+                <li>Take your feelings seriously instead of dismissing them as something you simply have to tolerate.</li>
+
+                <li>Speak with someone you trust about the pressure you are experiencing.</li>
+
+                <li>Identify tasks that can be shared or temporarily reduced.</li>
+
+                <li>Arrange regular breaks and protect time for rest.</li>
+
+                <li>Consider speaking with a doctor or mental health professional if symptoms persist or interfere with daily life.</li>
+            </ul>
+
+            <h3>When to seek immediate help</h3>
+
+            <p>
+                If you feel unable to keep yourself safe, experience
+                thoughts of harming yourself or feel in immediate
+                danger, seek urgent professional help or contact
+                local emergency services.
+            </p>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> You do not need to
+                    reach a breaking point before asking for help.
+                    Your wellbeing deserves attention at every stage.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 3: Looking After Your Wellbeing -->
+    <section class="guide-section" id="personal-wellbeing">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 03</div>
+
+            <h2>Looking After Your Wellbeing</h2>
+
+            <img class="guide-image"
+                 src="caregiver-wellbeing.jpg"
+                 alt="A caregiver enjoying a peaceful moment with a book">
+
+            <p>
+                Self-care is not about being selfish or stepping
+                away from someone who needs you. It is about
+                recognising that you have physical, emotional
+                and personal needs that deserve attention, too.
+            </p>
+
+            <p>
+                You do not need an elaborate routine or hours
+                of free time to care for yourself. Small,
+                realistic habits can help you maintain your
+                wellbeing while navigating caregiving responsibilities.
+            </p>
+
+            <h3>Look after your physical health</h3>
+
+            <ul>
+                <li>Try to maintain regular meals and stay hydrated.</li>
+
+                <li>Prioritise sleep and rest whenever possible.</li>
+
+                <li>Make time for gentle physical activity that suits your health and circumstances.</li>
+
+                <li>Attend your own medical appointments and do not ignore persistent symptoms.</li>
+
+                <li>Avoid relying on excessive caffeine or other unhealthy habits to push through exhaustion.</li>
+            </ul>
+
+            <h3>Make space for your emotional wellbeing</h3>
+
+            <ul>
+                <li>Give yourself permission to acknowledge difficult feelings.</li>
+
+                <li>Talk to someone you trust instead of keeping every concern to yourself.</li>
+
+                <li>Consider journalling or other activities that help you process your thoughts.</li>
+
+                <li>Take short breaks from caregiving responsibilities when possible.</li>
+
+                <li>Consider counselling or professional mental health support if you need it.</li>
+            </ul>
+
+            <h3>Stay connected to your own life</h3>
+
+            <ul>
+                <li>Make time for friendships and relationships outside caregiving.</li>
+
+                <li>Continue hobbies, interests and activities that bring you joy.</li>
+
+                <li>Maintain personal goals related to education, work or other areas of your life when possible.</li>
+
+                <li>Allow yourself to enjoy positive moments without feeling guilty.</li>
+
+                <li>Remember that you are an individual with an identity beyond your caregiving role.</li>
+            </ul>
+
+            <h3>Create realistic self-care goals</h3>
+
+            <p>
+                Rather than expecting yourself to change everything
+                at once, start with small actions. A proper meal,
+                a short walk, a conversation with a friend or
+                a few minutes of quiet can be a meaningful beginning.
+            </p>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> You are allowed to
+                    have moments of happiness, rest and normalcy
+                    even when someone you love is going through
+                    a difficult time.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 4: Sharing Responsibilities -->
+    <section class="guide-section" id="sharing-responsibilities">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 04</div>
+
+            <h2>Sharing Responsibilities</h2>
+
+            <img class="guide-image"
+                 src="sharing-care.jpg"
+                 alt="Family members planning responsibilities together">
+
+            <p>
+                Caregiving often becomes overwhelming when one
+                person feels responsible for everything. Sharing
+                responsibilities can reduce pressure, create
+                a more supportive environment and help ensure
+                that the patient's needs are met consistently.
+            </p>
+
+            <h3>Start by identifying what needs to be done</h3>
+
+            <p>
+                Write down the responsibilities involved in
+                supporting the person. These may include:
+            </p>
+
+            <ul>
+                <li>Hospital appointments and transportation.</li>
+
+                <li>Medication and appointment reminders, when agreed upon with the patient.</li>
+
+                <li>Meal preparation and grocery shopping.</li>
+
+                <li>Household tasks and errands.</li>
+
+                <li>Childcare or support for other family members.</li>
+
+                <li>Administrative tasks, bills and paperwork.</li>
+
+                <li>Companionship and emotional support.</li>
+            </ul>
+
+            <h3>How to share the workload</h3>
+
+            <ul>
+                <li><strong>Have an open conversation:</strong> Discuss what needs to be done and who is available to help.</li>
+
+                <li><strong>Assign specific tasks:</strong> Instead of asking someone to help generally, identify a clear responsibility they can take on.</li>
+
+                <li><strong>Consider everyone's capacity:</strong> Take work schedules, distance, finances and other responsibilities into account.</li>
+
+                <li><strong>Create a shared schedule:</strong> Use a calendar or simple task list to coordinate appointments and responsibilities.</li>
+
+                <li><strong>Review arrangements:</strong> Needs may change during treatment, so check whether the existing plan is still manageable.</li>
+
+                <li><strong>Respect the patient's preferences:</strong> Involve them in decisions about who helps and how their personal information is shared.</li>
+            </ul>
+
+            <h3>How to ask others for help</h3>
+
+            <p>
+                Asking for assistance can feel uncomfortable,
+                especially if you are used to managing everything
+                independently. However, people around you may be
+                willing to help but unsure what is needed.
+            </p>
+
+            <p>You could try saying:</p>
+
+            <ul>
+                <li>"Could you accompany them to their appointment next week?"</li>
+
+                <li>"Would you be able to prepare dinner on Wednesdays?"</li>
+
+                <li>"Could you spend a little time with them while I take a break?"</li>
+
+                <li>"Can you help organise the upcoming appointments?"</li>
+            </ul>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> You do not have to
+                    be the only person holding everything together.
+                    Accepting help is a healthy part of caregiving.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 5: Managing Difficult Emotions -->
+    <section class="guide-section" id="difficult-emotions">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 05</div>
+
+            <h2>Managing Difficult Emotions</h2>
+
+            <img class="guide-image"
+                 src="caregiver-emotions.jpg"
+                 alt="Two people offering emotional support to each other">
+
+            <p>
+                Supporting someone with cancer can bring emotions
+                that are difficult to understand or express.
+                You may feel worried about the future, frustrated
+                by circumstances, guilty about taking time for
+                yourself or helpless when you cannot change what
+                someone is going through.
+            </p>
+
+            <p>
+                These feelings do not make you a bad caregiver.
+                They are human responses to a challenging situation.
+            </p>
+
+            <h3>Understanding some common emotions</h3>
+
+            <ul>
+                <li><strong>Fear and uncertainty:</strong> Worrying about treatment outcomes, changes in health and the future.</li>
+
+                <li><strong>Guilt:</strong> Feeling guilty when you rest, enjoy yourself or cannot meet every expectation.</li>
+
+                <li><strong>Frustration:</strong> Feeling overwhelmed by responsibilities, delays, changing plans or circumstances outside your control.</li>
+
+                <li><strong>Helplessness:</strong> Wanting to make everything better but not knowing how.</li>
+
+                <li><strong>Sadness:</strong> Feeling distressed about changes in your loved one's life and the uncertainty surrounding the journey.</li>
+
+                <li><strong>Anticipatory grief:</strong> Experiencing grief or fear about possible future losses before they happen.</li>
+            </ul>
+
+            <h3>Ways to navigate difficult feelings</h3>
+
+            <ul>
+                <li>Allow yourself to acknowledge your emotions without judging them.</li>
+
+                <li>Talk to someone you trust rather than keeping everything inside.</li>
+
+                <li>Write down your thoughts if expressing them aloud feels difficult.</li>
+
+                <li>Focus on what is within your control instead of trying to predict every possible outcome.</li>
+
+                <li>Take breaks when emotions become overwhelming.</li>
+
+                <li>Seek professional counselling or mental health support when needed.</li>
+            </ul>
+
+            <h3>Let go of the expectation to be strong all the time</h3>
+
+            <p>
+                You may feel pressure to remain positive, composed
+                and dependable for everyone around you. But you
+                are allowed to have difficult days. You can love
+                someone deeply and still feel exhausted, frightened
+                or frustrated by the situation.
+            </p>
+
+            <p>
+                You do not have to hide every emotion to be a
+                supportive caregiver.
+            </p>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> Your feelings deserve
+                    space, too. You can care deeply for someone
+                    while also acknowledging that this journey
+                    is difficult for you.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Topic 6: Finding Support for Yourself -->
+    <section class="guide-section" id="finding-support">
+
+        <div class="guide-content">
+
+            <div class="guide-label">Topic 06</div>
+
+            <h2>Finding Support for Yourself</h2>
+
+            <img class="guide-image"
+                 src="caregiver-support-groups.jpg"
+                 alt="People participating in a small support group">
+
+            <p>
+                Caregivers need support just as much as the people
+                they care for. You do not have to navigate every
+                responsibility, concern or emotion on your own.
+                Reaching out can help you feel understood and
+                less isolated.
+            </p>
+
+            <h3>Where can you find support?</h3>
+
+            <ul>
+                <li><strong>Family and friends:</strong> Share your concerns with people you trust and let them know when you need help.</li>
+
+                <li><strong>Caregiver support groups:</strong> Connect with others who understand the challenges of supporting someone with cancer.</li>
+
+                <li><strong>Professional counselling:</strong> A qualified mental health professional can help you work through stress, anxiety, grief and other difficult emotions.</li>
+
+                <li><strong>Hospital support services:</strong> Ask the patient's healthcare team whether social workers, counsellors or caregiver support services are available.</li>
+
+                <li><strong>Community organisations:</strong> Explore trusted cancer organisations that provide information, practical assistance or peer connections.</li>
+
+                <li><strong>Online communities:</strong> Consider moderated communities that offer opportunities to connect with other caregivers while protecting your privacy.</li>
+            </ul>
+
+            <h3>What can support groups offer?</h3>
+
+            <ul>
+                <li>A space to share experiences with people facing similar challenges.</li>
+
+                <li>Practical ideas for managing everyday caregiving responsibilities.</li>
+
+                <li>Emotional understanding and a sense of connection.</li>
+
+                <li>An opportunity to learn how others access support and resources.</li>
+            </ul>
+
+            <h3>Choosing a safe support space</h3>
+
+            <ul>
+                <li>Look for groups with clear moderation and community guidelines.</li>
+
+                <li>Protect personal and medical information when participating online.</li>
+
+                <li>Be cautious of anyone promising guaranteed treatment outcomes or promoting unverified medical advice.</li>
+
+                <li>Use qualified healthcare professionals for medical decisions rather than relying solely on peer experiences.</li>
+
+                <li>Remember that you can leave a group or community if it makes you uncomfortable.</li>
+            </ul>
+
+            <h3>It is okay to ask for professional help</h3>
+
+            <p>
+                If stress, anxiety, sadness or exhaustion begins
+                interfering with your daily life, consider speaking
+                with a qualified professional. Seeking support
+                is not a sign of weakness. It is one way of taking
+                your own wellbeing seriously.
+            </p>
+
+            <div class="guide-note">
+                <p>
+                    <strong>Remember:</strong> You deserve a support
+                    system of your own. You should not have to
+                    carry the emotional weight of caregiving alone.
+                </p>
+            </div>
+
+            <a href="#top" class="guide-back">Back to the top ↑</a>
+
+        </div>
+
+    </section>
+
+    <!-- Closing Section -->
+    <section class="wellbeing-closing">
+
+        <h2>You Matter Beyond Your Caregiving Role</h2>
+
+        <p>
+            Caring for someone through cancer can change your
+            everyday life, but it should not mean losing sight
+            of yourself. You deserve rest, understanding,
+            meaningful relationships and opportunities to
+            continue living your own life. Take things one day
+            at a time, ask for help when you need it and remember
+            that your wellbeing matters, too.
+        </p>
+
+        <a href="caregiver-support.html" class="back-to-caregiver">
+            Back to Caregiver Support
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 UNMUTE. Every voice matters. Every journey deserves support.</p>
+    </footer>
+
+</body>
+</html>

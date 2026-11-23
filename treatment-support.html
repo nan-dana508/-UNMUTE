@@ -1,0 +1,1555 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Support During Treatment | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none !important;
+        }
+
+        .treatment-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+            background: #faf5f2;
+        }
+
+        .treatment-hero-content {
+            flex: 1;
+        }
+
+        .treatment-hero-content h1 {
+            font-size: 42px;
+            color: #54284f;
+            margin-bottom: 20px;
+        }
+
+        .treatment-hero-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #514650;
+            max-width: 600px;
+        }
+
+        .treatment-hero-image {
+            flex: 1;
+        }
+
+        .treatment-hero-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .treatment-intro {
+            text-align: center;
+            padding: 55px 8% 25px;
+        }
+
+        .treatment-intro h2 {
+            color: #54284f;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .treatment-intro p {
+            color: #625760;
+            line-height: 1.7;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            padding: 30px 8% 70px;
+        }
+
+        .topic-card {
+            display: block;
+            text-align: left;
+            padding: 27px;
+            background: #fff;
+            border: 1px solid #eee4eb;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(75, 43, 69, 0.08);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: inherit;
+            color: inherit;
+            width: 100%;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(75, 43, 69, 0.14);
+        }
+
+        .topic-card:focus-visible,
+        .back-button:focus-visible,
+        .source-link:focus-visible {
+            outline: 2px solid #98536F;
+            outline-offset: 4px;
+        }
+
+        .topic-number {
+            display: inline-block;
+            color: #98536f;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .topic-card h3 {
+            color: #54284f;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            color: #625760;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .topic-card span:last-child {
+            color: #8a496e;
+            font-weight: 600;
+        }
+
+        .topic-view {
+            display: none;
+            padding: 55px 8% 75px;
+        }
+
+        .topic-view.active {
+            display: block;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 11px 20px;
+            background: #f4e9ef;
+            color: #702f61;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 30px;
+            margin-right: 10px;
+            font-family: inherit;
+        }
+
+        .back-button:hover {
+            background: #ead8e3;
+        }
+
+        .guide-content {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(75, 43, 69, 0.08);
+        }
+
+        .guide-content h2 {
+            color: #54284f;
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .guide-content h3 {
+            color: #713d68;
+            font-size: 21px;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .guide-content p {
+            color: #625760;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .guide-content ul {
+            padding-left: 23px;
+            margin-bottom: 20px;
+        }
+
+        .guide-content li {
+            color: #625760;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 9px;
+        }
+
+        .gentle-reminder {
+            background: #faf5f2;
+            border-left: 4px solid #98536f;
+            padding: 20px 23px;
+            margin-top: 28px;
+            border-radius: 8px;
+        }
+
+        .gentle-reminder p {
+            margin-bottom: 0;
+            color: #54284f;
+        }
+
+        .support-note {
+            background: #f7f0f5;
+            padding: 22px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .support-note h3 {
+            margin-top: 0;
+        }
+
+        .guide-sources {
+            border-top: 1px solid #eadfe7;
+            margin-top: 35px;
+            padding-top: 22px;
+        }
+
+        .guide-sources h3 {
+            margin-top: 0;
+        }
+
+        .guide-sources ul {
+            margin-bottom: 0;
+        }
+
+        .source-link {
+            color: #8a496e;
+            font-weight: 600;
+        }
+
+        .medical-disclaimer {
+            background: #f7f0f5;
+            padding: 22px;
+            border-radius: 12px;
+            margin: 0 8% 55px;
+        }
+
+        .medical-disclaimer p {
+            color: #625760;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .treatment-closing {
+            text-align: center;
+            padding: 65px 10%;
+            background: #faf5f2;
+        }
+
+        .treatment-closing h2 {
+            color: #54284f;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .treatment-closing p {
+            max-width: 750px;
+            margin: auto;
+            color: #625760;
+            line-height: 1.8;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .treatment-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+            }
+
+            .treatment-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .treatment-hero-image img {
+                height: 260px;
+            }
+
+            .topic-grid {
+                grid-template-columns: 1fr;
+                padding: 25px 6% 50px;
+            }
+
+            .topic-view {
+                padding: 35px 6% 55px;
+            }
+
+            .guide-content {
+                padding: 25px;
+            }
+
+            .guide-content h2 {
+                font-size: 27px;
+            }
+
+            .medical-disclaimer {
+                margin-left: 6%;
+                margin-right: 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html">Know Your Body</a>
+            <a href="find-support.html" class="active">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="treatment-hero">
+
+        <div class="treatment-hero-content">
+            <h1>Support Through Every Step of Treatment</h1>
+
+            <p>
+                Navigating cancer treatment can involve many questions,
+                decisions and changes to everyday life. Understanding
+                what to expect and knowing where to find reliable
+                information can make the journey feel more manageable.
+            </p>
+
+            <p>
+                Explore guidance on treatment options, preparation,
+                side effects, physical wellbeing and the support
+                available throughout your treatment journey.
+            </p>
+        </div>
+
+        <div class="treatment-hero-image">
+            <img src="treatment-support.jpg"
+                 alt="Support and encouragement during cancer treatment">
+        </div>
+
+    </section>
+
+    <!-- Main Category Directory -->
+    <main id="categoryDirectory">
+
+        <section class="treatment-intro">
+            <h2>Explore Treatment Support</h2>
+
+            <p>
+                Choose an area to explore practical information,
+                helpful guidance and resources for different stages
+                of cancer treatment.
+            </p>
+        </section>
+
+        <section class="topic-grid" id="categoryGrid">
+
+            <button class="topic-card" onclick="openCategory('understanding')">
+                <span class="topic-number">01</span>
+                <h3>Understanding Your Treatment</h3>
+                <p>
+                    Learn about different cancer treatments,
+                    how they work and why they may be recommended.
+                </p>
+                <span>Explore Topics →</span>
+            </button>
+
+            <button class="topic-card" onclick="openCategory('preparing')">
+                <span class="topic-number">02</span>
+                <h3>Preparing for Treatment</h3>
+                <p>
+                    Find guidance for appointments, reports,
+                    treatment preparation and planning ahead.
+                </p>
+                <span>Explore Topics →</span>
+            </button>
+
+            <button class="topic-card" onclick="openCategory('sideeffects')">
+                <span class="topic-number">03</span>
+                <h3>Managing Side Effects</h3>
+                <p>
+                    Understand possible side effects, ways to
+                    manage discomfort and when to seek medical help.
+                </p>
+                <span>Explore Topics →</span>
+            </button>
+
+            <button class="topic-card" onclick="openCategory('nutrition')">
+                <span class="topic-number">04</span>
+                <h3>Nutrition and Physical Wellbeing</h3>
+                <p>
+                    Explore nutrition, hydration, movement,
+                    rest and physical wellbeing during treatment.
+                </p>
+                <span>Explore Topics →</span>
+            </button>
+
+            <button class="topic-card" onclick="openCategory('dailylife')">
+                <span class="topic-number">05</span>
+                <h3>Treatment and Daily Life</h3>
+                <p>
+                    Find support for education, work, relationships
+                    and everyday responsibilities during treatment.
+                </p>
+                <span>Explore Topics →</span>
+            </button>
+
+            <button class="topic-card" onclick="openCategory('healthcareteam')">
+                <span class="topic-number">06</span>
+                <h3>Talking to Your Healthcare Team</h3>
+                <p>
+                    Prepare for appointments, understand medical
+                    information and take part in treatment decisions.
+                </p>
+                <span>Explore Topics →</span>
+            </button>
+
+            <button class="topic-card" onclick="openCategory('aftersession')">
+                <span class="topic-number">07</span>
+                <h3>After Each Treatment Session</h3>
+                <p>
+                    Understand recovery between sessions,
+                    home care and preparing for your next appointment.
+                </p>
+                <span>Explore Topics →</span>
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Category Topic Directory -->
+    <section class="topic-view" id="categoryTopics">
+
+        <button class="back-button" onclick="backToCategories()">
+            ← Back to Sections
+        </button>
+
+        <div class="treatment-intro">
+            <h2 id="categoryHeading">Explore Topics</h2>
+            <p id="categoryDescription"></p>
+        </div>
+
+        <section class="topic-grid" id="individualTopicGrid"></section>
+
+    </section>
+
+    <!-- Individual Guide View -->
+    <section class="topic-view" id="individualGuide">
+
+        <button class="back-button" onclick="backToCategoryTopics()">
+            ← Back to Topics
+        </button>
+
+        <div class="guide-content" id="guideContent"></div>
+
+    </section>
+
+    <!-- Medical Disclaimer -->
+    <section class="medical-disclaimer">
+        <p>
+            <strong>Important:</strong> This information is intended
+            for general education and support. Treatment plans and
+            side effects differ between individuals. Always follow
+            the instructions of your oncology team. Do not start,
+            stop or change medicines, supplements, diets or exercise
+            routines without discussing them with your healthcare team.
+        </p>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="treatment-closing" id="treatmentClosing">
+
+        <h2>You Don't Have to Navigate Treatment Alone</h2>
+
+        <p>
+            Every treatment journey is different. Take your time
+            exploring the information available, ask questions
+            whenever you need to and reach out for support.
+            You deserve care at every step.
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 UNMUTE. Every voice matters. Every journey deserves support.</p>
+    </footer>
+
+    <script>
+
+        const categories = {
+
+            understanding: {
+                title: "Understanding Your Treatment",
+                description: "Explore different cancer treatments, their purposes and the questions you may want to discuss with your healthcare team.",
+                topics: [
+                    {
+                        id: "chemotherapy",
+                        title: "Chemotherapy",
+                        description: "Understand how chemotherapy works and what to expect during treatment.",
+                        intro: "Chemotherapy uses medicines to destroy cancer cells or stop them from growing and dividing. It may be used before surgery, after surgery, alongside other treatments or in situations where surgery is not suitable.",
+                        points: [
+                            "Chemotherapy medicines may be given through a vein, as tablets or through other methods depending on the medicine.",
+                            "Treatment is often organised into cycles, with treatment days followed by recovery periods.",
+                            "The medicines used and the number of cycles depend on the cancer type, treatment goal and individual circumstances.",
+                            "Possible side effects vary. Not everyone experiences the same effects.",
+                            "Your healthcare team may monitor blood counts, organ function and treatment response during therapy."
+                        ],
+                        reminder: "Ask your oncology team what your treatment is intended to achieve, what side effects to watch for and whom to contact if you feel unwell."
+                    },
+                    {
+                        id: "surgery",
+                        title: "Surgery",
+                        description: "Learn why surgery may be recommended and what recovery can involve.",
+                        intro: "Cancer surgery involves removing cancerous tissue. Depending on the cancer, its location and its extent, surgery may be used to remove a tumour, obtain information about the disease or reduce the amount of cancer present.",
+                        points: [
+                            "The type of surgery depends on the cancer and the treatment plan.",
+                            "Your surgeon can explain the intended procedure, possible benefits and potential risks.",
+                            "Recovery time varies depending on the operation and individual health.",
+                            "You may need support with daily activities during the recovery period.",
+                            "Ask about wound care, pain management, activity restrictions and follow-up appointments."
+                        ],
+                        reminder: "Before surgery, make sure you understand the procedure, preparation instructions, expected recovery and whom to contact if concerns arise."
+                    },
+                    {
+                        id: "radiation",
+                        title: "Radiation Therapy",
+                        description: "Understand how radiation therapy works and when it may be used.",
+                        intro: "Radiation therapy uses high-energy radiation to damage cancer cells and prevent them from growing. It may be used as a main treatment or alongside surgery, chemotherapy or other treatments.",
+                        points: [
+                            "The treatment plan depends on the cancer type, location and treatment goal.",
+                            "Radiation is usually delivered in planned sessions over a period of time.",
+                            "Side effects depend partly on the area being treated.",
+                            "Your radiation oncology team will explain how to prepare for each session.",
+                            "Tell your team about any new or worsening symptoms during treatment."
+                        ],
+                        reminder: "Ask your radiation oncology team what the treatment schedule involves and which side effects require medical attention."
+                    },
+                    {
+                        id: "targeted",
+                        title: "Targeted Therapy",
+                        description: "Explore medicines that target particular features of cancer cells.",
+                        intro: "Targeted therapy uses medicines designed to act on specific features of cancer cells, such as proteins or genetic changes that help them grow. These treatments are suitable only for certain cancers and situations.",
+                        points: [
+                            "Some targeted treatments require testing of tumour tissue or other samples.",
+                            "Different targeted medicines work in different ways.",
+                            "They may be given as tablets, injections or infusions.",
+                            "Side effects depend on the particular medicine.",
+                            "Monitoring may include blood tests, scans and assessments for medicine-specific side effects."
+                        ],
+                        reminder: "Ask whether testing is needed to determine if a targeted treatment is appropriate for your cancer."
+                    },
+                    {
+                        id: "hormone",
+                        title: "Hormone Therapy",
+                        description: "Understand treatments that affect hormones involved in certain cancers.",
+                        intro: "Hormone therapy, also called endocrine therapy, changes hormone production or blocks the effects of hormones that may help certain cancers grow. It is used for specific hormone-sensitive cancers.",
+                        points: [
+                            "Hormone therapy is not appropriate for every cancer type.",
+                            "The choice of medicine depends on the cancer and its hormone sensitivity.",
+                            "Some treatments reduce hormone production, while others block hormone action.",
+                            "Possible side effects depend on the medicine and the person receiving it.",
+                            "Your healthcare team can explain how treatment response and side effects will be monitored."
+                        ],
+                        reminder: "Ask your doctor whether your cancer is hormone-sensitive and whether hormone therapy has a role in your treatment plan."
+                    },
+                    {
+                        id: "immunotherapy",
+                        title: "Immunotherapy",
+                        description: "Learn how certain treatments help the immune system recognise and attack cancer.",
+                        intro: "Immunotherapy includes treatments that help the immune system recognise or respond to cancer. It can be effective for some cancers, but it is not suitable for every patient or cancer type.",
+                        points: [
+                            "Different immunotherapies work through different mechanisms.",
+                            "Some treatments help immune cells recognise cancer cells.",
+                            "Immune-related side effects can affect different organs and may require prompt assessment.",
+                            "Symptoms should be reported to the healthcare team rather than ignored.",
+                            "Your doctor may recommend specific tests to determine whether immunotherapy is appropriate."
+                        ],
+                        reminder: "Do not dismiss new symptoms during immunotherapy. Contact your treatment team promptly about symptoms they have told you to watch for."
+                    },
+                    {
+                        id: "combination",
+                        title: "Understanding Combination Treatment",
+                        description: "Discover why different treatments may be used together or in sequence.",
+                        intro: "Cancer treatment sometimes involves more than one approach. A treatment plan may combine surgery, chemotherapy, radiation, targeted therapy, hormone therapy or immunotherapy depending on the cancer and the intended treatment outcome.",
+                        points: [
+                            "Different treatments may target cancer in different ways.",
+                            "Some treatments are given before surgery, while others are given afterwards.",
+                            "The order and timing are planned around the cancer and the person's health.",
+                            "Not everyone needs multiple types of treatment.",
+                            "Your team can explain the purpose of each part of your treatment plan."
+                        ],
+                        reminder: "Ask why each treatment is being recommended and how the different parts of the plan work together."
+                    }
+                ]
+            },
+
+            preparing: {
+                title: "Preparing for Treatment",
+                description: "Being prepared can help you feel more informed and organised before treatment begins.",
+                topics: [
+                    {
+                        id: "firstappointment",
+                        title: "Your First Oncology Appointment",
+                        description: "Know what to expect when meeting your oncology team.",
+                        intro: "Your first oncology appointment is an opportunity to discuss your diagnosis, available treatment options and the next steps in your care. It is completely normal to have many questions.",
+                        points: [
+                            "Bring available reports, scan results, pathology reports and a list of current medicines.",
+                            "Write down your questions before the appointment.",
+                            "Ask your doctor to explain unfamiliar medical terms.",
+                            "Consider bringing someone you trust if you would find that helpful.",
+                            "Ask who to contact if you have questions after the appointment."
+                        ],
+                        reminder: "You do not need to remember everything at once. It is okay to ask your doctor to repeat or explain information."
+                    },
+                    {
+                        id: "reports",
+                        title: "Understanding Your Diagnosis and Reports",
+                        description: "Learn about pathology reports, scans, staging and medical tests.",
+                        intro: "Cancer reports contain information that helps your healthcare team understand the type of cancer, where it is located and whether it has spread. Reports can contain unfamiliar terminology and should be interpreted in the context of your complete medical assessment.",
+                        points: [
+                            "Pathology reports describe findings from tissue or cell samples.",
+                            "Imaging reports describe findings from scans such as CT, MRI or PET.",
+                            "Cancer stage describes the extent of the disease using cancer-specific staging systems.",
+                            "Biomarker and molecular tests may provide additional information for certain cancers.",
+                            "A single report should not be used to make treatment decisions without medical interpretation."
+                        ],
+                        reminder: "Ask your doctor to explain what each report means for your diagnosis and treatment plan."
+                    },
+                    {
+                        id: "questionsbefore",
+                        title: "Questions to Ask Before Treatment",
+                        description: "Prepare questions about treatment goals, benefits, risks and alternatives.",
+                        intro: "Understanding your treatment plan can help you take part in decisions about your care. You have the right to ask questions and request explanations before treatment begins.",
+                        points: [
+                            "What is the goal of this treatment?",
+                            "Why is this treatment being recommended for me?",
+                            "What benefits and risks should I understand?",
+                            "What side effects should I watch for?",
+                            "How will we know whether treatment is working?",
+                            "Are there other reasonable treatment options?",
+                            "Who should I contact if I experience a problem?"
+                        ],
+                        reminder: "There is no such thing as an unimportant question when it concerns your care."
+                    },
+                    {
+                        id: "preparechemo",
+                        title: "Preparing for Chemotherapy",
+                        description: "Understand what you may need to organise before chemotherapy sessions.",
+                        intro: "Chemotherapy preparation depends on the medicines being used and the instructions provided by your oncology team. Your hospital will explain what to do before each session.",
+                        points: [
+                            "Confirm the date, time and location of your treatment.",
+                            "Ask whether you need blood tests or other checks beforehand.",
+                            "Discuss your current medicines, supplements and allergies with your team.",
+                            "Ask what food, drink and medication instructions apply on treatment days.",
+                            "Arrange transport or support if you may feel tired after treatment.",
+                            "Keep your hospital's contact details accessible."
+                        ],
+                        reminder: "Follow the preparation instructions provided by your own oncology team. Do not change medicines or fasting routines without asking them."
+                    },
+                    {
+                        id: "preparesurgery",
+                        title: "Preparing for Surgery",
+                        description: "Explore the discussions and practical arrangements that may help before an operation.",
+                        intro: "Preparing for cancer surgery involves medical assessments and practical planning. Your surgical team will provide instructions specific to your procedure and health needs.",
+                        points: [
+                            "Understand the planned procedure and ask about its purpose.",
+                            "Discuss existing health conditions, allergies and all medicines you take.",
+                            "Follow the hospital's instructions about eating and drinking before surgery.",
+                            "Ask which medicines should be taken or paused, and when.",
+                            "Arrange help at home for the recovery period if needed.",
+                            "Ask about wound care, pain relief and follow-up appointments."
+                        ],
+                        reminder: "Pre-operative instructions differ between procedures. Follow the exact instructions provided by your surgical team."
+                    },
+                    {
+                        id: "homesupport",
+                        title: "Preparing Your Home and Support System",
+                        description: "Plan practical support for treatment days and recovery.",
+                        intro: "Treatment can affect everyday routines. Planning ahead may make it easier to manage appointments, rest and household responsibilities.",
+                        points: [
+                            "Identify people who may be able to help with transport or appointments.",
+                            "Keep important hospital numbers and medical documents accessible.",
+                            "Plan simple meals and household arrangements where possible.",
+                            "Make a comfortable place to rest.",
+                            "Discuss childcare, family responsibilities or study arrangements if needed.",
+                            "Tell your support network what kind of help would be useful."
+                        ],
+                        reminder: "You do not have to organise everything alone. Ask your family, friends or hospital team about practical support."
+                    }
+                ]
+            },
+
+            sideeffects: {
+                title: "Managing Side Effects",
+                description: "Learn about possible treatment side effects, supportive care and symptoms that need medical attention.",
+                topics: [
+                    {
+                        id: "understandeffects",
+                        title: "Understanding Treatment Side Effects",
+                        description: "Learn why side effects occur and why they differ between individuals.",
+                        intro: "Cancer treatments can affect healthy cells and normal body functions as well as cancer cells. This can lead to side effects, but the type and severity vary between treatments and individuals.",
+                        points: [
+                            "Not everyone experiences the same side effects.",
+                            "Some side effects appear during treatment, while others may develop later.",
+                            "Your healthcare team can explain which effects are more likely with your treatment.",
+                            "Supportive medicines and other measures may help manage certain side effects.",
+                            "Report new, persistent or worsening symptoms to your treatment team."
+                        ],
+                        reminder: "Do not assume that a symptom is harmless or treatment-related. Ask your healthcare team when you are unsure."
+                    },
+                    {
+                        id: "fatigue",
+                        title: "Cancer-Related Fatigue",
+                        description: "Understand treatment-related tiredness and ways to manage daily energy.",
+                        intro: "Cancer-related fatigue is a persistent feeling of physical, mental or emotional exhaustion. It may be caused by cancer, treatment, sleep changes, anaemia, stress or other factors.",
+                        points: [
+                            "Let your healthcare team know if fatigue is affecting daily activities.",
+                            "Prioritise important tasks and allow rest periods.",
+                            "Accept help with household activities when needed.",
+                            "Ask your team whether gentle physical activity is suitable for you.",
+                            "Discuss fatigue that is sudden, severe or worsening, as treatable causes may need assessment."
+                        ],
+                        reminder: "Rest is part of caring for yourself. You do not need to push through severe fatigue."
+                    },
+                    {
+                        id: "nausea",
+                        title: "Nausea and Vomiting",
+                        description: "Explore ways to manage nausea and when to contact your care team.",
+                        intro: "Some cancer treatments can cause nausea or vomiting. The timing and severity vary. Medicines are available to prevent or reduce treatment-related nausea.",
+                        points: [
+                            "Take prescribed anti-nausea medicines exactly as instructed.",
+                            "Tell your team if nausea is not controlled by the medicines provided.",
+                            "Ask whether small, frequent meals or particular foods may be easier to tolerate.",
+                            "Discuss hydration if you are struggling to keep fluids down.",
+                            "Seek prompt medical advice if vomiting is persistent or you cannot keep fluids down."
+                        ],
+                        reminder: "Do not wait until you are severely dehydrated to report persistent vomiting or difficulty drinking."
+                    },
+                    {
+                        id: "hairloss",
+                        title: "Hair Loss and Changes in Appearance",
+                        description: "Understand treatment-related hair changes and available support.",
+                        intro: "Some cancer treatments can cause hair thinning or hair loss. The extent and timing depend on the medicines or treatment area. Hair may grow back after treatment, although its texture or appearance can sometimes change.",
+                        points: [
+                            "Ask your team whether your particular treatment is likely to cause hair loss.",
+                            "Explore head coverings, scarves, wigs or other options if you wish.",
+                            "Ask whether scalp cooling is suitable for your treatment.",
+                            "Use gentle hair and scalp care if recommended by your team.",
+                            "Discuss emotional concerns about appearance with someone you trust or a counsellor."
+                        ],
+                        reminder: "There is no right or wrong way to feel about changes in your appearance. Choose the options that feel comfortable for you."
+                    },
+                    {
+                        id: "appetite",
+                        title: "Changes in Appetite and Taste",
+                        description: "Learn about appetite changes and taste alterations during treatment.",
+                        intro: "Cancer and its treatment may change appetite, taste, smell and enjoyment of food. These changes can make eating difficult and may affect nutrition.",
+                        points: [
+                            "Tell your healthcare team if appetite changes are affecting your food intake.",
+                            "Ask whether a dietitian can help you plan meals that are manageable.",
+                            "Try different food textures or flavours if your usual choices are difficult to tolerate.",
+                            "Discuss ongoing weight changes with your care team.",
+                            "Seek advice if eating or drinking becomes difficult."
+                        ],
+                        reminder: "There is no single food plan suitable for everyone during cancer treatment. Ask for advice based on your needs."
+                    },
+                    {
+                        id: "digestive",
+                        title: "Digestive Problems",
+                        description: "Understand constipation, diarrhoea, mouth sores and other digestive changes.",
+                        intro: "Cancer treatment may affect the digestive system. Some people experience constipation, diarrhoea, bloating, mouth sores or changes in bowel habits.",
+                        points: [
+                            "Tell your team about new or persistent bowel changes.",
+                            "Ask before using laxatives, anti-diarrhoeal medicines or mouth treatments.",
+                            "Follow your team's advice about food and fluids.",
+                            "Report mouth sores that make eating or drinking difficult.",
+                            "Seek urgent advice for severe abdominal pain, blood in stools or significant dehydration."
+                        ],
+                        reminder: "Digestive symptoms can have different causes. Your healthcare team can help determine what needs assessment and treatment."
+                    },
+                    {
+                        id: "pain",
+                        title: "Pain and Discomfort",
+                        description: "Learn how to communicate pain and explore pain-management support.",
+                        intro: "Pain can be associated with cancer, treatment, surgery or other health conditions. It is important to tell your healthcare team about pain rather than feeling you must tolerate it.",
+                        points: [
+                            "Describe where the pain occurs and when it started.",
+                            "Explain whether it is constant, intermittent or linked to particular activities.",
+                            "Tell your team how severe it feels and whether it affects sleep or daily activities.",
+                            "Use pain medicines only as prescribed or advised by your healthcare team.",
+                            "Report sudden, severe or rapidly worsening pain promptly."
+                        ],
+                        reminder: "Pain deserves attention. Your healthcare team can assess its cause and discuss suitable ways to manage it."
+                    },
+                    {
+                        id: "skin",
+                        title: "Skin and Nail Changes",
+                        description: "Understand possible skin and nail changes during treatment.",
+                        intro: "Some cancer treatments can affect the skin and nails. Changes may include dryness, sensitivity, rashes, discolouration, nail changes or irritation.",
+                        points: [
+                            "Ask your team which skin changes may occur with your treatment.",
+                            "Use skin-care products recommended by your healthcare team.",
+                            "Protect sensitive skin from excessive sun exposure.",
+                            "Avoid treating severe rashes or skin reactions without medical advice.",
+                            "Report blistering, swelling, spreading redness or painful skin changes."
+                        ],
+                        reminder: "A new or worsening skin reaction should be discussed with your treatment team, especially if it is painful or accompanied by fever."
+                    },
+                    {
+                        id: "sleepbrainfog",
+                        title: "Sleep Problems and Brain Fog",
+                        description: "Explore sleep difficulties and changes in memory or concentration.",
+                        intro: "Some people experience sleep disturbances, difficulty concentrating or memory changes during cancer treatment. These experiences can have several possible causes, including medicines, fatigue, stress and other medical factors.",
+                        points: [
+                            "Tell your healthcare team if sleep or concentration problems are affecting everyday life.",
+                            "Keep a flexible sleep routine where possible.",
+                            "Use reminders, calendars or written notes to organise important tasks.",
+                            "Allow breaks between activities that require concentration.",
+                            "Discuss persistent or sudden cognitive changes with your doctor."
+                        ],
+                        reminder: "Do not assume every memory or concentration problem is caused by treatment. New or concerning changes deserve medical assessment."
+                    },
+                    {
+                        id: "immunity",
+                        title: "Changes in Immunity and Infection Prevention",
+                        description: "Understand infection risks and how to respond to possible warning signs.",
+                        intro: "Some cancer treatments can lower the number of infection-fighting white blood cells. This can make certain infections more serious and may require urgent medical assessment.",
+                        points: [
+                            "Ask your team whether your treatment may lower your white blood cell count.",
+                            "Follow advice about hand hygiene, food safety and avoiding exposure to infections.",
+                            "Know the contact number for your oncology team and the instructions they have given you.",
+                            "A temperature of 38°C or higher during chemotherapy can be a medical emergency.",
+                            "Do not take fever-reducing medicines to mask a fever before contacting your oncology team unless they have instructed you to do so."
+                        ],
+                        reminder: "If you develop a fever during chemotherapy, follow your hospital's emergency instructions and seek urgent medical advice immediately. Do not wait for symptoms to worsen."
+                    }
+                ]
+            },
+
+            nutrition: {
+                title: "Nutrition and Physical Wellbeing",
+                description: "Explore ways to support your nutritional and physical wellbeing while respecting your individual treatment needs.",
+                topics: [
+                    {
+                        id: "eatingwell",
+                        title: "Eating Well During Cancer Treatment",
+                        description: "Understand the role of nutrition during treatment and recovery.",
+                        intro: "Good nutrition can help support strength, energy and recovery during cancer treatment. However, appetite, food tolerance and nutritional needs can change throughout the treatment journey.",
+                        points: [
+                            "Aim for a varied diet that meets your individual nutritional needs.",
+                            "Discuss eating difficulties with your oncology team.",
+                            "Ask whether a registered dietitian with cancer-care experience is available.",
+                            "Follow any dietary instructions related to your treatment or medical condition.",
+                            "Avoid restrictive diets that may reduce your nutritional intake without medical guidance."
+                        ],
+                        reminder: "There is no universal cancer diet, and no particular food has been proven to cure cancer."
+                    },
+                    {
+                        id: "eatingdifficulties",
+                        title: "Managing Eating Difficulties",
+                        description: "Explore support for appetite loss, swallowing difficulties and other eating challenges.",
+                        intro: "Treatment can make eating difficult for different reasons, including nausea, mouth sores, taste changes, swallowing problems or reduced appetite.",
+                        points: [
+                            "Tell your team about difficulties with chewing, swallowing or keeping food down.",
+                            "Ask whether changes in food texture or meal timing may help.",
+                            "Discuss nutritional drinks or other support with a dietitian if needed.",
+                            "Monitor significant changes in weight or food intake with your care team.",
+                            "Seek prompt help if you cannot eat or drink adequately."
+                        ],
+                        reminder: "If eating becomes difficult, you deserve practical nutritional support rather than pressure to manage it alone."
+                    },
+                    {
+                        id: "hydration",
+                        title: "Hydration During Treatment",
+                        description: "Understand why fluid intake may need attention during cancer treatment.",
+                        intro: "Hydration supports normal body functions. Treatment-related vomiting, diarrhoea, fever or reduced fluid intake can increase the risk of dehydration.",
+                        points: [
+                            "Ask your team how much fluid is appropriate for your individual situation.",
+                            "Follow any fluid restrictions or special instructions you have been given.",
+                            "Tell your team if nausea makes drinking difficult.",
+                            "Watch for symptoms such as unusual dizziness, reduced urination or marked weakness.",
+                            "Seek medical advice if you cannot keep fluids down."
+                        ],
+                        reminder: "Fluid needs differ between individuals, especially when other medical conditions are present. Follow your healthcare team's advice."
+                    },
+                    {
+                        id: "foodsafety",
+                        title: "Food Safety and Hygiene",
+                        description: "Learn about safer food handling during treatment.",
+                        intro: "Some cancer treatments can weaken the immune system. Safe food handling and hygiene can help reduce exposure to foodborne infections.",
+                        points: [
+                            "Wash hands before preparing or eating food.",
+                            "Wash fruits and vegetables thoroughly.",
+                            "Cook meat, seafood and eggs thoroughly.",
+                            "Avoid cross-contamination between raw and cooked foods.",
+                            "Refrigerate perishable food appropriately and avoid food that may have spoiled.",
+                            "Ask your oncology team whether you need additional food-safety precautions."
+                        ],
+                        reminder: "Food-safety advice may vary depending on your immune status and treatment. Follow the guidance provided by your care team."
+                    },
+                    {
+                        id: "physicalactivity",
+                        title: "Physical Activity During Treatment",
+                        description: "Explore the role of suitable movement and activity during treatment.",
+                        intro: "Physical activity may help some people maintain strength, mobility and everyday function during cancer treatment. The right level of activity depends on treatment, symptoms and overall health.",
+                        points: [
+                            "Ask your healthcare team what activities are suitable for you.",
+                            "Start gently if you have been inactive and your team approves.",
+                            "Adapt activity to your energy and physical ability.",
+                            "Stop and seek advice if you experience concerning symptoms during activity.",
+                            "Ask about a physiotherapist or cancer rehabilitation service if available."
+                        ],
+                        reminder: "There is no requirement to exercise through pain or exhaustion. Your activity plan should be safe and individualised."
+                    },
+                    {
+                        id: "rest",
+                        title: "Rest, Sleep and Recovery",
+                        description: "Understand why rest matters and how to support recovery.",
+                        intro: "Rest and sleep are important parts of wellbeing during cancer treatment. Fatigue, discomfort, anxiety and treatment schedules can make restful sleep difficult.",
+                        points: [
+                            "Allow time for rest between activities.",
+                            "Create a comfortable sleep environment where possible.",
+                            "Discuss persistent sleep difficulties with your healthcare team.",
+                            "Ask for help with tasks that use more energy than you currently have.",
+                            "Avoid judging your recovery by comparing it with someone else's."
+                        ],
+                        reminder: "Rest is not wasted time. It is a valid part of looking after yourself."
+                    },
+                    {
+                        id: "weight",
+                        title: "Weight and Body Changes",
+                        description: "Understand weight changes and when to discuss them with your care team.",
+                        intro: "Cancer and its treatment may affect weight, appetite, muscle strength and body shape. Changes can happen for several reasons and should be discussed with your healthcare team.",
+                        points: [
+                            "Tell your team about unexpected or rapid weight changes.",
+                            "Ask whether a dietitian can help assess your nutritional needs.",
+                            "Discuss swelling, fluid retention or changes in abdominal size with your doctor.",
+                            "Avoid trying restrictive diets or weight-loss plans without medical advice.",
+                            "Focus on maintaining health and strength rather than appearance."
+                        ],
+                        reminder: "Weight changes during treatment are not a personal failure. Your care team can help assess the cause and appropriate support."
+                    },
+                    {
+                        id: "supplements",
+                        title: "Vitamins, Supplements and Complementary Therapies",
+                        description: "Understand the importance of discussing supplements and complementary approaches with your doctor.",
+                        intro: "Some people explore vitamins, herbal products, traditional remedies or complementary therapies during cancer treatment. These products and practices may affect medicines or treatment in unexpected ways.",
+                        points: [
+                            "Tell your oncologist about every supplement, herbal product or remedy you use.",
+                            "Do not assume that natural products are automatically safe.",
+                            "Some supplements may interact with cancer medicines or affect treatment.",
+                            "Ask about the evidence and possible risks before starting a complementary therapy.",
+                            "Never replace prescribed cancer treatment with an unproven alternative."
+                        ],
+                        reminder: "Check with your oncology team before starting any vitamin, supplement, herbal product or complementary therapy."
+                    }
+                ]
+            },
+
+            dailylife: {
+                title: "Treatment and Daily Life",
+                description: "Cancer treatment can affect many parts of everyday life. Explore ways to navigate responsibilities, relationships and personal goals.",
+                topics: [
+                    {
+                        id: "balancinglife",
+                        title: "Balancing Treatment and Everyday Life",
+                        description: "Explore ways to manage routines and responsibilities during treatment.",
+                        intro: "Treatment appointments, recovery periods and changing energy levels can affect everyday routines. Finding a balance may involve adjusting expectations and deciding which activities matter most.",
+                        points: [
+                            "Create a flexible routine around your treatment schedule.",
+                            "Prioritise essential tasks and postpone what can wait.",
+                            "Ask family or friends for practical help when needed.",
+                            "Allow time for rest and activities that bring comfort.",
+                            "Discuss ongoing difficulties with your healthcare team."
+                        ],
+                        reminder: "Your routine may look different during treatment. Adjusting your expectations is not giving up."
+                    },
+                    {
+                        id: "college",
+                        title: "College and Education During Treatment",
+                        description: "Find guidance for students managing education alongside cancer treatment.",
+                        intro: "A cancer diagnosis can interrupt education through hospital visits, treatment schedules, fatigue or recovery. Students may need time away from classes or changes to their academic routine.",
+                        points: [
+                            "Consider speaking with a trusted faculty member or student-support office.",
+                            "Ask about medical leave, attendance flexibility or examination arrangements.",
+                            "Keep copies of relevant medical documentation if your institution requires it.",
+                            "Explore remote learning or adjusted academic plans where available.",
+                            "Stay connected with classmates in ways that feel manageable.",
+                            "Remember that returning to studies can happen at a pace that suits your recovery."
+                        ],
+                        reminder: "Taking a medical break does not erase your academic goals. Ask your institution about its actual policies and available support."
+                    },
+                    {
+                        id: "working",
+                        title: "Working During Cancer Treatment",
+                        description: "Explore conversations and practical considerations around employment.",
+                        intro: "Some people continue working during treatment, while others need reduced hours or time away. The right arrangement depends on the type of work, treatment schedule, health and personal circumstances.",
+                        points: [
+                            "Consider what information you feel comfortable sharing with your employer.",
+                            "Ask about available leave or workplace flexibility.",
+                            "Discuss adjustments to workload, hours or work location if appropriate.",
+                            "Keep important employment and medical documents organised.",
+                            "Seek advice from a qualified local source about workplace rights or benefits."
+                        ],
+                        reminder: "There is no single correct decision about working during treatment. Your health and individual circumstances matter."
+                    },
+                    {
+                        id: "family",
+                        title: "Relationships and Family Life",
+                        description: "Explore how treatment may affect family relationships and responsibilities.",
+                        intro: "Cancer treatment can affect family routines, roles and relationships. Family members may also experience worry and uncertainty while trying to support someone they care about.",
+                        points: [
+                            "Talk openly about practical needs when you feel ready.",
+                            "Share responsibilities where possible.",
+                            "Set boundaries around visitors, questions and advice.",
+                            "Make space for conversations that are not about cancer.",
+                            "Consider family counselling or support services if communication becomes difficult."
+                        ],
+                        reminder: "You can appreciate support from family while still needing privacy, independence and personal space."
+                    },
+                    {
+                        id: "friendships",
+                        title: "Friendships and Social Connections",
+                        description: "Find ways to maintain friendships and social connections during treatment.",
+                        intro: "Treatment may change how often you see friends or take part in social activities. Some people may not know what to say, while others may offer support in ways that do not always match your needs.",
+                        points: [
+                            "Let friends know what kind of contact feels comfortable.",
+                            "Choose shorter or flexible social activities if energy is limited.",
+                            "It is okay to decline invitations when you need rest.",
+                            "Consider connecting with people who have shared experiences if you wish.",
+                            "Set boundaries with people whose comments or advice feel unhelpful."
+                        ],
+                        reminder: "You deserve friendships that allow you to be yourself, not only someone receiving treatment."
+                    },
+                    {
+                        id: "intimacy",
+                        title: "Intimacy, Sexual Health and Fertility",
+                        description: "Explore sensitive questions about intimacy, reproductive health and fertility.",
+                        intro: "Cancer and its treatment may affect sexual health, fertility, hormones, intimacy and body image. These concerns are valid and can be discussed with your healthcare team.",
+                        points: [
+                            "Ask whether your treatment may affect fertility or reproductive function.",
+                            "If future fertility matters to you, ask about fertility-preservation options before treatment when possible.",
+                            "Discuss changes in sexual health, comfort or desire with your care team.",
+                            "Ask about contraception and pregnancy-related precautions where relevant.",
+                            "Consider a referral to a specialist if you need more detailed guidance."
+                        ],
+                        reminder: "These conversations can feel personal, but they are an important part of comprehensive cancer care. You deserve clear and respectful answers."
+                    },
+                    {
+                        id: "occasions",
+                        title: "Special Occasions and Social Activities",
+                        description: "Plan celebrations and social activities around your health and treatment schedule.",
+                        intro: "Birthdays, festivals, family gatherings and other special occasions can remain meaningful during treatment. You may need to adapt plans around appointments, energy levels and medical advice.",
+                        points: [
+                            "Plan flexible activities that can be changed if needed.",
+                            "Choose gatherings that feel comfortable and manageable.",
+                            "Ask your care team about infection precautions before attending crowded events if your immunity is low.",
+                            "Let people know if you may need to leave early or change plans.",
+                            "Find smaller ways to celebrate when larger gatherings are not practical."
+                        ],
+                        reminder: "You can still make room for meaningful moments during treatment, in ways that feel safe and comfortable."
+                    },
+                    {
+                        id: "aftertreatment",
+                        title: "Planning for Life After Treatment",
+                        description: "Explore the transition from active treatment to follow-up care and everyday life.",
+                        intro: "Finishing a phase of treatment can bring relief, uncertainty and new questions. Follow-up care helps monitor health, manage ongoing effects and support life after treatment.",
+                        points: [
+                            "Ask your team what follow-up appointments and tests you will need.",
+                            "Discuss symptoms or side effects that continue after treatment.",
+                            "Ask about rehabilitation, emotional support and other survivorship services.",
+                            "Find out whom to contact if new concerns arise.",
+                            "Give yourself time to adjust to changes in routine and expectations."
+                        ],
+                        reminder: "The end of active treatment is a transition, not a deadline for feeling completely back to normal."
+                    }
+                ]
+            },
+
+            healthcareteam: {
+                title: "Talking to Your Healthcare Team",
+                description: "Clear communication can help you understand your care and take part in decisions about your treatment.",
+                topics: [
+                    {
+                        id: "oncologist",
+                        title: "Building a Relationship With Your Oncologist",
+                        description: "Learn how open communication can support your treatment journey.",
+                        intro: "Your oncologist helps guide your cancer treatment and coordinates important parts of your care. A good working relationship allows you to ask questions, share concerns and understand the decisions being made.",
+                        points: [
+                            "Be open about symptoms, concerns and changes in your health.",
+                            "Ask for explanations when medical information is unclear.",
+                            "Share your priorities and concerns about treatment.",
+                            "Tell your doctor about medicines, supplements and other treatments you use.",
+                            "Ask how to contact the team between appointments."
+                        ],
+                        reminder: "You are an important part of your care team. Asking questions is appropriate and encouraged."
+                    },
+                    {
+                        id: "appointmentprep",
+                        title: "Preparing for Doctor Appointments",
+                        description: "Organise questions and information before your next appointment.",
+                        intro: "Appointments can involve a lot of information, especially when treatment is changing. Preparing a short list of questions may help you make the most of the time with your healthcare team.",
+                        points: [
+                            "Write down your most important questions first.",
+                            "Record new symptoms and when they occur.",
+                            "Bring relevant reports and a list of medicines.",
+                            "Ask whether you can take notes or receive written instructions.",
+                            "Confirm the next appointment and any tests that need to be completed."
+                        ],
+                        reminder: "If you forget a question during an appointment, you can contact your hospital team to ask how it can be addressed."
+                    },
+                    {
+                        id: "terminology",
+                        title: "Understanding Medical Terminology",
+                        description: "Become more familiar with common terms used in cancer care.",
+                        intro: "Cancer reports and medical appointments often include specialised terms. Understanding what these words mean can make discussions with your healthcare team easier.",
+                        points: [
+                            "Ask your doctor to explain unfamiliar terms in plain language.",
+                            "Write down terms you want to look up later.",
+                            "Ask what a test result means in the context of your complete diagnosis.",
+                            "Clarify the difference between a treatment response, remission and cure.",
+                            "Use reliable medical information sources rather than relying on isolated search results."
+                        ],
+                        reminder: "You do not need to become a medical expert to understand your care. Your healthcare team should help explain it."
+                    },
+                    {
+                        id: "treatmentplan",
+                        title: "Understanding Your Treatment Plan",
+                        description: "Learn what information a treatment plan may include.",
+                        intro: "A treatment plan outlines the treatments recommended for your cancer and how they are expected to be delivered. It may change as your healthcare team reviews your response and overall health.",
+                        points: [
+                            "Ask about the goal of treatment and the expected timeline.",
+                            "Understand the medicines, procedures or therapies included.",
+                            "Ask which tests will be used to monitor your response.",
+                            "Discuss possible side effects and supportive care.",
+                            "Ask what may happen if the treatment needs to be adjusted."
+                        ],
+                        reminder: "A treatment plan is individualised. Ask your doctor to explain any changes and the reasons behind them."
+                    },
+                    {
+                        id: "discussingsymptoms",
+                        title: "Discussing Side Effects and Symptoms",
+                        description: "Learn how to describe symptoms and communicate concerns clearly.",
+                        intro: "Sharing symptoms with your healthcare team helps them assess whether you need medical advice, further tests or changes to supportive care.",
+                        points: [
+                            "Describe when the symptom started and how often it occurs.",
+                            "Explain its severity and whether it is getting better or worse.",
+                            "Mention medicines or activities that seem to affect it.",
+                            "Do not wait for a routine appointment if your team has told you a symptom needs urgent attention.",
+                            "Ask which symptoms require an immediate call or emergency assessment."
+                        ],
+                        reminder: "Your team would rather hear about a concerning symptom than have you wait because you are unsure whether it matters."
+                    },
+                    {
+                        id: "secondopinion",
+                        title: "Seeking a Second Opinion",
+                        description: "Understand when and how a second medical opinion may be considered.",
+                        intro: "A second opinion means asking another qualified doctor to review your diagnosis or treatment plan. Some people seek one to understand their options, especially when facing complex decisions.",
+                        points: [
+                            "You can ask your current doctor about obtaining another opinion.",
+                            "Collect relevant pathology reports, scan reports and treatment records.",
+                            "Ask the second doctor to explain their assessment and recommendations.",
+                            "Clarify whether any proposed differences are based on new information or a different clinical judgement.",
+                            "Consider discussing the opinions with your treating team."
+                        ],
+                        reminder: "Seeking another opinion does not mean you are being disloyal to your doctor. It can be part of making an informed decision."
+                    },
+                    {
+                        id: "shareddecision",
+                        title: "Shared Decision-Making",
+                        description: "Explore how patients and healthcare professionals can make informed decisions together.",
+                        intro: "Shared decision-making involves discussing available options, their benefits and risks, and what matters most to the patient. It recognises that medical expertise and personal preferences both matter.",
+                        points: [
+                            "Ask what treatment options are appropriate for your situation.",
+                            "Discuss expected benefits, risks and uncertainties.",
+                            "Share your concerns, priorities and personal circumstances.",
+                            "Ask for time to consider a decision when it is medically appropriate.",
+                            "Make sure you understand the next steps before agreeing to a plan."
+                        ],
+                        reminder: "You deserve to be involved in decisions about your care and to have your questions treated respectfully."
+                    },
+                    {
+                        id: "specialists",
+                        title: "Communicating With Different Specialists",
+                        description: "Understand the roles of different professionals involved in cancer care.",
+                        intro: "Cancer care may involve several specialists, including oncologists, surgeons, radiologists, pathologists, nurses, dietitians and rehabilitation professionals. Each contributes different expertise.",
+                        points: [
+                            "Ask who is coordinating your overall treatment plan.",
+                            "Keep a record of important appointments and recommendations.",
+                            "Make sure each specialist knows about relevant medicines and health concerns.",
+                            "Ask whom to contact for questions about a particular treatment or symptom.",
+                            "Request clarification if advice from different professionals appears inconsistent."
+                        ],
+                        reminder: "It is reasonable to ask your care team to help coordinate information when several specialists are involved."
+                    }
+                ]
+            },
+
+            aftersession: {
+                title: "After Each Treatment Session",
+                description: "Explore what recovery between treatment sessions may involve and how to prepare for the next step.",
+                topics: [
+                    {
+                        id: "aftertreatmentwhat",
+                        title: "What to Expect After Treatment",
+                        description: "Understand why recovery experiences can differ after each session.",
+                        intro: "The period after a treatment session can vary depending on the type of treatment, medicines used and individual health. Some people feel well soon afterwards, while others experience fatigue or other side effects.",
+                        points: [
+                            "Ask your team which effects are expected with your treatment.",
+                            "Follow the home-care instructions provided by your hospital.",
+                            "Take prescribed medicines according to instructions.",
+                            "Keep your oncology team's contact details accessible.",
+                            "Report symptoms that are severe, unexpected or worsening."
+                        ],
+                        reminder: "Your experience may differ from someone else's. Follow your own treatment instructions rather than comparing recovery timelines."
+                    },
+                    {
+                        id: "firsthours",
+                        title: "The First 24–48 Hours",
+                        description: "Plan for the immediate period after a treatment session.",
+                        intro: "The first day or two after treatment may involve rest, medication schedules and monitoring for symptoms. The exact instructions depend on the treatment you receive.",
+                        points: [
+                            "Follow the discharge or home-care instructions given by your team.",
+                            "Know which medicines are due and when.",
+                            "Arrange support if you have been advised not to travel or manage activities alone.",
+                            "Keep fluids and food accessible if your team has not given you restrictions.",
+                            "Know which symptoms require an urgent call to your hospital."
+                        ],
+                        reminder: "If you are unsure whether a symptom is urgent, use the contact instructions provided by your treatment centre."
+                    },
+                    {
+                        id: "betweencycles",
+                        title: "Managing the Days Between Sessions",
+                        description: "Understand how to plan for changing energy levels and symptoms between treatments.",
+                        intro: "Recovery periods between treatment sessions can involve changes in energy, appetite and other symptoms. These periods are also important for monitoring how your body responds.",
+                        points: [
+                            "Keep a simple record of symptoms and when they occur.",
+                            "Follow your medication and follow-up instructions.",
+                            "Allow time for rest and manageable daily activities.",
+                            "Report symptoms that persist or interfere with eating, drinking or daily life.",
+                            "Attend recommended blood tests and appointments."
+                        ],
+                        reminder: "Recovery between sessions is part of treatment. Let your team know if you are not recovering as expected."
+                    },
+                    {
+                        id: "homecare",
+                        title: "Medication and Home Care",
+                        description: "Learn how to organise medicines and follow home-care instructions.",
+                        intro: "After treatment, your healthcare team may provide medicines or specific instructions to help manage symptoms and reduce complications.",
+                        points: [
+                            "Keep an updated list of medicines and doses.",
+                            "Follow the prescribed schedule and instructions.",
+                            "Ask what to do if you miss a dose or experience a side effect.",
+                            "Do not add over-the-counter medicines or supplements without checking for interactions.",
+                            "Store medicines safely and keep them away from children."
+                        ],
+                        reminder: "If medication instructions are unclear, contact your pharmacist or healthcare team rather than guessing."
+                    },
+                    {
+                        id: "monitoring",
+                        title: "Monitoring Your Health at Home",
+                        description: "Understand what symptoms and changes your team may ask you to monitor.",
+                        intro: "Your healthcare team may ask you to monitor particular symptoms between appointments. This can help them understand your recovery and identify problems that need attention.",
+                        points: [
+                            "Record symptoms that your team has asked you to monitor.",
+                            "Follow any instructions about checking your temperature.",
+                            "Note changes in eating, drinking, bowel habits or energy if relevant.",
+                            "Keep track of medicines and appointments.",
+                            "Contact your team if you notice warning signs they have asked you to report."
+                        ],
+                        reminder: "Home monitoring does not replace medical assessment. Contact your team about concerning symptoms even if your records appear normal."
+                    },
+                    {
+                        id: "whencontact",
+                        title: "When to Contact Your Medical Team",
+                        description: "Recognise symptoms that may need urgent medical attention.",
+                        intro: "Some symptoms during cancer treatment need prompt medical assessment. Your oncology team should provide specific instructions about which symptoms require an immediate call or hospital visit.",
+                        points: [
+                            "A temperature of 38°C or higher during chemotherapy may indicate a serious infection and requires urgent medical advice.",
+                            "Difficulty breathing or chest pain requires emergency assessment.",
+                            "Uncontrolled vomiting or inability to keep fluids down needs prompt medical attention.",
+                            "Severe or rapidly worsening pain should be reported urgently.",
+                            "Unusual bleeding, confusion, fainting or signs of serious infection need urgent assessment.",
+                            "Follow any additional emergency instructions given by your own oncology team."
+                        ],
+                        reminder: "Do not wait for your next scheduled appointment if you experience an emergency warning sign. Contact your oncology team or seek emergency medical care immediately."
+                    },
+                    {
+                        id: "caregiverafter",
+                        title: "Caregiver's After-Treatment Guide",
+                        description: "Practical guidance for people supporting someone after a treatment session.",
+                        intro: "Caregivers may help with transport, meals, medication routines and emotional support after treatment. The type of help needed can change from one session to another.",
+                        points: [
+                            "Understand the home-care instructions provided by the treatment team.",
+                            "Know the medicines and symptoms that need attention.",
+                            "Help organise appointments and transport where needed.",
+                            "Ask the patient what kind of support they prefer.",
+                            "Respect privacy and encourage independence whenever possible.",
+                            "Look after your own wellbeing and seek support when needed."
+                        ],
+                        reminder: "Supporting someone does not mean you must manage everything alone. Caregivers deserve support too."
+                    },
+                    {
+                        id: "nextcycle",
+                        title: "Preparing for the Next Cycle or Appointment",
+                        description: "Organise questions and information before your next treatment session.",
+                        intro: "The period before the next treatment session is an opportunity to discuss recovery, side effects and any concerns with your healthcare team.",
+                        points: [
+                            "Record symptoms experienced since the previous session.",
+                            "Write down questions about medicines or side effects.",
+                            "Check the date and time of the next appointment.",
+                            "Complete recommended tests before the appointment.",
+                            "Tell your team about any new medicines, supplements or health changes.",
+                            "Ask whether any part of the treatment plan has changed."
+                        ],
+                        reminder: "Your feedback helps your healthcare team understand how you are responding and what support you may need next."
+                    }
+                ]
+            }
+
+        };
+
+        const categoryDirectory = document.getElementById("categoryDirectory");
+        const categoryTopics = document.getElementById("categoryTopics");
+        const individualGuide = document.getElementById("individualGuide");
+        const treatmentClosing = document.getElementById("treatmentClosing");
+
+        const categoryHeading = document.getElementById("categoryHeading");
+        const categoryDescription = document.getElementById("categoryDescription");
+        const individualTopicGrid = document.getElementById("individualTopicGrid");
+        const guideContent = document.getElementById("guideContent");
+
+        let currentCategory = null;
+
+        // Scroll to the selected section instead of returning to the top of the page.
+        // The navbar height is included so the heading does not get hidden behind it.
+        function scrollToSection(element) {
+            if (!element) return;
+
+            requestAnimationFrame(function () {
+                const navbar = document.querySelector(".navbar");
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+                const elementPosition =
+                    element.getBoundingClientRect().top + window.scrollY;
+
+                window.scrollTo({
+                    top: Math.max(0, elementPosition - navbarHeight - 20),
+                    behavior: "smooth"
+                });
+            });
+        }
+
+        function hideAllViews() {
+            categoryDirectory.classList.add("hidden");
+            categoryTopics.classList.remove("active");
+            individualGuide.classList.remove("active");
+            treatmentClosing.classList.add("hidden");
+        }
+
+        function openCategory(categoryId) {
+            const category = categories[categoryId];
+
+            if (!category) return;
+
+            currentCategory = categoryId;
+
+            hideAllViews();
+
+            categoryHeading.textContent = category.title;
+            categoryDescription.textContent = category.description;
+
+            individualTopicGrid.innerHTML = "";
+
+            category.topics.forEach(function (topic, index) {
+                const card = document.createElement("button");
+                card.className = "topic-card";
+                card.type = "button";
+
+                const number = document.createElement("span");
+                number.className = "topic-number";
+                number.textContent = String(index + 1).padStart(2, "0");
+
+                const heading = document.createElement("h3");
+                heading.textContent = topic.title;
+
+                const description = document.createElement("p");
+                description.textContent = topic.description;
+
+                const linkText = document.createElement("span");
+                linkText.textContent = "Explore Topic →";
+
+                card.append(number, heading, description, linkText);
+
+                card.addEventListener("click", function () {
+                    openGuide(topic.id);
+                });
+
+                individualTopicGrid.appendChild(card);
+            });
+
+            categoryTopics.classList.add("active");
+
+            // Scroll to the selected category heading.
+            scrollToSection(categoryHeading);
+        }
+
+        function findTopic(topicId) {
+            for (const category of Object.values(categories)) {
+                const topic = category.topics.find(function (item) {
+                    return item.id === topicId;
+                });
+
+                if (topic) return topic;
+            }
+
+            return null;
+        }
+
+        function openGuide(topicId) {
+            const topic = findTopic(topicId);
+
+            if (!topic) return;
+
+            hideAllViews();
+
+            guideContent.innerHTML = "";
+
+            const heading = document.createElement("h2");
+            heading.textContent = topic.title;
+            guideContent.appendChild(heading);
+
+            const intro = document.createElement("p");
+            intro.textContent = topic.intro;
+            guideContent.appendChild(intro);
+
+            const subheading = document.createElement("h3");
+            subheading.textContent = "What Should You Know?";
+            guideContent.appendChild(subheading);
+
+            const list = document.createElement("ul");
+
+            topic.points.forEach(function (point) {
+                const item = document.createElement("li");
+                item.textContent = point;
+                list.appendChild(item);
+            });
+
+            guideContent.appendChild(list);
+
+            const reminderBox = document.createElement("div");
+            reminderBox.className = "gentle-reminder";
+
+            const reminder = document.createElement("p");
+            reminder.textContent = topic.reminder;
+
+            reminderBox.appendChild(reminder);
+            guideContent.appendChild(reminderBox);
+
+            const sources = document.createElement("div");
+            sources.className = "guide-sources";
+
+            const sourceHeading = document.createElement("h3");
+            sourceHeading.textContent = "Further Reading";
+
+            const sourceList = document.createElement("ul");
+
+            const sourceLinks = [
+                {
+                    text: "National Cancer Institute – Cancer Treatment",
+                    url: "https://www.cancer.gov/about-cancer/treatment"
+                },
+                {
+                    text: "National Cancer Institute – Supportive Care",
+                    url: "https://www.cancer.gov/about-cancer/treatment/side-effects"
+                },
+                {
+                    text: "American Cancer Society – Treatment and Side Effects",
+                    url: "https://www.cancer.org/cancer/managing-cancer/treatment-types.html"
+                }
+            ];
+
+            sourceLinks.forEach(function (source) {
+                const item = document.createElement("li");
+                const link = document.createElement("a");
+
+                link.className = "source-link";
+                link.href = source.url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = source.text;
+
+                item.appendChild(link);
+                sourceList.appendChild(item);
+            });
+
+            sources.append(sourceHeading, sourceList);
+            guideContent.appendChild(sources);
+
+            individualGuide.classList.add("active");
+
+            // Scroll to the selected guide.
+            scrollToSection(guideContent);
+        }
+
+        function backToCategories() {
+            categoryTopics.classList.remove("active");
+            individualGuide.classList.remove("active");
+
+            categoryDirectory.classList.remove("hidden");
+            treatmentClosing.classList.remove("hidden");
+
+            // Return to the main category directory.
+            scrollToSection(categoryDirectory);
+        }
+
+        function backToCategoryTopics() {
+            individualGuide.classList.remove("active");
+            categoryTopics.classList.add("active");
+
+            // Return to the selected category heading and topic cards.
+            scrollToSection(categoryHeading);
+        }
+
+    </script>
+
+</body>
+</html>

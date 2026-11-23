@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connect With Others | UNMUTE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Connect With Others Page */
+
+        .connect-hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 45px;
+            padding: 65px 8%;
+            background: #f8f5fc;
+        }
+
+        .connect-hero-content {
+            flex: 1;
+        }
+
+        .connect-hero-content h1 {
+            color: #593b78;
+            font-size: 42px;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .connect-hero-content p {
+            color: #625b68;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        .connect-hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .connect-hero-image img {
+            width: 100%;
+            max-width: 520px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 22px;
+        }
+
+        .connect-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 65px auto 45px;
+            padding: 0 25px;
+        }
+
+        .connect-intro h2 {
+            color: #593b78;
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .connect-intro p {
+            color: #6b6470;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .connect-section {
+            padding: 55px 8%;
+        }
+
+        .connect-section:nth-of-type(even) {
+            background: #faf8fc;
+        }
+
+        .connect-section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .connect-section-heading h2 {
+            color: #593b78;
+            font-size: 29px;
+            margin-bottom: 12px;
+        }
+
+        .connect-section-heading p {
+            color: #706978;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .connect-card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .connect-card {
+            background: #fff;
+            border: 1px solid #eee7f3;
+            border-radius: 17px;
+            padding: 28px;
+            box-shadow: 0 5px 18px rgba(70, 45, 90, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .connect-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 9px 24px rgba(70, 45, 90, 0.10);
+        }
+
+        .connect-card h3 {
+            color: #654783;
+            font-size: 20px;
+            margin-bottom: 13px;
+        }
+
+        .connect-card p {
+            color: #6c6571;
+            line-height: 1.75;
+            margin-bottom: 15px;
+        }
+
+        .connect-card ul {
+            padding-left: 20px;
+            margin: 12px 0 0;
+        }
+
+        .connect-card li {
+            color: #6c6571;
+            line-height: 1.75;
+            margin-bottom: 7px;
+        }
+
+        .connect-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #76539a;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .connect-link:hover,
+        .connect-link:focus {
+            color: #4d326b;
+            text-decoration: none;
+        }
+
+        .connect-safety {
+            max-width: 1050px;
+            margin: 55px auto;
+            padding: 32px;
+            background: #f4eff9;
+            border-left: 5px solid #8b6aaa;
+            border-radius: 12px;
+        }
+
+        .connect-safety h2 {
+            color: #593b78;
+            margin-bottom: 15px;
+        }
+
+        .connect-safety p,
+        .connect-safety li {
+            color: #625b68;
+            line-height: 1.8;
+        }
+
+        .connect-safety ul {
+            padding-left: 22px;
+        }
+
+        .connect-closing {
+            text-align: center;
+            padding: 65px 8%;
+            background: #f8f5fc;
+        }
+
+        .connect-closing h2 {
+            color: #593b78;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .connect-closing p {
+            color: #6b6470;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Prevent underlines throughout the page */
+
+        .navbar a,
+        .navbar a:hover,
+        .navbar a:focus,
+        .connect-link,
+        .connect-link:hover,
+        .connect-link:focus {
+            text-decoration: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .connect-hero {
+                flex-direction: column;
+                padding: 45px 6%;
+                text-align: center;
+            }
+
+            .connect-hero-content h1 {
+                font-size: 32px;
+            }
+
+            .connect-hero-image img {
+                height: 260px;
+            }
+
+            .connect-intro {
+                margin: 45px auto 35px;
+            }
+
+            .connect-section {
+                padding: 45px 6%;
+            }
+
+            .connect-section-heading h2 {
+                font-size: 25px;
+            }
+
+            .connect-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .connect-safety {
+                margin: 35px 6%;
+                padding: 25px;
+            }
+
+            .connect-closing {
+                padding: 50px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="unmute-logo.png" alt="UNMUTE logo">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="know-your-body.html">Know Your Body</a>
+            <a href="find-support.html" class="active">Find Support</a>
+            <a href="her-voice.html">Her Voice</a>
+            <a href="beyond-the-common.html">Beyond the Common</a>
+            <a href="index.html#garden">A Little Garden of Hope</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="connect-hero">
+
+        <div class="connect-hero-content">
+            <h1>You Don't Have to Face This Alone</h1>
+
+            <p>
+                A cancer diagnosis can sometimes make the world feel smaller.
+                Connecting with people who understand what you are going through
+                can help you feel heard, supported and less alone.
+                Explore support groups, peer communities and safe spaces where
+                patients, survivors and caregivers can connect.
+            </p>
+        </div>
+
+        <div class="connect-hero-image">
+            <img src="connect-with-others.jpg"
+                 alt="People connecting and supporting one another">
+        </div>
+
+    </section>
+
+
+    <!-- Introduction -->
+    <section class="connect-intro">
+
+        <h2>Finding People Who Understand</h2>
+
+        <p>
+            Everyone's cancer journey is different, but you do not have to
+            navigate it without support. Some people find comfort in speaking
+            with someone who has experienced a similar diagnosis. Others prefer
+            a structured support group, an online community or a space where
+            family members can learn and connect.
+        </p>
+
+        <p>
+            There is no single right way to seek connection. Explore the options
+            below and choose what feels comfortable and appropriate for you.
+        </p>
+
+    </section>
+
+
+    <!-- Section 1: Cancer Support Groups -->
+    <section class="connect-section" id="cancer-support-groups">
+
+        <div class="connect-section-heading">
+            <h2>Cancer Support Groups</h2>
+
+            <p>
+                Support groups bring together people affected by cancer to share
+                experiences, discuss challenges and learn from one another in
+                a supportive environment.
+            </p>
+        </div>
+
+        <div class="connect-card-grid">
+
+            <div class="connect-card">
+                <h3>Hospital-Based Support Groups</h3>
+
+                <p>
+                    Some cancer hospitals and treatment centres facilitate
+                    patient-support activities, counselling sessions or group
+                    meetings.
+                </p>
+
+                <ul>
+                    <li>Ask your hospital's social worker or counsellor about available groups.</li>
+                    <li>Check whether meetings are conducted in person or online.</li>
+                    <li>Ask whether family members or caregivers can participate.</li>
+                </ul>
+            </div>
+
+            <div class="connect-card">
+                <h3>Community and Non-Profit Organisations</h3>
+
+                <p>
+                    Cancer-focused organisations may offer emotional support,
+                    patient guidance, community programmes and connections to
+                    other support services.
+                </p>
+
+                <ul>
+                    <li>Look for organisations with a clear identity and contact information.</li>
+                    <li>Ask about the type of support they provide.</li>
+                    <li>Confirm whether their programmes are currently active.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Section 2: Peer-to-Peer Support -->
+    <section class="connect-section" id="peer-support">
+
+        <div class="connect-section-heading">
+            <h2>Peer-to-Peer Support</h2>
+
+            <p>
+                Sometimes, speaking to just one person who has been through
+                something similar can make a meaningful difference.
+            </p>
+        </div>
+
+        <div class="connect-card-grid">
+
+            <div class="connect-card">
+                <h3>Connect With Someone Who Understands</h3>
+
+                <p>
+                    Peer support can help patients speak openly about the
+                    emotional and practical challenges of living with cancer.
+                    A peer may share their personal experience and offer
+                    understanding without judgement.
+                </p>
+
+                <ul>
+                    <li>Ask your treatment centre whether peer-support connections are available.</li>
+                    <li>Look for programmes that have clear consent and privacy practices.</li>
+                    <li>Choose whether you prefer someone with a similar diagnosis, age group or treatment experience.</li>
+                </ul>
+            </div>
+
+            <div class="connect-card">
+                <h3>Support at Different Stages</h3>
+
+                <p>
+                    Your needs may change throughout diagnosis, treatment,
+                    recovery and survivorship. You may find it helpful to
+                    connect with people at a similar stage of their journey.
+                </p>
+
+                <ul>
+                    <li>People newly diagnosed may seek guidance and reassurance.</li>
+                    <li>People undergoing treatment may value shared coping experiences.</li>
+                    <li>Survivors may seek connection during follow-up and life after treatment.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Section 3: Online Communities -->
+    <section class="connect-section" id="online-communities">
+
+        <div class="connect-section-heading">
+            <h2>Online Communities</h2>
+
+            <p>
+                Online communities can make support more accessible, especially
+                when travel, distance or treatment schedules make in-person
+                meetings difficult.
+            </p>
+        </div>
+
+        <div class="connect-card-grid">
+
+            <div class="connect-card">
+                <h3>Moderated Online Support Spaces</h3>
+
+                <p>
+                    Some organisations and patient communities offer online
+                    groups, virtual meetings or discussion spaces for people
+                    affected by cancer.
+                </p>
+
+                <ul>
+                    <li>Prefer communities with active moderators and clear community guidelines.</li>
+                    <li>Check how membership and personal information are handled.</li>
+                    <li>Understand whether the group is public, private or invitation-based.</li>
+                </ul>
+            </div>
+
+            <div class="connect-card">
+                <h3>Finding the Right Online Community</h3>
+
+                <p>
+                    Not every online group will be the right fit. Look for a
+                    community that respects different experiences and encourages
+                    informed, compassionate conversations.
+                </p>
+
+                <ul>
+                    <li>Check who manages the group and how concerns are reported.</li>
+                    <li>Be cautious of claims promising guaranteed cures or treatment outcomes.</li>
+                    <li>Remember that personal experiences are not medical advice.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Section 4: Support for Young Adults -->
+    <section class="connect-section" id="young-adults">
+
+        <div class="connect-section-heading">
+            <h2>Support for Young Adults</h2>
+
+            <p>
+                Facing cancer at a younger age can bring challenges that may
+                feel different from those experienced by older adults.
+                Finding people in a similar stage of life can help.
+            </p>
+        </div>
+
+        <div class="connect-card-grid">
+
+            <div class="connect-card">
+                <h3>Connecting With Other Young Patients</h3>
+
+                <p>
+                    Young adults may want to connect with others who understand
+                    the experience of managing cancer alongside education,
+                    work, relationships and changing plans for the future.
+                </p>
+
+                <ul>
+                    <li>Ask your hospital about age-specific support programmes.</li>
+                    <li>Look for moderated communities for young adults affected by cancer.</li>
+                    <li>Choose spaces where you feel comfortable sharing at your own pace.</li>
+                </ul>
+            </div>
+
+            <div class="connect-card">
+                <h3>Life Beyond Treatment</h3>
+
+                <p>
+                    The end of active treatment does not always mean that every
+                    challenge disappears. Some young survivors may want support
+                    with returning to studies or work, relationships, confidence
+                    and adjusting to life after cancer.
+                </p>
+
+                <ul>
+                    <li>Explore survivorship and young-adult support communities.</li>
+                    <li>Seek emotional support when adjusting to life after treatment.</li>
+                    <li>Remember that everyone's recovery and adjustment are different.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Staying Safe While Connecting -->
+    <section class="connect-safety">
+
+        <h2>Staying Safe While Connecting</h2>
+
+        <p>
+            Support communities can be valuable, but it is important to protect
+            your privacy and make informed choices when interacting with people
+            online or in person.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Protect personal information:</strong>
+                Avoid sharing medical records, identification numbers,
+                addresses, phone numbers or other sensitive details in public groups.
+            </li>
+
+            <li>
+                <strong>Be cautious of medical claims:</strong>
+                Personal experiences are not clinical evidence. Discuss treatment
+                decisions and medical advice with your healthcare team.
+            </li>
+
+            <li>
+                <strong>Watch out for scams:</strong>
+                Be careful of people promising guaranteed cures, selling
+                unverified treatments or requesting money under pressure.
+            </li>
+
+            <li>
+                <strong>Check community guidelines:</strong>
+                Look for clear moderation policies, reporting options and
+                respectful behaviour.
+            </li>
+
+            <li>
+                <strong>Set your own boundaries:</strong>
+                You do not have to share your story, answer personal questions
+                or remain in a group that makes you uncomfortable.
+            </li>
+        </ul>
+
+    </section>
+
+
+    <!-- Closing Section -->
+    <section class="connect-closing">
+
+        <h2>Sometimes, Being Understood Is a Kind of Support</h2>
+
+        <p>
+            You may find support in a group, a conversation with one person
+            or a community that simply makes you feel less alone. Take your
+            time, explore what feels right and remember that you deserve
+            connection, understanding and respect throughout your journey.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 UNMUTE. Every voice matters. Every journey deserves support.</p>
+    </footer>
+
+
+    <script>
+        // Keep anchor navigation clear of the fixed navigation bar
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (event) {
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (target) {
+                    event.preventDefault();
+
+                    const navbar = document.querySelector('.navbar');
+                    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+                    const targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        navbarHeight -
+                        20;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
