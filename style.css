@@ -2467,3 +2467,39 @@ a.feature-card:active {
     color: #FFFFFF;
     text-decoration: none;
 }
+/* Individual cancer guide hero images - Mobile only */
+
+@media (max-width: 650px) {
+
+    .cancer-guide-hero .cancer-guide-image {
+        width: 100%;
+        max-width: 280px;
+        margin: 20px auto 0;
+        overflow: hidden;
+    }
+
+    .cancer-guide-hero .cancer-guide-image img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+}
+/* Keep mobile navigation font size consistent */
+
+@media (max-width: 700px) {
+    .navbar nav a {
+        font-size: 14px;
+    }
+}
+/* Copyright notice */
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #725F70;
+    margin-top: 20px;
+    line-height: 1.8;
+}
