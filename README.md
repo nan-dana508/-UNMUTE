@@ -86,4 +86,8 @@ UNMUTE is being developed as a web project, with an initial set of educational a
 
 To create a space where people affected by women's cancers can find information, discover support, explore research, and feel less alone throughout their journey.
 
-**UNMUTE — Because every voice deserves to be heard.**
+**UNMUTE — Her Health. Her Voice. Her Right to Be Heard.**
+
+© 2026 UNMUTE. All rights reserved.
+
+Designed & developed by Nandana Predeep.
